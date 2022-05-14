@@ -1,0 +1,74 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POa="Arun Mulpur"
+PV=3.000
+PS=0
+PE=1
+PP=0.01
+PI=172
+PX=0.01
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-10,6,16,"Arial"
+Pc=17
+Po=1,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=2048,0,0,3840,0,0
+PM=1,1,1,1
+N.1="const"(7)*13x19
+N.2="const"(14)*13x21
+N.3="const"(21)*13x23
+N.4="const"(28)*13x25
+N.5="const"(35)*13x27
+N.6="case"*31x17#6,1
+N.7="variable"*20x19
+n="A"
+N.8="variable"*20x21
+n="B"
+N.9="variable"*20x23
+n="C"
+N.10="variable"*20x25
+n="D"
+N.11="variable"*20x27
+n="E"
+N.12="variable"*44x22
+n="Y"
+N.13="variable"*20x12
+n="J"
+N.14="const"(3)*13x12
+N.15="display"(28)*57x22
+n="0"
+Oe=6
+Ox=1
+Ov=0
+N.16="label"*18x3
+n="Using a case block to implement
+a five-branch decision tree."
+Of=-19,0,400,0,0,0,34,"Arial"
+N.17="label"*41x29
+n="If J = 0, then Y = A;
+else
+If J = 1, then Y = B;
+else
+....."
+I.6.i1=13.o1
+I.6.i2=7.o1
+I.6.i3=8.o1
+I.6.i4=9.o1
+I.6.i5=10.o1
+I.6.i6=11.o1
+I.7.i1=1.o1
+I.8.i1=2.o1
+I.9.i1=3.o1
+I.10.i1=4.o1
+I.11.i1=5.o1
+I.12.i1=6.o1
+I.13.i1=14.o1
+I.15.i1=12.o1

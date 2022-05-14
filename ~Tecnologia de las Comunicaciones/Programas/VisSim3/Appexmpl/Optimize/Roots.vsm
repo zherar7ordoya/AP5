@@ -1,0 +1,116 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POa="Arun Mulpur"
+PV=3.000
+PS=0
+PE=1
+PP=0.05
+PI=170
+PX=0.05
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-9,8,18,"Arial"
+Pc=28
+Po=0.01,50,664,0
+PC=2,100,0.0001,1,1e-007
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x1
+Ps=1024,0,0,704,0,0
+Pd=17
+PM=1,1,1,1
+N.1="variable"*25x15
+n="y"
+N.2="const"(0)*5x15
+N.3="constraint"(0.001)*57x31
+N.4="unknown"(0)*12x15
+N.5="variable"*2x30
+n="y"
+N.6="gain"(4)*11x30
+N.7="const"(-5)*13x32
+N.8="summingJunction"*23x28#3,1
+N.9="display"(-5.0000000012525)*32x15
+n="-5"
+Oe=6
+Ox=1
+Ov=0
+N.10="variable"*2x45
+n="y"
+N.11="const"(0)*4x51
+N.12=">"*11x49
+N.13="*"*28x48
+N.14="gain"(3)*38x49
+N.15="summingJunction"*47x30
+N.16="display"(0)*63x49
+n="0"
+Oe=6
+Ox=1
+Ov=0
+N.17="*"*33x29
+N.18="label"*10x35
+n="Equation to be solved:
+y^2 + 4y - 5 = 0"
+N.19="label"*40x52
+n="Penalty, y must be < 0"
+N.20="display"(5.6474239825396e-017)*56x28
+n="5.64742e-17"
+Oe=6
+Ox=1
+Ov=0
+N.21="pow"(2)*47x49
+N.22="pow"(2)*11x28
+N.23="label"*50x33
+n="                   Total error
+(penalty function + equation err)"
+N.24="label"*34x17
+n="Root"
+N.25="Compound"*2x1<C>
+n="Click Right Button
+           Here
+For More Information"
+Ms=2048,0,0,1536,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.26="comment"*16x44*89x12<M>
+C="Use the online Help menu for more information on using VisSim.
+
+To return to the diagram, point the mouse to an empty part of the screen and click the right mouse button."
+N.27="comment"*16x14*89x28<M>
+C="This block diagram uses constraint and unknown blocks to find one of the roots (-5) of the quadratic equation y^2 + 4y - 5 = 0.  A penalty function is added to the constraint function to force the discovered root to be less than 0. 
+
+"
+N.28="label"*7x55
+n="Additional Condition:
+y must be negative"
+I.1.i1=4.o1
+I.3.i1=15.o1
+I.4.i1=2.o1
+I.6.i1=5.o1
+I.8.i1=22.o1
+I.8.i2=6.o1
+I.8.i3=7.o1
+I.9.i1=1.o1
+f12.1.i=ll
+I.12.i1=10.o1
+f12.2.i=lr
+I.12.i2=11.o1
+I.13.i1=10.o1
+I.13.i2=12.o1
+I.14.i1=13.o1
+I.15.i1=17.o1
+I.15.i2=21.o1
+I.16.i1=21.o1
+I.17.i1=8.o1
+I.17.i2=8.o1
+I.20.i1=15.o1
+I.21.i1=14.o1
+I.22.i1=5.o1
+G.25=26,27,

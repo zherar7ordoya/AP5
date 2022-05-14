@@ -1,0 +1,95 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Min Value Model"
+POa="Vardhani"
+PV=2.000
+PS=0
+PE=3
+PP=0.002
+PI=170
+PX=0.002
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=16
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=2048,0,0,1414,0,0
+Pd=777
+PM=1,1,1,1
+N.1="Compound"*3x1#1,1<C>
+n="min_val.bmp"
+B=0,"min_val.bmp"
+BB=0,4,7,4,7
+Ms=928,0,0,422,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.2="variable"*81x25<M>
+n=":+/- Pk trigger"
+N.3="comment"*4x1*95x13<M>
+C="Min Value Model:
+Detects the Low peak value every cycle of a periodic waveform.  The +/- Pk trigger outputs a +1 impulse at the positive peak of the waveform and a -1 impuse at the negative peak.  
+
+Limitations:
+1.  Refer to the (z-1/z) block
+"
+N.4="crossDetect"(0)*23x32<M>
+N.5="gain"(-1)*48x32<M>
+N.6="sampleHold"(0)*117x25<M>
+N.7="limit"(-1.1,0)*80x32<M>
+N.8="label"*0x25<M>
+n="Input"
+N.9="label"*180x40<M>
+n="Output"
+N.10="Compound"*8x30#1,1<MC>
+n="  Z - 1
+---------
+     Z"
+Ms=1996,0,0,1363,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.11="unitDelay"(0,0,0)*64x30<M>
+N.12="const"(1)*52x30<M>
+N.13="summingJunction"*96x34<M>
+N.14="label"*2x39<M>
+n="Input signal"
+N.15="label"*172x40<M>
+n="Output signal"
+N.16="comment"*6x2*157x26<M>
+C="Discrete Differencer Model:	
+
+This model is used to compute the first backwards difference of the input signal.   When scaled by the simulation update time (stepsize) the output signal becomes an approximation to the derivative of the input signal.  The unit delay is triggered every dt (simulation update) with the 1 input to its boolean. This may not operate correctly when an adaptive integration algorithm is used.  In this situation the unit delay should be replaced with a continuous time delay with a reasonable delay time value.
+
+Limitations: 
+1. Unreliable operation when using adaptive integration algorithms
+2.  Simulation stepsize must be less than the  time constant for stability."
+G.1=2,3,4,5,6,7,8,9,10,
+I.1.o1=6.o1
+I.2.i1=5.o1
+I.4.i1=10.o1
+I.5.i1=4.o1
+I.6.i1=7.o1
+I.6.i2=1.i1
+I.7.i1=5.o1
+G.10=11,12,13,14,15,16,
+I.10.o1=13.o1
+I.10.i1=1.i1
+I.11.i1=12.o1
+I.11.i2=10.i1
+f13.1.i=-
+I.13.i1=11.o1
+I.13.i2=10.i1

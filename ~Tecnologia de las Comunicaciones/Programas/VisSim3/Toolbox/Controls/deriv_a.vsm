@@ -1,0 +1,70 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Continuous Derivative Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=1
+PP=0.001
+PI=170
+PX=0.001
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=11
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=1996,0,0,1363,0,0
+Pd=17
+PM=1,1,1,1
+N.1="summingJunction"*49x27<M>
+N.2="integrator"(0,0,0)*44x37<MR>
+N.3="Compound"*3x1#1,1<C>
+n="     d
+    ----
+      dt
+Derivative"
+Ms=870,0,0,601,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.4="/"*118x28<M>
+N.5="label"*11x24<M>
+n="Input signal"
+N.6="label"*169x35<M>
+n="Output signal"
+N.7="comment"*2x1*94x21<M>
+C="Continuous Derivative Model:	
+
+This model is used to approximate the derivative of a signal using a lag filter.  The derivative is valid for frequencies up to (1/ time constant).  For higher frequencies the time constant must be decreased.
+
+Limitations: 
+1.  time constant > 0
+2.  Simulation stepsize must be less than the time constant for stability.
+3.  First Pass Results are inaccurate"
+N.8="variable"*80x30<M>
+n=":time constant"
+N.9="label"*13x62<M>
+n="==== Parameters ===="
+N.10="variable"*33x67<M>
+n=":time constant"
+N.11="const"(0.01)*9x67<M>
+I.1.i1=3.i1
+f1.2.i=-
+I.1.i2=2.o1
+I.2.i1=4.o1
+G.3=1,2,4,5,6,7,8,9,10,11,
+I.3.o1=4.o1
+I.4.i1=1.o1
+I.4.i2=8.o1
+I.10.i1=11.o1

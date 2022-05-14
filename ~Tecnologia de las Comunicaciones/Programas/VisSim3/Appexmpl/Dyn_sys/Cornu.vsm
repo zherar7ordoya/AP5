@@ -1,0 +1,77 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POt="XY plot"
+POa="Visual Solutions Inc."
+PV=3.000
+PS=-12
+PE=12
+PP=0.05
+PI=170
+PX=0.05
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-9,8,18,"Arial"
+Pc=10
+Po=0.01,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=2007,0,0,1392,0,0
+Pd=17
+PM=1,1,1,1
+N.1="cos"*16x15
+N.2="sin"*16x26
+N.3="ramp"(0,1)*1x21
+N.4="*"*8x20
+N.5="integrator"(0,0,0)*28x15
+N.6="integrator"(0,1,0)*28x26
+N.7="plot"*37x11*60x43
+pt="Cornu's Spiral"
+px="Time (sec)"
+py="integral( sin( t**2))"
+pax=0
+pf=H
+pf=x
+pf=F
+pb=2,-1
+pbx=1.8,-0.8
+pbY=2,-1
+pbX=12,-12
+pc=512
+pm=10,0
+pb.0=1.8,-0.8
+pL.0="integral( cos( t**2))"
+pb.1=1.8,-0.8
+pb.2=0,0
+pb.3=0,0
+pL.3="integral( sin( t**2))"
+N.8="Compound"*2x1<C>
+n="Click Right Button
+           Here
+For More Information"
+Ms=2048,0,0,1536,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.9="comment"*12x25*50x13<M>
+C="Use the online Help for more information on using VisSim.
+
+To return to the diagram, point the mouse to an empty part of the screen and click the right mouse button."
+N.10="comment"*12x11*50x13<M>
+C="This block diagram plots the function integral (cos(t**2)) against integral(sin(t**2))."
+I.1.i1=4.o1
+I.2.i1=4.o1
+I.4.i1=3.o1
+I.4.i2=3.o1
+I.5.i1=1.o1
+I.6.i1=2.o1
+I.7.i1=5.o1
+I.7.i2=6.o1
+G.8=9,10,

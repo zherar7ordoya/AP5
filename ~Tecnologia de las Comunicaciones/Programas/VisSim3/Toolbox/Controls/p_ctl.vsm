@@ -1,0 +1,68 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Proportional  Controller Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=2.5
+PP=0.005
+PI=170
+PX=0.005
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=11
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=2003,0,0,1395,0,0
+Pd=17
+PM=1,1,1,1
+N.1="Compound"*1x0#2,1<C>
+n="p_ctl.bmp"
+B=0,"p_ctl.bmp"
+BB=0,4,7,4,7
+Ms=883,0,0,598,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.2="label"*2x12<M>
+n="Setpoint"
+N.3="label"*137x25<M>
+n="Output signal"
+N.4="label"*27x46<M>
+n="==== Parameters ===="
+N.5="comment"*18x0*109x19<M>
+C="Proportional  Controller Model:			
+
+A simple control used to modify the transient response and  maintain steady state accuracy (to a certain degree)  between the Setpoint Value and the Feedback signal.  In some situations, the output signal may require limiting.  This is accomplished by adding a limit block between the multiplier block and the output tab and setting the limit appropriately.
+
+Limitations:
+1.  None
+"
+N.6="label"*2x48<M>
+n="Feedback"
+N.7="summingJunction"*6x28<M>
+N.8="const"(1)*28x49<M>
+N.9="variable"*39x49<M>
+n=":Proportional Gain"
+N.10="*"*61x29<M>
+N.11="variable"*25x31<M>
+n=":Proportional Gain"
+G.1=2,3,4,5,6,7,8,9,10,11,
+I.1.o1=10.o1
+I.7.i1=1.i1
+f7.2.i=-
+I.7.i2=1.i2
+I.9.i1=8.o1
+I.10.i1=7.o1
+I.10.i2=11.o1

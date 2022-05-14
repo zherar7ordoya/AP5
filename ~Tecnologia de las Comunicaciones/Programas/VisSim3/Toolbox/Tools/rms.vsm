@@ -1,0 +1,85 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="RMS Model"
+POa="Vardhani"
+PV=2.000
+PS=0
+PE=3
+PP=0.01
+PI=170
+PX=0.01
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=18
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=2004,0,0,1395,0,0
+Pd=777
+PM=1,1,1,1
+N.1="sqrt"*131x27<M>
+N.2="/"*113x26<M>
+N.3="Compound"*2x2#2,1<C>
+n="On/Off              
+           RMS(x) -> y
+x"
+Ms=2048,0,0,1414,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.4="variable"*10x12<M>
+n=":on/off (1/0)"
+N.5="limit"(1e-005,1e+099)*138x39<M>
+N.6="resetIntegrator"(0,0,0)*68x24<M>
+N.7="sampleHold"(0)*18x33<MR>
+N.8="not"*10x18<M>
+N.9="variable"*25x18<M>
+n=":on/off (1/0) complement"
+N.10="variable"*35x33<MR>
+n=":on/off (1/0) complement"
+N.11="resetIntegrator"(0,1,0)*122x37<M>
+N.12="step"(0,1)*111x37<M>
+N.13="sampleHold"(0)*71x50<MR>
+N.14="variable"*89x50<MR>
+n=":on/off (1/0) complement"
+N.15="comment"*66x1*81x11<M>
+C="RMS Model:
+Computes the RMS (Root Mean Square) value of a signal when the on/off input (top) is high (1).  This is useful when interactive on-line data reduction is required. The algorithm is coded using two reset integrators providing a  zero transient startup characteristic.
+
+Limitations:
+1.  None"
+N.16="variable"*21x26<M>
+n=":on/off (1/0) complement"
+N.17="pow"(2)*8x24<M>
+N.18="variable"*83x39<M>
+n=":on/off (1/0) complement"
+I.1.i1=2.o1
+I.2.i1=6.o1
+I.2.i2=5.o1
+G.3=1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,
+I.3.o1=1.o1
+I.4.i1=3.i1
+I.5.i1=11.o1
+I.6.i1=17.o1
+I.6.i2=16.o1
+I.6.i3=7.o1
+I.7.i1=10.o1
+I.7.i2=6.o1
+I.8.i1=3.i1
+I.9.i1=8.o1
+I.11.i1=12.o1
+I.11.i2=18.o1
+I.11.i3=13.o1
+I.13.i1=14.o1
+I.13.i2=11.o1
+I.17.i1=3.i2

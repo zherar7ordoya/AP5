@@ -1,0 +1,181 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POt="This block diagram simulates the Lorenz Strange Attractor"
+POa="Visual Solutions Inc."
+PV=3.000
+PS=0
+PE=100
+PP=0.01
+PI=170
+PX=0.01
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-9,8,18,"Arial"
+Pc=41
+Po=0.01,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=1024,0,0,727,0,0
+Pd=17
+PM=1,1,1,1
+N.1="plot"*38x8*57x49
+pt="Lorenz Attractor"
+ps="a=5, b=15, c=1"
+px="Time (sec)"
+py="Y & Z"
+pax=0
+pf=H
+pf=x
+pb=30,-20
+pbx=10,-10
+pbY=30,-20
+pbX=100,0
+pc=2000
+pm=10,0
+pb.0=10,-10
+pL.0="X"
+pb.1=0,0
+pL.1="Y"
+pb.2=20,-20
+pL.2="Y"
+pb.3=30,0
+pL.3="Z"
+N.2="variable"*12x32
+n="a"
+N.3="variable"*12x36
+n="b"
+N.4="variable"*12x39
+n="c"
+N.5="const"(5)*4x32
+N.6="const"(15)*4x36
+N.7="const"(1)*4x39
+N.8="Compound"*25x35#0,3<C>
+n="Lorenz"
+Ms=2000,0,0,1392,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.9="label"*4x29
+n="Lorenz Parameters"
+N.10="comment"*26x49*50x14<M>
+C="Lorenz Attractor Equations:
+xDot = -a(y-x)
+yDot = (b-z)x - y
+zDot = xy - cz
+
+Where a = 5, b = 15, c = 1"
+N.11="*"*47x4<M>
+N.12="integrator"(-2,2,0)*68x5<M>
+N.13="summingJunction"*32x5<M>
+N.14="variable"*33x2<M>
+n="a"
+N.15="variable"*19x7<M>
+n="Y"
+N.16="*"*36x20<M>
+N.17="integrator"(-2,1,0)*70x24<M>
+N.18="summingJunction"*48x23<M>
+N.19="summingJunction"*16x19<M>
+N.20="variable"*4x19<M>
+n="b"
+N.21="variable"*83x24<M>
+n="Y"
+N.22="variable"*38x25<M>
+n="Y"
+N.23="*"*24x44<M>
+N.24="integrator"(15,0,0)*69x44<M>
+N.25="summingJunction"*38x43<M>
+N.26="variable"*3x46<M>
+n="c"
+N.27="variable"*3x44<M>
+n="Z"
+N.28="*"*24x37<M>
+N.29="variable"*3x39<M>
+n="Y"
+N.30="variable"*3x37<M>
+n="X"
+N.31="variable"*82x5<M>
+n="X"
+N.32="variable"*82x44<M>
+n="Z"
+N.33="variable"*19x5<M>
+n="X"
+N.34="variable"*4x21<M>
+n="Z"
+N.35="variable"*19x24<M>
+n="X"
+N.36="label"*59x3<M>
+n="xDot"
+N.37="label"*61x22<M>
+n="yDot"
+N.38="label"*60x42<M>
+n="zDot"
+N.39="Compound"*3x2<C>
+n="Click Right Button
+           Here
+For More Information"
+Ms=2048,0,0,1536,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.40="comment"*10x43*62x11<M>
+C="Use the online Help for more information on using VisSim.
+
+To return to the diagram, point the mouse to an empty part of the screen and click the right mouse button."
+N.41="comment"*10x2*62x41<M>
+C="This block diagram simulates the Lorenz Strange Attractor, which is an element of chaos theory. This diagram shows how small changes in initial conditions can result in a radically different function trajectory.  It is used by weather analysts to justify the notion that \"the beat of a butterfly's wings in China may cause a hurricane in Texas.\"  It is basically formed by the intersection of the planes of two nearby limit cycles in 3-D space.
+
+To get a smooth printout on a laser printe:
+1.  Click the right mouse button over the plot.
+
+2.  In the Max Plotted Points box, enter 8195 and click on the OK button.
+
+3.  From the Simulate menu, choose the Simulation Setup command.
+
+4.  In the Step Size box under Range Control, enter  0.015 and click on the OK button."
+I.1.i1=8.o1
+I.1.i3=8.o2
+I.1.i4=8.o3
+I.2.i1=5.o1
+I.3.i1=6.o1
+I.4.i1=7.o1
+G.8=10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,
+I.8.o1=31.o1
+I.8.o2=21.o1
+I.8.o3=32.o1
+I.11.i1=14.o1
+I.11.i2=13.o1
+I.12.i1=11.o1
+f13.1.i=-
+I.13.i1=33.o1
+I.13.i2=15.o1
+I.16.i1=19.o1
+I.16.i2=35.o1
+I.17.i1=18.o1
+I.18.i1=16.o1
+f18.2.i=-
+I.18.i2=22.o1
+I.19.i1=20.o1
+f19.2.i=-
+I.19.i2=34.o1
+I.21.i1=17.o1
+I.23.i1=27.o1
+I.23.i2=26.o1
+I.24.i1=25.o1
+I.25.i1=28.o1
+f25.2.i=-
+I.25.i2=23.o1
+I.28.i1=30.o1
+I.28.i2=29.o1
+I.31.i1=12.o1
+I.32.i1=24.o1
+G.39=40,41,

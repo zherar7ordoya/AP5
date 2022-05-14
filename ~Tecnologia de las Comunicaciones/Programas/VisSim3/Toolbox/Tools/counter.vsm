@@ -1,0 +1,56 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Counter Model"
+POa="Vardhani"
+PV=2.000
+PS=0
+PE=1
+PP=0.001
+PI=175
+PX=0.001
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=7
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=2048,0,0,1414,0,0
+Pd=777
+PM=1,1,1,1
+N.1="summingJunction"*97x39<M>
+N.2="const"(1)*85x41<M>
+N.3="unitDelay"(0,0,0)*87x32<MR>
+N.4="Compound"*3x1#1,1<C>
+n="counter.bmp"
+B=0,"counter.bmp"
+BB=0,4,7,4,7
+Ms=2048,0,0,1414,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.5="comment"*8x1*86x11<M>
+C="Counter Model:
+The input is a pulse train (regular or irregularly spaced in time).  The output represents the number of pulses counted.
+
+Limitations:
+1.  None"
+N.6="label"*2x30<M>
+n="Input"
+N.7="label"*139x30<M>
+n="Output"
+I.1.i1=3.o1
+I.1.i2=2.o1
+I.3.i1=4.i1
+I.3.i2=1.o1
+G.4=1,2,3,5,6,7,
+I.4.o1=1.o1

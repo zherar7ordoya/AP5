@@ -1,0 +1,125 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Rate Feedback (RFB) Controller Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=5
+PP=0.005
+PI=170
+PX=0.005
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,6,14,"MS Serif"
+Pc=27
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr=""
+Ps=2003,0,0,1395,0,0
+Pd=17
+PM=1,1,1,1
+N.1="label"*1x10<M>
+n="Setpoint"
+N.2="label"*0x45<M>
+n="Feedback "
+N.3="label"*89x32<M>
+n="Output signal"
+N.4="summingJunction"*75x22<M>
+N.5="summingJunction"*18x22<M>
+N.6="Compound"*0x0#2,1<C>
+n="rfb_ctl.bmp"
+B=0,"rfb_ctl.bmp"
+BB=0,6,7,6,7
+Ms=840,0,0,662,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.7="comment"*53x1*49x16<M>
+C="Rate Feedback (RFB) Controller Model:
+
+Used to control the transient characteristics of a system (time constant and damping ratio).  
+
+Limitations:
+1.  Check the limitations inside the Derivative block
+ "
+N.8="label"*19x48<M>
+n="==== Parameters ===="
+N.9="variable"*31x52<M>
+n=":Proportional Gain"
+N.10="variable"*31x55<M>
+n=":Rate Gain"
+N.11="const"(1)*19x52<M>
+N.12="const"(0.1)*19x55<M>
+N.13="*"*56x21<M>
+N.14="*"*45x40<M>
+N.15="variable"*31x21<M>
+n=":Proportional Gain"
+N.16="variable"*23x40<M>
+n=":Rate Gain"
+N.17="summingJunction"*31x29<M>
+N.18="integrator"(0,0,0)*28x39<MR>
+N.19="Compound"*54x38#1,1<MC>
+n="     d
+    ----
+      dt
+
+Derivative"
+Ms=870,0,0,601,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.20="/"*77x28<M>
+N.21="label"*5x26<M>
+n="Input signal"
+N.22="label"*113x35<M>
+n="Output signal"
+N.23="comment"*35x2*66x20<M>
+C="Derivative Model:	
+
+This model is used to take the derivative of a signal using a lag filter.  The derivative is valid for frequencies up to (1/ time constant).  For higher frequencies the time constant must be decreased.
+
+Limitations: 
+1.  time constant > 0
+2.  Simulation stepsize must be less than the time constant for stability."
+N.24="variable"*52x33<M>
+n=":time constant"
+N.25="label"*10x62<M>
+n="==== Parameters ===="
+N.26="variable"*22x67<M>
+n=":time constant"
+N.27="const"(0.01)*6x67<M>
+I.4.i1=13.o1
+f4.2.i=-
+I.4.i2=19.o1
+I.5.i1=6.i1
+f5.2.i=-
+I.5.i2=6.i2
+G.6=1,5,4,3,2,7,8,9,10,11,12,13,14,15,16,19,
+I.6.o1=4.o1
+I.9.i1=11.o1
+I.10.i1=12.o1
+I.13.i1=15.o1
+I.13.i2=5.o1
+I.14.i1=16.o1
+I.14.i2=6.i2
+I.17.i1=19.i1
+f17.2.i=-
+I.17.i2=18.o1
+I.18.i1=20.o1
+G.19=17,18,20,21,22,23,24,25,26,27,
+I.19.o1=20.o1
+I.19.i1=14.o1
+I.20.i1=17.o1
+I.20.i2=24.o1
+I.26.i1=27.o1

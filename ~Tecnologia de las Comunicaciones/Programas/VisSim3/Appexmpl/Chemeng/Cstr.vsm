@@ -1,0 +1,326 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POa="priya"
+PV=3.000
+PS=0
+PE=20
+PP=0.1
+PI=172
+PX=0.1
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-9,8,18,"Arial"
+Pc=63
+Po=1,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=2048,0,0,3840,0,0
+PM=1,1,1,1
+Pxi=9
+Px="Ca",65280,65280
+Px="Cx",65280,65280
+Px="Cb",65280,65280
+Px="Cy",65280,65280
+Px="Cz",65280,65280
+Px="Ca1",0,65280
+Px="Ca2",0,65280
+Px="Ca3",0,65280
+N.1="variable"*85x28<M>
+n="Ca1"
+N.2="variable"*56x28<M>
+n="dCa1/dt"
+N.3="integrator"(0,0,0)*72x28<M>
+N.4="Compound"*2x28#0,1<C>
+n="Component balance for 
+a in tank 1"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.5="plot"*27x26*46x26
+px="Time (sec)"
+py="Concentration mol/L"
+pax=0
+pf=H
+pb=0.8,0
+pbx=20,0
+pbY=0,0
+pbX=0,0
+pc=512
+pm=10,0
+pb.0=0.8,0
+pb.1=0.6,0
+pb.2=0.5,0
+pb.3=0,0
+N.6="variable"*62x26<M>
+n="Cao"
+N.7="Compound"*3x17<C>
+n="Input Parameters"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.8="const"(1)*52x26<M>
+N.9="label"*52x29<M>
+n="Initial Concentration of 
+A, mol/ L"
+Ob=65535
+Og=0
+N.10="const"(0.1)*52x18<M>
+N.11="variable"*63x18<M>
+n="k"
+N.12="label"*52x21<M>
+n="Reaction rate constant
+1/min"
+Ob=65535
+Og=0
+N.13="const"(3)*22x18<M>
+N.14="variable"*29x18<M>
+n="tau1"
+N.15="label"*22x21<M>
+n="Residence time of 
+ tank 1, min"
+Ob=65535
+Og=0
+N.16="variable"*48x29<M>
+n="tau1"
+N.17="variable"*36x24<M>
+n="Cao"
+N.18="variable"*21x29<M>
+n="k"
+N.19="summingJunction"*48x24<M>
+N.20="*"*33x27<M>
+N.21="summingJunction"*44x27<M>
+N.22="Compound"*19x31#0,1<MC>
+n="Rate of depletion of a
+in tank 1"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.23="Compound"*19x27#0,1<MC>
+n="Net Flow in of a
+into tank 1"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.24="/"*59x27<M>
+N.25="variable"*21x27<M>
+n="Ca1"
+N.26="variable"*36x26<M>
+n="Ca1"
+N.27="comment"*20x2*55x13
+C="CSTR - Isothermal  Continuous Stirred-Tank Cascade
+
+A system of three continuous stirred tank reactors is used to carry out the first order isothermal reaction given below.
+
+                                        k     
+                               a  -------->  Products
+ Assumptions
+(1) The above  reaction is  assumed to follow simple first order kinetics.
+(2) The temperature in the tanks are  assumed to be constant and thus the value of the reaction rate constant can be evaluated for that particular temperature and then input in the block for  Input Parameters.           
+                    		
+NOTE : Input the initial concentration of a in each tank in their respective  SetUp Integrator Blocks as an Initial Condition. 
+ Also input the values for the various parameters in the compound block,  Input Parameters.
+
+ References
+
+1. J. Ingham, I.J. Dunn, E. Heinzle & J.E. Prenosil, Chemical Engineering Dynamics : Modelling with PC Simulation, VCH Publishers Inc., New York (USA)."
+N.28="label"*22x29<M>
+n="Residence time of 
+ tank 2, min"
+Ob=65535
+Og=0
+N.29="variable"*29x26<M>
+n="tau2"
+N.30="const"(3)*22x26<M>
+N.31="label"*22x38<M>
+n="Residence time of 
+ tank 3, min"
+Ob=65535
+Og=0
+N.32="variable"*29x35<M>
+n="tau3"
+N.33="const"(3)*22x35<M>
+N.34="Compound"*2x34#0,1<C>
+n="Component balance for 
+a in tank 2"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.35="variable"*85x28<M>
+n="Ca2"
+N.36="variable"*56x28<M>
+n="dCa2/dt"
+N.37="integrator"(0,1,0)*72x28<M>
+N.38="summingJunction"*44x27<M>
+N.39="Compound"*19x31#0,1<MC>
+n="Rate of depletion of a
+in tank 2"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.40="variable"*21x29<M>
+n="k"
+N.41="*"*33x27<M>
+N.42="variable"*21x27<M>
+n="Ca2"
+N.43="Compound"*19x27#0,1<MC>
+n="Net Flow in of a
+into tank 2"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.44="variable"*23x29<M>
+n="tau2"
+N.45="variable"*10x24<M>
+n="Ca1"
+N.46="summingJunction"*23x24<M>
+N.47="/"*34x27<M>
+N.48="variable"*10x26<M>
+n="Ca2"
+N.49="Compound"*2x41#0,1<C>
+n="Component balance for 
+a in tank 3"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.50="variable"*85x28<M>
+n="Ca3"
+N.51="variable"*56x28<M>
+n="dCa3/dt"
+N.52="integrator"(0,2,0)*72x28<M>
+N.53="summingJunction"*44x27<M>
+N.54="Compound"*19x31#0,1<MC>
+n="Rate of depletion of a
+in tank 3"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.55="variable"*21x29<M>
+n="k"
+N.56="*"*33x27<M>
+N.57="variable"*21x27<M>
+n="Ca3"
+N.58="Compound"*19x27#0,1<MC>
+n="Net Flow in of a
+into tank 3"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.59="variable"*26x29<M>
+n="tau3"
+N.60="variable"*15x24<M>
+n="Ca2"
+N.61="summingJunction"*26x24<M>
+N.62="/"*37x27<M>
+N.63="variable"*15x26<M>
+n="Ca3"
+I.1.i1=3.o1
+I.2.i1=21.o1
+I.3.i1=2.o1
+G.4=1,2,3,21,22,23,
+I.4.o1=1.o1
+f4.1.o=t6,
+I.5.i1=4.o1
+I.5.i2=34.o1
+I.5.i3=49.o1
+I.6.i1=8.o1
+G.7=6,8,9,10,11,12,13,14,15,28,29,30,31,32,33,
+I.11.i1=10.o1
+I.14.i1=13.o1
+I.19.i1=17.o1
+f19.2.i=-
+I.19.i2=26.o1
+I.20.i1=25.o1
+I.20.i2=18.o1
+I.21.i1=23.o1
+f21.2.i=-
+I.21.i2=22.o1
+G.22=18,20,25,
+I.22.o1=20.o1
+G.23=16,17,19,24,26,
+I.23.o1=24.o1
+f24.1.i=ll
+I.24.i1=19.o1
+f24.2.i=lr
+I.24.i2=16.o1
+I.29.i1=30.o1
+I.32.i1=33.o1
+G.34=35,36,37,38,39,43,
+I.34.o1=35.o1
+f34.1.o=t7,
+I.35.i1=37.o1
+I.36.i1=38.o1
+I.37.i1=36.o1
+I.38.i1=43.o1
+f38.2.i=-
+I.38.i2=39.o1
+G.39=40,41,42,
+I.39.o1=41.o1
+I.41.i1=42.o1
+I.41.i2=40.o1
+G.43=44,45,46,47,48,
+I.43.o1=47.o1
+I.46.i1=45.o1
+f46.2.i=-
+I.46.i2=48.o1
+f47.1.i=ll
+I.47.i1=46.o1
+f47.2.i=lr
+I.47.i2=44.o1
+G.49=50,51,52,53,54,58,
+I.49.o1=50.o1
+f49.1.o=t8,
+I.50.i1=52.o1
+I.51.i1=53.o1
+I.52.i1=51.o1
+I.53.i1=58.o1
+f53.2.i=-
+I.53.i2=54.o1
+G.54=55,56,57,
+I.54.o1=56.o1
+I.56.i1=57.o1
+I.56.i2=55.o1
+G.58=59,60,61,62,63,
+I.58.o1=62.o1
+I.61.i1=60.o1
+f61.2.i=-
+I.61.i2=63.o1
+f62.1.i=ll
+I.62.i1=61.o1
+f62.2.i=lr
+I.62.i2=59.o1

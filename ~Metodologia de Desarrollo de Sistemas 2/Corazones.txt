@@ -1,0 +1,5 @@
+Si a mí me preguntan cuál es el corazón de la materia Metodología 1, son los diagramas de Casos de Uso.
+
+Si a mí me preguntan cuál es el corazón de la materia Metodología 2, son los Diagramas de Clase.
+
+Si a mí me preguntan cuál es el corazón del Trabajo Final, son los Procesos No-Funcionales (login, logout, etc.).

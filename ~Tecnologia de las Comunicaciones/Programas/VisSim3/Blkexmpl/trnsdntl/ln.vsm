@@ -1,0 +1,57 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POa="Arun Mulpur"
+PV=3.000
+PS=0
+PE=10
+PP=0.01
+PI=172
+PX=0.01
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-10,6,16,"Arial"
+Pc=11
+Po=1,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=2048,0,0,3840,0,0
+PM=1,1,1,1
+N.1="ln"*33x16
+N.2="const"(10)*18x16
+N.3="exp"*39x23
+N.4="display"(10)*51x23
+n="10"
+Oe=6
+Ox=1
+Ov=0
+N.5="variable"*41x16
+n="x"
+N.6="display"(2.302585092994)*51x16
+n="2.30259"
+Oe=6
+Ox=1
+Ov=0
+N.7="variable"*32x23
+n="x"
+N.8="variable"*25x16
+n="y"
+N.9="label"*53x25
+n="e^x = y"
+N.10="label"*53x18
+n="x = ln(y)"
+N.11="label"*16x7
+n="Computation of the natural logarithm
+of a signal using the ln block."
+Of=-19,0,400,0,0,0,34,"Arial"
+I.1.i1=8.o1
+I.3.i1=7.o1
+I.4.i1=3.o1
+I.5.i1=1.o1
+I.6.i1=5.o1
+I.8.i1=2.o1

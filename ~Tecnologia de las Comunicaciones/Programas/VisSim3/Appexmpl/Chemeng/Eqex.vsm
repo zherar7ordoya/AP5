@@ -1,0 +1,375 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1996 Visual Solutions
+POa="priya"
+PV=3.000
+PS=0
+PE=30
+PP=0.1
+PI=172
+PX=0.1
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-9,8,18,"Arial"
+Pc=76
+Po=1,50,664,0
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Ps=2048,0,0,3840,0,0
+PM=1,1,1,1
+Pxi=7
+Px="perSec",-1,0
+Px="k",0,0
+Px="T",255,0
+Px="X",-1,0
+Px="Ca",65280,0
+Px=" ",0,-1
+N.1="variable"*81x29<M>
+n="X1"
+N.2="variable"*57x29<M>
+n="dX1/dt"
+N.3="integrator"(0,1,0)*71x29<M>
+N.4="*"*12x28<M>
+N.5="Compound"*25x36#1,1<C>
+n="Component  Balance 
+on liquid phase"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.6="variable"*1x28<M>
+n="Y1"
+N.7="/"*10x28<M>
+N.8="Compound"*0x36#0,1<C>
+n="Equilibrium Concentration"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.9="variable"*1x30<M>
+n="M"
+N.10="variable"*19x8<M>
+n="V1"
+N.11="Compound"*6x18<C>
+n="Input Parameters"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.12="const"(10)*8x8<M>
+N.13="variable"*19x17<M>
+n="V2"
+N.14="const"(10)*8x17<M>
+N.15="const"(50)*8x26<M>
+N.16="variable"*18x26<M>
+n="K"
+N.17="label"*8x11<M>
+n="Volume of liquid 
+phase, m^3"
+Ob=65535
+Og=0
+N.18="const"(0.8)*40x8<M>
+N.19="variable"*51x8<M>
+n="M"
+N.20="label"*8x29<M>
+n="Rate constant, m^3/hr"
+Ob=65535
+Og=0
+N.21="label"*40x11<M>
+n="Equilibrium constant"
+Ob=65535
+Og=0
+N.22="comment"*9x1*62x13
+C="EQEX - Simple Equilibrium Stage Extractor
+
+The extraction is represented by a single perfectly mixed constant volume, continuous flow equilibrium stage. 
+
+The equilibrium condition is satisfied by the use of an arbitrarily high value for K to force conditions towards equilibrium.
+
+Following an initial transient condition, the extractor will achieve a steady state operating condition, in which the outlet concentrations then remain constant with respect to time.
+
+The constant K considered, contains the mass transfer coefficient, the specific interfacial area, and the total liquid volume.
+
+Assumptions
+
+(1) It is assumed that the outlet flow concentrations , X1 & Y1 achieve equilibrium.
+(2) Density variations are assumed to be negligible.
+
+NOTE
+ Input the initial concentration of the solute in the two phases   in their respective  SetUp Integrator Blocks as an Initial Condition. 
+Input the values for the various parameters in the compound block,  Input Parameters.
+
+ References
+
+1. J. Ingham, I.J. Dunn, E. Heinzle & J.E. Prenosil, Chemical Engineering Dynamics : Modelling with PC Simulation, VCH Publishers Inc., New York (USA).
+ "
+N.23="plot"*51x22*46x24
+px="Time (hr)"
+py=" "
+pax=0
+pf=H
+pb=1,0
+pbx=30,0
+pbY=0,0
+pbX=0,0
+pc=512
+pm=10,0
+pb.0=0,0
+pb.1=1,0
+pL.1="Fractional Extraction"
+pb.2=0.4,0
+pL.2="Conc in liq-phase"
+pb.3=0.3,0
+pL.3="Conc in vap-phase"
+N.24="variable"*18x29<M>
+n="X1*"
+N.25="summingJunction"*35x26#3,1<M>
+N.26="/"*49x28<M>
+N.27="variable"*40x30<M>
+n="V1"
+N.28="variable"*3x30<M>
+n="X0"
+N.29="label"*39x19<M>
+n="Solute concentration 
+in liq feed, kg/m^3"
+Ob=65535
+Og=0
+N.30="variable"*50x16<M>
+n="X0"
+N.31="const"(1)*39x16<M>
+N.32="Compound"*20x30#0,1<C>
+n="Fractional Extraction"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.33="variable"*1x27<M>
+n="X0"
+N.34="/"*29x28<M>
+N.35="variable"*20x30<M>
+n="X0"
+N.36="summingJunction"*13x27<M>
+N.37="variable"*1x29<M>
+n="X1"
+N.38="label"*8x20<M>
+n="Volume of vapor
+phase, m^3"
+Ob=65535
+Og=0
+N.39="variable"*3x28<M>
+n="L"
+N.40="Compound"*6x24#0,1<MC>
+n="Amount of Solute
+coming in as feed"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.41="Compound"*6x28#0,1<MC>
+n="Amount of Solute
+extracted out"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.42="*"*12x28<M>
+N.43="variable"*3x30<M>
+n="X1"
+N.44="variable"*3x28<M>
+n="L"
+N.45="variable"*38x27<M>
+n="Q"
+N.46="Compound"*4x32#1,1<MC>
+n="Amount of Solute going
+into vapor phase"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.47="variable"*18x26<M>
+n="K"
+N.48="variable"*2x27<M>
+n="X1"
+N.49="*"*28x26<M>
+N.50="summingJunction"*11x27<M>
+N.51="Compound"*21x42#0,1<C>
+n="Component  Balance 
+on vapor phase"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.52="variable"*74x29<M>
+n="Y1"
+N.53="variable"*52x29<M>
+n="dY1/dt"
+N.54="integrator"(0,0,0)*65x29<M>
+N.55="summingJunction"*30x26#3,1<M>
+N.56="/"*45x28<M>
+N.57="variable"*35x30<M>
+n="V2"
+N.58="Compound"*0x24#0,1<MC>
+n="Amount of Solute
+coming in as feed"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.59="*"*12x28<M>
+N.60="variable"*3x30<M>
+n="Y0"
+N.61="variable"*3x28<M>
+n="G"
+N.62="Compound"*0x28#0,1<MC>
+n="Amount of Solute
+extracted out"
+Ms=2048,0,0,3840,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.63="*"*12x28<M>
+N.64="variable"*3x30<M>
+n="Y1"
+N.65="variable"*3x28<M>
+n="G"
+N.66="label"*11x34<M>
+n="Amount of solute coming
+from the liquid phase"
+Ob=65535
+Og=0
+N.67="const"(3)*39x24<M>
+N.68="variable"*50x24<M>
+n="G"
+N.69="label"*39x27<M>
+n="Vapor Flow Rate,
+m^3/hr"
+Ob=65535
+Og=0
+N.70="variable"*84x8<M>
+n="L"
+N.71="const"(1)*73x8<M>
+N.72="const"(0)*73x17<M>
+N.73="variable"*83x17<M>
+n="Y0"
+N.74="label"*73x20<M>
+n="Solute concentration 
+in vap feed, kg/m^3"
+Ob=65535
+Og=0
+N.75="variable"*20x30<M>
+n="Q"
+N.76="label"*73x11<M>
+n="Liquid Flow Rate,
+m^3/hr"
+Ob=65535
+Og=0
+I.1.i1=3.o1
+I.2.i1=26.o1
+I.3.i1=2.o1
+I.4.i1=39.o1
+I.4.i2=28.o1
+G.5=1,2,3,25,26,27,40,41,46,
+I.5.o1=1.o1
+f5.1.o=t6,
+I.5.i1=8.o1
+f7.1.i=ll
+I.7.i1=6.o1
+f7.2.i=lr
+I.7.i2=9.o1
+G.8=6,7,9,24,
+I.8.o1=24.o1
+f8.1.o=t6,
+I.10.i1=12.o1
+G.11=10,12,13,14,15,16,17,18,19,20,21,29,30,31,38,67,68,69,70,71,72,73,74,76,
+I.13.i1=14.o1
+I.16.i1=15.o1
+I.19.i1=18.o1
+I.23.i2=32.o1
+I.23.i3=5.o1
+I.23.i4=51.o1
+I.24.i1=7.o1
+I.25.i1=40.o1
+f25.2.i=-
+I.25.i2=41.o1
+f25.3.i=-
+I.25.i3=46.o1
+f26.1.i=ll
+I.26.i1=25.o1
+f26.2.i=lr
+I.26.i2=27.o1
+I.30.i1=31.o1
+G.32=33,34,35,36,37,
+I.32.o1=34.o1
+f32.1.o=t6,
+f34.1.i=ll
+I.34.i1=36.o1
+f34.2.i=lr
+I.34.i2=35.o1
+I.36.i1=33.o1
+f36.2.i=-
+I.36.i2=37.o1
+G.40=4,28,39,
+I.40.o1=4.o1
+G.41=42,43,44,
+I.41.o1=42.o1
+I.42.i1=44.o1
+I.42.i2=43.o1
+I.45.i1=49.o1
+G.46=45,47,48,49,50,
+I.46.o1=45.o1
+I.46.i1=5.i1
+I.49.i1=47.o1
+I.49.i2=50.o1
+I.50.i1=48.o1
+f50.2.i=-
+I.50.i2=46.i1
+G.51=52,53,54,55,56,57,58,62,66,75,
+I.51.o1=52.o1
+f51.1.o=t6,
+I.52.i1=54.o1
+I.53.i1=56.o1
+I.54.i1=53.o1
+I.55.i1=58.o1
+f55.2.i=-
+I.55.i2=62.o1
+I.55.i3=75.o1
+f56.1.i=ll
+I.56.i1=55.o1
+f56.2.i=lr
+I.56.i2=57.o1
+G.58=59,60,61,
+I.58.o1=59.o1
+I.59.i1=61.o1
+I.59.i2=60.o1
+G.62=63,64,65,
+I.62.o1=63.o1
+I.63.i1=65.o1
+I.63.i2=64.o1
+I.68.i1=67.o1
+I.70.i1=71.o1
+I.73.i1=72.o1

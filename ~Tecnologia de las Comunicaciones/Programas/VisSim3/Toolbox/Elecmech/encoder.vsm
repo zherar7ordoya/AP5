@@ -1,0 +1,99 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Encoder Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=8
+PP=0.005
+PI=170
+PX=0.005
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=19
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=1996,0,0,1363,0,0
+Pd=17
+PM=1,1,1,1
+N.1="Compound"*0x1#1,1<C>
+n="encoder.bmp"
+B=0,"encoder.bmp"
+BB=0,4,7,4,7
+Ms=878,0,0,608,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.2="sampleHold"(0)*117x29<M>
+N.3="summingJunction"*22x29<M>
+N.4="min"*106x28<M>
+N.5="max"*81x40<M>
+N.6="gain"(-1)*55x40<M>
+N.7="!="*86x28<M>
+N.8="const"(0.4)*8x51<M>
+N.9="label"*8x48<M>
+n="==== Parameters ===="
+N.10="label"*136x27<M>
+n="Output signal"
+N.11="variable"*21x51<M>
+n=":Quantization Value"
+N.12="variable"*9x26<M>
+n=":input "
+N.13="variable"*44x28<M>
+n=":error"
+N.14="variable"*100x31<M>
+n=":input "
+N.15="unitDelay"(0,0,0)*67x36<MR>
+N.16="variable"*29x23<M>
+n=":error"
+N.17="Compound"*45x21#2,1<MC>
+n="min(QV,max(error,-QV))"
+Ms=2048,0,0,1436,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.18="comment"*8x0*95x17<M>
+C="Encoder Model:			
+
+Models the behavior of an encoder with (amplitude) resolution defined by the Quantization Value. For example, if a unit slope ramp is applied as input, the output signal will be a staircase with height equal to the Quantization Value. The Output signal is NOT a function of time.
+
+Limitations: 
+1.  Quantization Value > 0."
+N.19="variable"*12x21<M>
+n=":Quantization Value"
+G.1=2,3,7,8,9,10,11,12,13,14,15,16,17,18,19,
+I.1.o1=2.o1
+I.2.i1=7.o1
+I.2.i2=14.o1
+I.3.i1=1.i1
+f3.2.i=-
+I.3.i2=15.o1
+I.4.i1=17.i1
+I.4.i2=5.o1
+I.5.i1=6.o1
+I.5.i2=17.i2
+I.6.i1=17.i1
+I.7.i1=17.o1
+I.7.i2=3.o1
+I.11.i1=8.o1
+I.12.i1=1.i1
+I.13.i1=3.o1
+I.15.i1=7.o1
+I.15.i2=2.o1
+G.17=4,5,6,
+I.17.o1=4.o1
+I.17.i1=19.o1
+I.17.i2=16.o1

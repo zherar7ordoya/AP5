@@ -1,0 +1,74 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="DT Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=1
+PP=0.05
+PI=175
+PX=0.05
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=13
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=1996,0,0,1363,0,0
+Pd=17
+PM=1,1,1,1
+N.1="Compound"*1x0#0,1<C>
+n="dt.bmp"
+B=0,"dt.bmp"
+BB=0,4,7,4,7
+Ms=1996,0,0,1363,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.2="ramp"(0,1)*44x33<M>
+N.3="summingJunction"*108x33<M>
+N.4="const"(1)*70x36<M>
+N.5="unitDelay"(0,0,0)*80x36<M>
+N.6="comment"*18x2*97x17<M>
+C="DT Model:
+Calculates the  simulation update time in seconds.  The value on the first pass is set to the parameter First Pass Value to protect against potential divides by zero.
+
+Limitations:
+1.  dt value varies (and may be unreliable) when using adaptive integration algorithms
+2.  Unreliable results when Implicit Solver is active
+3.  dt value on the first pass will be incorrect 
+
+"
+N.7="label"*143x25<M>
+n="dt, sec"
+N.8="label"*15x40<M>
+n="==== Parameters ===="
+N.9="variable"*30x43<M>
+n=":First Pass Value"
+N.10="const"(1e-006)*15x43<M>
+N.11="merge"*127x28<M>
+N.12="variable"*97x30<M>
+n=":First Pass Value"
+N.13="variable"*103x24<M>
+n="$firstPass"
+G.1=2,3,4,5,6,7,8,9,10,11,12,13,
+I.1.o1=11.o1
+I.3.i1=2.o1
+f3.2.i=-
+I.3.i2=5.o1
+I.5.i1=4.o1
+I.5.i2=2.o1
+I.9.i1=10.o1
+I.11.i1=13.o1
+I.11.i2=12.o1
+I.11.i3=3.o1

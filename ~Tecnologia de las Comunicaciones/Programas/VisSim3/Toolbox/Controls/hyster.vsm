@@ -1,0 +1,83 @@
+; VisSim Block Diagram Format (VBDF)
+; Copyright (C) 1989-1995 Visual Solutions
+POt="Hysteresis Model"
+POa="Visual Solutions"
+PV=2.000
+PS=0
+PE=1
+PP=0.005
+PI=170
+PX=1
+PN=1e-006
+PL=5
+PT=1e-005
+Pn=-8,4,14,"Times New Roman"
+Pc=18
+Po=0.01,50,664
+Ppl=0
+Ppp=0
+Ppt=0
+Ppf=1
+Pe=0
+PD=1024x768
+Pf=0x0
+Pr="stub"
+Ps=1996,0,0,1363,0,0
+Pd=17
+PM=1,1,1,1
+N.1="summingJunction"*31x28<M>
+N.2="Compound"*0x0#1,1<C>
+n="hyster.bmp"
+B=0,"hyster.bmp"
+BB=0,4,7,4,7
+Ms=865,0,0,596,0,0
+Ml=0
+Mr=0
+Mh=0
+Mp=0
+Mw=""
+N.3="*"*124x29<M>
+N.4="label"*45x26<M>
+n="Full Deadband set Internally"
+N.5="integrator"(0,0,0)*93x29<M>
+N.6="/"*80x28<M>
+N.7="comment"*4x0*112x20<M>
+C="Hysteresis Model:			
+
+Models the hysteresis curve without saturation.  The model is based on \"high gain feedback\" through a deadband operator. The hysteresis deadband is set by the Bandwith parameter inside the deadband block.  The slope of the hysteresis curve is set by the slope parameter.  
+
+Limitations:  
+1.  The time constant variable must be greater than the simulation step size for stability and > 0
+"
+N.8="wirePositioner"*30x36<MR>
+N.9="label"*3x32<M>
+n="Input signal"
+N.10="label"*134x28<M>
+n="Output signal"
+N.11="variable"*55x32<M>
+n=":time constant"
+N.12="deadband"(0.2)*55x28<M>
+N.13="variable"*109x31<M>
+n=":slope"
+N.14="label"*6x44<M>
+n="==== Parameters ===="
+N.15="const"(0.01)*6x51<M>
+N.16="variable"*21x51<M>
+n=":time constant"
+N.17="variable"*21x48<M>
+n=":slope"
+N.18="const"(1)*6x48<M>
+I.1.i1=2.i1
+f1.2.i=-
+I.1.i2=8.o1
+G.2=1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,
+I.2.o1=3.o1
+I.3.i1=5.o1
+I.3.i2=13.o1
+I.5.i1=6.o1
+I.6.i1=12.o1
+I.6.i2=11.o1
+I.8.i1=5.o1
+I.12.i1=1.o1
+I.16.i1=15.o1
+I.17.i1=18.o1
