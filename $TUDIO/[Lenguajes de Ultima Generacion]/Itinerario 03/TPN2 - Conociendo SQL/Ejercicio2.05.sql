@@ -1,0 +1,6 @@
+USE TPN2a
+
+GO
+
+DELETE FROM Socio
+WHERE Socio.Id_Socio = 2

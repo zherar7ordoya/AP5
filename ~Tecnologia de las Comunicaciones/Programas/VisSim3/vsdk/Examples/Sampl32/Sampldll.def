@@ -1,5 +1,0 @@
-LIBRARY     SAMPLDLL
-EXETYPE     WINDOWS
-STUB        'winstub.exe'
-HEAPSIZE    2048
-
