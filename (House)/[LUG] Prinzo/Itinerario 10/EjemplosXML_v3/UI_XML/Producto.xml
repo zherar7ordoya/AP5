@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Productos>
+  <Producto ID="10001">
+    <NombreProducto>Café Negro</NombreProducto>
+    <Precio>8500</Precio>
+  </Producto>
+  <Producto ID="10002">
+    <NombreProducto>Cappuccino</NombreProducto>
+    <Precio>9500</Precio>
+  </Producto>
+</Productos>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<personas>
+        <nombre edad="34">Pablo</nombre>
+        <nombre edad="35">Sara</nombre>
+        <nombre edad="45">Fulanito</nombre>
+ </personas>

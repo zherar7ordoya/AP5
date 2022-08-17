@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32602.291
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XML Contains", "XML Contains\XML Contains.csproj", "{B7E5C4D0-1589-4A0E-A7E2-6CA155EB9176}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Declaraciones", "Declaraciones\Declaraciones.csproj", "{6998199B-F86D-4F52-A72F-F35D37C1E0FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7CEBB90-F370-47CB-94E4-B57B825CB9CE}"
+	ProjectSection(SolutionItems) = preProject
+		functional construction in linq to xml.png = functional construction in linq to xml.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7E5C4D0-1589-4A0E-A7E2-6CA155EB9176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7E5C4D0-1589-4A0E-A7E2-6CA155EB9176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7E5C4D0-1589-4A0E-A7E2-6CA155EB9176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7E5C4D0-1589-4A0E-A7E2-6CA155EB9176}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6998199B-F86D-4F52-A72F-F35D37C1E0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6998199B-F86D-4F52-A72F-F35D37C1E0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6998199B-F86D-4F52-A72F-F35D37C1E0FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6998199B-F86D-4F52-A72F-F35D37C1E0FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0A17FAA-0DBB-40AF-BCAC-1D66EE1CF838}
+	EndGlobalSection
+EndGlobal

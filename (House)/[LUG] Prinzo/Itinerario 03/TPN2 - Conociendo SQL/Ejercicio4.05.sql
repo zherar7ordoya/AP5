@@ -1,0 +1,6 @@
+USE TPN2b
+
+GO
+
+DELETE FROM Juego
+WHERE Cod_Juego = 2

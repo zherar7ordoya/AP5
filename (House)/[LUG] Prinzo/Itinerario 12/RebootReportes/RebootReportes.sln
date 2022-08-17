@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RebootReportes", "RebootReportes.csproj", "{B077A7D5-8035-4C19-99CB-8513B7ACB3C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B077A7D5-8035-4C19-99CB-8513B7ACB3C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B077A7D5-8035-4C19-99CB-8513B7ACB3C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B077A7D5-8035-4C19-99CB-8513B7ACB3C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B077A7D5-8035-4C19-99CB-8513B7ACB3C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F59AC5EC-672F-4F06-A59A-35EFC9367D45}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+  <?xml version="1.0" encoding="UTF-8" ?>
+    <persona>
+        <nombre>Pablo</nombre>
+        <edad>34</edad>
+    </persona>
+   <persona>
+        <nombre>Juan</nombre>
+        <edad>34</edad>
+    </persona>
+  <persona>
+        <nombre>Pedro</nombre>
+        <edad>33</edad>
+    </persona>

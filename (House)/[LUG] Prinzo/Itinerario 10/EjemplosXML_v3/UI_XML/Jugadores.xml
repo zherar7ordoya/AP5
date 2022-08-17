@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugadores>
+  <Jugador>
+    <Nombre>Cristiano</Nombre>>
+	<Apellido>Ronaldo</Apellido>
+    <Equipo>Real madrid</Equipo>
+    <Posicion>Delantero</Posicion>
+  </Jugador>
+  <Jugador>
+    <Nombre>Lionel</Nombre>
+	<Apellido>Messi</Apellido>
+    <Equipo>Barcelona</Equipo>
+    <Posicion>Delantero</Posicion>
+  </Jugador>
+  <Jugador>
+    <Nombre>Paolo</Nombre>
+	<Apellido>Goltz</Apellido>
+    <Equipo>Boca Juniors</Equipo>
+    <Posicion>Defensor</Posicion>
+  </Jugador>
+  <Jugador>
+    <Nombre>German</Nombre>
+   <Apellido>Lux</Apellido>
+    <Equipo>River Plate</Equipo>
+    <Posicion>Arquero</Posicion>
+  </Jugador>
+  </Jugadores>

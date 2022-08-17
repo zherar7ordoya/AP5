@@ -1,0 +1,13 @@
+USE TPN2a;
+
+GO
+
+SELECT * FROM Socio;
+
+GO
+
+SELECT * FROM Pais;
+
+GO
+
+SELECT * FROM Provincia;

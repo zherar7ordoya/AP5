@@ -1,0 +1,9 @@
+USE TPN2a
+
+GO
+
+SELECT COUNT(*) FROM Socio
+
+GO
+
+SELECT COUNT(*) FROM Provincia
