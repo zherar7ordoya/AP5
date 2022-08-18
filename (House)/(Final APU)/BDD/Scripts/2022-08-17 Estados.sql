@@ -4,4 +4,4 @@ GO
 
 ALTER TABLE Ordenes
 ADD CONSTRAINT CHK_OrdenEstado
-CHECK (Estado IN ('Aprobado','Completado','Enviado', 'Pendiente'));
+CHECK (OrdenEstado IN ('Aprobado','Completado','Enviado', 'Pendiente'));

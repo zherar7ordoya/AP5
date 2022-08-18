@@ -1,0 +1,6 @@
+USE PIO
+
+GO
+
+ALTER TABLE Empleados
+ADD EmpleadoID INT IDENTITY(1,1)
