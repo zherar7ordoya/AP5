@@ -1,0 +1,9 @@
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\bin\Debug\BEL.dll
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\bin\Debug\BEL.pdb
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\bin\Debug\ABS.dll
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\bin\Debug\ABS.pdb
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\obj\Debug\BEL.csproj.CopyComplete
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\obj\Debug\BEL.dll
+C:\Documents\AP5\(House)\(Final APU)\MVP-UAI\BEL\obj\Debug\BEL.pdb
