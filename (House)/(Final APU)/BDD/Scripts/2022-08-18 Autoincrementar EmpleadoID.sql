@@ -1,8 +1,8 @@
-DECLARE @EmpleadoID INT 
-SET @EmpleadoID = 0 
-UPDATE Ordenes 
-SET @EmpleadoID = EmpleadoID = @EmpleadoID + 1 
+DECLARE @Descuento REAL 
+SET @Descuento = 0 
+UPDATE [Orden Detalles]
+SET @Descuento = Descuento = @Descuento + 0.1 ;
 GO 
 
-SELECT * FROM Ordenes
+SELECT * FROM [Orden Detalles]
 GO 

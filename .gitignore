@@ -249,7 +249,9 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 ServiceFabricBackup/
-*.rptproj.bak
+
+# CANCELADO PORQUE PIERDO LAS COPIAS DE SEGURIDAD DE LAS BBDD.
+# *.rptproj.bak
 
 # CANCELO ESTO PARA NO PERDER LAS BASES DE DATOS
 # SQL Server files
