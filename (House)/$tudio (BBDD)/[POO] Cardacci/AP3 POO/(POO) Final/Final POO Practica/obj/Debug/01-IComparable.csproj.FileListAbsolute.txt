@@ -1,9 +1,0 @@
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\bin\Debug\Final POO Practica.exe.config
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\bin\Debug\Final POO Practica.exe
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\bin\Debug\Final POO Practica.pdb
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\01-IComparable.csprojAssemblyReference.cache
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\Final_POO_Practica.Form1.resources
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\Final_POO_Practica.Properties.Resources.resources
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\01-IComparable.csproj.GenerateResource.cache
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\Final POO Practica.exe
-C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\Final POO Practica\obj\Debug\Final POO Practica.pdb

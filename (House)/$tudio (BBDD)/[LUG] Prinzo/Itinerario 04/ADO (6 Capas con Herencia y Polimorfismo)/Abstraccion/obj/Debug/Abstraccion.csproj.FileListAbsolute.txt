@@ -1,6 +1,0 @@
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\bin\Debug\Abstraccion.dll
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\bin\Debug\Abstraccion.pdb
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\obj\Debug\Abstraccion.csproj.AssemblyReference.cache
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\obj\Debug\Abstraccion.csproj.CoreCompileInputs.cache
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\obj\Debug\Abstraccion.dll
-C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Abstraccion\obj\Debug\Abstraccion.pdb

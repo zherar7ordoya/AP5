@@ -1,7 +1,0 @@
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\bin\Debug\DelegateApp.exe.config
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\bin\Debug\DelegateApp.exe
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\bin\Debug\DelegateApp.pdb
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\obj\Debug\DelegateApp.csproj.AssemblyReference.cache
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\obj\Debug\DelegateApp.csproj.CoreCompileInputs.cache
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\obj\Debug\DelegateApp.exe
-C:\Documents\AP4\$tudio\Delegados\DelegateApp\obj\Debug\DelegateApp.pdb

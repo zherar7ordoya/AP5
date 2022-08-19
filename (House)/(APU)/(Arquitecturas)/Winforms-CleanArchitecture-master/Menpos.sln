@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menpos.Persistence", "Menpos.Persistence\Menpos.Persistence.csproj", "{F9C3FC2F-51AB-4C68-B959-42A6D11B1106}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menpos.Domain", "Menpos.Domain\Menpos.Domain.csproj", "{55F4FB26-81F6-4EE8-B663-5F654286003D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menpos.Application", "Menpos.Application\Menpos.Application.csproj", "{9B44335E-9F88-496F-8C40-6E931A13CE94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menpos.Infrastructure", "Menpos.Infrastructure\Menpos.Infrastructure.csproj", "{C59411C2-AD52-4BDA-A1E4-7EC880E5496C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menpos.Presentation.Controls", "Menpos.Presentation.Controls\Menpos.Presentation.Controls.csproj", "{537B6A55-B8ED-498A-B1CE-E68A7B458B3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menpos.Presentation.UI", "Menpos.Presentation.UI\Menpos.Presentation.UI.csproj", "{CE20D021-5F02-4BAE-BD4D-A6D0893BB38F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9C3FC2F-51AB-4C68-B959-42A6D11B1106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C3FC2F-51AB-4C68-B959-42A6D11B1106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C3FC2F-51AB-4C68-B959-42A6D11B1106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C3FC2F-51AB-4C68-B959-42A6D11B1106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F4FB26-81F6-4EE8-B663-5F654286003D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F4FB26-81F6-4EE8-B663-5F654286003D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F4FB26-81F6-4EE8-B663-5F654286003D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F4FB26-81F6-4EE8-B663-5F654286003D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B44335E-9F88-496F-8C40-6E931A13CE94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B44335E-9F88-496F-8C40-6E931A13CE94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B44335E-9F88-496F-8C40-6E931A13CE94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B44335E-9F88-496F-8C40-6E931A13CE94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C59411C2-AD52-4BDA-A1E4-7EC880E5496C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C59411C2-AD52-4BDA-A1E4-7EC880E5496C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C59411C2-AD52-4BDA-A1E4-7EC880E5496C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C59411C2-AD52-4BDA-A1E4-7EC880E5496C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{537B6A55-B8ED-498A-B1CE-E68A7B458B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{537B6A55-B8ED-498A-B1CE-E68A7B458B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{537B6A55-B8ED-498A-B1CE-E68A7B458B3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{537B6A55-B8ED-498A-B1CE-E68A7B458B3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE20D021-5F02-4BAE-BD4D-A6D0893BB38F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE20D021-5F02-4BAE-BD4D-A6D0893BB38F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE20D021-5F02-4BAE-BD4D-A6D0893BB38F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE20D021-5F02-4BAE-BD4D-A6D0893BB38F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {985581F3-EFBA-49FF-99AC-DE4E53480C41}
+	EndGlobalSection
+EndGlobal

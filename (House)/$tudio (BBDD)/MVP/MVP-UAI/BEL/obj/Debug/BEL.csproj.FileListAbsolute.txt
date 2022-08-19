@@ -1,9 +1,0 @@
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\bin\Debug\BEL.dll
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\bin\Debug\BEL.pdb
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\bin\Debug\ABS.dll
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\bin\Debug\ABS.pdb
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\obj\Debug\BEL.csproj.AssemblyReference.cache
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\obj\Debug\BEL.csproj.CoreCompileInputs.cache
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\obj\Debug\BEL.csproj.CopyComplete
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\obj\Debug\BEL.dll
-C:\Documents\AP4\$tudio\MVP\MVP-UAI\BEL\obj\Debug\BEL.pdb

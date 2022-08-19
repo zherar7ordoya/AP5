@@ -1,7 +1,0 @@
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\bin\Debug\ConVariosDatos.exe.config
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\bin\Debug\ConVariosDatos.exe
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\bin\Debug\ConVariosDatos.pdb
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\obj\Debug\ConVariosDatos.csproj.AssemblyReference.cache
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\obj\Debug\ConVariosDatos.csproj.CoreCompileInputs.cache
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\obj\Debug\ConVariosDatos.exe
-C:\Documents\AP4\$tudio\Eventos\Teacher\ConVariosDatos\obj\Debug\ConVariosDatos.pdb

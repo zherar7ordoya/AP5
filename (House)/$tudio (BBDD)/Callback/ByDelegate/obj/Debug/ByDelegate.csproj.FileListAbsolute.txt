@@ -1,7 +1,0 @@
-C:\Documents\AP4\$tudio\Callback\ByDelegate\bin\Debug\ByDelegate.exe.config
-C:\Documents\AP4\$tudio\Callback\ByDelegate\bin\Debug\ByDelegate.exe
-C:\Documents\AP4\$tudio\Callback\ByDelegate\bin\Debug\ByDelegate.pdb
-C:\Documents\AP4\$tudio\Callback\ByDelegate\obj\Debug\ByDelegate.csproj.AssemblyReference.cache
-C:\Documents\AP4\$tudio\Callback\ByDelegate\obj\Debug\ByDelegate.csproj.CoreCompileInputs.cache
-C:\Documents\AP4\$tudio\Callback\ByDelegate\obj\Debug\ByDelegate.exe
-C:\Documents\AP4\$tudio\Callback\ByDelegate\obj\Debug\ByDelegate.pdb

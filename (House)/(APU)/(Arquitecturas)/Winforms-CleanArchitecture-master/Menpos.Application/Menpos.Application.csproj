@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Validators\**" />
+	  <EmbeddedResource Remove="Validators\**" />
+	  <None Remove="Validators\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Menpos.Domain\Menpos.Domain.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="ModelValidators\" />
+	</ItemGroup>
+
+</Project>
