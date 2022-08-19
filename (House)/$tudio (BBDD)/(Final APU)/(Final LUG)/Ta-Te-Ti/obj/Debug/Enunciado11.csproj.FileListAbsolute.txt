@@ -1,0 +1,10 @@
+C:\Users\gtordoya\Downloads\Enunciado11\bin\Debug\Enunciado11.exe.config
+C:\Users\gtordoya\Downloads\Enunciado11\bin\Debug\Enunciado11.exe
+C:\Users\gtordoya\Downloads\Enunciado11\bin\Debug\Enunciado11.pdb
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.csproj.AssemblyReference.cache
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.Form1.resources
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.Properties.Resources.resources
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.csproj.GenerateResource.cache
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.csproj.CoreCompileInputs.cache
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.exe
+C:\Users\gtordoya\Downloads\Enunciado11\obj\Debug\Enunciado11.pdb

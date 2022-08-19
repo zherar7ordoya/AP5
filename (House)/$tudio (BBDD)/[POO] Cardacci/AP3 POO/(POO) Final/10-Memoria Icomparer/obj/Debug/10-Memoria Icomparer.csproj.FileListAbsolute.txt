@@ -1,0 +1,10 @@
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\bin\Debug\10-Memoria Icomparer.exe.config
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\bin\Debug\10-Memoria Icomparer.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\bin\Debug\10-Memoria Icomparer.pdb
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\10-Memoria Icomparer.csprojAssemblyReference.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\_10_Memoria_Icomparer.Form1.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\_10_Memoria_Icomparer.Properties.Resources.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\10-Memoria Icomparer.csproj.GenerateResource.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\10-Memoria Icomparer.csproj.CoreCompileInputs.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\10-Memoria Icomparer.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\10-Memoria Icomparer\obj\Debug\10-Memoria Icomparer.pdb

@@ -1,0 +1,9 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\bin\Debug\BE.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\bin\Debug\BE.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\bin\Debug\ABSTRACTA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\bin\Debug\ABSTRACTA.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\obj\Debug\BE.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BE\obj\Debug\BE.pdb

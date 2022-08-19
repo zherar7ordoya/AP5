@@ -1,0 +1,10 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\bin\Debug\Piedra-Papel-Tijera.exe.config
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\bin\Debug\Piedra-Papel-Tijera.exe
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\bin\Debug\Piedra-Papel-Tijera.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra-Papel-Tijera.csproj.AssemblyReference.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra_Papel_Tijera.FormPPT.resources
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra_Papel_Tijera.Properties.Resources.resources
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra-Papel-Tijera.csproj.GenerateResource.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra-Papel-Tijera.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra-Papel-Tijera.exe
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Piedra-Papel-Tijera\obj\Debug\Piedra-Papel-Tijera.pdb

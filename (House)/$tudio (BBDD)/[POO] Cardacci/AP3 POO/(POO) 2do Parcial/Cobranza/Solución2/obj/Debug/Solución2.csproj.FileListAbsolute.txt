@@ -1,0 +1,12 @@
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\bin\Debug\CANCELOS_POO_2P.exe.config
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\bin\Debug\CANCELOS_POO_2P.exe
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\bin\Debug\CANCELOS_POO_2P.pdb
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\Solución2.csproj.AssemblyReference.cache
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.Form1.resources
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.FormEvento.resources
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.Informacion.resources
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.Properties.Resources.resources
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\Solución2.csproj.GenerateResource.cache
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\Solución2.csproj.CoreCompileInputs.cache
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.exe
+C:\Documents\AP3\A dog chasing cars\DanClark\2do Parcial (modelo)\Solución2\obj\Debug\CANCELOS_POO_2P.pdb

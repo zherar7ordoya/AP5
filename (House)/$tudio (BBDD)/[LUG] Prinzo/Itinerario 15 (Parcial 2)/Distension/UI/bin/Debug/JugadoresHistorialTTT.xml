@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Jugadores>
+  <Jugador Nombre="Gerardo">
+    <Ganados>10</Ganados>
+    <Empatados>59</Empatados>
+    <Perdidos>10</Perdidos>
+    <Puntos>300</Puntos>
+  </Jugador>
+  <Jugador Nombre="Raquel">
+    <Ganados>58</Ganados>
+    <Empatados>8</Empatados>
+    <Perdidos>57</Perdidos>
+    <Puntos>375</Puntos>
+  </Jugador>
+  <Jugador Nombre="Andrea">
+    <Ganados>8</Ganados>
+    <Empatados>56</Empatados>
+    <Perdidos>6</Perdidos>
+    <Puntos>305</Puntos>
+  </Jugador>
+  <Jugador Nombre="Julio">
+    <Ganados>55</Ganados>
+    <Empatados>5</Empatados>
+    <Perdidos>54</Perdidos>
+    <Puntos>225</Puntos>
+  </Jugador>
+  <Jugador Nombre="Alfredo">
+    <Ganados>4</Ganados>
+    <Empatados>53</Empatados>
+    <Perdidos>3</Perdidos>
+    <Puntos>150</Puntos>
+  </Jugador>
+</Jugadores>

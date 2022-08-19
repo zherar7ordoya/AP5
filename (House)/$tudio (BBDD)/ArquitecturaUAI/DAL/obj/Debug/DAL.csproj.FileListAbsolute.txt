@@ -1,0 +1,11 @@
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\DAL.dll
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\DAL.pdb
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\ABS.dll
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\BEL.dll
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\ABS.pdb
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\bin\Debug\BEL.pdb
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\obj\Debug\DAL.dll
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\obj\Debug\DAL.pdb
+C:\Documents\AP4\$tudio\ArquitecturaUAI\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache

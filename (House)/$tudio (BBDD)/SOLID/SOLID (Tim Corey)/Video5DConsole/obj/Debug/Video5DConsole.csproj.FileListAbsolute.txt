@@ -1,0 +1,10 @@
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\obj\Debug\Video5DConsole.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\obj\Debug\Video5DConsole.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\bin\Debug\Video5DConsole.exe.config
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\bin\Debug\Video5DConsole.exe
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\bin\Debug\Video5DConsole.pdb
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\bin\Debug\Video5DLibrary.dll
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\bin\Debug\Video5DLibrary.pdb
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\obj\Debug\Video5DConsole.csproj.CopyComplete
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\obj\Debug\Video5DConsole.exe
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video5DConsole\obj\Debug\Video5DConsole.pdb

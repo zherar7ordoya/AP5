@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Employees>
+  <Employee>
+    <id>2</id>
+    <fullname>Héctor Zampini</fullname>
+    <salary>75000</salary>
+    <email>hzampini@mail.net</email>
+    <address>Almirante Brown 725</address>
+  </Employee>
+  <Employee>
+    <id>3</id>
+    <fullname>René Juárez</fullname>
+    <salary>10000</salary>
+    <email>rjuarez@mail.net</email>
+    <address>9 de Julio 96</address>
+  </Employee>
+  <Employee>
+    <id>1</id>
+    <fullname>Gerardo Tordoya</fullname>
+    <salary>125000</salary>
+    <email>gtordoya@mail.net</email>
+    <address>Pachi Gorriti 1310</address>
+  </Employee>
+</Employees>

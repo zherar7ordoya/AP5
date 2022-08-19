@@ -1,0 +1,6 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\bin\Debug\ABSTRACTA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\bin\Debug\ABSTRACTA.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\obj\Debug\ABSTRACTA.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\obj\Debug\ABSTRACTA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\obj\Debug\ABSTRACTA.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\ABSTRACTA\obj\Debug\ABSTRACTA.csproj.AssemblyReference.cache

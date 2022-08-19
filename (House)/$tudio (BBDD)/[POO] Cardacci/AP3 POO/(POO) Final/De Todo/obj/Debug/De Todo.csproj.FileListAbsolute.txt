@@ -1,0 +1,10 @@
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\bin\Debug\De Todo.exe.config
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\bin\Debug\De Todo.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\bin\Debug\De Todo.pdb
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De Todo.csprojAssemblyReference.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De_Todo.Form1.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De_Todo.Properties.Resources.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De Todo.csproj.GenerateResource.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De Todo.csproj.CoreCompileInputs.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De Todo.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\De Todo\obj\Debug\De Todo.pdb

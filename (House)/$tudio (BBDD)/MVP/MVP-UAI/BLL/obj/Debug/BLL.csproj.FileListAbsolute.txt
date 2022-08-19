@@ -1,0 +1,9 @@
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\bin\Debug\BLL.dll
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\bin\Debug\BLL.pdb
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\bin\Debug\ABS.dll
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\bin\Debug\ABS.pdb
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\obj\Debug\BLL.dll
+C:\Documents\AP4\$tudio\MVP\MVP-UAI\BLL\obj\Debug\BLL.pdb

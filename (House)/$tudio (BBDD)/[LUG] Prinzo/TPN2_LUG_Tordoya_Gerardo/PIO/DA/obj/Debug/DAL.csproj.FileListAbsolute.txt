@@ -1,0 +1,5 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\DA\bin\Debug\DA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\DA\bin\Debug\DA.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\DA\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\DA\obj\Debug\DA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\DA\obj\Debug\DA.pdb

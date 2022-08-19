@@ -1,0 +1,15 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\Negocio_BLL.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\Negocio_BLL.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\Abstraccion.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\BE.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\MPP.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\DAL.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\Abstraccion.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\BE.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\MPP.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\bin\Debug\DAL.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\obj\Debug\Negocio_BLL.csproj.AssemblyReference.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\obj\Debug\Negocio_BLL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\obj\Debug\Negocio_BLL.csproj.CopyComplete
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\obj\Debug\Negocio_BLL.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 04\ADO (6 Capas con Herencia y Polimorfismo)\Negocio_BLL\obj\Debug\Negocio_BLL.pdb

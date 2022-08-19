@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\obj\Debug\Delegados.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\obj\Debug\Delegados.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\bin\Debug\Delegados.exe.config
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\bin\Debug\Delegados.exe
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\bin\Debug\Delegados.pdb
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\obj\Debug\Delegados.exe
+C:\Documents\AP4\$tudio\Delegados\Delegates Versus Interfaces\Delegados\obj\Debug\Delegados.pdb

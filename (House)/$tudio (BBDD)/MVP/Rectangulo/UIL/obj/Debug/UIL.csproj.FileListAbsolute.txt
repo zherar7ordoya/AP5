@@ -1,0 +1,10 @@
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\bin\Debug\UIL.exe.config
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\bin\Debug\UIL.exe
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\bin\Debug\UIL.pdb
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.Properties.Resources.resources
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.csproj.GenerateResource.cache
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.exe
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.pdb
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.Form1.resources
+C:\Documents\AP4\$tudio\MVP\Rectangulo\UIL\obj\Debug\UIL.csproj.AssemblyReference.cache

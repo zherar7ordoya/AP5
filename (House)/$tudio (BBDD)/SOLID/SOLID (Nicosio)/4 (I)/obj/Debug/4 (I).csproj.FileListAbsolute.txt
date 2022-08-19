@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\bin\Debug\4 (I).exe.config
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\bin\Debug\4 (I).exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\bin\Debug\4 (I).pdb
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\obj\Debug\4 (I).csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\obj\Debug\4 (I).csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\obj\Debug\4 (I).exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\4 (I)\obj\Debug\4 (I).pdb

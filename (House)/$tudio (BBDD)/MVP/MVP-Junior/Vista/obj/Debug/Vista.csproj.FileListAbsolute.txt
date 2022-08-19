@@ -1,0 +1,15 @@
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Vista.exe.config
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Vista.exe
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Vista.pdb
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Presentador.dll
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Modelo.dll
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Presentador.pdb
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\bin\Debug\Modelo.pdb
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.Form1.resources
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.exe
+C:\Documents\AP4\$tudio\MVP\Inicio\Vista\obj\Debug\Vista.pdb

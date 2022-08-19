@@ -1,0 +1,6 @@
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\bin\Debug\ABS.dll
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\bin\Debug\ABS.pdb
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\obj\Debug\ABS.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\obj\Debug\ABS.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\obj\Debug\ABS.dll
+C:\Documents\AP4\$tudio\(TRABAJO FINAL CARRERA)\MVP-UAI\ABS\obj\Debug\ABS.pdb

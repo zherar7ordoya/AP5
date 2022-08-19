@@ -1,0 +1,10 @@
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\bin\Debug\Ej0005.exe.config
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\bin\Debug\Ej0005.exe
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\bin\Debug\Ej0005.pdb
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.csproj.AssemblyReference.cache
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.Form1.resources
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.Properties.Resources.resources
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.csproj.GenerateResource.cache
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.exe
+C:\Documents\AP4\(POO) Cardacci\Orientador 2\Ej0005\Ej0005\obj\Debug\Ej0005.pdb

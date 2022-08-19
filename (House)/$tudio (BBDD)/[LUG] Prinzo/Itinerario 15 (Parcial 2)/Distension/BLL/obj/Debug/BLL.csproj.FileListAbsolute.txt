@@ -1,0 +1,17 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\BLL.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\BLL.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\ABSTRACTA.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\BE.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\ABSTRACTA.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\BE.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\obj\Debug\BLL.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\obj\Debug\BLL.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\Jugadores.xml
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\MPP.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\MPP.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\JuegosHistorial.xml
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\JugadoresHistorialTTT.xml
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\Itinerario 15 (Parcial 2)\Distension\BLL\bin\Debug\JugadoresHistorialPPT.xml

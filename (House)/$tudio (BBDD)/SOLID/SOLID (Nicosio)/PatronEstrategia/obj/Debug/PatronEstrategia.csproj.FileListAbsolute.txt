@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\bin\Debug\PatronEstrategia.exe.config
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\bin\Debug\PatronEstrategia.exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\bin\Debug\PatronEstrategia.pdb
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\obj\Debug\PatronEstrategia.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\obj\Debug\PatronEstrategia.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\obj\Debug\PatronEstrategia.exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\PatronEstrategia\obj\Debug\PatronEstrategia.pdb

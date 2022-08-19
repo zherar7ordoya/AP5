@@ -1,0 +1,6 @@
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\obj\Debug\Video4ILibrary.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\obj\Debug\Video4ILibrary.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\bin\Debug\Video4ILibrary.dll
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\bin\Debug\Video4ILibrary.pdb
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\obj\Debug\Video4ILibrary.dll
+C:\Documents\AP4\$tudio\SOLID (Tim Corey)\Video4ILibrary\obj\Debug\Video4ILibrary.pdb

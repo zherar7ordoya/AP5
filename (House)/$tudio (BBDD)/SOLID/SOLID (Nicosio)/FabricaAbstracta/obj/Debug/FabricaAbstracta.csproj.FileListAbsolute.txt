@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\obj\Debug\FabricaAbstracta.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\obj\Debug\FabricaAbstracta.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\bin\Debug\FabricaAbstracta.exe.config
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\bin\Debug\FabricaAbstracta.exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\bin\Debug\FabricaAbstracta.pdb
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\obj\Debug\FabricaAbstracta.exe
+C:\Documents\AP4\$tudio\SOLID (Nicosio)\FabricaAbstracta\obj\Debug\FabricaAbstracta.pdb

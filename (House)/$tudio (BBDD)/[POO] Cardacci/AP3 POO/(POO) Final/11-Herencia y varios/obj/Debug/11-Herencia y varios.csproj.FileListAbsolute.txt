@@ -1,0 +1,10 @@
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\bin\Debug\11-Herencia y varios.exe.config
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\bin\Debug\11-Herencia y varios.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\bin\Debug\11-Herencia y varios.pdb
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\11-Herencia y varios.csprojAssemblyReference.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\_11_Herencia_y_varios.Form1.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\_11_Herencia_y_varios.Properties.Resources.resources
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\11-Herencia y varios.csproj.GenerateResource.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\11-Herencia y varios.csproj.CoreCompileInputs.cache
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\11-Herencia y varios.exe
+C:\Users\Alex\OneDrive\UAI\POO\Visual Studio\Final POO Practica\11-Herencia y varios\obj\Debug\11-Herencia y varios.pdb

@@ -1,0 +1,6 @@
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\bin\Debug\ABSTRACCION.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\bin\Debug\ABSTRACCION.pdb
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\obj\Debug\ABSTRACTA.csproj.AssemblyReference.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\obj\Debug\ABSTRACTA.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\obj\Debug\ABSTRACCION.dll
+C:\Documents\AP4\[Lenguajes de Ultima Generacion]\TPN2_LUG_Tordoya_Gerardo\PIO\ABSTRACCION\obj\Debug\ABSTRACCION.pdb

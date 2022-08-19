@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\IoC\Step3\bin\Debug\Step3.exe.config
+C:\Documents\AP4\$tudio\IoC\Step3\bin\Debug\Step3.exe
+C:\Documents\AP4\$tudio\IoC\Step3\bin\Debug\Step3.pdb
+C:\Documents\AP4\$tudio\IoC\Step3\obj\Debug\Step3.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\IoC\Step3\obj\Debug\Step3.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\IoC\Step3\obj\Debug\Step3.exe
+C:\Documents\AP4\$tudio\IoC\Step3\obj\Debug\Step3.pdb

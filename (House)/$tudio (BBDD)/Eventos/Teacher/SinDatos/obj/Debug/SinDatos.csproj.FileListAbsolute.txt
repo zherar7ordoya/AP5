@@ -1,0 +1,7 @@
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\bin\Debug\SinDatos.exe.config
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\bin\Debug\SinDatos.exe
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\bin\Debug\SinDatos.pdb
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\obj\Debug\SinDatos.csproj.AssemblyReference.cache
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\obj\Debug\SinDatos.csproj.CoreCompileInputs.cache
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\obj\Debug\SinDatos.exe
+C:\Documents\AP4\$tudio\Eventos\Teacher\SinDatos\obj\Debug\SinDatos.pdb
