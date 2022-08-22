@@ -3,13 +3,13 @@
 1. La Estadística tiene su origen en: 
  	- El juego de azar. 
 	- La digitalización de los datos. 
-	- La recopilación de datos por parte del Estado. 
+	- **La recopilación de datos por parte del Estado** <==
 	- La ganadería. 
 	- Ninguno de los anteriores. 
  
 2. El objeto de estudio de la Estadística son: 
 	- Los Números. 
-	- Los Datos. 
+	- **Los Datos** <== 
 	- La información. 
 	- Los Gráficos. 
 	- Las Encuestas. 
@@ -20,7 +20,9 @@ presentar informes sobre un conjunto de datos es:
 	- Teórica. 
 	- Deductiva. 
 	- Discrecional. 
-	- Descriptiva.  
+	- **Descriptiva** <==
+
+.
 
 ---
 
@@ -36,6 +38,8 @@ Estimado/Estimada alumno/alumna, lo/la invito a realizar una autoevaluación dia
 4. ¿Alguna de estos Problemas le ocasionaron dificultades? ¿Cuáles?
 5. ¿Tuvo otras dificultades?
 6. Emita su opinión acerca de su desempeño.
+
+.
 
 ---
 
