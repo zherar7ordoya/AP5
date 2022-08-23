@@ -1,4 +1,4 @@
-# CUESTIONARIO DE REVISION 
+# Cuestionario de revisión
  
 1. La Estadística tiene su origen en: 
  	- El juego de azar. 
@@ -22,9 +22,8 @@ presentar informes sobre un conjunto de datos es:
 	- Discrecional. 
 	- **Descriptiva** <==
 
-.
 
----
+## Punto 2
 
 Estadística es la rama de las matemáticas que se encarga de recopilar y organizar datos.
 
@@ -39,9 +38,8 @@ Estimado/Estimada alumno/alumna, lo/la invito a realizar una autoevaluación dia
 5. ¿Tuvo otras dificultades?
 6. Emita su opinión acerca de su desempeño.
 
-.
 
----
+### Tip
 
 Tenga siempre presente que en Matemática "de los errores se aprende". Toda la Matemática se construyó, ladrillo a ladrillo, pero muchas veces sin certezas.
 Intentaremos generar entre todos/as un grupo colaborativo de trabajo para poder “construir”.
