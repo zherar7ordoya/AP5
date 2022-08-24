@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 print ("Hola Mundo") #Comentario
 
 a = 8
