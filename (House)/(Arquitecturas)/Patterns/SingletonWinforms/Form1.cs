@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SingletonWinforms
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IDisposable
     {
         private static Form1 aForm = null;
 
         public static Form1 Instance()
         {
-            if (aForm == null) aForm = new Form1();
+            if (aForm == null) aForm = (Form1)Factory.CrearForm1();
             return aForm;
         }
 

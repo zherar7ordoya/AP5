@@ -3,12 +3,12 @@ using System.Runtime.InteropServices;
 
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
-// asociada con un ensamblado.
-[assembly: AssemblyTitle("SingletonWinforms")]
+// asociada a un ensamblado.
+[assembly: AssemblyTitle("Factory")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SingletonWinforms")]
+[assembly: AssemblyProduct("Factory")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("0a8338a2-7885-4ec0-8ec6-a5dfa118a9ac")]
+[assembly: Guid("132ab103-2124-4506-8545-0783faa2f671")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
