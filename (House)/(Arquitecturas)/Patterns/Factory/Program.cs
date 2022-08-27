@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Factory
 {
@@ -6,16 +10,16 @@ namespace Factory
     {
         static void Main()
         {
-            IFabrica fabrica = new FabricaQuimica();
-            fabrica.CrearProductos();
+            Console.WriteLine("Dinero disponible: ");
+            int dinero = Convert.ToInt32(Console.ReadLine());
+            IVehiculo vehiculo = Creador.MetodoFabrica(dinero);
 
-            IProductoLeche leche = fabrica.ObtenLeche;
-            IProductoSabor sabor = fabrica.ObtenSabor;
+            vehiculo.Encender();
+            vehiculo.Acelerar();
+            vehiculo.Frenar();
+            vehiculo.Girar();
 
-            leche.Producir();
-            sabor.Obtener();
-
-            Console.WriteLine("Malteada {0} y {1}", leche.ObtenerDatos(), sabor.Informar());
+            Console.ReadKey();
         }
     }
 }

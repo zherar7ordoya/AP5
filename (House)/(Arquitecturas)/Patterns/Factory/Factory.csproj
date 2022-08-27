@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{132AB103-2124-4506-8545-0783FAA2F671}</ProjectGuid>
+    <ProjectGuid>{7DB6BF9A-B718-43D2-851B-8F6570A2D8DA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Factory</RootNamespace>
     <AssemblyName>Factory</AssemblyName>
@@ -43,18 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FabricaNatural.cs" />
-    <Compile Include="FabricaQuimica.cs" />
-    <Compile Include="IFabrica.cs" />
-    <Compile Include="IProductoLeche.cs" />
-    <Compile Include="IProductoSabor.cs" />
-    <Compile Include="LecheAlmendras.cs" />
-    <Compile Include="LecheCoco.cs" />
-    <Compile Include="LecheVaca.cs" />
+    <Compile Include="Automovil.cs" />
+    <Compile Include="Avioneta.cs" />
+    <Compile Include="Bicicleta.cs" />
+    <Compile Include="Creador.cs" />
+    <Compile Include="IVehiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SaborChocolate.cs" />
-    <Compile Include="SaborVainilla.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
