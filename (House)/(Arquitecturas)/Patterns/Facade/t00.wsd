@@ -1,0 +1,4 @@
+@startuml 00
+' Supported Formats
+' *.wsd, *.pu, *.puml, *.plantuml, *.iuml
+@enduml

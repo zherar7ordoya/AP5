@@ -1,4 +1,6 @@
-@startuml Swarm (Enjambre)
+@startuml Tutorial
+
+title Casos de Uso
 
 ' =================================== TWEAKS ===================================
 skin rose

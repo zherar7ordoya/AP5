@@ -1,0 +1,39 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title Properties / Methods - Class Diagram
+
+    skinparam componentStyle uml2
+
+    class Car
+    {
+        .. Field Examples ..
+        -Name: Type { arg1, arg2, argn }
+        +Name: Type { arg1, arg2, argn }
+        #Name: Type { arg1, arg2, argn }
+        ~Name: Type { arg1, arg2, argn }
+
+        .. Method Examples ..
+        -Name(): Type { arg1, arg2, argn }
+        +Name(): Type { arg1, arg2, argn }
+        #Name(): Type { arg1, arg2, argn }
+        ~Name(): Type { arg1, arg2, argn }
+
+        .. Static Example ..
+        +{static} Name(): Type { arg1, arg2, argn }
+
+        .. Abstract Example ..
+        +{abstract} Name(): Type { arg1, arg2, argn }
+    }
+
+    class Car
+    ICar1 ()- Car
+    ICar2 ()-- Car
+    Car -() ICar3
+    
+@enduml

@@ -1,0 +1,29 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title Color - Activity Diagram 
+
+    skinparam backgroundColor LightGray
+
+    ' En este caso, si ponemos la primera llave estilo C#, tira error.
+    skinparam activity {
+        StartColor Violet
+        EndColor Blue
+        BackgroundColor LightGreen
+        BorderColor Yellow
+    }
+
+    start
+
+    :Eat Hot Wings;
+
+    :Drink Homebrew;
+
+    stop
+
+@enduml

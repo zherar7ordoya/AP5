@@ -1,0 +1,22 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title While Loop - Activity Diagram 
+
+    start
+
+    while (Hungry?) is (Yes)
+        :Eat Hot Wings;
+        :Drink Homebrew;
+    endwhile (No)
+
+    :Go To Sleep;
+
+    stop
+
+@enduml

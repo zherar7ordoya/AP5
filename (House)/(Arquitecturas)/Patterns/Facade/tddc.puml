@@ -1,10 +1,12 @@
 @startuml Tutorial
 
-' =================================== TWEAKS ===================================
-skin rose
-skinparam classFontName Calibri
-skinparam shadowing false
-' ------------------------------------------------------------------------------
+    title Diagrama de Clases
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
 
     interface Clase1
     {
@@ -38,5 +40,11 @@ skinparam shadowing false
     
     Clase4 "1" *-- "n" Clase5: Composición
     Clase6 o-- Clase7: Agregación
+
+    class Car
+    ICar ()-- Car
+    ICar2 ()- Car
+    Car -() ICar3
+
 
 @enduml

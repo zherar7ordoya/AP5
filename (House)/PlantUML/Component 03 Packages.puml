@@ -1,0 +1,38 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title Packages - Component Diagram
+
+    'Para este caso, no toma las llaves estilo C#.
+    package "Front End" {
+        component [Graphic User\nInterface] as GUI
+    }
+
+    cloud Internet {
+        'Haz lo tuyo...
+    }
+    
+    node "Middle Tier" {
+        [Business Logic]
+        [Data Access] as DA  
+        interface IMath as Math
+        interface "IItems" as Items
+    } 
+
+    database "PostgreSQL\n" {
+        [Stored Procs]
+    }
+
+    GUI -down-> Internet
+    Internet -down-( Math
+    [Business Logic] -up- Math
+    DA -- Items
+    [Business Logic] --( Items
+    DA .. [Stored Procs]
+    
+@enduml

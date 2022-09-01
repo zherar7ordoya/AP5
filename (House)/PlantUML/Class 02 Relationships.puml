@@ -1,0 +1,30 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title Relationships - Class Diagram
+
+    class Dwelling
+    {
+    +int Windows
+    +void LockTheDoor()
+    }
+
+    class Apartment
+    class House
+    class Commune
+    class Window
+    class Door
+
+    Dwelling "1" *-up- "many" Door: Composition
+    Dwelling "1" *-up- "many" Window: Composition
+
+    Dwelling <|-left- Apartment: Inheritance
+    Dwelling <|-down- House: Inheritance
+    Dwelling <|-right- Commune: Inheritance
+    
+@enduml
