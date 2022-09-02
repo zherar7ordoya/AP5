@@ -1,0 +1,4 @@
+'No acepta nada, ni siquiera saltos de línea...
+@startuml Samples
+sudoku
+@enduml

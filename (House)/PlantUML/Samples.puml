@@ -2,11 +2,11 @@
 
     'https://www.planttext.com/
 
-    ' ================================= TWEAKS =================================
+    '=========== TWEAKS ===========
     skin rose
     skinparam classFontName Calibri
     skinparam shadowing false
-    ' --------------------------------------------------------------------------
+    '------------------------------
 
     title Diagrama
 

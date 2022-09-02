@@ -1,0 +1,19 @@
+@startsalt Samples
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Separador
+
+{
+    This is a dotted line
+    ..
+    This is a double line
+    ==
+    This is a thick solid line
+    ~~
+    This is a thin solid line
+    --
+}
+
+@endsalt

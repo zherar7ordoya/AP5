@@ -1,0 +1,23 @@
+@startuml Samples
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+
+    title Diagrama by Gerardo Tordoya
+'====================================
+
+robust "My Day" as MD
+
+@08:00:00
+MD is "Get to work"
+
+@11:30:00
+MD is "Lunch!!!!"
+
+@12:30:00
+MD is "Get to work"
+
+@15:00:00
+MD is "Ride bike home"
+
+@enduml

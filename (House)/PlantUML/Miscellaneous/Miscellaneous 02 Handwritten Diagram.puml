@@ -1,0 +1,13 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    skinparam handwritten true
+    Alice -> Bob : hello
+    note right: Not validated yet
+
+@enduml

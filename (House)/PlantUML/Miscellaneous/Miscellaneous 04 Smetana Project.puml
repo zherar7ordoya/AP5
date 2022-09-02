@@ -1,0 +1,27 @@
+@startuml Samples
+
+'=========== TWEAKS ===========
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+'------------------------------
+
+!pragma layout smetana
+
+'Es interesante el tema. Básicamente, el equipo de PlantUML está buscando un 
+'reemplazo para GraphViz/Dot (dos tecnologias externas, una de renderizado, la
+'otra de cálculo) con una libreria: Smetana. 
+'Esto que vemos vendría a ser como una preview.
+'Para más informacion: https://plantuml.com/es/smetana02
+
+title Gerardo Tordoya
+
+class Foo1
+
+Foo1 --> Foo2
+Foo1 --> Foo3
+
+Foo1 ---> Foo4 : test 4
+Foo1 ----> Foo5 : test 5
+
+@enduml

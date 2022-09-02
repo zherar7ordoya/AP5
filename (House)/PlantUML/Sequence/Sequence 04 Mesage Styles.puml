@@ -1,0 +1,19 @@
+@startuml Samples
+
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Estilos de mensaje
+
+Bob -> Alice
+Bob ->> Alice
+Bob -\ Alice
+Bob \- Alice
+Bob //-- Alice
+Bob ->o Alice
+Bob o\-- Alice
+Bob <-> Alice
+Bob <->o Alice
+
+@enduml

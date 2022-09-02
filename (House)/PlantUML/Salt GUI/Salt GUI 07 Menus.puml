@@ -1,0 +1,25 @@
+@startsalt Samples
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Menús
+
+{+
+
+{* File | Edit | Source | Refactor 
+ Refactor | New | Open File | - | Close | <b>Close All</b> }
+
+    {/ <b>General | Fullscreen | Behavior | Saving }
+
+    {
+        Name:        | "                 "
+        Direction:   | { (X) Left | () Right | () Up | () Down }
+        Attending?:  | {  [] Yes | [] No  
+                        [] Maybe }
+        [Browse...]
+    }
+
+}
+
+@endsalt

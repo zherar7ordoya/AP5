@@ -1,0 +1,25 @@
+@startuml Sample
+
+'=========== TWEAKS ===========
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+'=========== TITULO ===========
+
+title Título del Diagrama
+
+'========== DIAGRAMA ==========
+
+Rodolfo -> Gerardo : Tengo algo que decirte...
+
+'Aparentemente, en esto tiene un renderizado similar a HTML.
+note right
+    <code>
+    main() {
+      printf("Algo.");
+    }
+    </code>
+end note
+
+@enduml

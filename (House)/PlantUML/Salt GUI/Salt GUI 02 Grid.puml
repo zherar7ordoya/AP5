@@ -1,0 +1,14 @@
+@startsalt Samples
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Grilla
+
+{
+  User Name:| "Justin     "
+  Password: | "****       "
+  [Ok    ]  | [  Close   ]
+}
+
+@endsalt

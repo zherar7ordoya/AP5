@@ -1,0 +1,20 @@
+@startuml Samples
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Elementos Básicos
+
+salt
+{
+    Just plain text
+    [This is my button]
+    ()  Unchecked radio
+    (X) Checked radio
+    []  Unchecked box
+    [X] Checked box
+    "This is a textbox   "
+    ^This is a droplist^
+}
+
+@enduml

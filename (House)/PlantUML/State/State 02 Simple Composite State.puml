@@ -1,0 +1,21 @@
+@startuml Samples
+
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Estado Simple Compuesto
+
+[*] --> NeilDiamond
+state NeilDiamond 
+
+state "Neil Diamond" as NeilDiamond {
+  state Dancing
+  state Singing
+  state Smiling
+  Dancing --> Singing
+  Singing --> Smiling
+  Smiling --> Dancing
+}
+
+@enduml
