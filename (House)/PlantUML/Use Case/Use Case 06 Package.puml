@@ -11,12 +11,21 @@
     skinparam classFontName Calibri
     skinparam shadowing false
 
-    title Casos de Uso
+    title Paquete
 '====================================
 
-(Login)
-(Run Process) as (Proc1)
-usecase (Undo Process)
-usecase (Log Out) as UC4
+rectangle Features {
+    (Login)
+    (Create / Delete User) as CDU
+}
+
+:Employee: 
+:Client:
+:Supervisor:
+
+Employee --> (Login)
+Supervisor --> (Login)
+Client ..> (Login) : NO!!!!
+Supervisor ---> CDU: I am god
 
 @enduml

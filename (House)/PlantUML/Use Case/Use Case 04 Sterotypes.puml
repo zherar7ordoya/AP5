@@ -11,12 +11,15 @@
     skinparam classFontName Calibri
     skinparam shadowing false
 
-    title Casos de Uso
+    title Estereotipos
 '====================================
 
-(Login)
-(Run Process) as (Proc1)
-usecase (Undo Process)
-usecase (Log Out) as UC4
+(Upload File) as UF<<Manual>>
+actor :User: as U<<Person>>
+:HAL: as H<<Computer>>
+
+U -> UF
+U ---> (L)
+H <.up.> (L)
 
 @enduml

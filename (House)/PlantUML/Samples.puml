@@ -1,15 +1,11 @@
 @startuml Samples
-
-    'https://www.planttext.com/
-
-    '=========== TWEAKS ===========
     skin rose
     skinparam classFontName Calibri
     skinparam shadowing false
-    '------------------------------
 
-    title Diagrama
+    title https://www.planttext.com/
+'====================================
 
-    Bob -> Alice: Quiero decirte algo
+Alfa -> Beta: Enviándote un mensaje
 
 @enduml

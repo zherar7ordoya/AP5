@@ -11,12 +11,15 @@
     skinparam classFontName Calibri
     skinparam shadowing false
 
-    title Casos de Uso
+    title Direcciones
 '====================================
 
-(Login)
-(Run Process) as (Proc1)
-usecase (Undo Process)
-usecase (Log Out) as UC4
+actor :Admin: as A
+
+A -> (Login)
+A --> (Logout)
+A -left-> (Copy / Paste)
+A -up-> (Bulk Upload)
+A ---> (Throw Computer Out Of Window!!!)
 
 @enduml

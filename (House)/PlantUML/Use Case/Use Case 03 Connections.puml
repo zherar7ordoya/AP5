@@ -11,12 +11,15 @@
     skinparam classFontName Calibri
     skinparam shadowing false
 
-    title Casos de Uso
+    title Conexiones
 '====================================
 
-(Login)
-(Run Process) as (Proc1)
-usecase (Undo Process)
-usecase (Log Out) as UC4
+Employee -up-|> User
+Client -up-|> User
+Supervisor -up-|> User
+Employee --> (Login)
+Supervisor --> (Login)
+Client ..> (Login) : NO!!!!
+Supervisor --> (Create / Delete User): I am god
 
 @enduml
