@@ -1,0 +1,8 @@
+@startuml Samples
+
+'No acepta indentación ni configuración alguna (!)
+digraph G {
+    Hello -> World
+}
+
+@enduml

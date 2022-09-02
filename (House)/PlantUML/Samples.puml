@@ -1,0 +1,15 @@
+@startuml Samples
+
+    'https://www.planttext.com/
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    title Diagrama
+
+    Bob -> Alice: Quiero decirte algo
+
+@enduml

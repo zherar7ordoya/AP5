@@ -1,0 +1,32 @@
+@startuml Samples
+
+    ' ================================= TWEAKS =================================
+    skin rose
+    skinparam classFontName Calibri
+    skinparam shadowing false
+    ' --------------------------------------------------------------------------
+
+    skinparam rectangle {
+        roundCorner<<Concept>> 54
+    }
+
+    rectangle "Concept Model" <<Concept>> {
+
+        rectangle "Example 1" <<Concept>> as ex1
+        rectangle "Another rectangle"
+        actor Gerardo
+
+        frame Nested {
+            cloud Web
+            rectangle "Another One"
+        }
+
+        card Card {
+            package System
+        }
+    }
+
+    database Database
+    queue Queue
+    
+@enduml
