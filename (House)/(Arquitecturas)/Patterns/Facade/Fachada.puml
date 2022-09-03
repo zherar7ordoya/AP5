@@ -1,4 +1,4 @@
-@startuml Samples
+@startuml Nicosio
     skin rose
     skinparam classFontName Calibri
     skinparam shadowing false
@@ -8,16 +8,16 @@
 
 class Cliente
 
-
-
-namespace Namespace {
-    class Fachada {
+package
+{
+    class Fachada
+    {
         +Operacion1()
         +Operacion2()
         +OperacionN()
     }
 
-    .Cliente o-- Fachada
+    Cliente o-- Fachada
     Fachada o-- Subsistema1
     Fachada o-- Subsistema2
     Fachada o-- Subsistema3
