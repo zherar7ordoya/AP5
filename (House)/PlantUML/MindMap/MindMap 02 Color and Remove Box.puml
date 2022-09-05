@@ -1,5 +1,13 @@
 @startmindmap Samples
 
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Colores y Sin-Caja
+
+'========= 2022-09-05 =========
+
 <style>
     mindmapDiagram {
         .green {

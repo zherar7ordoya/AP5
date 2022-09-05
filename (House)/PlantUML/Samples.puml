@@ -1,11 +1,16 @@
 @startuml Samples
-    skin rose
-    skinparam classFontName Calibri
-    skinparam shadowing false
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
 
-    title https://www.planttext.com/
-'====================================
+title Gerardo Tordoya
 
-Alfa -> Beta: Enviándote un mensaje
+'========= 2022-09-01 =========
+
+Alfa -> Beta: Mensaje enviado
+Beta -> Gamma: Mensaje reenviado
+Gamma --> Alfa: Mensaje recibido
+
+caption https://www.planttext.com/
 
 @enduml
