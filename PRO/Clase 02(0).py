@@ -1,21 +1,20 @@
 #!/usr/bin/python
 
-print ("Hola Mundo") #Comentario
+print ("Hola Mundo") # Comentario
 
 a = 8
 b= "Hello"
 c= True
 
 #Formateo de salida...
-print("Concatenando "+ str(a) + " " + b + " " + str(c)) #Obligatorio hacer cast a string
-print("Concatenando",a,b,c)
-print("Concatenando %s %s %s" % (a,b,c))
+print("Concatenando " + str(a) + " " + b + " " + str(c)) # Obligatorio hacer cast a string
+print("Concatenando", a, b, c)
+print("Concatenando %s %s %s" % (a, b, c))
 
 my_string = "Concatenando {} {} {}"
-print(my_string.format(a,b,c))
+print(my_string.format(a, b, c))
 
-print(f"Concatenando {a} {b} {c} ") #Sugerida...
-
+print(f"Concatenando {a} {b} {c} ") # Sugerida
 
 m = 10
 if m > 25:
@@ -26,11 +25,10 @@ else:
     print("m es menor que", 25)
 
 
-#Solicitud de datos al usuario...
+# Solicitud de datos al usuario
 num = eval(input("Ingrese un número: "))
 
 while num != 0:
-
     if num > 10:
         print("Mayor que 10")
     else:
@@ -152,7 +150,6 @@ print(f"Tiempo {t_final} en segundos")
 """tak(12,6,1)
 tak(13,6,1)
 tak(14,6,1)"""
-
 
 diccionario = {"clave": "valor"}
 
