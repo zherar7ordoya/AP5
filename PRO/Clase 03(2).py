@@ -1,28 +1,18 @@
-'''
-@created 2022-09-06
-@author Gerardo Tordoya
-'''
+import math
 
 class Vector:
-    def inicializa(self):
-        self.x = 0
-        self.y = 0
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-v1 = Vector()
-v1.inicializa()
-print(v1.x, v1.y)
+    def muestra(self):
+        print(self.x, self.y)
 
-v1.x = 5
-print(v1.x, v1.y)
+    def magnitud(self):
+        return math.sqrt(self.x**2 + self.y**2)
 
-v2 = Vector()
-v2.inicializa()
-print(v2.x, v2.y)
+v1 = Vector(4, 5)
+v1.muestra()
 
-v2.x = 3
-v2.y = 7
-print(v1.x, v1.y)
-print(v2.x, v2.y)
-
-v1.z = 6 # Creado "al vuelo"...
-print(v1.x, v1.y, v1.z)
+m = v1.magnitud()
+print(m)
