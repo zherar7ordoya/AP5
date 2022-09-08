@@ -1,0 +1,22 @@
+@startuml Samples
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+title Gerardo Tordoya
+
+'========= 2022-09-01 =========
+
+Alpha -> Bravo: Mensaje enviado
+Bravo -> Charlie: Mensaje reenviado
+Charlie --> Alpha: Mensaje recibido
+
+caption https://www.planttext.com/
+
+@enduml
+
+
+' Comentario corto
+/'
+Comentario largo
+'/
