@@ -1,5 +1,4 @@
-"""
-Archivo original
+"""_summary_
 """
 
 # Comentario corto
@@ -25,8 +24,8 @@ mi_var.append("Elemento nuevo")
 print(mi_var)
 print(mi_var.count(99))
 
-a = (2,3) #Tupla
-mi_var.extend(a) #Pasa como lista
+a = (2,3)           # Tupla
+mi_var.extend(a)    # Pasa como lista
 
 
 print(mi_var)
@@ -38,16 +37,16 @@ mi_var.remove("Elemento nuevo") #Remove objeto
 print(mi_var)
 mi_var.reverse() #Invertir la lista
 print(mi_var)
-orden = ['e', 'a', 'u', 'o', 'i'] 
+orden = ['e', 'a', 'u', 'o', 'i']
 orden.sort() #reverse=True para ordenar de mayor a menor
 otro = orden
 print(otro)
 print(orden)
 
-c = "hola mundo"
-c[0] # h
-c[5:] # mundo
-c[::3] # hauo
+C = "hola mundo"
+print(C[0])     # h
+print(C[5:])    # mundo
+print(C[::3])   # hauo
 
 t = (1, 2, True, "python")
 
@@ -75,14 +74,15 @@ print(materias["lunes"][0]) #materias como diccionario y luego como lista...
 diccionario = {"clave": "valor"}
 
 print(diccionario["clave"])
-print(diccionario.get("clave", ["no encontrado"])) #Opción de agregar un valor si no se encuentra la clave
+#Opción de agregar un valor si no se encuentra la clave
+print(diccionario.get("clave", ["no encontrado"]))
 
 #print(diccionario.has_key("clave")) #Reemplazada en python 3 por
 print('clave' in diccionario)
 
-print(diccionario.items()) #Todo los items del diccionaio
-print(diccionario.keys()) #Todas las claves
-print(diccionario.values()) #Todos los valores
+print(diccionario.items())      # Todos los items del diccionario
+print(diccionario.keys())       # Todas las claves
+print(diccionario.values())     # Todos los valores
 
-print(diccionario.pop("clave")) #Muestro y lo quito 
+print(diccionario.pop("clave")) # Muestro y los quito
 print(diccionario.items())
