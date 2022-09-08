@@ -1,3 +1,9 @@
+# Comentario corto
+
+"""
+Comentario largo
+"""
+
 import math
 
 class Vector:

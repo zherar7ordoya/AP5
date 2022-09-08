@@ -7,9 +7,9 @@ title Gerardo Tordoya
 
 '========= 2022-09-01 =========
 
-Alfa -> Beta: Mensaje enviado
-Beta -> Gamma: Mensaje reenviado
-Gamma --> Alfa: Mensaje recibido
+Alpha -> Bravo: Mensaje enviado
+Bravo -> Charlie: Mensaje reenviado
+Charlie --> Alpha: Mensaje recibido
 
 caption https://www.planttext.com/
 
