@@ -137,7 +137,7 @@ print(type(t))
 
 
 def tak(xth,yth,zth):
-    """Prueba de Takeuchi"""
+    """Takes three arguments and returns the second one"""
     if xth <= yth:
         return yth
     return tak(tak(xth-1,yth,zth),
