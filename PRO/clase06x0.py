@@ -1,13 +1,23 @@
+"""@author: Gerardo Tordoya"""
+
+#Para trabajar con fechas...
+from datetime import datetime
+
 class Terrestre:
+    """Terrestre"""
     def desplazar(self):
+        """Desplazar"""
         print("El animal anda")
 
 class Acuatico:
+    """Acuatico"""
     def desplazar(self):
+        """Desplazar"""
         print("El animal nada")
 
 class Cocodrilo(Terrestre, Acuatico):
-    pass
+    """Cocodrilo"""
+    #pass
 
 c = Cocodrilo()
 c.desplazar()
@@ -38,13 +48,16 @@ nombres = frecuencias(["pedro","juan","pedro","tito","pedro","juan"])
 print(nombres)
 
 #Con clases
-
 class Leon:
+    """Leon"""
     def desplazar(self):
+        """Desplazar"""
         print("Avanzo en 4 patas...")
 
 class Bicicleta():
+    """Bicicleta"""
     def desplazar(self):
+        """Desplazar"""
         print("Avanzo en 2 ruedas...")
 
 leon = Leon()
@@ -53,27 +66,29 @@ leon = Leon()
 bicicleta = Bicicleta()
 #bicicleta.desplazar()
 
-def mover(object):
-    object.desplazar()
+def mover(obj): # No sé, no me gusta... el original era "object".
+    """Mover"""
+    obj.desplazar()
 
 mover(leon)
 mover(bicicleta)
 
 #Sobrecarga métodos
 class Persona():
+    """def mensaje(self, mensaje):"""
     def __init__(self):
-        print("Construyo Persona")        
+        print("Construyo Persona")
 
     def mensaje(self):
+        """Mensaje"""
         print("mensaje desde la clase Persona")
 
 class Obrero(Persona):
-    
+    """def mensaje(self, mensaje):"""
     def __init__(self, horas):
         super().__init__()
         print("Construyo Obrero")
         self.__horas_trabajo = horas
-
     def mensaje(self):
         print("mensaje desde la clase Obrero", self.__horas_trabajo)
 
@@ -83,20 +98,21 @@ obrero_planta.mensaje()
 obrero_planta.__class__ = Persona #Trato al obrero como una persona
 obrero_planta.mensaje()
 
-obrero_planta.__class__ = Obrero #Trato nuevamente como obrero al objeto conservando el estado del objeto
+#Trato nuevamente como obrero al objeto conservando el estado del objeto
+obrero_planta.__class__ = Obrero
 obrero_planta.mensaje()
 
 
 #Sobrecarga de operadores
 class Punto:
-    def __init__(self, x = 0, y = 0):
-        self.x = x
-        self.y = y
-
-    def __add__(self, other): #Sobrecarga de método de suma 
-        x = self.x + other.x
-        y = self.y + other.y
-        return x, y 
+    """def __str__(self):"""
+    def __init__(self, xth = 0, yth = 0):
+        self.xth = xth
+        self.yth = yth
+    def __add__(self, other): #Sobrecarga de método de suma
+        xth = self.xth + other.xth
+        yth = self.yth + other.yth
+        return xth, yth
 
 punto1 = Punto(4, 6)
 punto2 = Punto(1, -2)
@@ -107,34 +123,35 @@ print(type(Persona))
 print(type(str))
 
 #Usando type para un objeto
-s = "test"
+PER = "test"
 persona1 = Persona()
 
-print(type(s)) 
+print(type(PER))
 print(type(persona1))
 
 
-#new vs init
-class A():
+# new VERSUS init
+class Ath():
+    """DOCSTRING!"""
     def __new__(cls):
-        print ("A.__new__ es llamado")
-        return super(A, cls).__new__(cls)
+        print ("Correcto...") # A.__new__ es llamado
+        return super(Ath, cls).__new__(cls)
 
     def __init__(self): #Init nuno puede devolver nada, salvo un None
         print ("A.__init__ es llamado")
-        #return 33    
+        #return 33
 
-a = A()
+a = Ath()
 
 #Singleton
 
 class SoyUnico():
-
+    """SoyUnico"""
     __instance = None
     nombre = None
 
     def __str__(self):
-        return self.nombre 
+        return self.nombre
 
     def __new__(cls):
         if SoyUnico.__instance is None:
@@ -153,21 +170,27 @@ print(ramon)
 
 #Duck typing
 
-class Bird: 
-    def fly(self): 
-        print("fly with wings") 
+class Bird:
+    """Bird"""
+    def fly(self):
+        """Fly"""
+        print("fly with wings")
 
-class Airplane: 
-    def fly(self): 
-        print("fly with fuel") 
+class Airplane:
+    """Airplane"""
+    def fly(self):
+        """Fly"""
+        print("fly with fuel")
 
-class Fish: 
-    def swim(self): 
-        print("fish swim in sea") 
-  
+class Fish:
+    """Fish"""
+    def swim(self):
+        """Swim"""
+        print("fish swim in sea")
+
 # Atributos con el mismo nombre
 # se consideran como duck typing
-#for obj in Bird(), Airplane(), Fish(): 
+#for obj in Bird(), Airplane(), Fish():
     #obj.fly() #En Fish daría excepción
 
 #Ordenamiento - Ejemplos y objetos
@@ -187,28 +210,32 @@ planetas.sort(reverse= True)
 print(planetas)
 
 
-from datetime import datetime #Para trabajar con fechas...
+
 
 class Factura:
-
+    """Factura"""
     def __init__(self, nro, fecha):
         self.__nro = nro
         self.__fecha = fecha
-    
-    def getFecha(self):
+
+    def get_fecha(self):
+        """get_fecha"""
         return self.__fecha
 
-    def setFecha(self, fecha):
+    def set_fecha(self, fecha):
+        """set_fecha"""
         self.__fecha = fecha
 
-    def getNro(self):
+    def get_nro(self):
+        """get_nro"""
         return self.__nro
 
-    def setNro(self, nro):
+    def set_nro(self, nro):
+        """set_nro"""
         self.__nro = nro
 
-    nro = property(getNro, setNro)
-    fecha = property(getFecha, setFecha)
+    nro = property(get_nro, set_nro)
+    fecha = property(get_fecha, set_fecha)
 
 f1 = Factura(1, datetime(2019, 1, 1))
 f2 = Factura(8, datetime(2019, 1, 5))
@@ -227,4 +254,3 @@ facturas_ordenada_fecha = sorted(lista_facturas, key=lambda objeto: objeto.fecha
 print("Ordenamiento por fecha:")
 for s in facturas_ordenada_fecha:
     print(s.nro, s.fecha)
-    
