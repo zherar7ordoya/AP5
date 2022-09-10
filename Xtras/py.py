@@ -3,7 +3,7 @@
     @description: Colores en Python
 """
 
-# Run the script
+# Run Forest, run!
 
 class Vector:
     """Crea el vector"""
@@ -19,5 +19,5 @@ class Vector:
     def __str__(self):
         return self.xth + self.yth
 
-VECTOR = Vector()
-VECTOR.muestra()
+vector = Vector()
+vector.muestra()
