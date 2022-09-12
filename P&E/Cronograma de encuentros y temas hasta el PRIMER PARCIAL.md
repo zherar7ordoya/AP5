@@ -17,7 +17,7 @@ Lunes 22/08 a las 19:00 hs.
 
 **Objetivo:** Presentación de la asignatura. Canales de comunicación. Importancia de la vitalidad académica. Características de la asignatura y su relación con el mundo actual. Orígenes de la Estadística, sus ramas y diferencias. Conceptos básicos de la Estadística. Ejemplos. Tipos de variables. Ejemplos. Presentación de la bibliografía y técnicas para optimizar el estudio de la materia.
 
-### Videos adicionales del docente
+### Videos adicionales del docente (Encuentro 1)
 
 * [Probabilidad y Estadística - Conceptos Básicos](https://www.youtube.com/watch?v=e6z_trddtrs)
 * [Estadística - Tipos de variable](https://www.youtube.com/watch?v=X3ECGjQtgH8)
@@ -41,7 +41,7 @@ Lunes 05/09 a las 19:00 hs.
 * Medidas de posición: cuartiles, deciles, percentiles.
 * Recomendación de libros y enlaces para estudiar estos temas.
 
-### Videos adicionales del docente
+### Videos adicionales del docente (Encuentro 2)
 
 * [Cuartiles - Cálculo por fórmulas y verificación con calculadora online y Excel](https://www.youtube.com/watch?v=1uCbRRGBoNc)
 * [Estadística: Varianza y Desviación estándar](https://www.youtube.com/watch?v=NjkyIF06Jmo)
