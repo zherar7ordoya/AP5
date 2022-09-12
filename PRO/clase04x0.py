@@ -1,5 +1,18 @@
-class Coche:
+#!/usr/bin/env python
 
+""" *------------------>= [DESCRIPCIÓN DE ESTE MÓDULO] <=----------------------*
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+"""
+__author__ = "Gerardo Tordoya"
+__date__ = "2022/09/12"
+
+# *------------------------->= [Run Forest, run!] <=---------------------------*
+
+class Coche:
+    """Clase Coche"""
     marca = None  # Atributo de clase público
     __modelo = None  # Atributo de clase privado
 
@@ -53,21 +66,22 @@ class Coche:
         """Definimos el método"""
         print ("El automovil irá desde", origen, "hasta", destino, "recorriendo", kms, "kms")
 
-auto1 = Coche(5) #Instancio un coche
-Coche.marca = "Fiat" #Modifico atributo público de clase 
-Coche.set_modelo("Argo") #Modifico atributo privado de clase (setter)
-auto1.arrancar() #Arrancar el vehículo, método de instancia
-auto1.conducir() #Conducir el vehículo, método de instancia
+auto1 = Coche(5)        #Instancio un coche
+Coche.marca = "Fiat"    #Modifico atributo público de clase
+Coche.set_modelo("Argo")#Modifico atributo privado de clase (setter)
+auto1.arrancar()        #Arrancar el vehículo, método de instancia
+auto1.conducir()        #Conducir el vehículo, método de instancia
 #auto1.set_gasolina(10)
-auto1.set_gasolina(0) #Método setter tradicional
-auto1.gasolina = 10 #Seteo por property
-print(auto1.gasolina) #Traigo la gasolina por property
+auto1.set_gasolina(0)   #Método setter tradicional
+auto1.gasolina = 10     #Seteo por property
+print(auto1.gasolina)   #Traigo la gasolina por property
 print(auto1.get_gasolina()) #Traigo la gasolina por getter tradicional
 auto1.conducir()
 auto1.conducir()
-Coche.imprimir() #Método de clase -> LLamo directo a la clase
-Coche.funcion_sin_relacion_con_la_clase("bs as", "rosario", 45) #Método estático -> Sin relación interna
-del auto1 #Destruyo el objeto
+Coche.imprimir()        #Método de clase -> LLamo directo a la clase
+#Método estático -> Sin relación interna
+Coche.funcion_sin_relacion_con_la_clase("bs as", "rosario", 45)
+del auto1               #Destruyo el objeto
 
 
 auto2 = Coche(10)
@@ -75,35 +89,41 @@ del auto2
 
 
 class Ejemplo:
+    """Método estático"""
     def publico_test(self):
+        """Método público"""
         print("Público")
+        self.__privado_test()
 
     def __privado_test(self):
+        """Método privado"""
         print("Privado")
 
 ej = Ejemplo()
-
-print([attr for attr in dir(ej) if 'test' in attr]) #dir() método que retorna métodos y atributos de cualquier objeto...
-
+#dir() método que retorna métodos y atributos de cualquier objeto...
+print([attr for attr in dir(ej) if 'test' in attr])
 ej.publico_test()
-ej._Ejemplo__privado_test()
 
 
 #Agregación
 class Salary:
+    """Clase Salario"""
     def __init__(self, pay):
         self.__pay=pay
 
     def get_total(self):
-        return (self.__pay * 12)
+        """Método getter"""
+        return self.__pay * 12
 
 class Employee:
+    """Clase Empleado"""
     def __init__(self, pay, bonus):
         self.__pay=pay #Paso directamente el objeto Salario en el constructor
         self.__bonus=bonus
-        #self.__obj_salary=Salary(self.__pay) 
+        #self.__obj_salary=Salary(self.__pay)
 
     def annual_salary(self):
+        """Método que retorna el salario anual"""
         return "Total: "  +  str(self.__pay.get_total() + self.__bonus)
 
 obj_salary=Salary(100) #Creo el objeto salario
