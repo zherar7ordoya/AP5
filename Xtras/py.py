@@ -20,7 +20,7 @@ class Vector:
     def muestra(self):
         """Muestra el vector"""
         print(self.xth, self.yth)       # Se refiere a los atributos de la clase
-        print("Muestra concluída...")   # Se refiere a un string
+        print("Presentación concluida...")   # Se refiere a un string
 
     def __str__(self):
         return self.xth + self.yth
