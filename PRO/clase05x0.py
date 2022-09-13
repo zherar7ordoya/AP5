@@ -11,6 +11,8 @@ __date__ = "2022/09/12"
 
 # *------------------------->= [Run Forest, run!] <=---------------------------*
 
+# import os
+
 class Instrumento:
     """Clase Instrumento"""
     def __init__(self, precio):
@@ -75,3 +77,5 @@ lista1 = AgregarElemento() #Definimos la clase de nuestra lista llamada "Lista1"
 lista1.append ('Matias') #Añadimos un elemento a la lista como lo haríamos normalmente
 lista1.append('Jorge') #Otro elemento...
 print(lista1)  # Imprimimos la lista para corroborar los alumnos...
+
+# os.system("CLS")
