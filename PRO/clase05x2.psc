@@ -12,11 +12,39 @@
 //
 // # *------------------------->= [Run Forest, run!] <=---------------------------*
 
-Algoritmo OperativaBancaria
+
+
+// INFORMAR
+
+SubProceso Informar(cuentas)
+	Escribir ""
+	Escribir "Datos de la Cuenta"
+	Escribir "------------------"
+	Escribir cliente, ", su saldo es: "
+	Para i <- 1 Hasta 2 Hacer
+		Escribir "En cuenta ", i, " hay $ ", cuentas[i]
+	FinPara
+	Escribir ""
+FinSubProceso
+
+
+
+Proceso OperativaBancaria
 	
 	// GLOBALES
-	Dimension clientes[2]
-	Dimension cuentas[4]
+	Definir cliente Como Caracter
+	Definir cuentas Como Entero
+	Dimension cuentas[2]
+	
+	// INICIALIZACIÓN
+	Escribir ""
+	Escribir "Ingrese su nombre (y apellido): " 
+	Leer cliente
+	cuentas[1] <- 0
+	cuentas[2] <- 0
+	
+	Informar(cuentas)
+	
 	
 	Repetir
 		
@@ -67,7 +95,7 @@ Algoritmo OperativaBancaria
 		
 	Hasta Que operacion == 10
 	
-FinAlgoritmo
+FinProceso
 
 // """ *------------------------>= [PROCEDIMIENTOS] <=----------------------------*
 
@@ -121,9 +149,4 @@ Funcion Transferir
 	Escribir "Hola mundo!"
 FinFuncion
 
-// MOSTRAR TODO
-
-Funcion MostrarTodo
-	
-FinFuncion
 	
