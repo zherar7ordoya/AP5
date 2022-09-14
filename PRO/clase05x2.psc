@@ -6,46 +6,31 @@
 //						Menu.psc
 //						Mayores.psc
 //						Subprocesos.psc
+//						Sucursales.psc
+// NOTA: Recordar configurar arreglos a base 0.
 // """
 // __author__ = "Gerardo Tordoya"
 // __date__ = "2022-09-XX"
 //
 // # *------------------------->= [Run Forest, run!] <=---------------------------*
 
-
-
-// INFORMAR
-
-SubProceso Informar(cuentas)
-	Escribir ""
-	Escribir "Datos de la Cuenta"
-	Escribir "------------------"
-	Escribir cliente, ", su saldo es: "
-	Para i <- 1 Hasta 2 Hacer
-		Escribir "En cuenta ", i, " hay $ ", cuentas[i]
-	FinPara
-	Escribir ""
-FinSubProceso
-
-
-
 Proceso OperativaBancaria
 	
 	// GLOBALES
 	Definir cliente Como Caracter
-	Definir cuentas Como Entero
+	Definir cuenta, cuentas Como Entero
 	Dimension cuentas[2]
 	
 	// INICIALIZACIÓN
 	Escribir ""
 	Escribir "Ingrese su nombre (y apellido): " 
 	Leer cliente
+	cuenta <- 0
+	cuentas[0] <- 0
 	cuentas[1] <- 0
-	cuentas[2] <- 0
 	
-	Informar(cuentas)
-	
-	
+	DetallarCuenta(cliente, cuentas)
+		
 	Repetir
 		
 		Escribir "Operatoria Bancaria"
@@ -67,23 +52,46 @@ Proceso OperativaBancaria
 		Segun operacion Hacer
 			1:
 				// Alta de Cliente
-				AltaCliente(clientes)
+				AltaCliente()
+				DetallarCuenta(cliente, cuentas)
 			2:
 				// Baja de Cliente
+				BajaCliente()
+				DetallarCuenta(cliente, cuentas)
 			3:
 				// Modificación de Cliente
+				ModificacionCliente(cliente)
+				DetallarCuenta(cliente, cuentas)
 			4:
 				// Alta de Cuenta
+				AltaCuenta()
+				DetallarCuenta(cliente, cuentas)
 			5:
 				// Baja de Cuenta
+				BajaCuenta()
+				DetallarCuenta(cliente, cuentas)
 			6:
 				// Modificación de Cuenta
+				ModificacionCuenta()
+				DetallarCuenta(cliente, cuentas)
 			7:
 				// Realizar Depósito
+				Escribir "Ingrese cuenta sobre la que operar (0 ó 1): "
+				Leer cuenta
+				Depositar(cuenta, cuentas)
+				DetallarCuenta(cliente, cuentas)
 			8:
 				// Realizar Retiro
+				Escribir "Ingrese cuenta sobre la que operar (0 ó 1): "
+				Leer cuenta
+				Retirar(cuenta, cuentas)
+				DetallarCuenta(cliente, cuentas)
 			9:
 				// Realizar Transferencia
+				Escribir "Ingrese cuenta sobre la que operar (0 ó 1): "
+				Leer cuenta
+				Transferir(cuenta, cuentas)
+				DetallarCuenta(cliente, cuentas)
 			10:
 				// Salir
 				Escribir "Gracias y vuelva pronto."
@@ -99,54 +107,114 @@ FinProceso
 
 // """ *------------------------>= [PROCEDIMIENTOS] <=----------------------------*
 
+// INFORMAR
+
+SubProceso DetallarCuenta(cliente Por Referencia, cuentas Por Referencia)
+	Escribir ""
+	Escribir "Datos de la Cuenta"
+	Escribir "------------------"
+	Escribir cliente, ", su saldo es: "
+	Para i <- 0 Hasta 1 Hacer
+		Escribir "En cuenta ", i, " hay $ ", cuentas[i]
+	FinPara
+	Escribir ""
+FinSubProceso
+
 // CLIENTES
 
-Funcion AltaCliente(clientes)
-	Para i <- 0 Hasta 1 Hacer
-		Escribir "Ingrese nombre del cliente ", i, ": "
-		Leer clientes[i]
-		Escribir "Cliente ingresado con código ", i
-	FinPara
+Funcion AltaCliente
+	Escribir "Usted ya está dado de alta."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
 Funcion BajaCliente
-	Escribir "Hola mundo!"
+	Escribir "No es posible aún realizar esa operación."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
-Funcion ModificacionCliente
-	Escribir "Hola mundo!"
+Funcion ModificacionCliente(cliente Por Referencia)
+	Escribir cliente, " ingrese su nuevo nombre"
+	Leer cliente
+	Escribir "Operación exitosa."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
 // CUENTAS
 
-Funcion AltaCuenta(cuentas)
-	Para i <- 0 Hasta 1 Hacer
-		Escribir "Ingrese nombre del cliente ", i, ": "
-		Leer cuentas[i]
-		Escribir "Cliente ingresado con código ", i
-	FinPara
+Funcion AltaCuenta
+	Escribir "No es posible aún realizar esa operación."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
 Funcion BajaCuenta
-	Escribir "Hola mundo!"
+	Escribir "No es posible aún realizar esa operación."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
 Funcion ModificacionCuenta
-	Escribir "Hola mundo!"
+	Escribir "Solo puede modificar los saldos de sus cuentas."
+	Escribir "Para ello, elija una operación del menú principal."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
 // OPERACIONES
 
-Funcion Depositar
-	Escribir "Hola mundo!"
+Funcion Depositar(cuenta Por Referencia, cuentas Por Referencia)
+	Definir importe Como Entero
+	Escribir "Ingrese importe a depositar: "
+	Leer importe
+	cuentas[cuenta] <- importe
+	Escribir "Operación exitosa."
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
-Funcion Retirar
-	Escribir "Hola mundo!"
+Funcion Retirar(cuenta Por Referencia, cuentas Por Referencia)
+	Definir importe Como Entero
+	Escribir "Ingrese importe a retirar: "
+	Leer importe
+	Si cuentas[cuenta] > importe Entonces
+		cuentas[cuenta] = cuentas[cuenta] - importe
+		Escribir "Operación exitosa."
+	SiNo
+		Escribir "Saldo insuficiente para hacer un retiro"
+	FinSi
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
 
-Funcion Transferir
-	Escribir "Hola mundo!"
+Funcion Transferir(cuenta Por Referencia, cuentas Por Referencia)
+	Definir importe Como Entero
+	Escribir "Ingrese importe a transferir: "
+	Leer importe
+	Si cuentas[cuenta] > importe Entonces
+		Si cuenta = 0 Entonces
+			cuentas[cuenta] = cuentas[cuenta] - importe
+			cuentas[1] = cuentas[1] + importe
+			Escribir "Operación exitosa."
+		SiNo
+			cuentas[cuenta] = cuentas[cuenta] - importe
+			cuentas[0] = cuentas[0] + importe
+			Escribir "Operación exitosa."
+		FinSi
+	SiNo
+		Escribir "Saldo insuficiente para hacer un retiro"
+	FinSi
+	Escribir "Presione un tecla para continuar..."
+	Esperar Tecla
+	Borrar Pantalla
 FinFuncion
-
-	
