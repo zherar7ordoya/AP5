@@ -16,7 +16,7 @@ Algoritmo OperativaBancaria
 	
 	// GLOBALES
 	Dimension clientes[2]
-	Dimension cuentas[2]
+	Dimension cuentas[4]
 	
 	Repetir
 		
@@ -60,6 +60,7 @@ Algoritmo OperativaBancaria
 				// Salir
 				Escribir "Gracias y vuelva pronto."
 				Escribir "Saliendo..."
+				Escribir "Ahora puede cerrar esta ventana."
 			De Otro Modo:
 				Escribir "Ingrese una opción válida"
 		Fin Segun
@@ -74,7 +75,7 @@ FinAlgoritmo
 
 Funcion AltaCliente(clientes)
 	Para i <- 0 Hasta 1 Hacer
-		Escribir "Ingrese el dato ", i, ": "
+		Escribir "Ingrese nombre del cliente ", i, ": "
 		Leer clientes[i]
 		Escribir "Cliente ingresado con código ", i
 	FinPara
@@ -90,8 +91,12 @@ FinFuncion
 
 // CUENTAS
 
-Funcion AltaCuenta
-	Escribir "Hola mundo!"
+Funcion AltaCuenta(cuentas)
+	Para i <- 0 Hasta 1 Hacer
+		Escribir "Ingrese nombre del cliente ", i, ": "
+		Leer cuentas[i]
+		Escribir "Cliente ingresado con código ", i
+	FinPara
 FinFuncion
 
 Funcion BajaCuenta
@@ -115,3 +120,10 @@ FinFuncion
 Funcion Transferir
 	Escribir "Hola mundo!"
 FinFuncion
+
+// MOSTRAR TODO
+
+Funcion MostrarTodo
+	
+FinFuncion
+	
