@@ -92,7 +92,7 @@ def depositar():
     importe = int()
     print("Ingrese importe a depositar: ")
     importe = int(input())
-    cuentas[CUENTA] = importe
+    cuentas[cuenta] += importe
     print("Operación exitosa.")
     print("Presione un tecla para continuar...")
     input() # a diferencia del pseudocódigo, espera un Enter, no cualquier tecla
@@ -103,8 +103,8 @@ def retirar():
     importe = int()
     print("Ingrese importe a retirar: ")
     importe = int(input())
-    if cuentas[CUENTA]>importe:
-        cuentas[CUENTA] = cuentas[CUENTA]-importe
+    if cuentas[cuenta]>importe:
+        cuentas[cuenta] = cuentas[cuenta]-importe
         print("Operación exitosa.")
     else:
         print("Saldo insuficiente para hacer un retiro")
@@ -117,13 +117,13 @@ def transferir():
     importe = int()
     print("Ingrese importe a transferir: ")
     importe = int(input())
-    if cuentas[CUENTA]>importe:
-        if CUENTA==0:
-            cuentas[CUENTA] = cuentas[CUENTA]-importe
+    if cuentas[cuenta]>importe:
+        if cuenta==0:
+            cuentas[cuenta] = cuentas[cuenta]-importe
             cuentas[1] = cuentas[1]+importe
             print("Operación exitosa.")
         else:
-            cuentas[CUENTA] = cuentas[CUENTA]-importe
+            cuentas[cuenta] = cuentas[cuenta]-importe
             cuentas[0] = cuentas[0]+importe
             print("Operación exitosa.")
     else:
@@ -141,7 +141,8 @@ if __name__ == '__main__':
     os.system('CLS')
 
     # GLOBALES
-    CUENTA = int()
+    #cuenta = 0
+    #cuenta = int()
     cuentas = [int() for ind0 in range(2)]
 
     # INICIALIZACIÓN
@@ -149,7 +150,7 @@ if __name__ == '__main__':
     print("Ingrese su nombre (y apellido): ")
     nya = input()
     cliente = [nya]
-    CUENTA = 0
+    #cuenta = 0
     cuentas[0] = 0
     cuentas[1] = 0
 
@@ -197,19 +198,19 @@ if __name__ == '__main__':
         elif operacion==7:
             # Realizar Depósito
             print("Ingrese CUENTA sobre la que operar (0 ó 1): ")
-            CUENTA = int(input())
+            cuenta = int(input())
             depositar()
             detallar_cuenta()
         elif operacion==8:
             # Realizar Retiro
             print("Ingrese CUENTA sobre la que operar (0 ó 1): ")
-            CUENTA = int(input())
+            cuenta = int(input())
             retirar()
             detallar_cuenta()
         elif operacion==9:
             # Realizar Transferencia
             print("Ingrese CUENTA sobre la que operar (0 ó 1): ")
-            CUENTA = int(input())
+            cuenta = int(input())
             transferir()
             detallar_cuenta()
         elif operacion==10:
