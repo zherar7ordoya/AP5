@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+"""
+                        [DESCRIPCIÓN DE ESTE MÓDULO]
 
-""" *------------------>= [DESCRIPCIÓN DE ESTE MÓDULO] <=----------------------*
 Ejercicio del banco (usando estructurada).
 
 Nota:
@@ -13,7 +13,7 @@ __author__ = "Gerardo Tordoya"
 __date__ = "2022-09-15"
 
 
-# *--------------------------->= [PROCEDIMIENTOS] <=---------------------------*
+############################### [Procedimientos] ###############################
 
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
@@ -31,7 +31,9 @@ def pausar_pantalla():
     input()
     os.system('CLS')
 
-# CLIENTES.---------------------------------------------------------------------
+#
+##
+### CLIENTES
 
 def alta_cliente():
     """ Alta de un nuevo cliente """
@@ -52,8 +54,9 @@ def modificacion_cliente(cadena):
     print("Operación exitosa.")
     pausar_pantalla()
 
-
-# CUENTAS.----------------------------------------------------------------------
+#
+##
+### CUENTAS
 
 def alta_cuenta():
     """ Alta de una nueva cuenta """
@@ -71,8 +74,9 @@ def modificacion_cuenta():
     print("Para ello, elija una operación del menú principal.")
     pausar_pantalla()
 
-
-# OPERACIONES.------------------------------------------------------------------
+#
+##
+### OPERACIONES
 
 def depositar():
     """ Deposito de dinero en una cuenta """
@@ -114,7 +118,7 @@ def transferir():
     pausar_pantalla()
 
 
-#*-------------------------->= [PROGAMA PRINCIPAL] <=--------------------------*
+############################# [Programa principal] #############################
 
 if __name__ == '__main__':
 
