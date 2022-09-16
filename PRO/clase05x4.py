@@ -118,12 +118,24 @@ def transferir():
     pausar_pantalla()
 
 
+def print_centre(cadena):
+    """ Imprime un string centrado """
+    print(' ' * ((os.get_terminal_size().columns - len(cadena))//2) + cadena)
+
 ############################# [Programa principal] #############################
 
 if __name__ == '__main__':
 
+    #from colorama import init, Fore, Back, Style, Cursor
+    from termcolor import colored
     import os
+
     os.system('CLS')
+
+    print_centre("BANCO DE LA NACIÓN ARGENTINA")
+
+    os.system('color')
+    print(colored('hello', 'red'), colored('world', 'green'))
 
     print("Ingrese su nombre (y apellido):")
     cliente = [input()]
