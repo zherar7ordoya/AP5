@@ -17,11 +17,11 @@ __date__ = "2022-09-15"
 
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
-    print("DATOS DE LA CUENTA")
-    print("")
-    print(cliente[0], "su saldo es:")
+    os.system('CLS')
+    print_centre("SALDOS DE LA CUENTA\n")
+    print(cliente[0], "\n")
     for i in range(2):
-        print("En la cuenta",i ,"hay $", cuentas[i])
+        print("\tSaldo cuenta", i, "en $", cuentas[i])
     print("")
     print("Seleccione Opción")
 
@@ -117,27 +117,25 @@ def transferir():
         print("Saldo insuficiente para hacer esa transferencia.")
     pausar_pantalla()
 
-
-def print_centre(cadena):
+# Método genérico de centrado de texto en consola.
+def print_centre(texto):
     """ Imprime un string centrado """
-    print(' ' * ((os.get_terminal_size().columns - len(cadena))//2) + cadena)
+    print("\n" + Fore.GREEN + ' ' * ((os.get_terminal_size().columns - len(texto))//2) + texto)
 
 ############################# [Programa principal] #############################
 
 if __name__ == '__main__':
 
-    #from colorama import init, Fore, Back, Style, Cursor
-    from termcolor import colored
     import os
+    import colorama
+    from colorama import Fore
 
     os.system('CLS')
+    colorama.init(autoreset = True)
 
-    print_centre("BANCO DE LA NACIÓN ARGENTINA")
-
-    os.system('color')
-    print(colored('hello', 'red'), colored('world', 'green'))
-
-    print("Ingrese su nombre (y apellido):")
+    # Este centrado usa un método genérico de centrado de texto en consola.
+    print_centre("BANCO DE LA NACIÓN ARGENTINA\n")
+    print("Ingrese su nombre (y apellido):\n")
     cliente = [input()]
     print("")
     cuentas = [int() for idx in range(2)]
@@ -187,7 +185,8 @@ if __name__ == '__main__':
                 cuenta = int(input())
                 transferir()
             case 10:
-                print("Gracias por utilizar nuestros servicios.")
+                os.system('CLS')
+                print_centre("Gracias por utilizar nuestros servicios.\n")
                 break
             case _:
                 print("Opción inválida.")
