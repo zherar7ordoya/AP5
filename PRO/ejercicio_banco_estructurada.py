@@ -17,7 +17,7 @@ __date__    = "2022-XX-XX"
 __version__ = "Python 3.10.7"
 
 
-# ----------------------------- [PROCEDIMIENTOS] ----------------------------- #
+# --------------------------->= [PROCEDIMIENTOS] <=--------------------------- #
 
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
@@ -130,7 +130,7 @@ def print_centre(texto):
     print("\n" + Fore.GREEN + ' ' * ((os.get_terminal_size().columns - len(texto))//2) + texto)
 
 
-# --------------------------- [PROGRAMA PRINCIPAL] --------------------------- #
+# ------------------------->= [PROGRAMA PRINCIPAL] <=------------------------- #
 
 if __name__ == '__main__':
 
