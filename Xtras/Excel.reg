@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.xlsx\Excel.Sheet.12\ShellNew]
+"FileName"="C:\\Program Files (x86)\\Microsoft Office\\Root\\VFS\\Windows\\ShellNew\\excel12.xlsx"
