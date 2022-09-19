@@ -47,7 +47,6 @@ def maximo(ath, bth):
     else:
         return "Son iguales"
 
-
 respuesta = maximo(5, 5)
 print(respuesta)
 

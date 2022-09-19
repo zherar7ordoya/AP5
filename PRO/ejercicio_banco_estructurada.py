@@ -22,7 +22,7 @@ __version__ = "Python 3.10.7"
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
     os.system('CLS')
-    print_centre("SALDOS DE LA CUENTA\n")
+    print_center("SALDOS DE LA CUENTA\n")
     print(cliente[0], "\n")
     for i in range(2):
         print("\tSaldo cuenta", i, "en $", cuentas[i])
@@ -123,7 +123,7 @@ def transferir():
 # Herramientas
 # ************
 
-def print_centre(texto):
+def print_center(texto):
     """ Método genérico de consola para imprimir texto centrado. """
     print("\n" + Fore.GREEN + ' ' * ((os.get_terminal_size().columns - len(texto))//2) + texto)
 
@@ -139,8 +139,7 @@ if __name__ == '__main__':
     os.system('CLS')
     colorama.init(autoreset = True)
 
-    # Este centrado usa un método genérico de centrado de texto en consola.
-    print_centre("BANCO DE LA NACIÓN ARGENTINA\n")
+    print_center("BANCO DE LA NACIÓN ARGENTINA\n")
     print("Ingrese su nombre (y apellido):\n")
     cliente = [input()]
     print("")
@@ -192,7 +191,7 @@ if __name__ == '__main__':
                 transferir()
             case 10:
                 os.system('CLS')
-                print_centre("Gracias por utilizar nuestros servicios.\n")
+                print_center("Gracias por utilizar nuestros servicios.\n")
                 break
             case _:
                 print("Opción inválida.")
