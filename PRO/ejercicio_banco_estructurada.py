@@ -50,9 +50,7 @@ def baja_cliente():
     pausar_pantalla()
 
 def modificacion_cliente(cadena):
-    """ Mañoso!
-        stackoverflow.com/a/55992372/14009797
-    """
+    """ stackoverflow.com/a/55992372/14009797 """
     print(cliente[0], "ingrese su nuevo nombre:")
     cadena[0] = input()
     print("Operación exitosa.")
