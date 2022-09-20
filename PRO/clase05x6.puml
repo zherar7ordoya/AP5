@@ -2,7 +2,7 @@
 
 ' El comando para generar el diagrama es: pyreverse -ASmy -o puml clase05x6.py
 ' La solución la hallé en: https://github.com/PyCQA/pylint/issues/5950
-' ChrisKeefe, a su vez, lo halló en: https://pylint.pycqa.org/en/v2.12.2/additional_commands/index.html?highlight=.puml#example-output
+' https://pylint.pycqa.org/en/v2.15.3/pyreverse.html
 
 set namespaceSeparator none
 class "clase05x6.Empleado" as clase05x6.Empleado {

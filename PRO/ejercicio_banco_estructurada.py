@@ -125,7 +125,12 @@ def transferir():
 
 def print_center(texto):
     """ Método genérico de consola para imprimir texto centrado. """
-    print("\n" + Fore.GREEN + ' ' * ((os.get_terminal_size().columns - len(texto))//2) + texto)
+    print(
+        "\n" +
+        Fore.GREEN +
+        ' ' * ((os.get_terminal_size().columns - len(texto))//2) +
+        texto
+        )
 
 
 # ------------------------->= [PROGRAMA PRINCIPAL] <=------------------------- #
