@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
+
+// VERDE
 
 namespace MediadorConsola
 {
@@ -19,24 +17,19 @@ namespace MediadorConsola
             ColegaA Luis = new ColegaA("Luis", mediador);
             ColegaB David = new ColegaB("David", mediador);
 
-            Ana.Enviar("Saludos a todos");
-            Luis.Enviar("¿Cómo están?");
-            David.Enviar("Bien, gracias");
+            Ana.Enviar("SALUDOS A TODOS");
+            Luis.Enviar("¿CÓMO ESTÁN?");
+            David.Enviar("BIEN, GRACIAS");
 
-            WriteLine();
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine("\n========================= (censura)");
+            Luis.Enviar("DIGO PALABROTA AHORA");
 
-            ForegroundColor = ConsoleColor.White;
-            WriteLine(" *** VERIFICAMOS CENSURA *** \n");
-            Luis.Enviar("La palabrota no me gusta...");
-            WriteLine();
-
-            mediador.Bloqueo(Luis.Recibir);
-            Ana.Enviar("Vean los vídeos");
-            WriteLine();
+            mediador.Bloquear(Luis.Recibir);
+            Ana.Enviar("VEAN LOS VIDEOS");
 
             mediador.Suscribir(Luis.Recibir);
-            David.Enviar("Me gusta C#");
-            WriteLine();
+            David.Enviar("ME GUSTA CSHARP");
 
             ReadKey();
         }

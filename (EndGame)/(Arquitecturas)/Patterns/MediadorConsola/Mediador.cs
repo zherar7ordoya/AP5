@@ -1,43 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
+
+// BLANCO
 
 namespace MediadorConsola
 {
     public class Mediador
     {
         // Creamos un delegado que usaremos para invocar los métodos
-        public delegate void DEnvio(string emisor, string mensaje);
-        DEnvio enviarMensaje;
+        public delegate void MiDelegado(string emisor, string mensaje);
+        MiDelegado DelegadoEnviarMensaje;
 
         // Añadimos los métodos que queremos invocar
-        public void Suscribir(DEnvio metodo)
+        public void Suscribir(MiDelegado metodo)
         {
-            enviarMensaje += metodo;
-            ForegroundColor = ConsoleColor.Green;
-            WriteLine("Se ha suscrito un nuevo método");
+            DelegadoEnviarMensaje += metodo;
+            ForegroundColor = ConsoleColor.White;
+            WriteLine("(método suscripto)");
         }
 
         public void Enviar(string emisor, string mensaje)
         {
             // Usamos el mediador para censurar
-            if (mensaje.Contains("palabrota")) mensaje = mensaje.Replace("palabrota", "*****");
+            if (mensaje.Contains("PALABROTA")) mensaje = mensaje.Replace("PALABROTA", "*****");
 
             // Enviamos los mensajes correspondientes via delegado
-            enviarMensaje(emisor, mensaje);
-            ForegroundColor = ConsoleColor.Red;
-            WriteLine("\nMensaje enviado\n");
+            DelegadoEnviarMensaje(emisor, mensaje);
+            ForegroundColor = ConsoleColor.White;
+            WriteLine("\n(mensaje enviado)");
         }
 
         // Quitamos los métodos que ya no queremos invocar
-        public void Bloqueo(DEnvio metodo)
+        public void Bloquear(MiDelegado metodo)
         {
-            enviarMensaje -= metodo;
+            DelegadoEnviarMensaje -= metodo;
             ForegroundColor = ConsoleColor.Red;
-            WriteLine(" --- BLOQUEO --- ");
+            WriteLine("\n========================= (bloqueo)");
         }
     }
 }

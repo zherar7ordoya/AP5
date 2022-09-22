@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static System.Console;
+
+// AMARILLO
 
 namespace MediadorConsola
 {
     public class ColegaA : IColega
     {
-        private Mediador mediador;
-        private string nombre;
+        private readonly Mediador mediador;
+        private readonly string nombre;
 
         public ColegaA(string nombre, Mediador mediador)
         {
@@ -24,8 +22,8 @@ namespace MediadorConsola
             if (nombre != emisor)
             {
                 // Lleva a cabo la recepción según su lógica
-                ForegroundColor = ConsoleColor.Blue;
-                WriteLine("Soy {0}, recibí de {1}: {2}", nombre, emisor, mensaje);
+                ForegroundColor = ConsoleColor.Yellow;
+                WriteLine("Soy {0} (Tipo A) recibo de {1}: {2}", nombre, emisor, mensaje);
             }
         }
 
@@ -33,8 +31,8 @@ namespace MediadorConsola
         {
             // Lleva a cabo el envío según su lógica.
             // No necesariamente debe ser un parámetro.
-            ForegroundColor = ConsoleColor.Blue;
-            WriteLine("Soy {0} (tipo A), envío este mensaje: {1}\n", nombre, mensaje);
+            ForegroundColor = ConsoleColor.Yellow;
+            WriteLine("\nSoy {0} (tipo A) || {1}\n", nombre, mensaje);
             mediador.Enviar(nombre, mensaje);
         }
     }
