@@ -10,8 +10,8 @@
 
     class Dwelling
     {
-    +int Windows
-    +void LockTheDoor()
+        +int Windows
+        +void LockTheDoor()
     }
 
     class Apartment

@@ -18,12 +18,21 @@ skinparam shadowing false
 ' @version 1.0
 ' @date 2022-09-21
 
-title Gerardo Tordoya
+title Patrón de diseño Mediador
 
-Alpha -> Bravo: Mensaje enviado
-Bravo -> Charlie: Mensaje reenviado
-Charlie --> Alpha: Mensaje recibido
+interface IColega
+{
+    + Informa()
+    + Actualiza()
+}
 
-caption www.planttext.com
+class Mediador
+class Colega
+
+IColega <|.. Colega
+Colega "0..*"--o Mediador
+Colega -- Mediador
+
+caption youtu.be/s4j92Rj7TJk
 
 @enduml
