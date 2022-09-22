@@ -34,7 +34,7 @@ namespace MediadorConsola
             // Lleva a cabo el envío según su lógica.
             // No necesariamente debe ser un parámetro.
             ForegroundColor = ConsoleColor.Blue;
-            WriteLine("Soy {0}, envío este mensaje: {1}\n", nombre, mensaje);
+            WriteLine("Soy {0} (tipo A), envío este mensaje: {1}\n", nombre, mensaje);
             mediador.Enviar(nombre, mensaje);
         }
     }
