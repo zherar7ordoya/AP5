@@ -1,33 +1,40 @@
 ﻿using DemoLibrary;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static System.Console;
 
 namespace ConsoleUI
 {
     class Program
     {
-        static ShoppingCartModel cart = new ShoppingCartModel();
+        // VARIABLES GLOBALES.-------------------------------------------------
+        static readonly CarritoDeCompras carrito = new CarritoDeCompras();
 
-        static void Main(string[] args)
+        // MÉTODO PRINCIPAL.---------------------------------------------------
+        static void Main()
         {
-            PopulateCartWithDemoData();
+            CargarCarrito();
 
-            
+            WriteLine($"Your total for this {carrito.Items.Count} " +
+                      $"item(s) order is " +
+                      // Aquí es donde obtengo mi dos returns:
+                      $"{carrito.CalcularTotal(AlertarSubtotal):C2}.");
 
-            Console.WriteLine();
-            Console.Write("Please press any key to exit the application...");
-            Console.ReadKey();
+            WriteLine();
+            Write("Please press any key to exit the application...");
+            ReadKey();
         }
 
-        private static void PopulateCartWithDemoData()
+        // OTROS MÉTODOS.------------------------------------------------------
+        private static void CargarCarrito()
         {
-            cart.Items.Add(new ProductModel { ItemName = "Cereal", Price = 3.63M });
-            cart.Items.Add(new ProductModel { ItemName = "Milk", Price = 2.95M });
-            cart.Items.Add(new ProductModel { ItemName = "Strawberries", Price = 7.51M });
-            cart.Items.Add(new ProductModel { ItemName = "Blueberries", Price = 8.84M });
+            carrito.Items.Add(new Producto { Nombre = "Cereal", Precio = 3.63M });
+            carrito.Items.Add(new Producto { Nombre = "Milk", Precio = 2.95M });
+            carrito.Items.Add(new Producto { Nombre = "Strawberries", Precio = 7.51M });
+            carrito.Items.Add(new Producto { Nombre = "Blueberries", Precio = 8.84M });
+        }
+
+        private static void AlertarSubtotal(decimal subtotal)
+        {
+            WriteLine($"Your subtotal is {subtotal:C2}.");
         }
     }
 }

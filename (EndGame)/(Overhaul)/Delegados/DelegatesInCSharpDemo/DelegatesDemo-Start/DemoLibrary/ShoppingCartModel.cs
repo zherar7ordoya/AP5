@@ -1,18 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoLibrary
 {
-    public class ShoppingCartModel
+    public class CarritoDeCompras
     {
-        public List<ProductModel> Items { get; set; } = new List<ProductModel>();
+        /* Yo sé lo que mi hipotético método necesitaría para mandar ese famoso
+        primer return (nota de abajo). Entonces, lo defino aquí, el lugar más
+        cómodo para hacerlo. */
+        public delegate void MostrarSubtotal(decimal total);
         
-        public decimal GenerateTotal()
+        public List<Producto> Items { get; set; } = new List<Producto>();
+        
+        /* Perdón, pero insisto: aquí vemos lo necesario para los 2 returns:
+        el parámetro es un método. Y obviamente, un método no es un tipo (al
+        menos, no un tipo ya definido): yo lo tengo que definir, y lo hice,
+        líneas arriba, al declarar el delegado. Es más, si lo medito un poco,
+        tal vez llamando PUNTERO (apuntador) a DELEGATE, a lo mejor vea el
+        asunto con más claridad. Veamos... */
+        public decimal CalcularTotal(MostrarSubtotal metodo)
         {
-            throw new NotImplementedException();
+            decimal total = Items.Sum(x => x.Precio);
+
+            /* He "traído" el método declarado en Main hasta aquí (lo he tomado
+            "prestado" desde allí) y lo ejecuto aquí. ¿Por qué? Yo aquí tengo
+            todos los elementos que Main no tiene y podría pasarle (a Main)
+            tanto el subtotal como el total, pero pasar ambos datos mediante
+            return... no es muy elegante. Podría también mandarlo por aquí
+            a la consola pero violentaría el concepto de librería. Sin embargo,
+            en cierta manera (para simplificar el problema) sí lo hago,  y lo
+            hago "tomando prestado" un método de Main. */
+            metodo(total);
+
+            if (total > 100) return total * 0.80M;
+            if (total > 50) return total * 0.85M;
+            if (total > 10) return total * 0.90M;
+            return total;
         }
     }
 }

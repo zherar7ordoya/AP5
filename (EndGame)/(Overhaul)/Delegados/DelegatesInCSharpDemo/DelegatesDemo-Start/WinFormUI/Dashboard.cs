@@ -1,19 +1,12 @@
 ﻿using DemoLibrary;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormUI
 {
     public partial class Dashboard : Form
     {
-        ShoppingCartModel cart = new ShoppingCartModel();
+        readonly CarritoDeCompras cart = new CarritoDeCompras();
 
         public Dashboard()
         {
@@ -23,10 +16,10 @@ namespace WinFormUI
 
         private void PopulateCartWithDemoData()
         {
-            cart.Items.Add(new ProductModel { ItemName = "Cereal", Price = 3.63M });
-            cart.Items.Add(new ProductModel { ItemName = "Milk", Price = 2.95M });
-            cart.Items.Add(new ProductModel { ItemName = "Strawberries", Price = 7.51M });
-            cart.Items.Add(new ProductModel { ItemName = "Blueberries", Price = 8.84M });
+            cart.Items.Add(new Producto { Nombre = "Cereal", Precio = 3.63M });
+            cart.Items.Add(new Producto { Nombre = "Milk", Precio = 2.95M });
+            cart.Items.Add(new Producto { Nombre = "Strawberries", Precio = 7.51M });
+            cart.Items.Add(new Producto { Nombre = "Blueberries", Precio = 8.84M });
         }
 
         private void messageBoxDemoButton_Click(object sender, EventArgs e)
