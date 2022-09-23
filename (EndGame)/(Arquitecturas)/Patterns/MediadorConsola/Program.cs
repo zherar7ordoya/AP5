@@ -22,7 +22,7 @@ namespace MediadorConsola
             David.Enviar("BIEN, GRACIAS");
 
             ForegroundColor = ConsoleColor.Green;
-            WriteLine("\n========================= (censura)");
+            WriteLine("\n============================================== (censura)");
             Luis.Enviar("DIGO PALABROTA AHORA");
 
             mediador.Bloquear(Luis.Recibir);

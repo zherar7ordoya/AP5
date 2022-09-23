@@ -16,7 +16,7 @@ namespace MediadorConsola
         {
             DelegadoEnviarMensaje += metodo;
             ForegroundColor = ConsoleColor.White;
-            WriteLine("(método suscripto)");
+            WriteLine("------------------------------------------ (suscripción)");
         }
 
         public void Enviar(string emisor, string mensaje)
@@ -27,7 +27,7 @@ namespace MediadorConsola
             // Enviamos los mensajes correspondientes via delegado
             DelegadoEnviarMensaje(emisor, mensaje);
             ForegroundColor = ConsoleColor.White;
-            WriteLine("\n(mensaje enviado)");
+            WriteLine("\n-------------------------------------- (mensaje enviado)");
         }
 
         // Quitamos los métodos que ya no queremos invocar
@@ -35,7 +35,7 @@ namespace MediadorConsola
         {
             DelegadoEnviarMensaje -= metodo;
             ForegroundColor = ConsoleColor.Red;
-            WriteLine("\n========================= (bloqueo)");
+            WriteLine("\n============================================== (bloqueo)");
         }
     }
 }

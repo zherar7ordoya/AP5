@@ -1,23 +1,17 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-"""
-                        [DESCRIPCIÓN DE ESTE MÓDULO]
-
-Ejercicio del banco (usando estructurada).
-
-Nota:
-En Python no hay forma de elegir como pasar una variable a una funcion (por
-referencia o por valor). Las variables "inmutables" (str, int, float, bool) se
-pasan siempre por copia mientras que las demas (listas, objetos, etc.) se pasan
-siempre por referencia.
+""" EJERCICIO DEL BANCO
+Las consignas del ejercicio están en ejercicio_banco_estructurada.md (adjunto).
+En esta version el ejercicio fue resuelto usando progración estructurada.
 """
 
 __author__  = "Gerardo Tordoya"
 __date__    = "2022-XX-XX"
-__version__ = "Python 3.10.7"
+__python__  = "3.10.7"
 
 
-# --------------------------->= [PROCEDIMIENTOS] <=--------------------------- #
+
+# --------------------------------------------------------------- PROCEDIMIENTOS
 
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
@@ -36,8 +30,9 @@ def pausar_pantalla():
     os.system('CLS')
 
 
+# --------
 # Clientes
-# ********
+# --------
 
 def alta_cliente():
     """ Alta de un nuevo cliente """
@@ -57,8 +52,9 @@ def modificacion_cliente(cadena):
     pausar_pantalla()
 
 
+# -------
 # Cuentas
-# *******
+# -------
 
 def alta_cuenta():
     """ Alta de una nueva cuenta """
@@ -77,8 +73,9 @@ def modificacion_cuenta():
     pausar_pantalla()
 
 
+# -----------
 # Operaciones
-# ***********
+# -----------
 
 def depositar():
     """ Deposito de dinero en una cuenta """
@@ -120,8 +117,9 @@ def transferir():
     pausar_pantalla()
 
 
+# ------------
 # Herramientas
-# ************
+# ------------
 
 def print_center(texto):
     """ Método genérico de consola para imprimir texto centrado. """
@@ -133,7 +131,7 @@ def print_center(texto):
         )
 
 
-# ------------------------->= [PROGRAMA PRINCIPAL] <=------------------------- #
+# ----------------------------------------------------------- PROGRAMA PRINCIPAL
 
 if __name__ == '__main__':
 
