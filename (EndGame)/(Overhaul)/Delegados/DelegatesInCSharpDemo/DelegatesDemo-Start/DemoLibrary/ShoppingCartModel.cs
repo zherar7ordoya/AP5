@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DemoLibrary
@@ -18,9 +19,14 @@ namespace DemoLibrary
         líneas arriba, al declarar el delegado. Es más, si lo medito un poco,
         tal vez llamando PUNTERO (apuntador) a DELEGATE, a lo mejor vea el
         asunto con más claridad. Veamos... */
-        public decimal CalcularTotal(MostrarSubtotal metodo)
+        public decimal CalcularTotal
+            (
+            MostrarSubtotal metodo,
+            Func<List<Producto>, decimal, decimal> CalculateDiscountedTotal,
+            Action<string> TellUserWeAreDiscounting
+            )
         {
-            decimal total = Items.Sum(x => x.Precio);
+            decimal subtotal = Items.Sum(x => x.Precio);
 
             /* He "traído" el método declarado en Main hasta aquí (lo he tomado
             "prestado" desde allí) y lo ejecuto aquí. ¿Por qué? Yo aquí tengo
@@ -30,12 +36,9 @@ namespace DemoLibrary
             a la consola pero violentaría el concepto de librería. Sin embargo,
             en cierta manera (para simplificar el problema) sí lo hago,  y lo
             hago "tomando prestado" un método de Main. */
-            metodo(total);
-
-            if (total > 100) return total * 0.80M;
-            if (total > 50) return total * 0.85M;
-            if (total > 10) return total * 0.90M;
-            return total;
+            metodo(subtotal);
+            TellUserWeAreDiscounting("We are applying your discount...");
+            return CalculateDiscountedTotal(Items, subtotal);
         }
     }
 }
