@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace DemoLibrary
 {
@@ -11,12 +7,16 @@ namespace DemoLibrary
         public string AccountName { get; set; }
         public decimal Balance { get; private set; }
 
-        private List<string> _transactions = new List<string>();
-
+        // -------------------------------------------------------------------*
+        /* El guión bajo aquí indica que es un campo de respaldo privado, lo 
+         * que significa que admite una propiedad completa.----------------- */
+        private readonly List<string> _transactions = new List<string>();
+        //                            ↕ ↕ ↕ ↕ ↕ ↕
         public IReadOnlyList<string> Transactions
         {
             get { return _transactions.AsReadOnly(); }
         }
+        // -------------------------------------------------------------------*
 
         public bool AddDeposit(string depositName, decimal amount)
         {
