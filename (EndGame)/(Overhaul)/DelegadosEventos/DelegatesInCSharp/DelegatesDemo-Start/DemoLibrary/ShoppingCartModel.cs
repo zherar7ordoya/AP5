@@ -37,7 +37,7 @@ namespace DemoLibrary
             en cierta manera (para simplificar el problema) sí lo hago,  y lo
             hago "tomando prestado" un método de Main. */
             metodo(subtotal);
-            TellUserWeAreDiscounting("We are applying your discount...");
+            TellUserWeAreDiscounting("STATUS: APPLYING DISCOUNT...");
             return CalculateDiscountedTotal(Items, subtotal);
         }
     }

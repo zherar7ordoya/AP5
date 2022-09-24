@@ -1,6 +1,7 @@
 ﻿using DemoLibrary;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WinFormUI
@@ -25,8 +26,8 @@ namespace WinFormUI
 
         private void messageBoxDemoButton_Click(object sender, EventArgs e)
         {
-            decimal total = cart.CalcularTotal(SubTotalAlert, CalculateLeveledDiscount, PrintOutDiscountAlert);
-            MessageBox.Show($"The total for the cart is {total:C2}");
+            decimal total = cart.CalcularTotal(PrintSubtotal, CalculateTotal, PrintAlert);
+            MessageBox.Show($"Total del carrito: {total:C2}");
         }
 
         private void textBoxDemoButton_Click(object sender, EventArgs e)
@@ -40,21 +41,22 @@ namespace WinFormUI
             totalTextBox.Text = $"{total:C2}";
         }
 
-        // DELEGADOS ---------------------------------------------------------*
+        // -------------------------------------------------------------------*
 
-        private void PrintOutDiscountAlert(string discountMessage)
+        private void PrintSubtotal(decimal subtotal)
         {
-            MessageBox.Show(discountMessage);
+            MessageBox.Show($"El subtotal es {subtotal:C}");
         }
 
-        private void SubTotalAlert(decimal subTotal)
+        private decimal CalculateTotal(List<Producto> productos, decimal subtotal)
         {
-            MessageBox.Show($"El subtotal es {subTotal:C}");
+            return subtotal - productos.Count;
+        }
+        
+        private void PrintAlert(string mensaje)
+        {
+            MessageBox.Show(mensaje);
         }
 
-        private decimal CalculateLeveledDiscount(List<Producto> productos, decimal subTotal)
-        {
-            return subTotal - productos.Count;
-        }
     }
 }
