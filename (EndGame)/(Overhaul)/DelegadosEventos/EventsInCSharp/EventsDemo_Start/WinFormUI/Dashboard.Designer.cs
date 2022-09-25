@@ -158,7 +158,7 @@
             this.recordTransactionsButton.TabIndex = 11;
             this.recordTransactionsButton.Text = "Record Transactions";
             this.recordTransactionsButton.UseVisualStyleBackColor = true;
-            this.recordTransactionsButton.Click += new System.EventHandler(this.recordTransactionsButton_Click);
+            this.recordTransactionsButton.Click += new System.EventHandler(this.RecordTransactionsButton_Click);
             // 
             // errorMessage
             // 
@@ -170,7 +170,7 @@
             this.errorMessage.TabIndex = 12;
             this.errorMessage.Text = "You had an overdraft protection transfer of $0.00";
             this.errorMessage.Visible = false;
-            this.errorMessage.Click += new System.EventHandler(this.errorMessage_Click);
+            this.errorMessage.Click += new System.EventHandler(this.ErrorMessage_Click);
             // 
             // Dashboard
             // 

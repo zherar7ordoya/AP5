@@ -1,4 +1,8 @@
-﻿using DemoLibrary;
+﻿/* TIM COREY
+ * C# Events - Creating and Consuming Events in Your Application
+ * https://youtu.be/-1cftB9q1kQ */
+
+using DemoLibrary;
 using System;
 using System.Windows.Forms;
 
@@ -35,15 +39,39 @@ namespace WinFormUI
             savingsTransactions.DataSource = customer.SavingsAccount.Transactions;
             checkingBalanceValue.Text = string.Format("{0:C2}", customer.CheckingAccount.Balance);
             savingsBalanceValue.Text = string.Format("{0:C2}", customer.SavingsAccount.Balance);
+
+            customer.CheckingAccount.TransactionApprovedEvent += CheckingAccount_TransactionApprovedEvent;
+            customer.SavingsAccount.TransactionApprovedEvent += SavingsAccount_TransactionApprovedEvent;
+            customer.CheckingAccount.OverdraftEvent += CheckingAccount_OverdraftEvent;
         }
 
-        private void recordTransactionsButton_Click(object sender, EventArgs e)
+        private void CheckingAccount_OverdraftEvent(object sender, decimal e)
+        {
+            errorMessage.Text = $"You had and overdraft protection transfer of {string.Format("{0:C2}", e)}";
+            errorMessage.Visible = true;
+        }
+
+        private void SavingsAccount_TransactionApprovedEvent(object sender, string e)
+        {
+            savingsTransactions.DataSource = null;
+            savingsTransactions.DataSource = customer.SavingsAccount.Transactions;
+            savingsBalanceValue.Text = string.Format("{0:C2}", customer.SavingsAccount.Balance);
+        }
+
+        private void CheckingAccount_TransactionApprovedEvent(object sender, string e)
+        {
+            checkingTransactions.DataSource = null;
+            checkingTransactions.DataSource = customer.CheckingAccount.Transactions;
+            checkingBalanceValue.Text = string.Format("{0:C2}", customer.CheckingAccount.Balance);
+        }
+
+        private void RecordTransactionsButton_Click(object sender, EventArgs e)
         {
             Transactions transactions = new Transactions(customer);
             transactions.Show();
         }
 
-        private void errorMessage_Click(object sender, EventArgs e)
+        private void ErrorMessage_Click(object sender, EventArgs e)
         {
             errorMessage.Visible = false;
         }

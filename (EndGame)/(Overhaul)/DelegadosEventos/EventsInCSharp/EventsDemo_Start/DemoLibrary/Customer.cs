@@ -1,4 +1,8 @@
-﻿namespace DemoLibrary
+﻿/* TIM COREY
+ * C# Events - Creating and Consuming Events in Your Application
+ * https://youtu.be/-1cftB9q1kQ */
+
+namespace DemoLibrary
 {
     public class Customer
     {

@@ -4,6 +4,11 @@ using static System.Console;
 
 namespace ConsoleUI
 {
+    /// <summary>
+    /// TIM COREY
+    /// Delegates in C# - A practical demonstration, including Action and Func
+    /// https://youtu.be/R8Blt5c-Vi4
+    /// </summary>
     class Program
     {
         static readonly CarritoDeCompras carrito = new CarritoDeCompras();
