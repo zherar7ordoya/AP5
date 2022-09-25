@@ -20,7 +20,7 @@ namespace WinFormUI
             _customer.CheckingAccount.OverdraftEvent += CheckingAccount_OverdraftEvent;
         }
 
-        private void CheckingAccount_OverdraftEvent(object sender, decimal e)
+        private void CheckingAccount_OverdraftEvent(object sender, OverdraftEventArgs e)
         {
             errorMessage.Visible = true;
         }
