@@ -478,23 +478,24 @@ def display_menu():
 
     print()
 
-    print("  ┌────────────────┐  ╭───────────────────────╮           ")
-    print("  │  ╭┼┼╮          │  │ ▶︎ 1 • Create Account  │           ")
-    print("  │  ╰┼┼╮          │  ├───────────────────────┴─────╮     ")
-    print("  │  ╰┼┼╯          │  │ ▶︎ 2 • Perform Transaction   │     ")
-    print("  │                │  ├────────────────────────────┬╯     ")
-    print("  │  D R A G O N   │  │ ▶︎ 3 • Update Account Info  │      ")
-    print("  │  B A N K       │  ├───────────────────────┬────╯      ")
-    print("  │                │  │ ▶︎ 4 • Delete Account  │           ")
-    print("  │                │  ├───────────────────────┴────╮      ")
-    print("  │                │  │ ▶︎ 5 • Search Account Info  │      ")
-    print("  │                │  ├────────────────────────────┴╮     ")
-    print("  │ ║│┃┃║║│┃║│║┃│  │  │ ▶︎ 6 • View Customer's List  │     ")
-    print("  │ ║│┃┃║║│┃║│║┃│  │  ├────────────────────┬────────╯     ")
-    print("  │                │  │ ▶︎ 7 • Exit System  │              ")
-    print("  └────────────────┘  ╰────────────────────╯              ")
-
-    user_choice = int(input("\n  ☞ Enter your command: "))
+    print("""
+        ┌─────────────────┐  ╭──────────────────────────╮
+        │                 │  │ ▸ 1 Create Account       │
+        │      ╭┼┼╮       │  ├──────────────────────────┤
+        │      ╰┼┼╮       │  │ ▸ 2 Perform Transaction  │
+        │      ╰┼┼╯       │  ├──────────────────────────┤
+        │                 │  │ ▸ 3 Update Account Info  │
+        │   B A N C O  ▸  │  ├──────────────────────────┤
+        │  UNIVERSIDAD ▸  │  │ ▸ 4 Delete Account       │
+        │                 │  ├──────────────────────────┤
+        │                 │  │ ▸ 5 Search Account Info  │
+        │                 │  ├──────────────────────────┤
+        │                 │  │ ▸ 6 View Customer's List │
+        │                 │  ├──────────────────────────┤
+        │                 │  │ ▸ 7 Exit System          │
+        └─────────────────┘  ╰──────────────────────────╯
+    """)
+    user_choice = int(input("      ▸ Enter your command: "))
 
     clean_terminal_screen()
 
