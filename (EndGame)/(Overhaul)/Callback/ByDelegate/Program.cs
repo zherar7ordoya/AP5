@@ -11,6 +11,7 @@
  * But, it can also be implemented by Interface.
  */
 
+
 using static System.Console;
 
 /// <summary>
@@ -26,15 +27,13 @@ using static System.Console;
 namespace ByDelegate
 {
     // Declarado a nivel espacio de nombres (pues se usa en dos clases).
-    public delegate void DTarea(string texto);
-
-    //=========================================================================
+    public delegate void DelegadoTarea(string texto);
 
     class Program
     {
         static void Main()
         {
-            CPrueba callback = new CPrueba();
+            Prueba callback = new Prueba();
             callback.Probar();
             ReadLine();
         }

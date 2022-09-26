@@ -24,18 +24,24 @@ namespace DelegateApp
     class Program
     {
         //Our delegate
-        public delegate bool FilterDelegate(Person p);
+        public delegate bool FilterDelegate(Person person);
 
         static void Main()
         {
             //Create 4 Person objects
-            Person p1 = new Person() { Name = "John", Age = 41 };
-            Person p2 = new Person() { Name = "Jane", Age = 69 };
-            Person p3 = new Person() { Name = "Jake", Age = 12 };
-            Person p4 = new Person() { Name = "Jessie", Age = 25 };
+            Person person1 = new Person() { Name = "John", Age = 41 };
+            Person person2 = new Person() { Name = "Jane", Age = 69 };
+            Person person3 = new Person() { Name = "Jake", Age = 12 };
+            Person person4 = new Person() { Name = "Jessie", Age = 25 };
 
             //Create a list of Person objects and fill it
-            List<Person> people = new List<Person>() { p1, p2, p3, p4 };
+            List<Person> people = new List<Person>()
+            { 
+                person1,
+                person2,
+                person3,
+                person4
+            };
 
             //Invoke DisplayPeople using appropriate delegate
             DisplayPeople("Children:", people, IsChild);
@@ -58,9 +64,9 @@ namespace DelegateApp
         {
             WriteLine(title);
 
-            foreach (Person p in people)
+            foreach (Person person in people)
             {
-                if (filter(p)) WriteLine("{0}, {1} years old", p.Name, p.Age);
+                if (filter(person)) WriteLine("{0}, {1} years old", person.Name, person.Age);
             }
 
             Write("\n\n");
@@ -68,9 +74,9 @@ namespace DelegateApp
 
         //===============================FILTERS===============================
 
-        static bool IsChild(Person p) => p.Age < 18;
-        static bool IsAdult(Person p) => p.Age >= 18 && p.Age < 65;
-        static bool IsSenior(Person p) => p.Age >= 65;
+        static bool IsChild(Person person) => person.Age < 18;
+        static bool IsAdult(Person person) => person.Age >= 18 && person.Age < 65;
+        static bool IsSenior(Person person) => person.Age >= 65;
 
         //===============================THE END===============================
 

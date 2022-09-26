@@ -1,4 +1,17 @@
-﻿using System;
+﻿//  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  \\
+// ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ \\
+// ▐░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░░▌ \\
+// ▐░░▌ Title:       PATRÓN MEDIADOR                                    ▐░░▌ \\
+// ▐░░▌ Description: Patrones de diseño                                 ▐░░▌ \\
+// ▐░░▌ Author:      Gerardo Tordoya                                    ▐░░▌ \\
+// ▐░░▌ Date:        2022-09-25                                         ▐░░▌ \\
+// ▐░░▌ Source:      https://youtu.be/s4j92Rj7TJk                       ▐░░▌ \\
+// ▐░░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░░▌ \\
+// ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ \\
+//  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  \\
+
+
+using System;
 using static System.Console;
 
 // BLANCO
@@ -16,18 +29,20 @@ namespace MediadorConsola
         {
             DelegadoEnviarMensaje += metodo;
             ForegroundColor = ConsoleColor.White;
-            WriteLine("------------------------------------------ (suscripción)");
+            WriteLine("---------------------- [Se ha suscripto un nuevo método]");
         }
 
         public void Enviar(string emisor, string mensaje)
         {
-            // Usamos el mediador para censurar
+            // Usamos el MODERADOR para censurar
+            // Aquí moderador es una "regla", pero para evaluaciones más
+            // complejas será una clase aparte.
             if (mensaje.Contains("PALABROTA")) mensaje = mensaje.Replace("PALABROTA", "*****");
 
             // Enviamos los mensajes correspondientes via delegado
             DelegadoEnviarMensaje(emisor, mensaje);
             ForegroundColor = ConsoleColor.White;
-            WriteLine("\n-------------------------------------- (mensaje enviado)");
+            WriteLine("\n-------------------------------------- [Mensaje Enviado]");
         }
 
         // Quitamos los métodos que ya no queremos invocar
@@ -35,7 +50,7 @@ namespace MediadorConsola
         {
             DelegadoEnviarMensaje -= metodo;
             ForegroundColor = ConsoleColor.Red;
-            WriteLine("\n============================================== (bloqueo)");
+            WriteLine("\n---------------------------------------------- [Bloqueo]");
         }
     }
 }

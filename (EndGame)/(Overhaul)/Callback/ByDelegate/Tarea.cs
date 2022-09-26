@@ -2,9 +2,9 @@
 
 namespace ByDelegate
 {
-    public class CTarea
+    public class Tarea
     {
-        public void ComenzarTarea(DTarea callback)
+        public void ComenzarTarea(DelegadoTarea callback)
         {
             WriteLine("I have started a new task.");
             callback?.Invoke("I have completed the task.");

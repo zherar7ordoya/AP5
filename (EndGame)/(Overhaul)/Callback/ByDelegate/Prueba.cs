@@ -2,12 +2,12 @@
 
 namespace ByDelegate
 {
-    public class CPrueba
+    public class Prueba
     {
         public void Probar()
         {
-            DTarea callback = ProbarCallback;
-            CTarea tarea = new CTarea();
+            DelegadoTarea callback = ProbarCallback;
+            Tarea tarea = new Tarea();
             tarea.ComenzarTarea(callback);
         }
         public void ProbarCallback(string texto) => WriteLine(texto);

@@ -1,22 +1,16 @@
-@startuml Samples
+@startuml Nicosio
 
-' Configuracion de la plantilla (skin tradicional y fuente Excel)
+' Configuracion de la plantilla: skin tradicional, fuente Excel, sin sombra.
 skin rose
 skinparam classFontName Calibri
 skinparam shadowing false
 
-' @title Patrón de diseño Mediador
+' @title       Patrón de diseño Mediador
 ' @description El patrón de diseño Mediador es un patrón de comportamiento que 
 '              permite reducir las dependencias entre objetos al encapsular la
-'              forma en que estos interactúan entre sí. El patrón de diseño
-'              Mediador define un objeto que encapsula la forma en que un
-'              conjunto de objetos interactúan. El patrón de diseño Mediador
-'              promueve el acoplamiento débil al evitar que los objetos se
-'              refieran explícitamente entre sí y permite variar su interacción
-'              de forma independiente.
-' @author Gerardo Tordoya
-' @version 1.0
-' @date 2022-09-21
+'              forma en que estos interactúan entre sí.
+' @author      Gerardo Tordoya
+' @date        2022-09-21
 
 title Patrón de diseño Mediador
 

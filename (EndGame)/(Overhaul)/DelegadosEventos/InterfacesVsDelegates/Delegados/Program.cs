@@ -45,9 +45,9 @@ namespace Delegados
 
     class Util
     {
-        public static void Transform(int[] values, Transformer t)
+        public static void Transform(int[] values, Transformer transformer)
         {
-            for (int i = 0; i < values.Length; i++) { values[i] = t(values[i]); }
+            for (int i = 0; i < values.Length; i++) { values[i] = transformer(values[i]); }
         }
     }
 
