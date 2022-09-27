@@ -1,18 +1,30 @@
-"""
- ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌
-▐░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░░▌
-▐░░▌ Title:       BANCO                                                     ▐░░▌
-▐░░▌ Description: Ejercicio del banco usando POO                            ▐░░▌
-▐░░▌ Author:      Gerardo Tordoya                                           ▐░░▌
-▐░░▌ Date:        2022-09-26                                                ▐░░▌
-▐░░▌ Source:      https://github.com/zea17/dragon-bank                      ▐░░▌
-▐░░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░░▌
-▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌
- ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-"""
+#!/usr/bin/env python
 
-# ─── IMPORTS ────────────────────────────────────────────────────────────────────
+#  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  #
+# ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ #
+# ▐░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░░▌ #
+# ▐░░▌ Title:       BANCO                                                 ▐░░▌ #
+# ▐░░▌ Description: Ejercicio del banco usando POO                        ▐░░▌ #
+# ▐░░▌ Author:      Gerardo Tordoya                                       ▐░░▌ #
+# ▐░░▌ Date:        2022-09-26                                            ▐░░▌ #
+# ▐░░▌ Source:      https://github.com/zea17/dragon-bank                  ▐░░▌ #
+# ▐░░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░░▌ #
+# ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ #
+#  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  #
+
+
+# ─── HEADER ───────────────────────────────────────────────────────────────────
+
+""" CAJERO AUTOMÁTICO """
+
+__title__ = "BANCO"
+__description__ = "Ejercicio del banco usando POO"
+__author__ = "Gerardo Tordoya"
+__date__ = "2022-09-26"
+__source__ = "https://github.com/zea17/dragon-bank"
+
+
+# ─── IMPORTS ──────────────────────────────────────────────────────────────────
 
 import math
 import json
@@ -23,19 +35,16 @@ from os.path import exists
 import sys
 
 
-# ─── CONSTANTS ──────────────────────────────────────────────────────────────────
-
+# ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 FILE_PATH = "bank.json"
 
 
-# ─── DATABASE ───────────────────────────────────────────────────────────────────
-
+# ─── DATABASE ─────────────────────────────────────────────────────────────────
 
 def get_data():
-    """
-    Reads the bank information from the data file.
-    """
+    """ Reads the bank information from the data file. """
+
     # assume none existent file as empty file
     if not exists(FILE_PATH):
         return {}
@@ -47,6 +56,7 @@ def get_data():
 
 def set_data(data):
     """  Writes the bank information into the data file """
+
     archivo = open(FILE_PATH, encoding="utf-8")
     json_data = json.dumps(data)
     archivo.write(json_data)
@@ -69,50 +79,49 @@ def get_users_as_list():
     return results_as_ll
 
 
-# ─── LINKED LIST ────────────────────────────────────────────────────────────────
+# ─── LINKED LIST ──────────────────────────────────────────────────────────────
 
 
 class LinkedList:
     """ A linkedlist node """
 
     def __init__(self, _value, _next):
-        """
-        Creates the node with a value and reference to the next object (node) """
+        """ Creates the node with a value and reference to the next object (node) """
+
         self.value = _value
         self.next = _next
 
+
     def index(self, index):
-        """
-        Similar to A[i], this works as A.index(i)
-        """
+        """ Similar to A[i], this works as A.index(i) """
+
         if index == 0:
             return self.value
-        else:
-            if self.next is None:
-                return None
-            else:
-                return self.next.index(index - 1)
+        if self.next is None:
+            return None
+        return self.next.index(index - 1)
+
 
     def set_index(self, index, value):
-        """
-        Similar to A[i] = value, this is A.set_index(i, value)
-        """
+        """ Similar to A[i] = value, this is A.set_index(i, value) """
+
         if index == 0:
             self.value = value
         else:
             self.next.set_index(index - 1, value)
 
+
     def size(self):
-        """
-        Similar to len(A), this is A.size()
-        """
+        """ Similar to len(A), this is A.size() """
+
         if self.next is None:
             return 1
-        else:
-            return 1 + self.next.size()
+        return 1 + self.next.size()
+
 
     def append(self, nodo):
         """ Appends a new node to the end of nodes """
+
         if self.next is None:
             self.next = LinkedList(nodo, None)
         else:
@@ -128,7 +137,7 @@ def list_to_linked_list(arr):
     return nodo
 
 
-# ─── HEAP SORT ──────────────────────────────────────────────────────────────────
+# ─── HEAP SORT ────────────────────────────────────────────────────────────────
 
 
 def heap_sort(input_list, field):
@@ -152,6 +161,7 @@ def heap_sort(input_list, field):
 
 def swap(input_list, elemento_a, elemento_b):
     """ Swaps two elements of a list with the python shorthand """
+
     a_value = input_list.index(elemento_a)
     b_value = input_list.index(elemento_b)
     input_list.set_index(elemento_a, b_value)
@@ -205,13 +215,12 @@ def text_binary_search(input_list, field, query):
 
 
 def make_text_searchable(text):
-    """
-    Make the text lowercase the text and removes spaces
-    """
+    """ Make the text lowercase the text and removes spaces """
+
     return text.lower().replace(" ", "")
 
 
-# ─── ACCOUNT NUMBER ─────────────────────────────────────────────────────────────
+# ─── ACCOUNT NUMBER ───────────────────────────────────────────────────────────
 
 
 def generate_account_number():
@@ -229,8 +238,7 @@ def generate_account_number():
     return prefix + result
 
 
-# ─── TRANSACTION ────────────────────────────────────────────────────────────────
-
+# ─── TRANSACTION ──────────────────────────────────────────────────────────────
 
 def perform_transaction(sender_number, receiver_number, amount):
     """
@@ -260,7 +268,7 @@ def perform_transaction(sender_number, receiver_number, amount):
           users[sender_number]["full_name"], "to", users[receiver_number]["full_name"])
 
 
-# ─── UPDATE INFORMATION ───────────────────────────────────────────────|||─── #
+# ─── UPDATE INFORMATION ───────────────────────────────────────────────────────
 
 
 def update_information(account_number):
@@ -298,13 +306,11 @@ def update_information(account_number):
     display_account_information_by_given_account_number(account_number)
 
 
-# ─── CREATE A NEW USER ──────────────────────────────────────────────────────────
-
+# ─── CREATE A NEW USER ────────────────────────────────────────────────────────
 
 def create_new_user(full_name, balance, gender, city, phone_number):
-    """
-    Creates a new user with the given information
-    """
+    """ Creates a new user with the given information """
+
     users = get_data()
     date = datetime.today().strftime('%Y-%m-%d')
     account_number = generate_account_number()
@@ -320,7 +326,7 @@ def create_new_user(full_name, balance, gender, city, phone_number):
     display_account_information_by_given_account_number(account_number)
 
 
-# ─── SEARCH ACCOUNT ─────────────────────────────────────────────────────────────
+# ─── SEARCH ACCOUNT ───────────────────────────────────────────────────────────
 
 
 def search_account(field, query):
@@ -338,7 +344,7 @@ def search_account(field, query):
         display_user_object(user, user["account_number"])
 
 
-# ─── DELETE AN ACCOUNT ────────────────────────────────────────────────────── #
+# ─── DELETE AN ACCOUNT ────────────────────────────────────────────────────────
 
 def delete_account(account_number):
     """ Deletes an account if exists, otherwise displays an error. """
@@ -351,8 +357,7 @@ def delete_account(account_number):
     print("Account number", account_number, "removed.")
 
 
-# ─── INTERFACE TOOLS ────────────────────────────────────────────────────────────
-
+# ─── INTERFACE TOOLS ──────────────────────────────────────────────────────────
 
 def clean_terminal_screen():
     """
@@ -369,7 +374,7 @@ def print_horizontal_line():
     print("─────────────────────────────────────────────")
 
 
-# ─── DISPLAY USER OBJECT ────────────────────────────────────────────────────────
+# ─── DISPLAY USER OBJECT ──────────────────────────────────────────────────────
 
 
 def display_account_information_by_given_account_number(account_number):
@@ -401,6 +406,7 @@ def display_user_object(user_object, account_number):
 
 def display_all_accounts_sorted_by(field):
     """ Displays all the users one after the other, sorted by a given field """
+
     users = get_users_as_list()
     users = heap_sort(users, field)
     clean_terminal_screen()
@@ -411,6 +417,7 @@ def display_all_accounts_sorted_by(field):
 
 def beatify_field_name(field):
     """ builds a pretty field name """
+
     if field == "full_name":
         return "Full Name"
     if field == "account_creation_date":
@@ -425,9 +432,8 @@ def beatify_field_name(field):
 
 
 def ask_user_what_field_to_sort_the_display_by():
-    """
-    Shows a menu so that the user cas pick a field to sort the data by.
-    """
+    """ Shows a menu so that the user cas pick a field to sort the data by. """
+
     print("Sorting by:")
     print_horizontal_line()
     print("► 1 ∙ Full Name ")
@@ -458,7 +464,7 @@ def ask_user_what_field_to_sort_the_display_by():
     return "full_name"
 
 
-# ─── DISPLAY MENU ───────────────────────────────────────────────────────────────
+# ─── DISPLAY MENU ─────────────────────────────────────────────────────────────
 
 def display_menu():
     """
@@ -471,23 +477,23 @@ def display_menu():
     clean_terminal_screen()
 
     print()
-
+#https://www.compart.com/en/unicode/U+25B6
     print("""
-        ┌─────────────────┐  ╭───────────────────────────╮
-        │                 │  │ |> 1 Create Account       │
-        │      ╭┼┼╮       │  ├───────────────────────────┤
-        │      ╰┼┼╮       │  │ |> 2 Perform Transaction  │
-        │      ╰┼┼╯       │  ├───────────────────────────┤
-        │                 │  │ |> 3 Update Account Info  │
-        │   B A N C O  |> │  ├───────────────────────────┤
-        │  UNIVERSIDAD |> │  │ |> 4 Delete Account       │
-        │                 │  ├───────────────────────────┤
-        │                 │  │ |> 5 Search Account Info  │
-        │                 │  ├───────────────────────────┤
-        │                 │  │ |> 6 View Customer's List │
-        │                 │  ├───────────────────────────┤
-        │                 │  │ |> 7 Exit System          │
-        └─────────────────┘  ╰───────────────────────────╯
+        ┌───────────────┐  ╭───────────────────────────╮
+        │               │  │ ▶ 1 Create Account        │
+        │      ╭┼┼╮     │  ├───────────────────────────┤
+        │      ╰┼┼╮     │  │ ▶ 2 Perform Transaction   │
+        │      ╰┼┼╯     │  ├───────────────────────────┤
+        │               │  │ ▶ 3 Update Account Info   │
+        │   B A N C O   │  ├───────────────────────────┤
+        │  UNIVERSIDAD  │  │ ▶ 4 Delete Account        │
+        │               │  ├───────────────────────────┤
+        │               │  │ ▶ 5 Search Account Info   │
+        │               │  ├───────────────────────────┤
+        │               │  │ ▶ 6 View Customer's List  │
+        │               │  ├───────────────────────────┤
+        │               │  │ ▶ 7 Exit System           │
+        └───────────────┘  ╰───────────────────────────╯
     """)
     user_choice = int(input("      ▸ Enter your command: "))
 
@@ -541,11 +547,7 @@ def display_menu():
     print()
 
 
-# ─── MAIN ───────────────────────────────────────────────────────────────────────
-
+# ─── MAIN ─────────────────────────────────────────────────────────────────────
 
 while True:
     display_menu()
-
-
-# ────────────────────────────────────────────────────────────────────────────────
