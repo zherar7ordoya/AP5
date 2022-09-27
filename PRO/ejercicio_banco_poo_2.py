@@ -1,37 +1,21 @@
 #!/usr/bin/env python
 
-#  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  #
-# ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ #
-# ▐░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░░▌ #
-# ▐░░▌ Title:       BANCO                                                 ▐░░▌ #
-# ▐░░▌ Description: Ejercicio del banco usando POO                        ▐░░▌ #
-# ▐░░▌ Author:      Gerardo Tordoya                                       ▐░░▌ #
-# ▐░░▌ Date:        2022-09-26                                            ▐░░▌ #
-# ▐░░▌ Source:      https://github.com/zea17/dragon-bank                  ▐░░▌ #
-# ▐░░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░░▌ #
-# ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ #
-#  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  #
-
-
-# ─── HEADER ───────────────────────────────────────────────────────────────────
-
 """ CAJERO AUTOMÁTICO """
 
-__title__ = "BANCO"
+__title__       = "Cajero Bancario"
 __description__ = "Ejercicio del banco usando POO"
-__author__ = "Gerardo Tordoya"
-__date__ = "2022-09-26"
-__source__ = "https://github.com/zea17/dragon-bank"
+__author__      = "Gerardo Tordoya"
+__date__        = "2022-09-26"
 
 
 # ─── IMPORTS ──────────────────────────────────────────────────────────────────
 
-import math
-import json
-import os
-import random
 from datetime import datetime
 from os.path import exists
+import json
+import math
+import os
+import random
 import sys
 
 
@@ -477,25 +461,28 @@ def display_menu():
     clean_terminal_screen()
 
     print()
-#https://www.compart.com/en/unicode/U+25B6
+
+    # Este bloque unicode no produce corrimientos:
+    # https://www.compart.com/en/unicode/block/U+25A0
+
     print("""
-        ┌───────────────┐  ╭───────────────────────────╮
-        │               │  │ ▶ 1 Create Account        │
-        │      ╭┼┼╮     │  ├───────────────────────────┤
-        │      ╰┼┼╮     │  │ ▶ 2 Perform Transaction   │
-        │      ╰┼┼╯     │  ├───────────────────────────┤
-        │               │  │ ▶ 3 Update Account Info   │
-        │   B A N C O   │  ├───────────────────────────┤
-        │  UNIVERSIDAD  │  │ ▶ 4 Delete Account        │
-        │               │  ├───────────────────────────┤
-        │               │  │ ▶ 5 Search Account Info   │
-        │               │  ├───────────────────────────┤
-        │               │  │ ▶ 6 View Customer's List  │
-        │               │  ├───────────────────────────┤
-        │               │  │ ▶ 7 Exit System           │
-        └───────────────┘  ╰───────────────────────────╯
+        ┌────────────┐  ╭───────────────────────────╮
+        │            │  │ ▶ 1 Create Account        │
+        │            │  ├───────────────────────────┤
+        │            │  │ ▶ 2 Perform Transaction   │
+        │    ╭┼┼╮    │  ├───────────────────────────┤
+        │    ╰┼┼╮    │  │ ▶ 3 Update Account Info   │
+        │    ╰┼┼╯    │  ├───────────────────────────┤
+        │            │  │ ▶ 4 Delete Account        │
+        │            │  ├───────────────────────────┤
+        │   CAJERO   │  │ ▶ 5 Search Account Info   │
+        │  BANCARIO  │  ├───────────────────────────┤
+        │            │  │ ▶ 6 View Customer's List  │
+        │            │  ├───────────────────────────┤
+        │            │  │ ▶ 7 Exit System           │
+        └────────────┘  ╰───────────────────────────╯
     """)
-    user_choice = int(input("      ▸ Enter your command: "))
+    user_choice = int(input("         ▷ Enter your command: "))
 
     clean_terminal_screen()
 

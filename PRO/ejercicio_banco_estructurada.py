@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
-""" EJERCICIO DEL BANCO
+"""
+EJERCICIO DEL BANCO
 Las consignas del ejercicio están en ejercicio_banco_estructurada.md (adjunto).
 En esta version el ejercicio fue resuelto usando progración estructurada.
 """
 
-__author__  = "Gerardo Tordoya"
-__date__    = "2022-XX-XX"
-__python__  = "3.10.7"
+__title__       = "Ejercicio del Banco"
+__description__ = "Solución usando programación estructurada"
+__author__      = "Gerardo Tordoya"
+__date__        = "2022-XX-XX"
 
 
-
-# --------------------------------------------------------------- PROCEDIMIENTOS
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ PROCEDIMIENTOS                                                           │
+# └──────────────────────────────────────────────────────────────────────────┘
 
 def detallar_cuenta():
     """ Imprime los datos de la cuenta """
@@ -30,9 +33,7 @@ def pausar_pantalla():
     os.system('CLS')
 
 
-# --------
-# Clientes
-# --------
+# ─── Clientes ─────────────────────────────────────────────────────────────────
 
 def alta_cliente():
     """ Alta de un nuevo cliente """
@@ -52,9 +53,7 @@ def modificacion_cliente(cadena):
     pausar_pantalla()
 
 
-# -------
-# Cuentas
-# -------
+# ─── Cuentas ──────────────────────────────────────────────────────────────────
 
 def alta_cuenta():
     """ Alta de una nueva cuenta """
@@ -73,9 +72,7 @@ def modificacion_cuenta():
     pausar_pantalla()
 
 
-# -----------
-# Operaciones
-# -----------
+# ─── Operaciones ──────────────────────────────────────────────────────────────
 
 def depositar():
     """ Deposito de dinero en una cuenta """
@@ -117,9 +114,7 @@ def transferir():
     pausar_pantalla()
 
 
-# ------------
-# Herramientas
-# ------------
+# ─── Herramientas ─────────────────────────────────────────────────────────────
 
 def print_center(texto):
     """ Método genérico de consola para imprimir texto centrado. """
@@ -131,7 +126,9 @@ def print_center(texto):
         )
 
 
-# ----------------------------------------------------------- PROGRAMA PRINCIPAL
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │ PROGRAMA PRINCIPAL                                                       │
+# └──────────────────────────────────────────────────────────────────────────┘
 
 if __name__ == '__main__':
 
