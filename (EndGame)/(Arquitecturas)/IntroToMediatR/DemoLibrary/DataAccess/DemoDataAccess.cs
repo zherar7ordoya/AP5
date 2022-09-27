@@ -1,21 +1,27 @@
 ﻿using DemoLibrary.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoLibrary.DataAccess
 {
     public class DemoDataAccess : IDataAccess
     {
-        private List<PersonModel> people = new();
+        //  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ VARIABLES DE CLASE  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶
+
+        private readonly List<PersonModel> people = new();
+
+
+        //  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ CONSTRUCTOR  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶
 
         public DemoDataAccess()
         {
             people.Add(new PersonModel { Id = 1, FirstName = "Tim", LastName = "Corey" });
             people.Add(new PersonModel { Id = 2, FirstName = "Sue", LastName = "Storm" });
+            people.Add(new PersonModel { Id = 3, FirstName = "Gerardo", LastName = "Tordoya" });
         }
+
+
+        //  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ MÉTODOS  ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶ ̶̶̶̶̶̶
 
         public List<PersonModel> GetPeople()
         {
@@ -24,8 +30,12 @@ namespace DemoLibrary.DataAccess
 
         public PersonModel InsertPerson(string firstName, string lastName)
         {
-            PersonModel p = new() { FirstName = firstName, LastName = lastName };
-            p.Id = people.Max(x => x.Id) + 1;
+            PersonModel p = new()
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Id = people.Max(x => x.Id) + 1
+            };
             people.Add(p);
             return p;
         }

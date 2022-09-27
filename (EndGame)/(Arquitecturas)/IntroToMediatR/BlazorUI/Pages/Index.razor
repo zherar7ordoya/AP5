@@ -1,9 +1,9 @@
 ﻿@page "/"
 @inject MediatR.IMediator _mediator
 
-<h1>Hello, world!</h1>
+<h1>Gerardo Tordoya</h1>
 
-Welcome to your new app.
+<b>Bienvenido a Blazor</b>
 
 <ul>
     @foreach (var p in people)
@@ -12,7 +12,20 @@ Welcome to your new app.
 	}
 </ul>
 
-@code {
+@code
+{
+    //  ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄  \\
+    // ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ \\
+    // ▐░░█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█░░▌ \\
+    // ▐░░▌ Title:       MEDIATR                                        ▐░░▌ \\
+    // ▐░░▌ Description: Implementing CQRS and Mediator Patterns        ▐░░▌ \\
+    // ▐░░▌ Author:      Gerardo Tordoya                                ▐░░▌ \\
+    // ▐░░▌ Date:        2022-09-27                                     ▐░░▌ \\
+    // ▐░░▌ Source:      https://youtu.be/yozD5Tnd8nw                   ▐░░▌ \\
+    // ▐░░█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█░░▌ \\
+    // ▐░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▌ \\
+    //  ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀  \\
+
     List<PersonModel> people;
 
     protected override async Task OnInitializedAsync()

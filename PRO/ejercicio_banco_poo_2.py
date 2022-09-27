@@ -20,6 +20,7 @@ import os
 import random
 from datetime import datetime
 from os.path import exists
+import sys
 
 
 # ─── CONSTANTS ──────────────────────────────────────────────────────────────────
@@ -72,15 +73,11 @@ def get_users_as_list():
 
 
 class LinkedList:
-    """
-    A Linked List Node
-    """
+    """ A linkedlist node """
 
     def __init__(self, _value, _next):
         """
-        Creates the node with a value and reference to
-        the next object
-        """
+        Creates the node with a value and reference to the next object (node) """
         self.value = _value
         self.next = _next
 
@@ -263,7 +260,7 @@ def perform_transaction(sender_number, receiver_number, amount):
           users[sender_number]["full_name"], "to", users[receiver_number]["full_name"])
 
 
-# ─── update information ──────────────────────────────────────────────────────────
+# ─── UPDATE INFORMATION ───────────────────────────────────────────────|||─── #
 
 
 def update_information(account_number):
@@ -341,13 +338,10 @@ def search_account(field, query):
         display_user_object(user, user["account_number"])
 
 
-# ─── DELETE AN ACCOUNT ──────────────────────────────────────────────────────────
-
+# ─── DELETE AN ACCOUNT ────────────────────────────────────────────────────── #
 
 def delete_account(account_number):
-    """
-    Deletes an account if exists, otherwise displays an error
-    """
+    """ Deletes an account if exists, otherwise displays an error. """
     users = get_data()
     if account_number not in users:
         print("Did not found the account with number: " + account_number)
@@ -479,21 +473,21 @@ def display_menu():
     print()
 
     print("""
-        ┌─────────────────┐  ╭──────────────────────────╮
-        │                 │  │ ▸ 1 Create Account       │
-        │      ╭┼┼╮       │  ├──────────────────────────┤
-        │      ╰┼┼╮       │  │ ▸ 2 Perform Transaction  │
-        │      ╰┼┼╯       │  ├──────────────────────────┤
-        │                 │  │ ▸ 3 Update Account Info  │
-        │   B A N C O  ▸  │  ├──────────────────────────┤
-        │  UNIVERSIDAD ▸  │  │ ▸ 4 Delete Account       │
-        │                 │  ├──────────────────────────┤
-        │                 │  │ ▸ 5 Search Account Info  │
-        │                 │  ├──────────────────────────┤
-        │                 │  │ ▸ 6 View Customer's List │
-        │                 │  ├──────────────────────────┤
-        │                 │  │ ▸ 7 Exit System          │
-        └─────────────────┘  ╰──────────────────────────╯
+        ┌─────────────────┐  ╭───────────────────────────╮
+        │                 │  │ |> 1 Create Account       │
+        │      ╭┼┼╮       │  ├───────────────────────────┤
+        │      ╰┼┼╮       │  │ |> 2 Perform Transaction  │
+        │      ╰┼┼╯       │  ├───────────────────────────┤
+        │                 │  │ |> 3 Update Account Info  │
+        │   B A N C O  |> │  ├───────────────────────────┤
+        │  UNIVERSIDAD |> │  │ |> 4 Delete Account       │
+        │                 │  ├───────────────────────────┤
+        │                 │  │ |> 5 Search Account Info  │
+        │                 │  ├───────────────────────────┤
+        │                 │  │ |> 6 View Customer's List │
+        │                 │  ├───────────────────────────┤
+        │                 │  │ |> 7 Exit System          │
+        └─────────────────┘  ╰───────────────────────────╯
     """)
     user_choice = int(input("      ▸ Enter your command: "))
 
@@ -539,7 +533,7 @@ def display_menu():
         print("\n\nSorted by user", beatify_field_name(field))
 
     if user_choice == 7:
-        quit()
+        sys.exit()
 
     print()
     print_horizontal_line()
