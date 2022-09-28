@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonConsola", "Singlet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediadorConsola", "MediadorConsola\MediadorConsola.csproj", "{A0C1AAF3-C770-405A-8527-261D8FC174EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabricaAbstracta", "FabricaAbstracta\FabricaAbstracta.csproj", "{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{A0C1AAF3-C770-405A-8527-261D8FC174EA}.Release|x64.Build.0 = Release|Any CPU
 		{A0C1AAF3-C770-405A-8527-261D8FC174EA}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0C1AAF3-C770-405A-8527-261D8FC174EA}.Release|x86.Build.0 = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|x64.Build.0 = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Debug|x86.Build.0 = Debug|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|x64.Build.0 = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B12C0BD-1072-4E78-A45D-2C71902DC0D0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

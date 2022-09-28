@@ -8,7 +8,7 @@
   @source       https://youtu.be/10xMzsv_yBQ
 '/
 
-@startuml Samples
+@startuml Nicosio
 
 ' Configuración de la plantilla (skin clásico, fuente Excel, sin sombras).
 skin rose
@@ -16,22 +16,47 @@ skinparam classFontName Calibri
 skinparam shadowing false
 
 ' Inicio del diagrama.
-title Gerardo Tordoya
+title Fábrica Abstracta
 
 
 ' ─── OBJETOS ──────────────────────────────────────────────────────────────────
-' Alpha
-' Bravo
-' Charlie
+class Cliente
+
+interface IFabricaAbstracta
+class FabricaA
+class FabricaB
+
+interface IProductoAbstracto1
+class Producto1A
+class Producto1B
+
+interface IProductoAbstracto2
+class Producto2A
+class Producto2B
 
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
-Alpha -> Bravo: Mensaje enviado
-Bravo -> Charlie: Mensaje reenviado
-Charlie --> Alpha: Mensaje recibido
+Cliente o-- IFabricaAbstracta
+Cliente o-- IProductoAbstracto1
+Cliente o-- IProductoAbstracto2
+
+IFabricaAbstracta <|.. FabricaA
+IFabricaAbstracta <|.. FabricaB
+
+IProductoAbstracto1 <|.. Producto1A
+IProductoAbstracto1 <|.. Producto1B
+
+IProductoAbstracto2 <|.. Producto2A
+IProductoAbstracto2 <|.. Producto2B
+
+FabricaA ..> Producto1A
+FabricaA ..> Producto2A
+
+FabricaB ..> Producto1B
+FabricaB ..> Producto2B
 
 
 ' Fin del diagrama.
-caption www.planttext.com
+caption https://youtu.be/10xMzsv_yBQ
 
 @enduml

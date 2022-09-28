@@ -27,14 +27,11 @@ public class Singleton
     public static Singleton ObtenInstancia()
     {
         if (instancia == null) instancia = new Singleton();
-        Console.WriteLine("Instancia creada.");
+        WriteLine("Instancia creada.");
         return instancia;
     }
 
-    public override string ToString()
-    {
-        return string.Format("Persona {0} tiene {1} años", nombre, edad);
-    }
+    public override string ToString() => string.Format("Persona {0} tiene {1} años", nombre, edad);
 
     public void PonerDatos(string nombre, int edad)
     {
@@ -42,8 +39,5 @@ public class Singleton
         this.edad = edad;
     }
 
-    public void AlgunProceso()
-    {
-        Console.WriteLine("{0} está trabajando en algo.", nombre);
-    }
+    public void AlgunProceso() => WriteLine("{0} está trabajando en algo.", nombre);
 }

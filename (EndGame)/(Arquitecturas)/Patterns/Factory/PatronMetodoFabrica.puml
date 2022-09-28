@@ -1,0 +1,52 @@
+@startuml Nicosio
+
+' Configuracion de la plantilla: skin tradicional, fuente Excel, sin sombra.
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+/'
+    ────────────────────────────────────────────────────────────────────────────
+    @title          PATRÓN MÉTODO FÁBRICA
+    @description    El patrón Método Fábrica es un patrón de diseño creacional
+                    que proporciona una interfaz para crear objetos en una
+                    superclase mientras permite a las subclases alterar el tipo
+                    de objetos que se crearán.
+    @author         Gerardo Tordoya
+    @date           2022-09-27
+    @source         https://youtu.be/t-vqCWlFQLI
+    ────────────────────────────────────────────────────────────────────────────
+'/
+
+
+title Método Fábrica
+
+interface IProducto
+class Cliente
+class ProductoM
+class ProductoN
+class Creador
+{
+    +MetodoFabrica(): IProducto
+}
+
+
+Cliente *-- IProducto
+Cliente o-- Creador
+
+IProducto <|.. ProductoM
+IProducto <|.. ProductoN
+
+ProductoM <.. Creador
+ProductoN <.. Creador
+
+
+caption https://youtu.be/t-vqCWlFQLI
+
+@enduml
+
+/' 
+  ┌──────────────────────────────────────────────────────────────────────────┐
+  │ NOTA: Ver MD adjunto.                                                    │
+  └──────────────────────────────────────────────────────────────────────────┘
+ '/

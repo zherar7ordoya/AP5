@@ -1,27 +1,12 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace Factory
 {
     class Automovil : IVehiculo
     {
-        public void Acelerar()
-        {
-            Console.WriteLine("Presionar acelerador");
-        }
-
-        public void Encender()
-        {
-            Console.WriteLine("Girar la llave");
-        }
-
-        public void Frenar()
-        {
-            Console.WriteLine("Presionar el pedal");
-        }
-
-        public void Girar()
-        {
-            Console.WriteLine("Usar volante");
-        }
+        public void Acelerar() => WriteLine("Presionar acelerador");
+        public void Encender() => WriteLine("Girar la llave");
+        public void Frenar() => WriteLine("Presionar el pedal");
+        public void Girar() => WriteLine("Usar volante");
     }
 }

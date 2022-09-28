@@ -1,27 +1,12 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace Factory
 {
     class Avioneta : IVehiculo
     {
-        public void Acelerar()
-        {
-            Console.WriteLine("Empujar acelerador");
-        }
-
-        public void Encender()
-        {
-            Console.WriteLine("Según procedimiento");
-        }
-
-        public void Frenar()
-        {
-            Console.WriteLine("Jalar acelerador");
-        }
-
-        public void Girar()
-        {
-            Console.WriteLine("Usar timón");
-        }
+        public void Acelerar() => WriteLine("Empujar acelerador");
+        public void Encender() => WriteLine("Según procedimiento");
+        public void Frenar() => WriteLine("Jalar acelerador");
+        public void Girar() => WriteLine("Usar timón");
     }
 }
