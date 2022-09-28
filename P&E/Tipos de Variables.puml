@@ -1,13 +1,23 @@
-@startmindmap Samples
+/'
+  @title        TIPOS DE VARIABLES ESTADÍSTICAS
+  @description  Los tipos de variables estadísticas son: variables cualitativas
+                y variables cuantitativas.
+  @author       Gerardo Tordoya
+  @date         2022-09-05
+'/
 
+
+@startmindmap P&E
+
+' Configuración de la plantilla
 skin rose
 skinparam classFontName Calibri
 skinparam shadowing false
+' .............................
 
 title Tipos de Variables
 
-'========= 2022-09-05 =========
-
+' ─── DIAGRAMA ─────────────────────────────────────────────────────────────────
 * Tipos de \n Variables
 
 'left side
@@ -39,5 +49,8 @@ title Tipos de Variables
         ****_ Saldo bancario
         ****_ Tiempo
         ****_ Velocidad
+' ..............................................................................
+
+caption https://youtu.be/X3ECGjQtgH8
 
 @endmindmap

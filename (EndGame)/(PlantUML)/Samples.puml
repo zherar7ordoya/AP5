@@ -10,28 +10,20 @@
 
 @startuml Samples
 
-' Configuración de la plantilla (skin clásico, fuente Excel, sin sombras).
+' Configuración de la plantilla
 skin rose
 skinparam classFontName Calibri
 skinparam shadowing false
+' .............................
 
-' Inicio del diagrama.
 title Gerardo Tordoya
 
-
-' ─── OBJETOS ──────────────────────────────────────────────────────────────────
-' Alpha
-' Bravo
-' Charlie
-
-
-' ─── RELACIONES ───────────────────────────────────────────────────────────────
+' ─── DIAGRAMA ─────────────────────────────────────────────────────────────────
 Alpha -> Bravo: Mensaje enviado
 Bravo -> Charlie: Mensaje reenviado
 Charlie --> Alpha: Mensaje recibido
+' ..............................................................................
 
-
-' Fin del diagrama.
 caption www.planttext.com
 
 @enduml

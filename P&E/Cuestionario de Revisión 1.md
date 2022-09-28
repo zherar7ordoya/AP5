@@ -1,4 +1,4 @@
-# Cuestionario de revisión
+# Cuestionario de Revisión 1
 
 1. La Estadística tiene su origen en:
     - El juego de azar.
