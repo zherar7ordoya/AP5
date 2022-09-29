@@ -1,3 +1,13 @@
+@startmindmap P&E
+
+' ..............................................................................
+
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+' ..............................................................................
+
 /'
   @title        TIPOS DE VARIABLES ESTADÍSTICAS
   @description  Los tipos de variables estadísticas son: variables cualitativas
@@ -6,14 +16,7 @@
   @date         2022-09-05
 '/
 
-
-@startmindmap P&E
-
-' Configuración de la plantilla
-skin rose
-skinparam classFontName Calibri
-skinparam shadowing false
-' .............................
+' ─── HEADER ───────────────────────────────────────────────────────────────────
 
 title Tipos de Variables
 
@@ -49,8 +52,11 @@ title Tipos de Variables
         ****_ Saldo bancario
         ****_ Tiempo
         ****_ Velocidad
-' ..............................................................................
 
-caption https://youtu.be/X3ECGjQtgH8
+' ─── FOOTER ───────────────────────────────────────────────────────────────────
+
+caption youtu.be/X3ECGjQtgH8
+
+' ..............................................................................
 
 @endmindmap
