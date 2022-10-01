@@ -53,6 +53,10 @@ C) Frecuencia relativa de la primera semana. ***(Opción C)***
 
 ## Pregunta 5
 
+**Problema:** Se encuentran dos amigos en la calle. Cada uno debe pensar en dos vocales distintas y anotarlas en un papel (por ejemplo: AE, UO). ¿Cúál es la probabilidad de que ambos hayan escrito las mismas vocales y en el mismo orden?
+
+-RESUELTO EN EXCEL ADJUNTO-
+
 ---
 
 ## Pregunta 6
