@@ -1,4 +1,10 @@
-""" EJERCICIO BANCO POO """
+"""
+  @title        CAJERO BANCARIO
+  @description  Ejercicio adicional del banco en poo
+  @author       Gerardo Tordoya
+  @date         2022-09-XX
+  @credits      * * [] * *
+"""
 
 from dataclasses import dataclass
 from getpass import getpass
