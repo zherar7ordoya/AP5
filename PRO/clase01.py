@@ -1,13 +1,14 @@
 """
   @title        CLASE 01
   @description  Material otorgado para la clase 01 de la materia
-  @author       Profesor Cardacci
+  @author       Gerardo Tordoya
   @date         2022-09-12
   @source       UAI - Ingeniería en Computación
 """
 
-# --- RUN FOREST, RUN ----------------------------------------------------------
+# --- RUN FORREST, RUN ---------------------------------------------------------
 
+import array
 from os import system
 
 TEXTO = str("Gerardo Tordoya ")
@@ -60,3 +61,52 @@ print(x)
 # Otro ejemplo a tener en cuenta (p45)
 txt = "Mi nombre es\nGerardo Tordoya"
 print("Verifica si todos los caracteres son imprimibles:", txt.isprintable())
+
+# Otro ejemplo a tener en cuenta (p79)
+a = 8
+b = "Hola"
+c = 3.14
+
+print(f"El valor de a es {a}, el de b es {b} y el de c es {c}")
+
+# --- LISTAS & ARRAYS ---------------------------------------------------------
+
+# creating an array containing same data type elements 
+mi_array = array.array('i', [1, 2, 3])
+
+# accessing elements of array
+for x in mi_array:
+    print(f"x: {x}")
+
+# ─── 5 MÉTODOS PARA UNIR LISTAS ───────────────────────────────────────────────
+
+# 1. Usando el operador +
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista3 = lista1 + lista2
+print(lista3)
+
+# 2. Usando el método extend()
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista1.extend(lista2)
+print(lista1)
+
+# 3. Usando el método append()
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista1.append(lista2)
+print(lista1)
+
+# 4. Usando el método insert()
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+lista1.insert(3, lista2)
+print(lista1)
+
+# 5. Agregando todos los elementos, uno por uno
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+for x in lista2:
+    lista1.append(x)
+print(lista1)
