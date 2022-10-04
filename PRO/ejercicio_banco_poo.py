@@ -1,11 +1,10 @@
-#!/usr/bin/env python
-
-""" CAJERO AUTOMÁTICO """
-
-__title__       = "Cajero Bancario"
-__description__ = "Ejercicio del banco usando POO"
-__author__      = "Gerardo Tordoya"
-__date__        = "2022-09-26"
+"""
+  @title        CAJERO BANCARIO
+  @description  Ejercicio del banco con POO
+  @author       Gerardo Tordoya
+  @date         2022-09-26
+  @credits      www.compart.com/en/unicode/block/U+25A0
+"""
 
 
 # ─── IMPORTS ──────────────────────────────────────────────────────────────────
@@ -22,7 +21,6 @@ import sys
 # ─── CONSTANTS ────────────────────────────────────────────────────────────────
 
 FILE_PATH = "bank.json"
-
 
 # ─── DATABASE ─────────────────────────────────────────────────────────────────
 
@@ -64,7 +62,6 @@ def get_users_as_list():
 
 
 # ─── LINKED LIST ──────────────────────────────────────────────────────────────
-
 
 class LinkedList:
     """ A linkedlist node """
@@ -123,7 +120,6 @@ def list_to_linked_list(arr):
 
 # ─── HEAP SORT ────────────────────────────────────────────────────────────────
 
-
 def heap_sort(input_list, field):
     """
     A custom implementation of the heap sort function that
@@ -173,7 +169,6 @@ def sift_down(input_list, field, start_index, end_index):
 
 
 # ─── BINARY SEARCH ──────────────────────────────────────────────────────────────
-
 
 def text_binary_search(input_list, field, query):
     """
@@ -461,9 +456,6 @@ def display_menu():
     clean_terminal_screen()
 
     print()
-
-    # Este bloque unicode no produce corrimientos:
-    # https://www.compart.com/en/unicode/block/U+25A0
 
     print("""
         ┌────────────┐  ╭───────────────────────────╮
