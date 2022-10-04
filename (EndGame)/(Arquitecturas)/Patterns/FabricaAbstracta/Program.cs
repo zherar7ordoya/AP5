@@ -5,22 +5,39 @@
                 sus clases concretas.
   @author       Gerardo Tordoya
   @date         2022-09-28
-  @source       https://youtu.be/10xMzsv_yBQ
+  @credits      https://youtu.be/10xMzsv_yBQ
 */
 
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static System.Console;
 
 namespace FabricaAbstracta
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            IFabrica MiFabrica = new FabricaQuimica();
+            MiFabrica.CrearProductos();
+
+            IProductoLeche MiLeche = MiFabrica.ObtenProductoLeche;
+            IProductoSaborizante MiSabor = MiFabrica.ObtenSabor;
+
+            MiLeche.Producir();
+            MiSabor.Obtener();
+
+            WriteLine("Mi malteada es de {0} y {1}", MiLeche.ObtenDatos(), MiSabor.Informacion());
+
+            WriteLine("───────────────────────────────────────────────────────────");
+
+            MiFabrica = new FabricaNatural();
+            MiFabrica.CrearProductos();
+            MiLeche = MiFabrica.ObtenProductoLeche;
+            MiSabor = MiFabrica.ObtenSabor;
+
+            WriteLine("Mi malteada es de {0} y {1}", MiLeche.ObtenDatos(), MiSabor.Informacion());
+
+            ReadKey();
         }
     }
 }
