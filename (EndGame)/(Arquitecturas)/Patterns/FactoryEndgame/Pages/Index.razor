@@ -1,17 +1,35 @@
 ﻿@page "/"
-@inject ISample1 sample
+@inject IAbstractFactory<ISample1> factory1
+@inject IAbstractFactory<ISample2> factory2
+@inject IUserDataFactory userDataFactory
+@inject IVehicleFactory vehicleFactory
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1>Hello @user?.Name who drives a @vehicle?.VehicleType</h1>
+<h2>@vehicle?.Start()</h2>
 <h2>@currentTime?.CurrentDateTime</h2>
+<h2>The random value is: @randomValue?.RandomValue</h2>
+
 <button class="btn btn-primary" @onclick="GetNewTime">Get New Time</button>
 
 @code
 {
     ISample1? currentTime;
+    ISample2? randomValue;
+    IUserData? user;
+    IVehicle? vehicle;
+    
+    protected override void OnInitialized()
+    {
+        user = userDataFactory.Create("Gerardo Tordoya");
+        vehicle = vehicleFactory.Create("Truck");
+    }
+
     private void GetNewTime()
     {
-        currentTime = sample;
+        currentTime = factory1.Create();
+        randomValue = factory2.Create();
+        
     }
 }
