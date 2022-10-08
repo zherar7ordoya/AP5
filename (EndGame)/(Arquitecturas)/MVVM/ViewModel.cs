@@ -23,8 +23,8 @@ namespace CSharpCorner
                 (item as Button).Click += new EventHandler(ViewModel_Click);
             }
             /* As we can observe, a Form1 instance could be injected through
-* the constructor. This one will play the role of the binder
-* between the ViewModel and the user interface. */
+             * the constructor. This one will play the role of the binder
+             * between the ViewModel and the user interface. */
             Application.Run(_form1);
         }
 
