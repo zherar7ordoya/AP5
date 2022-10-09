@@ -1,24 +1,13 @@
 ---
 /*
-  @title        RASTREADOR DE TORNEO
-  @description  Curso completo de Desarrollo de Aplicaciones con C# y .NET
+  @title        GESTOR DE TORNEOS
+  @description  Aplicación para crear, organizar y administrar torneos.
   @author       Gerardo Tordoya
-  @date         2022-10-07
-  @credits      Tim Corey
-                www.youtube.com/playlist?list=PLLWMQd6PeGY3t63w-8MMIjIyYS7MsFcCi
+  @date         2022-10-08
 */
 ---
 
-# Requerimientos
-
-1) Rastrear los partidos jugados y sus resultados (quién ganó y quién perdió).
-2) Varios jugadores participan en un torneo.
-3) Crear un calendario de torneo (quién juega y en qué orden).
-4) Agendar partidos.
-5) Un solo partido perdido elimina a un jugador del torneo.
-6) El último jugador en ganar un partido es el ganador del torneo.
-
-## Preguntas
+# Preguntas
 
 1) ¿Cuántos jugadores participan en el torneo? ¿Es un número fijo o variable?
 2) Si un torneo tiene menos de la dotación completa de jugadores (_es decir, se cuenta con un número impar de jugadores_), ¿cómo lo manejamos?
