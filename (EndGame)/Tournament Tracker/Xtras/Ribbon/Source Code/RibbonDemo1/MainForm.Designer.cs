@@ -80,6 +80,8 @@ namespace RibbonDemo
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonItemGroup1 = new System.Windows.Forms.RibbonItemGroup();
             this.ribbonComboBox1 = new System.Windows.Forms.RibbonComboBox();
+            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
+            this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.ribbonComboBox2 = new System.Windows.Forms.RibbonComboBox();
             this.ribbonItemGroup2 = new System.Windows.Forms.RibbonItemGroup();
             this.ribbonButton8 = new System.Windows.Forms.RibbonButton();
@@ -155,8 +157,6 @@ namespace RibbonDemo
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ribbonLabel1 = new System.Windows.Forms.RibbonLabel();
-            this.ribbonLabel2 = new System.Windows.Forms.RibbonLabel();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -170,7 +170,7 @@ namespace RibbonDemo
             // 
             // 
             // 
-            this.ribbon1.OrbDropDown.BorderRoundness = 8;
+            this.ribbon1.OrbDropDown.BorderRoundness = 2;
             this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem1);
             this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem2);
@@ -658,6 +658,16 @@ namespace RibbonDemo
             this.ribbonComboBox1.Text = "ribbonComboBox1";
             this.ribbonComboBox1.TextBoxText = "Verdana";
             this.ribbonComboBox1.TextBoxWidth = 160;
+            // 
+            // ribbonLabel1
+            // 
+            this.ribbonLabel1.Name = "ribbonLabel1";
+            this.ribbonLabel1.Text = "Verdana";
+            // 
+            // ribbonLabel2
+            // 
+            this.ribbonLabel2.Name = "ribbonLabel2";
+            this.ribbonLabel2.Text = "Arial";
             // 
             // ribbonComboBox2
             // 
@@ -1292,9 +1302,9 @@ namespace RibbonDemo
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(824, 16);
+            this.label4.Location = new System.Drawing.Point(825, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 16);
+            this.label4.Size = new System.Drawing.Size(103, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Dock - RIGHT";
             // 
@@ -1303,9 +1313,9 @@ namespace RibbonDemo
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(94, 98);
+            this.label3.Location = new System.Drawing.Point(93, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 16);
+            this.label3.Size = new System.Drawing.Size(120, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Dock - BOTTOM";
             // 
@@ -1316,7 +1326,7 @@ namespace RibbonDemo
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.Size = new System.Drawing.Size(93, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Dock - LEFT";
             // 
@@ -1327,19 +1337,9 @@ namespace RibbonDemo
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 16);
+            this.label1.Size = new System.Drawing.Size(87, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dock - TOP";
-            // 
-            // ribbonLabel1
-            // 
-            this.ribbonLabel1.Name = "ribbonLabel1";
-            this.ribbonLabel1.Text = "Verdana";
-            // 
-            // ribbonLabel2
-            // 
-            this.ribbonLabel2.Name = "ribbonLabel2";
-            this.ribbonLabel2.Text = "Arial";
             // 
             // MainForm
             // 

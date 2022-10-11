@@ -85,13 +85,15 @@ namespace RibbonDemo
               return;
            try
            {
-              ribbon.OrbStyle = (RibbonOrbStyle)Enum.Parse(typeof(RibbonOrbStyle), cmbOrbStyle.Text);
+                ribbon.OrbStyle = (RibbonOrbStyle)Enum.Parse(typeof(RibbonOrbStyle), cmbOrbStyle.Text);
+                //ribbon.OrbStyle = RibbonOrbStyle.Office_2013;
            }
            catch { /* don't care */ }
            try
            {
-              ribbon.ThemeColor = (RibbonTheme)Enum.Parse(typeof(RibbonTheme), cmbColor.Text);
-           }
+                ribbon.ThemeColor = (RibbonTheme)Enum.Parse(typeof(RibbonTheme), cmbColor.Text);
+                //ribbon.ThemeColor = RibbonTheme.Normal;
+            }
            catch { /* don't care */ }
         }
     }
