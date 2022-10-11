@@ -51,7 +51,7 @@ entity "Premio" {
 
 ' MATCHUP
 entity "Partido" {
-    Participantes:      List\<Participante>
+    Participante:       List\<Participante>
     Ganador:            Equipo
     PartidoRonda:       Integer
 }

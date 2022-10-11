@@ -52,7 +52,7 @@ Lo único que sabes de un anciano es que ha sobrevivido a mucho más y mucho peo
 
 ## Partido
 
-* Participantes (List\<Participante>)
+* Participante (List\<Participante>)
 * Ganador (Equipo)
 * PartidoRonda (Integer)
 

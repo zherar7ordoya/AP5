@@ -1,0 +1,1 @@
+get-childitem "C:\Documents\AP5\(EndGame)\Tournament Tracker\2) Implementación\GCWinforms" | unblock-file
