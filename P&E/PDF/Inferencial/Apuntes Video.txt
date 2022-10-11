@@ -1,0 +1,13 @@
+¿Qué es una estimación?
+
+Sobre una muestra (que represente a la población) se estiman los siguientes parámetros:
+
+*) Media Aritmética
+*) Diferencia de Medias Aritméticas
+*) Proporciones
+*) Diferencia de Proporciones
+*) Varianzas
+
+Estos análisis se hacen con el fin de poder inferir sobre la población.
+
+A eso se le llama estimadores.
