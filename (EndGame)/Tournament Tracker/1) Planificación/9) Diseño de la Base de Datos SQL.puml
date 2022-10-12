@@ -2,7 +2,7 @@
   @title        GESTOR DE CAMPEONATOS
   @description  Aplicación para crear, organizar y administrar campeonatos.
   @author       Gerardo Tordoya
-  @date         2022-10-11
+  @date         2022-10-12
 '/
 
 @startuml GESTOR DE CAMPEONATOS
@@ -22,23 +22,12 @@ title Diseño de la Base de Datos SQL
 
 ' ─── OBJETOS ──────────────────────────────────────────────────────────────────
 
-
-entity "Campeonatos"
+entity "CampeonatoParticipantes"
 {
     *Id:                Integer  <<generated>>
     --
-    CampeonatoNombre:   String
-    CampeonatoTarifa:   Decimal
-}
-
-entity "Premios"
-{
-    *Id:                Integer  <<generated>>
-    --
-    PuestoNumero:       Integer
-    PuestoNombre:       String
-    PremioMonto:        Decimal
-    PremioPorcentaje:   Double
+    CampeonatoId:       Integer  **<<FK>>**
+    EquipoId:           Integer  **<<FK>>**
 }
 
 entity "CampeonatoPremios"
@@ -49,19 +38,12 @@ entity "CampeonatoPremios"
     PremioId:           String   **<<FK>>**
 }
 
-entity "CampeonatoParticipantes"
+entity "Campeonatos"
 {
     *Id:                Integer  <<generated>>
     --
-    CampeonatoId:       Integer  **<<FK>>**
-    EquipoId:           Integer  **<<FK>>**
-}
-
-entity "Equipos"
-{
-    *Id:                Integer  <<generated>>
-    --
-    Nombre:             String
+    CampeonatoNombre:   String
+    CampeonatoTarifa:   Decimal
 }
 
 entity "EquipoMiembros"
@@ -72,22 +54,11 @@ entity "EquipoMiembros"
     PersonaId:          Integer  **<<FK>>**
 }
 
-entity "Personas"
+entity "Equipos"
 {
-   *Id:                 Integer  <<generated>>
-   --
+    *Id:                Integer  <<generated>>
+    --
     Nombre:             String
-    Apellido:           String
-    Email:              String
-    Celular:            String
-}
-
-entity "Partidos"
-{
-   *Id:                 Integer  <<generated>>
-   --
-    GanadorId:          Integer  **<<FK>>**
-    PartidoRonda:       Integer
 }
 
 entity "PartidoParticipantes"
@@ -100,21 +71,53 @@ entity "PartidoParticipantes"
     Puntaje:            Integer
 }
 
+entity "Partidos"
+{
+   *Id:                 Integer  <<generated>>
+   --
+    GanadorId:          Integer  **<<FK>>**
+    PartidoRonda:       Integer
+}
+
+entity "Personas"
+{
+   *Id:                 Integer  <<generated>>
+   --
+    Nombre:             String
+    Apellido:           String
+    Email:              String
+    Celular:            String
+}
+
+entity "Premios"
+{
+    *Id:                Integer  <<generated>>
+    --
+    PuestoNumero:       Integer
+    PuestoNombre:       String
+    PremioMonto:        Decimal
+    PremioPorcentaje:   Double
+}
+
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
 
 Campeonatos ||--|{ CampeonatoParticipantes
 Campeonatos ||--|{ CampeonatoPremios
+
 Equipos     ||--|{ CampeonatoParticipantes
 Equipos     ||--|{ EquipoMiembros
 Equipos     ||--|{ PartidoParticipantes
 Equipos     ||--|{ Partidos
-Premios     ||--|{ CampeonatoPremios
-Personas    ||--|{ EquipoMiembros
+
 Partidos    ||--|{ PartidoParticipantes
+
+Personas    ||--|{ EquipoMiembros
+
+Premios     ||--|{ CampeonatoPremios
 
 ' ──────────────────────────────────────────────────────────────────────────────
 
-caption Diagramado por Gerardo Tordoya el 2022-10-12
+caption AUTOR \n **Gerardo Tordoya** \n 2022-10-12
 
 ' ──────────────────────────────────────────────────────────────────────────────
 
