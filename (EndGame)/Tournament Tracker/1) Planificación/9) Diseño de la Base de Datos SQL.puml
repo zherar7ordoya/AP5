@@ -24,79 +24,87 @@ title Diseño de la Base de Datos SQL
 
 entity "CampeonatoParticipantes"
 {
-    *Id:                Integer  <<generated>>
+    *ID:           int  <<generated>>
     --
-    CampeonatoId:       Integer  **<<FK>>**
-    EquipoId:           Integer  **<<FK>>**
+    CampeonatoID:  int  **<<FK>>**
+    EquipoID:      int  **<<FK>>**
 }
+
 
 entity "CampeonatoPremios"
 {
-    *Id:                Integer  <<generated>>
+    *ID:           int  <<generated>>
     --
-    CampeonatoId:       Integer  **<<FK>>**
-    PremioId:           String   **<<FK>>**
+    CampeonatoID:  int  **<<FK>>**
+    PremioID:      int  **<<FK>>**
 }
+
 
 entity "Campeonatos"
 {
-    *Id:                Integer  <<generated>>
+    *ID:     int  <<generated>>
     --
-    CampeonatoNombre:   String
-    CampeonatoTarifa:   Decimal
+    Nombre:  nvarchar(200)
+    Tarifa:  money
 }
+
 
 entity "EquipoMiembros"
 {
-    *Id:                Integer  <<generated>>
+    *ID:        int  <<generated>>
     --
-    EquipoId:           Integer  **<<FK>>**
-    PersonaId:          Integer  **<<FK>>**
+    EquipoID:   int  **<<FK>>**
+    PersonaID:  int  **<<FK>>**
 }
+
 
 entity "Equipos"
 {
-    *Id:                Integer  <<generated>>
+    *ID:     int  <<generated>>
     --
-    Nombre:             String
+    Nombre:  nvarchar(100)
 }
+
 
 entity "PartidoParticipantes"
 {
-   *Id:                 Integer  <<generated>>
+   *ID:                 int  <<generated>>
    --
-    PartidoId:          Integer  **<<FK>>**
-    PartidoAnteriorId:  Integer  **<<FK>>**
-    EquipoId:           Integer  **<<FK>>**
-    Puntaje:            Integer
+    PartidoPresenteID:  int  **<<FK>>**
+    PartidoAnteriorID:  int  **<<FK>>**
+    EquipoID:           int  **<<FK>>**
+    Puntaje:            int
 }
+
 
 entity "Partidos"
 {
-   *Id:                 Integer  <<generated>>
+   *ID:         int  <<generated>>
    --
-    GanadorId:          Integer  **<<FK>>**
-    PartidoRonda:       Integer
+    GanadorID:  int  **<<FK>>**
+    Ronda:      int
 }
+
 
 entity "Personas"
 {
-   *Id:                 Integer  <<generated>>
+   *ID:        int  <<generated>>
    --
-    Nombre:             String
-    Apellido:           String
-    Email:              String
-    Celular:            String
+    Nombre:    nvarchar(100)
+    Apellido:  nvarchar(100)
+    Email:     nvarchar(100)
+    Celular:   nvarchar(20)
 }
+
 
 entity "Premios"
 {
-    *Id:                Integer  <<generated>>
+    *ID:               int  <<generated>>
     --
-    PuestoNumero:       Integer
-    PuestoNombre:       String
-    PremioMonto:        Decimal
-    PremioPorcentaje:   Double
+    PuestoNumero:      int
+    PuestoNombre:      nvarchar(50)
+    PremioMonto:       money
+    PremioPorcentaje:  float
 }
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
