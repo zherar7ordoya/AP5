@@ -1,0 +1,18 @@
+{
+    "1717242444149734": {
+        "full_name": "Gerardo Tordoya",
+        "gender": "Male",
+        "balance": 25000.0,
+        "account_creation_date": "2022-10-13",
+        "city": "San Salvador de Jujuy",
+        "phone_number": "+5493885843652"
+    },
+    "1717242439253933": {
+        "full_name": "Ivan Torrent",
+        "gender": "Male",
+        "balance": 10000.0,
+        "account_creation_date": "2022-10-13",
+        "city": "Ciudad del Cabo",
+        "phone_number": "+5493885843652"
+    }
+}
