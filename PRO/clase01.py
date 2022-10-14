@@ -95,13 +95,13 @@ print(lista1)
 # 3. Usando el método append()
 lista1 = [1, 2, 3]
 lista2 = [4, 5, 6]
-lista1.append(lista2)
+lista1.append(lista2)  # type: ignore
 print(lista1)
 
 # 4. Usando el método insert()
 lista1 = [1, 2, 3]
 lista2 = [4, 5, 6]
-lista1.insert(3, lista2)
+lista1.insert(3, lista2)  # type: ignore
 print(lista1)
 
 # 5. Agregando todos los elementos, uno por uno
