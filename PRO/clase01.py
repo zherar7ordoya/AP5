@@ -34,44 +34,44 @@ print("Divide el texto en palabras: ", TEXTO.split(" "))
 X = "Tordoya" in TEXTO
 print("Comprueba si existe una palabra en el texto: ", X)
 EDAD = 43
-texto = f"Mi nombre es {TEXTO}y tengo {EDAD} años"
-print(texto)
-texto = "Los así llamados \"programadores\" son los mejores"
-print(texto)
-texto = "capitalización"
-print(texto.capitalize())
-texto = " Visüal Stüdio Códe "
-print(texto.center(50, "*"))
-print(texto.casefold())
-print("Centra el texto en 50 caracteres:\n", texto.center(50))
-print("Cuenta la cantidad de veces que aparece la 'o': ", texto.count("o"))
-print("Imprime una versión codificada del texto: ", texto.encode())
-texto = "G\tT"
+TXT = f"Mi nombre es {TEXTO} y tengo {EDAD} años"
+print(TXT)
+TXT = "Los así llamados \"programadores\" son los mejores"
+print(TXT)
+TXT = "capitalización"
+print(TXT.capitalize())
+TXT = " Visüal Stüdio Códe "
+print(TXT.center(50, "*"))
+print(TXT.casefold())
+print("Centra el texto en 50 caracteres:\n", TXT.center(50))
+print("Cuenta la cantidad de veces que aparece la 'o': ", TXT.count("o"))
+print("Imprime una versión codificada del texto: ", TXT.encode())
+TXT = "G\tT"
 print("Imprime una versión con tabuladores:")
-print(texto.expandtabs(2))
-print(texto.expandtabs(3))
-print(texto.expandtabs(4))
-print(texto.expandtabs(5))
+print(TXT.expandtabs(2))
+print(TXT.expandtabs(3))
+print(TXT.expandtabs(4))
+print(TXT.expandtabs(5))
 
 # Ejemplo a tener en cuenta (p37 del apunte)
-txt = "Hello, welcome to my world."
-x = txt.index("e", 5, 15)
-print(x)
+CADENA = "Hello, welcome to my world."
+XTH = CADENA.index("e", 5, 15)
+print(XTH)
 
 # Otro ejemplo a tener en cuenta (p45)
-txt = "Mi nombre es\nGerardo Tordoya"
-print("Verifica si todos los caracteres son imprimibles:", txt.isprintable())
+CADENA = "Mi nombre es\nGerardo Tordoya"
+print("Verifica si todos los caracteres son imprimibles:", CADENA.isprintable())
 
 # Otro ejemplo a tener en cuenta (p79)
-a = 8
-b = "Hola"
-c = 3.14
+ATH = 8
+BTH = "Hola"
+CTH = 3.14
 
-print(f"El valor de a es {a}, el de b es {b} y el de c es {c}")
+print(f"El valor de a es {ATH}, el de b es {BTH} y el de c es {CTH}")
 
 # --- LISTAS & ARRAYS ---------------------------------------------------------
 
-# creating an array containing same data type elements 
+# creating an array containing same data type elements
 mi_array = array.array('i', [1, 2, 3])
 
 # accessing elements of array
