@@ -317,8 +317,11 @@ def search_account(field, query):
         print("──── Error ──────────────────────────────────")
         print("Found no one as", query)
     else:
-        user = users.index(index)
-        display_user_object(user, user["account_number"])
+        # Se agregan los IF para que pylint no objete debido a None.
+        if users is not None:
+            user = users.index(index)
+            if user is not None:
+                display_user_object(user, user["account_number"])
 
 
 # ─── DELETE AN ACCOUNT ────────────────────────────────────────────────────────
@@ -387,10 +390,14 @@ def display_all_accounts_sorted_by(field):
     users = get_users_as_list()
     users = heap_sort(users, field)
     clean_terminal_screen()
-    for i in range(0, users.size()):
-        user = users.index(i)
-        display_user_object(user, user["account_number"])
 
+    # Los IF se pusieron para que no se rompa el programa si se ingresa un campo
+    # que no existe (None).
+    if users is not None:
+        for i in range(0, users.size()):
+            user = users.index(i)
+            if user is not None:
+                display_user_object(user, user["account_number"])
 
 def beatify_field_name(field):
     """ builds a pretty field name """

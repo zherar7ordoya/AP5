@@ -1,3 +1,8 @@
+"""
+Banco
+"""
+
+
 import csv
 import sys
 from os.path import exists
@@ -176,7 +181,7 @@ class Bank(object):
                             print("Successfully logged in. Welcome",
                                   account_name.title())
                             self.user_account = account.Account(
-                                row[0], row[1], row[2], row[3])
+                                row[0], row[1], row[2], row[3])  # type: ignore
                             break
                         else:
                             print("Wrong name or PIN entered. Please try "

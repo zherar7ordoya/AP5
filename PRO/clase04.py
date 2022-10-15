@@ -67,7 +67,7 @@ class Coche:
         print ("El automovil irá desde", origen, "hasta", destino, "recorriendo", kms, "kms")
 
 auto1 = Coche(5)        #Instancio un coche
-Coche.marca = "Fiat"    #Modifico atributo público de clase
+Coche.marca = "Fiat"    # type: ignore #Modifico atributo público de clase
 Coche.set_modelo("Argo")#Modifico atributo privado de clase (setter)
 auto1.arrancar()        #Arrancar el vehículo, método de instancia
 auto1.conducir()        #Conducir el vehículo, método de instancia
