@@ -1,6 +1,14 @@
+"""
+  @title        PARCIAL 1
+  @description  Gestor de tarjetas de crédito
+  @author       Gerardo Tordoya
+  @date         2022-10-16
+"""
+
 import os.path
 
-class Costumer:  # this class contains all the informations about the costomer of shop#
+class Costumer:
+    """ Esta clase contiene la información del cliente """
     cos_name = " "
     cos_cell = " "
     amount_paid = 0
@@ -10,51 +18,59 @@ class Costumer:  # this class contains all the informations about the costomer o
         pass
 
     def get_user_details(self):
+        """ Obtiene los datos del usuario """
         print("GETTING COSTUMER'S DETAILS\n")
         self.cos_name = str(input("Enter your Name : "))
         self.cos_cell = str(input("Enter Your cell # : "))
 
     def print_cos(self):
+        """ Imprime los datos del cliente """
         print("NAME YOUR NAME : " + str(self.cos_name))
         print("CELL # : " + str(self.cos_cell))
-        
-
+    
     def paying(self):
+        """ Paga la compra """
         self.amount_paid = int(input("Enter amount costumer Paid : $"))
 
     def returnned(self):
+        """ Devuelve el cambio """
         print("Amount returned : $" +str(self.amount_get_back))
 
 
-class User:  # this class contains all the informations about the shop admin#
+class User:
+    """ Esta clase contiene la información del usuario (administrador) """
     id_name = "admin"
     id_pass = "12345"
 
-    item_names = ["Corn", "Apple", "Cookies", "Maggie", "Milk", "Candies", "Cream", "Snacks", "Drinks", "Mangoes"]
+    item_names = ["Corn", "Apple", "Cookies", "Maggie", "Milk", "Candies",
+    "Cream", "Snacks", "Drinks", "Mangoes"]
     item_price = [20, 15, 30, 50, 100, 40, 90, 45, 80, 25]
     total_item = 10
 
     def display_available_items(self):
-        print("ITEM NAME\t\t\tPrice($)")
+        """ Imprime los items disponibles """
+        print("ITEM NAME\t\t\tPrecio($)")
         print("==================================")
         for i in range(len(self.item_names)):
             print(str(self.item_names[i]) + "\t\t\t\t" + str(self.item_price[i]) + "$")
 
+
     def get_user_detail(self):
+        """ Obtiene los datos del usuario """
         print("\nAdmin Login details ...\n===================\n")
         self.id_name = str(input("Enter ID-Name : "))
         self.id_pass = str(input("Enter Password : "))
-        while (True):
-            if self.id_name == "admin" and self.id_pass == "12345":
-                #  self.crud()
-                return True
-                break
 
-            else:
-                print("Wrong ID or Password\nTry Again")
-                self.get_user_detail()
+        while True:
+
+            if self.id_name == "admin" and self.id_pass == "12345":
+                return True
+
+            print("Wrong ID or Password\nTry Again")
+            self.get_user_detail()
 
     def add_item_to_shop(self):
+        """ Agrega un item al shop """
         name = str(input("Enter Name of item you want to add : "))
         price = int(input("Enter the price of that item $:"))
         self.item_names.append(name)
@@ -63,14 +79,16 @@ class User:  # this class contains all the informations about the shop admin#
         print("Item added successfully..!")
 
     def remove_from_shop(self):
+        """ Elimina un item del shop """
         name = str(input("Enter name of item you want to remove : "))
         for i in range(len(self.item_names) - 1):
             if self.item_names[i] == name:
-                del (self.item_names[i])
+                del self.item_names[i]
                 self.total_item -= 1
                 print("Item removed successfully")
 
     def admin_choice(self):
+        """ Muestra las opciones del administrador """
         print("\t\t\tADMIN PORTAL\n\t\t\t============\n")
         print("\t[1]. Display all items\n\t[2].Add more\n\t[3].Remove Item\n\t[4].Back-->")
         choice = int(input("SELECT WHAT YOU WANT TO DO ? "))
@@ -93,13 +111,15 @@ class User:  # this class contains all the informations about the shop admin#
                 self.admin_choice()
 
     def admin_side(self):
-        x = False
-        x = self.get_user_detail()
-        if x == True:
+        """ Muestra el menú del administrador """
+        xth = False
+        xth = self.get_user_detail()
+        if xth is True:
             self.admin_choice()
 
 
-class Shop(Costumer,User):  # this class contains the actual data and informations about shop#
+class Shop(Costumer, User):
+    """ Esta clase contiene la información de la tienda """
     itemQuantity = 0
     itemPrice = 0
     itemName = " "
@@ -119,16 +139,35 @@ class Shop(Costumer,User):  # this class contains the actual data and informatio
 
     # --------------------#
 
-    def __init__(self):
-        pass
+    #def __init__(self):
+    #    """ Constructor de la clase """
+    #    pass
 
-    def intro(self): 
-        print(
-            "\n\t\tWELCOME TO OUR SHOP \U0001F600 \n\t\t\n\t\t  HUNGER SOLUTION \U0001F637 \n\t\t---------------------\n\t\t ..we serve you..! \U0001F917 \n\t\t----------------------\n\nAddress : xyz road , Block abc , Khi\nContact # : +9232-shop(2122)\n\n")
+    def intro(self):
+        """ Imprime el menú de la tienda """
+        print("""
+        WELCOME TO OUR SHOP \U0001F600
+        HUNGER SOLUTION \U0001F637
+        ---------------------
+        ..we serve you..! \U0001F917
+        ----------------------
 
-    def interface(self):  # this is the method in which the program has two interface one is admin and the other is costumer#
+        Address : xyz road , Block abc , Khi
+        Contact # : +9232-shop(2122)
+        """)
+
+    def interface(self):
+        """ Muestra el menú de la tienda """
         self.intro()
-        abc = int(input("SELECT YOU SIDE :\n================\n\n[1]. ADMIN\n[2]. COSTUMER\n[3]. EXIT\nType here ... "))
+        abc = int(input("""
+        SELECT YOU SIDE:
+        ================
+        [1]. ADMIN
+        [2]. COSTUMER
+        [3]. EXIT
+        Type here ... "
+        """))
+
         if abc == 1:
             self.admin.admin_side()
             y = str(input("Press Y to continue .."))
@@ -146,16 +185,19 @@ class Shop(Costumer,User):  # this class contains the actual data and informatio
             exit(1)
 
     def costumer_side(self):
+        """ Muestra el menú del cliente """
         self.costumer.get_user_details()
         self.costumer_choice()
 
     def billing_process(self):
+        """ Proceso de facturación """
         self.paying()
         self.receiving_amount()
         self.returning_amount()
         self.returning_amount()
 
     def print_bill(self):
+        """ Imprime la factura """
         print("WELCOME TO OUR SHOPPING MART\n============================\n")
         print("Costumer Name : " + str(self.cos_name))
         print("Costumer cell : " + str(self.cos_cell))
@@ -180,10 +222,12 @@ class Shop(Costumer,User):  # this class contains the actual data and informatio
             print("TOTAL Amount after GST of 5% : " + str(self.total + (self.total * 0.05)) + "\n   THANK YOU!\n   HAVE A NICE DAY!!.")
 
     def receiving_amount(self):
+        """ Recibe el pago del cliente """
         self.paying()
         self.amount_rec = self.amount_paid
 
     def returning_amount(self):
+        """ Devuelve el cambio al cliente """
         self.amount_returned = self.total - self.amount_rec - self.total * 0.05
         self.amount_get_back = self.amount_returned
 
@@ -194,6 +238,7 @@ class Shop(Costumer,User):  # this class contains the actual data and informatio
         self.tot.append(self.itemPrice * self.itemQuantity)
 
     def selection(self):
+        """ Muestra las opciones del cliente """
         print("\nSHOWING COSTUMER PRICE OF ITEMS\n\n")
         self.admin.display_available_items()
         for i in range(self.num):
@@ -208,10 +253,12 @@ class Shop(Costumer,User):  # this class contains the actual data and informatio
                 print("ITEM NOT AVAILABLE!")
 
     def number(self):
+        """ Pide el número de artículos a comprar """
         print("Item Numbers:")
         self.num = int(input("Enter no of item you want:"))
 
     def display(self):
+        """ Muestra los artículos comprados """
         for i in range(len(self.items)):
             if i < self.num:
                 print("ITEM # " + str(i + 1) + " : ")
