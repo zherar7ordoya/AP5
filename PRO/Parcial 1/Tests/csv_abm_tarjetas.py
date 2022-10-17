@@ -109,6 +109,14 @@ class ABMTarjetas:
         """ Devuelve todas las tarjetas inactivas en un DataFrame """
         return self.tarjetas[self.tarjetas['Activa'] == 0]
 
+    def leer_tarjetas_asignadas(self):
+        """ Devuelve todas las tarjetas asignadas en un DataFrame """
+        return self.tarjetas[self.tarjetas['TitularDocumento'] != 0]
+
+    def leer_tarjetas_no_asignadas(self):
+        """ Devuelve todas las tarjetas no asignadas en un DataFrame """
+        return self.tarjetas[self.tarjetas['TitularDocumento'] == 0]
+
     def leer_tarjetas_titular(self, id_titular):
         """ Devuelve el titular de la tarjeta con el ID especificado """
         return self.tarjetas[self.tarjetas['TitularDocumento'] == int(id_titular)]

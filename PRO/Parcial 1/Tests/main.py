@@ -5,85 +5,90 @@
   @date         2022-10-16
 """
 
-import archivo_csv
+# ─── UNICODE BLOCKS -----------------------------------------------------------
+#          Box Drawing      => www.compart.com/en/unicode/block/U+2500         #
+#          Block Elements   => www.compart.com/en/unicode/block/U+2580         #
+#          Geometric Shapes => www.compart.com/en/unicode/block/U+25A0         #
 
-# ─── PRUEBAS PRELIMINARES ────────────────────────────────────────────────────
-# import os
-# print(os.getcwd())
-
-# df = pandas.read_csv(ARCHIVO_TITULARES)
-# print(df)
-
-# print(len(df.columns))    ES 4
-# print(len(df.index))      ES 6
-
-# AGREGAR REGISTRO
-# registro = ['Claudia', 'Tordoya', 'DNI', '32724632', '1']
-# df.loc[len(df.index)] = registro  # type: ignore
-
-# MODIFICAR REGISTRO
-# for index in df.index:
-#    if df.loc[index, 'DocumentoNumero'] == int('33777420'):
-#        df.loc[index, 'DocumentoNumero'] = '22777420'
-
-# GUARDAR REGISTRO
-# df.to_csv(ARCHIVO_TITULARES, index=False)
-
-# LEER REGISTRO
-# df = pandas.read_csv(ARCHIVO_TITULARES)
-
-# MOSTRAR REGISTRO
-# print(df)
-# ─────────────────────────────────────────────────────────────────────────────
-
-titulares = archivo_csv.ABM()
-tarjetas = archivo_csv.ABM()
-
-# --- C -----------------------------------------------------------------------
-# print(tarjetas.leer_tarjetas())
-# print(titulares.leer_titulares())
-
-# siguiente_tarjeta = len(tarjetas.leer_tarjetas().index)
-# tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
-
-titulares.crear_titular('Gerardo', 'Tordoya', 'DNI', '22777420', '1')
+import os
+import sys
+# import administrador
 
 
-# --- R -----------------------------------------------------------------------
-# print(tarjetas.leer_tarjetas())
-# print(titulares.leer_titulares())
+# ─── HERRAMIENTAS DE INTERFAZ ────────────────────────────────────────────────
+def limpiar_pantalla():
+    """ Limpia la pantalla de la consola usando CLS en Windows y CLEAR en Linux. """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-# print(tarjetas.leer_tarjeta('9999000000000000'))
-# print(titulares.leer_titular('22777420'))
 
-# --- U -----------------------------------------------------------------------
-# print(tarjetas.leer_tarjetas())
-# print(titulares.leer_titulares())
-#
-# print("\nACTUALIZANDO... \n")
-#
-# tarjetas.actualizar_tarjeta('9999000000000000', '9999000000000000', 'Platinum', '22777420',
-#                             '66444.12', '259.23', '2021-09-18', '2025-09-18', '1')
-# tarjetas.actualizar_tarjeta('8888000000000001', '8888000000000001', 'Gold', '22777420',
-#                             '53019.34', '574.45', '2021-05-09', '2025-05-09', '1')
-# tarjetas.actualizar_tarjeta('7777000000000002', '7777000000000002', 'Plata', '22777420',
-#                             '42400.56', '793.67', '2022-07-15', '2026-07-15', '1')
-# titulares.actualizar_titular('22777420', 'Gerardo', 'Tordoya', 'DNI', '22777420', '1')
-# --- D -----------------------------------------------------------------------
-# print(tarjetas.leer_tarjetas())
-# print(titulares.leer_titulares())
+def linea_horizontal():
+    """ Imprime una línea horizontal decorativa. """
+    print("───────────────────────────────────────────────")
 
-# Está hecho en UPDATE (ya que se actualiza el estado a 0): borrado lógico.
 
-# tarjetas.borrar_tarjeta('8888000000000001')
-# titulares.borrar_titular('22777420')
+# ─── MENU ────────────────────────────────────────────────────────────────────
 
-# --- TESTS -------------------------------------------------------------------
+def mostrar_menu():
+    """ Muestra el menú principal de la aplicación, la cual actúa como interfaz. """
 
-# tarjetas.asignar_tarjeta('9999000000000003', '22777420', '15000', '150')
+    limpiar_pantalla()
+    print()
+    print("""
+        ┌────────────────┐  ╭───────────────────────────────╮
+        │                │  │ ► 1 ABM Tarjetas              │
+        │   FINANCIERA   │  ├───────────────────────────────┤
+        │                │  │ ► 2 ABM Titulares             │
+        │      ╭┼┼╮      │  ├───────────────────────────────┤
+        │      ╰┼┼╮      │  │ ► 3 Asignaciones de Tarjetas  │
+        │      ╰┼┼╯      │  ├───────────────────────────────┤
+        │                │  │ ► 4 Ingreso de Consumos       │
+        │ ADMINISTRACIÓN │  ├───────────────────────────────┤
+        │    TARJETAS    │  │ ► 5 Ingreso de Pagos          │
+        │   DE CRÉDITO   │  ├───────────────────────────────┤
+        │                │  │ ► 6 Salir                     │
+        └────────────────┘  ╰───────────────────────────────╯
+    """)
+    respuesta = int(input("         Ingrese su respuesta ► "))
+    limpiar_pantalla()
 
-# print(tarjetas.leer_tarjetas_inactivas())
-# print(titulares.leer_tarjetas_activas_titular('22777420'))
+    if respuesta == 1:
+        print("─── Altas/Bajas/Modificaciones de Tarjetas ────")
+        # administrador.Administrador.
 
-# print(tarjetas.leer_tarjetas())
-print(titulares.leer_titulares())
+    if respuesta == 2:
+        print("─── Altas/Bajas/Modificaciones de Titulares ───")
+        # sender = input("Sender's Account Number:    ")
+        # receiver = input("Recipient's Account Number: ")
+        # amount = float(input("Transaction Amount: "))
+        # perform_transaction(sender, receiver, amount)
+
+    if respuesta == 3:
+        print("─── Asignaciones de Tarjetas a Titulares ──────")
+        # account_number = input("Account Number To Change: ")
+        # update_information(account_number)
+
+    if respuesta == 4:
+        print("─── Ingresos de Consumos ──────────────────────")
+        # account_number = input("Account number to delete: ")
+        # delete_account(account_number)
+
+    if respuesta == 5:
+        print("─── Ingresos de Pagos ─────────────────────────")
+        # query = input("Searching for: ")
+        # limpiar_pantalla()
+        # search_account("full_name", query)
+
+    if respuesta == 6:
+        print("─── Saliendo ──────────────────────────────────")
+        print("\nGracias por utilizar nuestros servicios.\n")
+        sys.exit()
+
+    print()
+    linea_horizontal()
+    input("Pulse ENTER para continuar...")
+    print()
+
+
+# ─── MAIN ─────────────────────────────────────────────────────────────────────
+while True:
+    mostrar_menu()
