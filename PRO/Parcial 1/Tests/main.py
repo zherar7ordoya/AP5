@@ -43,9 +43,9 @@ tarjetas = archivo_csv.ABM()
 # print(tarjetas.leer_tarjetas())
 # print(titulares.leer_titulares())
 
-siguiente_tarjeta = len(tarjetas.leer_tarjetas().index)
+# siguiente_tarjeta = len(tarjetas.leer_tarjetas().index)
+# tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
 
-tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
 # titulares.crear_titular('Rodolfo', 'Tordoya', 'LE', '8123999', '1')
 
 
@@ -79,5 +79,11 @@ tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
 # titulares.borrar_titular('22777420')
 
 # --- TESTS -------------------------------------------------------------------
+
+# tarjetas.asignar_tarjeta('9999000000000003', '22777420', '15000', '150')
+
+# print(tarjetas.leer_tarjetas_inactivas())
+# print(titulares.leer_tarjetas_activas_titular('22777420'))
+
 print(tarjetas.leer_tarjetas())
 print(titulares.leer_titulares())

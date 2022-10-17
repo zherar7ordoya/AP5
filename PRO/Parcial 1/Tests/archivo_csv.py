@@ -3,9 +3,14 @@
   @description  Implementación de ABM contra archivo CSV
   @author       Gerardo Tordoya
   @date         2022-10-16
+  @remark       Por una cuestión de practicidad, se implementa en una sola clase
+                tanto métodos genéricos como específicos para cada entidad.
 """
 
 import pandas
+from decimal import Decimal
+from datetime import date
+import fechas
 
 ARCHIVO_TARJETAS = 'tarjetas.csv'
 ARCHIVO_TITULARES = 'titulares.csv'
@@ -26,6 +31,27 @@ class ABM:
     def guardar_titular(self):
         """ Guarda los titulares en el archivo CSV """
         self.titulares.to_csv(ARCHIVO_TITULARES, index=False)
+
+    def asignar_tarjeta(self, id_tarjeta, id_titular, saldo_pesos, saldo_dolares):
+        """ Asigna una tarjeta a un titular """
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = int(id_titular)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoPesos'] = Decimal(saldo_pesos)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoDolares'] = Decimal(saldo_dolares)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = date.today()
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = fechas.agregar_years(date.today(), 4)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'Activa'] = 1
+        self.guardar_tarjeta()
+
+    def desasignar_tarjeta(self, id_tarjeta, id_titular):
+        """ Desasigna una tarjeta a un titular """
+        if self.tarjetas[(self.tarjetas['TarjetaNumero'] == int(id_tarjeta)) & (self.tarjetas['SaldoPesos'] == 0) & (self.tarjetas['SaldoDolares'] == 0)].empty:
+            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = 0
+            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = 0
+            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = 0
+            self.guardar_tarjeta()
+        else:
+            print('No se puede desasignar la tarjeta porque tiene saldo.')
+
 
     # ─── (C) CREAR ───────────────────────────────────────────────────────────
     def crear_tarjeta(self, tarjeta_numero, tarjeta_tipo):
@@ -63,6 +89,26 @@ class ABM:
         """
         return self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)]
 
+    def leer_tarjetas_activas(self):
+        """ Devuelve todas las tarjetas activas en un DataFrame """
+        return self.tarjetas[self.tarjetas['Activa'] == 1]
+
+    def leer_tarjetas_inactivas(self):
+        """ Devuelve todas las tarjetas inactivas en un DataFrame """
+        return self.tarjetas[self.tarjetas['Activa'] == 0]
+
+    def leer_tarjetas_titular(self, id_titular):
+        """ Devuelve el titular de la tarjeta con el ID especificado """
+        return self.tarjetas[self.tarjetas['TitularDocumento'] == int(id_titular)]
+
+    def leer_tarjetas_activas_titular(self, id_titular):
+        """ Devuelve todas las tarjetas activas del titular """
+        return self.tarjetas[(self.tarjetas['TitularDocumento'] == int(id_titular)) & (self.tarjetas['Activa'] == 1)]
+
+    def leer_tarjetas_inactivas_titular(self, id_titular):
+        """ Devuelve todas las tarjetas inactivas del titular """
+        return self.tarjetas[(self.tarjetas['TitularDocumento'] == int(id_titular)) & (self.tarjetas['Activa'] == 0)]
+
     def leer_tarjetas(self):
         """ Devuelve todas las tarjetas en un DataFrame """
         return self.tarjetas
@@ -73,6 +119,14 @@ class ABM:
         A los fines de este ejercicio, el ID es el número de documento.
         """
         return self.titulares[self.titulares['DocumentoNumero'] == int(id_titular)]
+
+    def leer_titulares_activos(self):
+        """ Devuelve todos los titulares activos en un DataFrame """
+        return self.titulares[self.titulares['Activo'] == 1]
+
+    def leer_titulares_inactivos(self):
+        """ Devuelve todos los titulares inactivos en un DataFrame """
+        return self.titulares[self.titulares['Activo'] == 0]
 
     def leer_titulares(self):
         """ Devuelve todos los titulares en un DataFrame """

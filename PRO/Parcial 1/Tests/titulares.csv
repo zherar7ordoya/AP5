@@ -1,4 +1,8 @@
 Nombre,Apellido,DocumentoTipo,DocumentoNumero,Activo
 Gerardo,Tordoya,DNI,22777420,1
-Claudia,Tordoya,DNI,32724632,1
-Rodolfo,Tordoya,LE,8123999,1
+Maria,Valdez,LC,13777421,0
+Rodolfo,Tordoya,LE,10123987,1
+Dario,Cardacci,DNI,28528582,1
+Peter,Gabriel,PASAPORTE,181852456,1
+Mari,Samuelsen,PASAPORTE,185753951,1
+Ludovico,Einaudi,PASAPORTE,183258654,1
