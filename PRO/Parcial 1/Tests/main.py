@@ -12,6 +12,7 @@
 
 import os
 import sys
+import info_pantalla
 # import administrador
 
 
@@ -82,6 +83,10 @@ def mostrar_menu():
         print("─── Saliendo ──────────────────────────────────")
         print("\nGracias por utilizar nuestros servicios.\n")
         sys.exit()
+
+    # ÁREA DE PRUEBAS:
+    # if respuesta == 7:
+    #     info_pantalla.mostrar_info()
 
     print()
     linea_horizontal()
