@@ -5,6 +5,8 @@
 Afirmaciones vinculadas a la Estadística Descriptiva:
 
 * Métodos empleados para resumir las características clave de datos conocidos. ***(Opción A)***
+* Brinda información certera sobre un grupo de individuos. (Opción C)
+* Interpreta la característica de una serie de datos.
 
 ---
 
@@ -52,7 +54,7 @@ Variables cuantitativas
 
 ## Pregunta 4
 
-C) Frecuencia relativa de la primera semana. ***(Opción C)***
+D) Frecuencia Absoluta de la 1ra Semana
 
 ---
 
