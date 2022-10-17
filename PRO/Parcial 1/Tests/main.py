@@ -46,7 +46,7 @@ tarjetas = archivo_csv.ABM()
 # siguiente_tarjeta = len(tarjetas.leer_tarjetas().index)
 # tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
 
-# titulares.crear_titular('Rodolfo', 'Tordoya', 'LE', '8123999', '1')
+titulares.crear_titular('Gerardo', 'Tordoya', 'DNI', '22777420', '1')
 
 
 # --- R -----------------------------------------------------------------------
@@ -85,5 +85,5 @@ tarjetas = archivo_csv.ABM()
 # print(tarjetas.leer_tarjetas_inactivas())
 # print(titulares.leer_tarjetas_activas_titular('22777420'))
 
-print(tarjetas.leer_tarjetas())
+# print(tarjetas.leer_tarjetas())
 print(titulares.leer_titulares())

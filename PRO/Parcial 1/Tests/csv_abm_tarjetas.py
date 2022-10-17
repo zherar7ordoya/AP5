@@ -1,50 +1,57 @@
 """
   @title        Gestor de Tarjetas de Crédito
-  @description  Implementación de ABM contra archivo CSV
+  @description  Implementación ABM archivo CSV para tarjetas
   @author       Gerardo Tordoya
   @date         2022-10-16
-  @remark       Por una cuestión de practicidad, se implementa en una sola clase
-                tanto métodos genéricos como específicos para cada entidad.
 """
 
 import pandas
 from decimal import Decimal
 from datetime import date
-import fechas
 
 ARCHIVO_TARJETAS = 'tarjetas.csv'
-ARCHIVO_TITULARES = 'titulares.csv'
 
 
-class ABM:
-    """ Herramienta para leer y escribir archivos CSV """
+# ─── MÉTODOS ESTÁTICOS ───────────────────────────────────────────────────────
+def agregar_years(desde, years):
+    """
+    Agrega años a una fecha y devuelve la fecha resultante.
+    No nombro "años" al método por el error "non-ASCII character".
+    """
+    try:
+        return desde.replace(year=desde.year + years)
+    except ValueError:
+        # Para el caso de febrero 29
+        return desde.replace(year=desde.year + years, day=28)
 
+
+class ABMTarjetas:
+    """ CRUD para leer y escribir el archivo CSV de tarjetas """
     def __init__(self):
         """ Constructor """
         self.tarjetas = pandas.read_csv(ARCHIVO_TARJETAS)
-        self.titulares = pandas.read_csv(ARCHIVO_TITULARES)
 
+    # ─── PERSISTENCIA ────────────────────────────────────────────────────────
     def guardar_tarjeta(self):
         """ Guarda las tarjetas en el archivo CSV """
         self.tarjetas.to_csv(ARCHIVO_TARJETAS, index=False)
 
-    def guardar_titular(self):
-        """ Guarda los titulares en el archivo CSV """
-        self.titulares.to_csv(ARCHIVO_TITULARES, index=False)
-
+    # ─── MÉTODOS DE INSTANCIA ────────────────────────────────────────────────
     def asignar_tarjeta(self, id_tarjeta, id_titular, saldo_pesos, saldo_dolares):
         """ Asigna una tarjeta a un titular """
         self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = int(id_titular)
         self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoPesos'] = Decimal(saldo_pesos)
         self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoDolares'] = Decimal(saldo_dolares)
         self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = date.today()
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = fechas.agregar_years(date.today(), 4)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = agregar_years(
+            date.today(), 4)
         self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'Activa'] = 1
         self.guardar_tarjeta()
 
-    def desasignar_tarjeta(self, id_tarjeta, id_titular):
+    def desasignar_tarjeta(self, id_tarjeta):
         """ Desasigna una tarjeta a un titular """
-        if self.tarjetas[(self.tarjetas['TarjetaNumero'] == int(id_tarjeta)) & (self.tarjetas['SaldoPesos'] == 0) & (self.tarjetas['SaldoDolares'] == 0)].empty:
+        if self.tarjetas[(self.tarjetas['TarjetaNumero'] == int(id_tarjeta)) & (self.tarjetas['SaldoPesos'] == 0) & (
+                self.tarjetas['SaldoDolares'] == 0)].empty:
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = 0
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = 0
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = 0
@@ -52,10 +59,27 @@ class ABM:
         else:
             print('No se puede desasignar la tarjeta porque tiene saldo.')
 
-
     # ─── (C) CREAR ───────────────────────────────────────────────────────────
     def crear_tarjeta(self, tarjeta_numero, tarjeta_tipo):
         """ Crea una nueva tarjeta """
+
+        # Validación pedida por el ejercicio.
+        largo_tarjeta = len(str(tarjeta_numero))
+        prefijo_tarjeta = str(tarjeta_numero)[:5]
+        if largo_tarjeta != 16:
+            print('El número de tarjeta no es válido.')
+            return
+        if prefijo_tarjeta == '9999' and tarjeta_tipo != 'Platinum':
+            print('El número de tarjeta no es válido.')
+            return
+        if prefijo_tarjeta == '8888' and tarjeta_tipo != 'Gold':
+            print('El número de tarjeta no es válido.')
+            return
+        if prefijo_tarjeta == '7777' and tarjeta_tipo != 'Plata':
+            print('El número de tarjeta no es válido.')
+            return
+        # Fin validación pedida por el ejercicio.
+
         tarjeta = {
             'TarjetaNumero': tarjeta_numero,
             'TarjetaTipo': tarjeta_tipo,
@@ -68,18 +92,6 @@ class ABM:
         }
         self.tarjetas = self.tarjetas.append(tarjeta, ignore_index=True)
         self.guardar_tarjeta()
-
-    def crear_titular(self, nombre, apellido, documento_tipo, documento_numero, activo):
-        """ Crea un nuevo titular """
-        titular = {
-            'Nombre': nombre,
-            'Apellido': apellido,
-            'DocumentoTipo': documento_tipo,
-            'DocumentoNumero': documento_numero,
-            'Activo': activo
-        }
-        self.titulares = self.titulares.append(titular, ignore_index=True)
-        self.guardar_titular()
 
     # ─── (R) LEER ────────────────────────────────────────────────────────────
     def leer_tarjeta(self, id_tarjeta):
@@ -113,25 +125,6 @@ class ABM:
         """ Devuelve todas las tarjetas en un DataFrame """
         return self.tarjetas
 
-    def leer_titular(self, id_titular):
-        """
-        Devuelve el titular con el ID especificado.
-        A los fines de este ejercicio, el ID es el número de documento.
-        """
-        return self.titulares[self.titulares['DocumentoNumero'] == int(id_titular)]
-
-    def leer_titulares_activos(self):
-        """ Devuelve todos los titulares activos en un DataFrame """
-        return self.titulares[self.titulares['Activo'] == 1]
-
-    def leer_titulares_inactivos(self):
-        """ Devuelve todos los titulares inactivos en un DataFrame """
-        return self.titulares[self.titulares['Activo'] == 0]
-
-    def leer_titulares(self):
-        """ Devuelve todos los titulares en un DataFrame """
-        return self.titulares
-
     # ─── (U) ACTUALIZAR ──────────────────────────────────────────────────────
     def actualizar_tarjeta(self, id_tarjeta, tarjeta_numero, tarjeta_tipo, titular_documento, saldo_pesos,
                            saldo_dolares, fecha_otorgamiento, fecha_vencimiento, activa):
@@ -148,17 +141,6 @@ class ABM:
                 self.tarjetas.loc[index, 'Activa'] = activa
         self.guardar_tarjeta()
 
-    def actualizar_titular(self, id_titular, nombre, apellido, documento_tipo, documento_numero, activo):
-        """ Actualiza los datos del titular """
-        for index in self.titulares.index:
-            if self.titulares.loc[index, 'DocumentoNumero'] == int(id_titular):
-                self.titulares.loc[index, 'Nombre'] = nombre
-                self.titulares.loc[index, 'Apellido'] = apellido
-                self.titulares.loc[index, 'DocumentoTipo'] = documento_tipo
-                self.titulares.loc[index, 'DocumentoNumero'] = documento_numero
-                self.titulares.loc[index, 'Activo'] = activo
-        self.guardar_titular()
-
     # ─── (D) BORRAR ──────────────────────────────────────────────────────────
     def borrar_tarjeta(self, id_tarjeta):
         """ Borra la tarjeta con el ID especificado """
@@ -166,10 +148,3 @@ class ABM:
             if self.tarjetas.loc[index, 'TarjetaNumero'] == int(id_tarjeta):
                 self.tarjetas.loc[index, 'Activa'] = '0'
         self.guardar_tarjeta()
-
-    def borrar_titular(self, id_titular):
-        """ Borra el titular con el ID especificado """
-        for index in self.titulares.index:
-            if self.titulares.loc[index, 'DocumentoNumero'] == int(id_titular):
-                self.titulares.loc[index, 'Activo'] = '0'
-        self.guardar_titular()
