@@ -25,7 +25,9 @@ class Operacion:
     # ─── CRUD TARJETAS ───────────────────────────────────────────────────────
     def alta_tarjeta(self):
         print()
+
         tarjeta_tipo = input("Tipo de Tarjeta: ")
+
         siguiente_tarjeta = len(self.tarjetas.leer_tarjetas().index)
         if tarjeta_tipo == "Platinum":
             self.tarjetas.crear_tarjeta(str(9999000000000000 + siguiente_tarjeta), 'Platinum')
@@ -46,6 +48,11 @@ class Operacion:
         print()
         tarjeta_numero = input("Número de Tarjeta: ")
 
+        if not tarjeta_numero:
+            print("El número de tarjeta ingresado no es válido.")
+            input("\nPulse ENTER para continuar...")
+            return
+
         if not tarjeta_numero.isdigit():
             print("El número de tarjeta no es válido.")
             input("\nPulse ENTER para continuar...")
@@ -58,12 +65,18 @@ class Operacion:
         print()
         print(self.tarjetas.leer_tarjetas_activas())
         print()
+
         tarjeta_numero = input("Número de Tarjeta: ")
         titular_documento = input("Documento del Titular: ")
         saldo_pesos = input("Saldo en Pesos: ")
         saldo_dolares = input("Saldo en Dólares: ")
         fecha_otorgamiento = input("Fecha de Otorgamiento (AAAA-MM-DD): ")
         fecha_vencimiento = input("Fecha de Vencimiento (AAAA-MM-DD): ")
+
+        if not tarjeta_numero and not titular_documento and not saldo_pesos and not saldo_dolares and not fecha_otorgamiento and not fecha_vencimiento:
+            print("No se ingresaron datos.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not tarjeta_numero.isdigit() and not titular_documento.isdigit() and not saldo_pesos.isdigit() and not saldo_dolares.isdigit():
             print("Los datos ingresados no son válidos.")
@@ -92,6 +105,11 @@ class Operacion:
         documento_tipo = input("Tipo de Documento: ")
         documento_numero = input("Número de Documento: ")
 
+        if not nombre and not apellido and not documento_tipo and not documento_numero:
+            print("No se ingresaron datos.")
+            input("\nPulse ENTER para continuar...")
+            return
+
         if not documento_numero.isdigit():
             print("El número de documento no es válido.")
             input("\nPulse ENTER para continuar...")
@@ -104,7 +122,13 @@ class Operacion:
         print()
         print(self.titulares.leer_titulares_activos())
         print()
+
         titular_documento = input("Documento del Titular: ")
+
+        if not titular_documento:
+            print("El número de documento ingresado no es válido.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not titular_documento.isdigit():
             print("El documento ingresado no es válido.")
@@ -118,10 +142,16 @@ class Operacion:
         print()
         print(self.titulares.leer_titulares_activos())
         print()
+
         id_titular = input("Número de Documento del Titular: ")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
         documento_tipo = input("Tipo de Documento: ")
+
+        if not id_titular and not nombre and not apellido and not documento_tipo:
+            print("No se ingresaron datos.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not id_titular.isdigit():
             print("El número de documento no es válido.")
@@ -144,6 +174,11 @@ class Operacion:
         saldo_pesos = input("Saldo en Pesos: ")
         saldo_dolares = input("Saldo en Dólares: ")
 
+        if not id_tarjeta and not id_titular and not saldo_pesos and not saldo_dolares:
+            print("Los datos ingresados no son válidos.")
+            input("\nPulse ENTER para continuar...")
+            return
+
         if not id_tarjeta.isdigit() and not id_titular.isdigit() and not saldo_pesos.isdigit() and not saldo_dolares.isdigit():
             print("Los datos ingresados no son válidos.")
             input("\nPulse ENTER para continuar...")
@@ -159,6 +194,11 @@ class Operacion:
         print(self.tarjetas.leer_tarjetas_asignadas())
         print()
         tarjeta_numero = input("Número de Tarjeta: ")
+
+        if not tarjeta_numero:
+            print("El número de tarjeta no es válido.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not tarjeta_numero.isdigit():
             print("El número de tarjeta no es válido.")
@@ -177,6 +217,11 @@ class Operacion:
         tarjeta_numero = input("Número de Tarjeta: ")
         pesos = input("Pesos: ")
 
+        if not tarjeta_numero and not pesos:
+            print("Los datos ingresados no son válidos.")
+            input("\nPulse ENTER para continuar...")
+            return
+
         if not tarjeta_numero.isdigit() and not pesos.isdigit():
             print("Error: Ingrese un número de tarjeta y un monto válido.")
             input("\nPulse ENTER para continuar...")
@@ -194,8 +239,14 @@ class Operacion:
         print()
         print(self.tarjetas.leer_tarjetas_activas())
         print()
+
         tarjeta_numero = input("Número de Tarjeta: ")
         dolares = input("Dólares: ")
+
+        if not tarjeta_numero and not dolares:
+            print("Los datos ingresados no son válidos.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not tarjeta_numero.isdigit() and not dolares.isdigit():
             print(f"\n{informacion.BColors.FAIL}\t Los datos ingresados no son válidos {informacion.BColors.ENDC}\n")
@@ -218,6 +269,11 @@ class Operacion:
 
         tarjeta_numero = input("Número de Tarjeta: ")
         pesos = input("Pesos: ")
+
+        if not tarjeta_numero and not pesos:
+            print("Los datos ingresados no son válidos.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not tarjeta_numero.isdigit() and not pesos.isdigit():
             print(f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
@@ -247,6 +303,11 @@ class Operacion:
 
         tarjeta_numero = input("Número de Tarjeta: ")
         dolares = input("Dólares: ")
+
+        if not tarjeta_numero and not dolares:
+            print("Los datos ingresados no son válidos.")
+            input("\nPulse ENTER para continuar...")
+            return
 
         if not tarjeta_numero.isdigit() and not dolares.isdigit():
             print(f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")

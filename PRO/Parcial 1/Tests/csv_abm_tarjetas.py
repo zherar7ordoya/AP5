@@ -52,7 +52,7 @@ class ABMTarjetas:
             'SaldoDolares': '0',
             'FechaOtorgamiento': '0',
             'FechaVencimiento': '0',
-            'Activa': '0'
+            'Activa': '1'
         }
         self.tarjetas = self.tarjetas.append(tarjeta, ignore_index=True)
         self.guardar_tarjeta()
