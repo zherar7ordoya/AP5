@@ -43,20 +43,27 @@ class Asignacion:
             print('El titular no existe.')
             return
 
-        if self.tarjetas.loc[self.tarjetas['id'] == id_tarjeta, 'id_titular'].item() is not None:
-            print('La tarjeta ya está asignada a un titular.')
+        # Valida si la tarjeta existe
+        if self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)].empty:
+            print('La tarjeta no existe.')
             return
-        else:
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = int(id_titular)
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoPesos'] = Decimal(saldo_pesos)
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoDolares'] = Decimal(
-                saldo_dolares)
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = date.today()
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = agregar_years(
-                date.today(), 4)
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'Activa'] = 1
-            self.tarjetas.to_csv(ARCHIVO_TARJETAS, index=False)
-            print('Tarjeta asignada correctamente.')
+
+        # Valida si la tarjeta ya está asignada
+        campo = self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)]['TitularDocumento']
+        if campo.values[0] != 0:
+            print('La tarjeta ya está asignada.')
+            return
+
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = int(id_titular)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoPesos'] = Decimal(saldo_pesos)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoDolares'] = Decimal(
+            saldo_dolares)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = date.today()
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = agregar_years(
+            date.today(), 4)
+        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'Activa'] = 1
+        self.tarjetas.to_csv(ARCHIVO_TARJETAS, index=False)
+        print('Tarjeta asignada correctamente.')
 
     def desasignar_tarjeta(self, id_tarjeta):
         """ Desasigna una tarjeta a un titular """

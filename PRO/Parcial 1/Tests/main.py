@@ -39,20 +39,22 @@ def mostrar_menu():
         │                │  │ ► 1 ABM Tarjetas              │
         │   FINANCIERA   │  ├───────────────────────────────┤
         │                │  │ ► 2 ABM Titulares             │
-        │      ╭┼┼╮      │  ├───────────────────────────────┤
-        │      ╰┼┼╮      │  │ ► 3 Asignaciones de Tarjetas  │
-        │      ╰┼┼╯      │  ├───────────────────────────────┤
-        │                │  │ ► 4 Ingreso de Consumos       │
+        │                │  ├───────────────────────────────┤
+        │      ╭┼┼╮      │  │ ► 3 Asignaciones de Tarjetas  │
+        │      ╰┼┼╮      │  ├───────────────────────────────┤
+        │      ╰┼┼╯      │  │ ► 4 Ingreso de Consumos       │
+        │                │  ├───────────────────────────────┤
+        │                │  │ ► 5 Ingreso de Pagos          │
         │ ADMINISTRACIÓN │  ├───────────────────────────────┤
-        │    TARJETAS    │  │ ► 5 Ingreso de Pagos          │
+        │    TARJETAS    │  │ ► 6 Salir                     │
         │   DE CRÉDITO   │  ├───────────────────────────────┤
-        │                │  │ ► 6 Salir                     │
+        │                │  │ ► 7 (Consultas)               │
         └────────────────┘  ╰───────────────────────────────╯
     """)
-    respuesta = int(input("         Ingrese su respuesta ► "))
+    opcion = input("         Ingrese su respuesta ► ")
     limpiar_pantalla()
 
-    if respuesta == 1:
+    if opcion == '1':
         print("─── Altas/Bajas/Modificaciones de Tarjetas ────")
         print("1. Crear Tarjeta")
         print("2. Borrar Tarjeta")
@@ -70,36 +72,75 @@ def mostrar_menu():
             return
         informacion.mostrar()
 
-    if respuesta == 2:
+    if opcion == '2':
         print("─── Altas/Bajas/Modificaciones de Titulares ───")
-        # sender = input("Sender's Account Number:    ")
-        # receiver = input("Recipient's Account Number: ")
-        # amount = float(input("Transaction Amount: "))
-        # perform_transaction(sender, receiver, amount)
+        print("1. Crear Titular")
+        print("2. Borrar Titular")
+        print("3. Modificar Titular")
+        respuesta = input("Opción: ")
+        if respuesta == "1":
+            operacion.alta_titular()
+        elif respuesta == "2":
+            operacion.baja_titular()
+        elif respuesta == "3":
+            operacion.modifica_titular()
+        else:
+            print("Opción incorrecta")
+            input("Pulse ENTER para continuar...")
+            return
+        informacion.mostrar()
 
-    if respuesta == 3:
+    if opcion == '3':
         print("─── Asignaciones de Tarjetas a Titulares ──────")
-        # account_number = input("Account Number To Change: ")
-        # update_information(account_number)
+        print("1. Asignar Tarjeta a Titular")
+        print("2. Desasignar Tarjeta a Titular")
+        respuesta = input("Opción: ")
+        if respuesta == "1":
+            operacion.asignar_tarjeta()
+        elif respuesta == "2":
+            operacion.desasignar_tarjeta()
+        else:
+            print("Opción incorrecta")
+            input("Pulse ENTER para continuar...")
+            return
+        informacion.mostrar()
 
-    if respuesta == 4:
+    if opcion == '4':
         print("─── Ingresos de Consumos ──────────────────────")
-        # account_number = input("Account number to delete: ")
-        # delete_account(account_number)
+        print("1. Ingresar Consumo en Pesos")
+        print("2. Ingresar Consumo en Dólares")
+        respuesta = input("Opción: ")
+        if respuesta == "1":
+            operacion.consumo_pesos()
+        elif respuesta == "2":
+            operacion.consumo_dolares()
+        else:
+            print("Opción incorrecta")
+            input("Pulse ENTER para continuar...")
+            return
+        informacion.mostrar()
 
-    if respuesta == 5:
+    if opcion == '5':
         print("─── Ingresos de Pagos ─────────────────────────")
-        # query = input("Searching for: ")
-        # limpiar_pantalla()
-        # search_account("full_name", query)
+        print("1. Ingresar Pago en Pesos")
+        print("2. Ingresar Pago en Dólares")
+        respuesta = input("Opción: ")
+        if respuesta == "1":
+            operacion.pago_pesos()
+        elif respuesta == "2":
+            operacion.pago_dolares()
+        else:
+            print("Opción incorrecta")
+            input("Pulse ENTER para continuar...")
+            return
+        informacion.mostrar()
 
-    if respuesta == 6:
+    if opcion == '6':
         print("─── Saliendo ──────────────────────────────────")
         print("\nGracias por utilizar nuestros servicios.\n")
         sys.exit()
 
-    # ÁREA DE PRUEBAS:
-    if respuesta == 7:
+    if opcion == '7':
         informacion.mostrar()
 
     print()

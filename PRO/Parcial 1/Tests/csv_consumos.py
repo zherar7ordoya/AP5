@@ -14,7 +14,7 @@ class Consumo:
     def __init__(self):
         self.tarjetas = pandas.read_csv(ARCHIVO_TARJETAS)
 
-    def en_pesos(self, id_tarjeta, pesos):
+    def consumo_pesos(self, id_tarjeta, pesos):
         """ Ingresa un consumo en pesos """
         conteo = 0
         for index in self.tarjetas.index:
@@ -28,7 +28,7 @@ class Consumo:
         else:
             print('Consumo ingresado con éxito.')
 
-    def en_dolares(self, id_tarjeta, dolares):
+    def consumo_dolares(self, id_tarjeta, dolares):
         """ Ingresa un consumo en dólares """
         conteo = 0
         for index in self.tarjetas.index:

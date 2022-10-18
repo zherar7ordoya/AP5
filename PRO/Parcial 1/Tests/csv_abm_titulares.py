@@ -81,6 +81,9 @@ class ABMTitulares:
         conteo = 0
         for index in self.titulares.index:
             if self.titulares.loc[index, 'DocumentoNumero'] == int(id_titular):
+                if self.titulares.loc[index, 'Activo'] == 0:
+                    print('El titular ya ha sido eliminado con anterioridad.')
+                    return
                 self.titulares.loc[index, 'Activo'] = '0'
                 conteo += 1
         self.guardar_titular()

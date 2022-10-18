@@ -132,6 +132,9 @@ class ABMTarjetas:
         conteo = 0
         for index in self.tarjetas.index:
             if self.tarjetas.loc[index, 'TarjetaNumero'] == int(id_tarjeta):
+                if self.tarjetas.loc[index, 'Activa'] == 0:
+                    print('La tarjeta ya ha sido eliminada con anterioridad.')
+                    return
                 self.tarjetas.loc[index, 'Activa'] = '0'
                 conteo += 1
         self.guardar_tarjeta()
