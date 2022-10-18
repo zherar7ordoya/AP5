@@ -1,5 +1,5 @@
 """
-  @title        PARCIAL 1
+  @title        MI PROGRAMA EN PYTHON v1.0
   @description  Gestor de tarjetas de crédito
   @author       Gerardo Tordoya
   @date         2022-10-16
@@ -12,8 +12,8 @@
 
 import os
 import sys
-import info_pantalla
-# import administrador
+import informacion
+import gestor
 
 
 # ─── HERRAMIENTAS DE INTERFAZ ────────────────────────────────────────────────
@@ -31,7 +31,7 @@ def linea_horizontal():
 
 def mostrar_menu():
     """ Muestra el menú principal de la aplicación, la cual actúa como interfaz. """
-
+    operacion = gestor.Operacion()
     limpiar_pantalla()
     print()
     print("""
@@ -54,7 +54,21 @@ def mostrar_menu():
 
     if respuesta == 1:
         print("─── Altas/Bajas/Modificaciones de Tarjetas ────")
-        # administrador.Administrador.
+        print("1. Crear Tarjeta")
+        print("2. Borrar Tarjeta")
+        print("3. Modificar Tarjeta")
+        respuesta = input("Opción: ")
+        if respuesta == "1":
+            operacion.alta_tarjeta()
+        elif respuesta == "2":
+            operacion.baja_tarjeta()
+        elif respuesta == "3":
+            operacion.modifica_tarjeta()
+        else:
+            print("Opción incorrecta")
+            input("Pulse ENTER para continuar...")
+            return
+        informacion.mostrar()
 
     if respuesta == 2:
         print("─── Altas/Bajas/Modificaciones de Titulares ───")
@@ -85,8 +99,8 @@ def mostrar_menu():
         sys.exit()
 
     # ÁREA DE PRUEBAS:
-    # if respuesta == 7:
-    #     info_pantalla.mostrar_info()
+    if respuesta == 7:
+        informacion.mostrar()
 
     print()
     linea_horizontal()

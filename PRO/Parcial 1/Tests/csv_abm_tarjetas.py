@@ -1,32 +1,19 @@
 """
-  @title        Gestor de Tarjetas de Crédito
+  @title        MI PROGRAMA EN PYTHON v1.0
   @description  Implementación ABM archivo CSV para tarjetas
   @author       Gerardo Tordoya
   @date         2022-10-16
 """
 
 import pandas
-from decimal import Decimal
-from datetime import date
+import datetime
 
 ARCHIVO_TARJETAS = 'tarjetas.csv'
 
 
-# ─── MÉTODOS ESTÁTICOS ───────────────────────────────────────────────────────
-def agregar_years(desde, years):
-    """
-    Agrega años a una fecha y devuelve la fecha resultante.
-    No nombro "años" al método por el error "non-ASCII character".
-    """
-    try:
-        return desde.replace(year=desde.year + years)
-    except ValueError:
-        # Para el caso de febrero 29
-        return desde.replace(year=desde.year + years, day=28)
-
-
 class ABMTarjetas:
     """ CRUD para leer y escribir el archivo CSV de tarjetas """
+
     def __init__(self):
         """ Constructor """
         self.tarjetas = pandas.read_csv(ARCHIVO_TARJETAS)
@@ -35,29 +22,6 @@ class ABMTarjetas:
     def guardar_tarjeta(self):
         """ Guarda las tarjetas en el archivo CSV """
         self.tarjetas.to_csv(ARCHIVO_TARJETAS, index=False)
-
-    # ─── MÉTODOS DE INSTANCIA ────────────────────────────────────────────────
-    def asignar_tarjeta(self, id_tarjeta, id_titular, saldo_pesos, saldo_dolares):
-        """ Asigna una tarjeta a un titular """
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = int(id_titular)
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoPesos'] = Decimal(saldo_pesos)
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'SaldoDolares'] = Decimal(saldo_dolares)
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = date.today()
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = agregar_years(
-            date.today(), 4)
-        self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'Activa'] = 1
-        self.guardar_tarjeta()
-
-    def desasignar_tarjeta(self, id_tarjeta):
-        """ Desasigna una tarjeta a un titular """
-        if self.tarjetas[(self.tarjetas['TarjetaNumero'] == int(id_tarjeta)) & (self.tarjetas['SaldoPesos'] == 0) & (
-                self.tarjetas['SaldoDolares'] == 0)].empty:
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = 0
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = 0
-            self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = 0
-            self.guardar_tarjeta()
-        else:
-            print('No se puede desasignar la tarjeta porque tiene saldo.')
 
     # ─── (C) CREAR ───────────────────────────────────────────────────────────
     def crear_tarjeta(self, tarjeta_numero, tarjeta_tipo):
@@ -92,6 +56,7 @@ class ABMTarjetas:
         }
         self.tarjetas = self.tarjetas.append(tarjeta, ignore_index=True)
         self.guardar_tarjeta()
+        print('Tarjeta creada con éxito.')
 
     # ─── (R) LEER ────────────────────────────────────────────────────────────
     def leer_tarjeta(self, id_tarjeta):
@@ -134,25 +99,43 @@ class ABMTarjetas:
         return self.tarjetas
 
     # ─── (U) ACTUALIZAR ──────────────────────────────────────────────────────
-    def actualizar_tarjeta(self, id_tarjeta, tarjeta_numero, tarjeta_tipo, titular_documento, saldo_pesos,
-                           saldo_dolares, fecha_otorgamiento, fecha_vencimiento, activa):
+    def actualizar_tarjeta(self, id_tarjeta, titular_documento, saldo_pesos,
+                           saldo_dolares, fecha_otorgamiento, fecha_vencimiento):
         """ Actualiza los datos de la tarjeta """
+
+        # Validación pedida por el ejercicio.
+        desde = datetime.datetime.strptime(fecha_otorgamiento, '%b %d %Y %I:%M%p')
+        hasta = datetime.datetime.strptime(fecha_vencimiento, '%b %d %Y %I:%M%p')
+        if desde >= hasta:
+            print('La fecha de vencimiento no puede ser anterior/igual a la fecha de otorgamiento.')
+            return
+        # Fin validación pedida por el ejercicio.
+
+        conteo = 0
         for index in self.tarjetas.index:
             if self.tarjetas.loc[index, 'TarjetaNumero'] == int(id_tarjeta):
-                self.tarjetas.loc[index, 'TarjetaNumero'] = tarjeta_numero
-                self.tarjetas.loc[index, 'TarjetaTipo'] = tarjeta_tipo
                 self.tarjetas.loc[index, 'TitularDocumento'] = titular_documento
                 self.tarjetas.loc[index, 'SaldoPesos'] = saldo_pesos
                 self.tarjetas.loc[index, 'SaldoDolares'] = saldo_dolares
                 self.tarjetas.loc[index, 'FechaOtorgamiento'] = fecha_otorgamiento
                 self.tarjetas.loc[index, 'FechaVencimiento'] = fecha_vencimiento
-                self.tarjetas.loc[index, 'Activa'] = activa
+                conteo += 1
         self.guardar_tarjeta()
+        if conteo == 0:
+            print('No se encontró la tarjeta especificada.')
+        else:
+            print('Tarjeta actualizada con éxito.')
 
     # ─── (D) BORRAR ──────────────────────────────────────────────────────────
     def borrar_tarjeta(self, id_tarjeta):
         """ Borra la tarjeta con el ID especificado """
+        conteo = 0
         for index in self.tarjetas.index:
             if self.tarjetas.loc[index, 'TarjetaNumero'] == int(id_tarjeta):
                 self.tarjetas.loc[index, 'Activa'] = '0'
+                conteo += 1
         self.guardar_tarjeta()
+        if conteo == 0:
+            print('No se encontró la tarjeta especificada.')
+        else:
+            print('Tarjeta borrada con éxito.')

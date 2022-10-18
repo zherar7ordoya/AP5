@@ -1,5 +1,5 @@
 """
-  @title        GESTOR DE TARJETAS DE CRÉDITO
+  @title        MI PROGRAMA EN PYTHON v1.0
   @description  Información en pantalla pedida por el ejercicio
   @author       Gerardo Tordoya
   @date         2022-10-16
@@ -11,7 +11,7 @@ import csv_abm_titulares
 
 # ─── MÉTODO ESTÁTICO ─────────────────────────────────────────────────────────
 
-def mostrar_info():
+def mostrar():
     tarjetas = csv_abm_tarjetas.ABMTarjetas()
     titulares = csv_abm_titulares.ABMTitulares()
 
