@@ -49,7 +49,7 @@ def mostrar_menu():
         │                │  │ ► 6 Salir                     │
         └────────────────┘  ╰───────────────────────────────╯
     """)
-    opcion = input("         Ingrese su respuesta ► ")
+    opcion = input("     Ingrese número de opción ► ")
     limpiar_pantalla()
 
     if opcion == '1':
@@ -135,12 +135,12 @@ def mostrar_menu():
 
     if opcion == '6':
         print("─── Saliendo ──────────────────────────────────\n")
-        print("Gracias por utilizar nuestros servicios.\n")
+        print(f"\t{informacion.BColors.OKGREEN}Gracias por utilizar nuestros servicios{informacion.BColors.ENDC}\n")
         sys.exit()
 
     print()
     linea_horizontal()
-    input("Pulse ENTER para continuar...")
+    input("\nPulse ENTER para continuar...")
     print()
 
 

@@ -80,7 +80,7 @@ class ABMTarjetas:
 
     def leer_tarjetas_no_asignadas(self):
         """ Devuelve todas las tarjetas no asignadas en un DataFrame """
-        return self.tarjetas[self.tarjetas['TitularDocumento'] == 0]
+        return self.tarjetas[(self.tarjetas['TitularDocumento'] == 0) & (self.tarjetas['Activa'] == 1)]
 
     def leer_tarjetas_titular(self, id_titular):
         """ Devuelve el titular de la tarjeta con el ID especificado """
@@ -104,8 +104,13 @@ class ABMTarjetas:
         """ Actualiza los datos de la tarjeta """
 
         # Validación pedida por el ejercicio.
-        desde = datetime.datetime.strptime(fecha_otorgamiento, '%b %d %Y %I:%M%p')
-        hasta = datetime.datetime.strptime(fecha_vencimiento, '%b %d %Y %I:%M%p')
+        try:
+            desde = datetime.datetime.strptime(fecha_otorgamiento, '%Y-%m-%d')
+            hasta = datetime.datetime.strptime(fecha_vencimiento, '%Y-%m-%d')
+        except ValueError:
+            print('Las fechas no son válidas.')
+            return
+
         if desde >= hasta:
             print('La fecha de vencimiento no puede ser anterior/igual a la fecha de otorgamiento.')
             return
