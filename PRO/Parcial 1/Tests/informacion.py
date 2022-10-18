@@ -15,6 +15,8 @@ def mostrar():
     tarjetas = csv_abm_tarjetas.ABMTarjetas()
     titulares = csv_abm_titulares.ABMTitulares()
 
+    print()
+
     for index in titulares.titulares.index:
         apellido = titulares.titulares.loc[index, "Apellido"]
         nombre = titulares.titulares.loc[index, "Nombre"]

@@ -67,9 +67,14 @@ class Asignacion:
 
     def desasignar_tarjeta(self, id_tarjeta):
         """ Desasigna una tarjeta a un titular """
-        if self.tarjetas[
-            (self.tarjetas['TarjetaNumero'] == int(id_tarjeta)) & (self.tarjetas['SaldoPesos'] == 0) & (
-                    self.tarjetas['SaldoDolares'] == 0)].empty:
+        if self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)].empty:
+            print('La tarjeta no existe.')
+            return
+
+        pesos = self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)]['SaldoPesos']
+        dolares = self.tarjetas[self.tarjetas['TarjetaNumero'] == int(id_tarjeta)]['SaldoDolares']
+
+        if pesos.values[0] == 0 and dolares.values[0] == 0:
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'TitularDocumento'] = 0
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaOtorgamiento'] = 0
             self.tarjetas.loc[self.tarjetas['TarjetaNumero'] == int(id_tarjeta), 'FechaVencimiento'] = 0
