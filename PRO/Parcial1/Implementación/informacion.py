@@ -22,7 +22,8 @@ def mostrar():
         nombre = titulares.titulares.loc[index, "Nombre"]
         documento_tipo = titulares.titulares.loc[index, "DocumentoTipo"]
         documento_numero = titulares.titulares.loc[index, "DocumentoNumero"]
-        print(f"\t{BColors.OKGREEN}{BColors.BOLD}Titular:{BColors.ENDC} {apellido}, {nombre} ({documento_tipo} {documento_numero})")
+        print(
+            f"\t{BColors.OKGREEN}{BColors.BOLD}Titular:{BColors.ENDC} {apellido}, {nombre} ({documento_tipo} {documento_numero})")
 
         for index_tarjeta in tarjetas.tarjetas.index:
             if tarjetas.tarjetas.loc[index_tarjeta, "TitularDocumento"] == int(documento_numero):

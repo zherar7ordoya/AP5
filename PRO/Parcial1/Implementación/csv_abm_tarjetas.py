@@ -5,8 +5,9 @@
   @date         2022-10-16
 """
 
-import pandas
 import datetime
+
+import pandas
 
 ARCHIVO_TARJETAS = 'tarjetas.csv'
 

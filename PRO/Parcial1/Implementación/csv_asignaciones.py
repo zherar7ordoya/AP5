@@ -5,9 +5,10 @@
   @date         2022-10-16
 """
 
-import pandas
-from decimal import Decimal
 from datetime import date
+from decimal import Decimal
+
+import pandas
 
 ARCHIVO_TARJETAS = 'tarjetas.csv'
 ARCHIVO_TITULARES = 'titulares.csv'

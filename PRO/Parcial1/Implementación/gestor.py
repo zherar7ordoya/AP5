@@ -5,13 +5,14 @@
   @date         2022-10-16
 """
 
+from dateutil import parser
+
 import csv_abm_tarjetas
 import csv_abm_titulares
 import csv_asignaciones
 import csv_consumos
 import csv_pagos
 import informacion
-from dateutil import parser
 
 
 class Operacion:
@@ -42,8 +43,6 @@ class Operacion:
             print("Tipo de tarjeta no válido.")
         input("\nPulse ENTER para continuar...")
 
-
-
     def baja_tarjeta(self):
         print()
         print(self.tarjetas.leer_tarjetas_activas())
@@ -62,8 +61,6 @@ class Operacion:
 
         self.tarjetas.borrar_tarjeta(tarjeta_numero)
         input("\nPulse ENTER para continuar...")
-
-
 
     def modifica_tarjeta(self):
         print()

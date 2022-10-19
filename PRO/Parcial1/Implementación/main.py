@@ -12,8 +12,9 @@
 
 import os
 import sys
-import informacion
+
 import gestor
+import informacion
 
 
 # ─── HERRAMIENTAS DE INTERFAZ ────────────────────────────────────────────────
