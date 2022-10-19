@@ -1,16 +1,17 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>5adda8f3-86be-447c-aa7c-a3d67831709d</ProjectGuid>
+    <ProjectGuid>5cb7438d-1b32-400f-ad09-564ea86263eb</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Parcial1.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Parcial1</Name>
-    <RootNamespace>Parcial1</RootNamespace>
+    <Name>Implementación</Name>
+    <RootNamespace>Implementación</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +22,20 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Parcial1.py" />
+    <Compile Include="csv_abm_tarjetas.py" />
+    <Compile Include="csv_abm_titulares.py" />
+    <Compile Include="csv_asignaciones.py" />
+    <Compile Include="csv_consumos.py" />
+    <Compile Include="csv_pagos.py" />
+    <Compile Include="gestor.py" />
+    <Compile Include="informacion.py" />
+    <Compile Include="main.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Captura.JPG" />
+    <Content Include="README.md" />
+    <Content Include="tarjetas.csv" />
+    <Content Include="titulares.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

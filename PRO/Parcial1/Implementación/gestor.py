@@ -42,13 +42,15 @@ class Operacion:
             print("Tipo de tarjeta no válido.")
         input("\nPulse ENTER para continuar...")
 
+
+
     def baja_tarjeta(self):
         print()
         print(self.tarjetas.leer_tarjetas_activas())
         print()
         tarjeta_numero = input("Número de Tarjeta: ")
 
-        if not tarjeta_numero:
+        if tarjeta_numero == "":
             print("El número de tarjeta ingresado no es válido.")
             input("\nPulse ENTER para continuar...")
             return
@@ -60,6 +62,8 @@ class Operacion:
 
         self.tarjetas.borrar_tarjeta(tarjeta_numero)
         input("\nPulse ENTER para continuar...")
+
+
 
     def modifica_tarjeta(self):
         print()
@@ -73,7 +77,7 @@ class Operacion:
         fecha_otorgamiento = input("Fecha de Otorgamiento (AAAA-MM-DD): ")
         fecha_vencimiento = input("Fecha de Vencimiento (AAAA-MM-DD): ")
 
-        if not tarjeta_numero and not titular_documento and not saldo_pesos and not saldo_dolares and not fecha_otorgamiento and not fecha_vencimiento:
+        if tarjeta_numero == "" or titular_documento == "" or saldo_pesos == "" or saldo_dolares == "" or fecha_otorgamiento == "" or fecha_vencimiento == "":
             print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
@@ -105,7 +109,7 @@ class Operacion:
         documento_tipo = input("Tipo de Documento: ")
         documento_numero = input("Número de Documento: ")
 
-        if not nombre and not apellido and not documento_tipo and not documento_numero:
+        if nombre == "" or apellido == "" or documento_tipo == "" or documento_numero == "":
             print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
@@ -125,7 +129,7 @@ class Operacion:
 
         titular_documento = input("Documento del Titular: ")
 
-        if not titular_documento:
+        if titular_documento == "":
             print("El número de documento ingresado no es válido.")
             input("\nPulse ENTER para continuar...")
             return
@@ -148,7 +152,7 @@ class Operacion:
         apellido = input("Apellido: ")
         documento_tipo = input("Tipo de Documento: ")
 
-        if not id_titular and not nombre and not apellido and not documento_tipo:
+        if id_titular == "" or nombre == "" or apellido == "" or documento_tipo == "":
             print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
@@ -174,8 +178,8 @@ class Operacion:
         saldo_pesos = input("Saldo en Pesos: ")
         saldo_dolares = input("Saldo en Dólares: ")
 
-        if not id_tarjeta and not id_titular and not saldo_pesos and not saldo_dolares:
-            print("Los datos ingresados no son válidos.")
+        if id_tarjeta == "" or id_titular == "" or saldo_pesos == "" or saldo_dolares == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -193,10 +197,11 @@ class Operacion:
         print("\t-------------------------\n")
         print(self.tarjetas.leer_tarjetas_asignadas())
         print()
+
         tarjeta_numero = input("Número de Tarjeta: ")
 
-        if not tarjeta_numero:
-            print("El número de tarjeta no es válido.")
+        if tarjeta_numero == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -217,8 +222,8 @@ class Operacion:
         tarjeta_numero = input("Número de Tarjeta: ")
         pesos = input("Pesos: ")
 
-        if not tarjeta_numero and not pesos:
-            print("Los datos ingresados no son válidos.")
+        if tarjeta_numero == "" or pesos == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -228,7 +233,8 @@ class Operacion:
             return
 
         if int(pesos) > 10000:
-            print(f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en pesos es de $ 10.000 {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en pesos es de $ 10.000 {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
@@ -243,8 +249,8 @@ class Operacion:
         tarjeta_numero = input("Número de Tarjeta: ")
         dolares = input("Dólares: ")
 
-        if not tarjeta_numero and not dolares:
-            print("Los datos ingresados no son válidos.")
+        if tarjeta_numero == "" or dolares == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -254,7 +260,8 @@ class Operacion:
             return
 
         if int(dolares) > 100:
-            print(f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en dólares es de U$S 100 {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en dólares es de U$S 100 {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
@@ -270,25 +277,27 @@ class Operacion:
         tarjeta_numero = input("Número de Tarjeta: ")
         pesos = input("Pesos: ")
 
-        if not tarjeta_numero and not pesos:
-            print("Los datos ingresados no son válidos.")
+        if tarjeta_numero == "" or pesos == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
         if not tarjeta_numero.isdigit() and not pesos.isdigit():
-            print(f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
         prefijo = tarjeta_numero[:4]
-        if prefijo == "9999":       # Platinum
+        if prefijo == "9999":  # Platinum
             pesos = int(pesos) * 1.1
-        elif prefijo == "8888":     # Gold
+        elif prefijo == "8888":  # Gold
             pesos = int(pesos) * 1.2
-        elif prefijo == "7777":     # Plata
+        elif prefijo == "7777":  # Plata
             pesos = int(pesos) * 1.3
         else:
-            print(f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -304,25 +313,27 @@ class Operacion:
         tarjeta_numero = input("Número de Tarjeta: ")
         dolares = input("Dólares: ")
 
-        if not tarjeta_numero and not dolares:
-            print("Los datos ingresados no son válidos.")
+        if tarjeta_numero == "" or dolares == "":
+            print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
         if not tarjeta_numero.isdigit() and not dolares.isdigit():
-            print(f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
         prefijo = tarjeta_numero[:4]
-        if prefijo == "9999":       # Platinum
+        if prefijo == "9999":  # Platinum
             dolares = int(dolares) * 1.01
-        elif prefijo == "8888":     # Gold
+        elif prefijo == "8888":  # Gold
             dolares = int(dolares) * 1.02
-        elif prefijo == "7777":     # Plata
+        elif prefijo == "7777":  # Plata
             dolares = int(dolares) * 1.03
         else:
-            print(f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
+            print(
+                f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
