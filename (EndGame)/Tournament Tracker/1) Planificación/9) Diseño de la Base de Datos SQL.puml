@@ -22,73 +22,73 @@ title Diseño de la Base de Datos SQL
 
 ' ─── OBJETOS ──────────────────────────────────────────────────────────────────
 
-entity "CampeonatoParticipantes"
+entity "Campeonato_Participantes"
 {
-    *ID:           int  <<generated>>
+    *Id:           int  <<generated>>
     --
-    CampeonatoID:  int  **<<FK>>**
-    EquipoID:      int  **<<FK>>**
+    Campeonato_Id:  int  **<<FK>>**
+    Equipo_Id:      int  **<<FK>>**
 }
 
 
-entity "CampeonatoPremios"
+entity "Campeonato_Premios"
 {
-    *ID:           int  <<generated>>
+    *Id:           int  <<generated>>
     --
-    CampeonatoID:  int  **<<FK>>**
-    PremioID:      int  **<<FK>>**
+    Campeonato_Id:  int  **<<FK>>**
+    Premio_Id:      int  **<<FK>>**
 }
 
 
 entity "Campeonatos"
 {
-    *ID:     int  <<generated>>
+    *Id:     int  <<generated>>
     --
     Nombre:  nvarchar(200)
     Tarifa:  money
 }
 
 
-entity "EquipoMiembros"
+entity "Equipo_Miembros"
 {
-    *ID:        int  <<generated>>
+    *Id:        int  <<generated>>
     --
-    EquipoID:   int  **<<FK>>**
-    PersonaID:  int  **<<FK>>**
+    Equipo_Id:   int  **<<FK>>**
+    Persona_Id:  int  **<<FK>>**
 }
 
 
 entity "Equipos"
 {
-    *ID:     int  <<generated>>
+    *Id:     int  <<generated>>
     --
     Nombre:  nvarchar(100)
 }
 
 
-entity "PartidoParticipantes"
+entity "Partido_Participantes"
 {
-   *ID:                 int  <<generated>>
+   *Id:                 int  <<generated>>
    --
-    PartidoPresenteID:  int  **<<FK>>**
-    PartidoAnteriorID:  int  **<<FK>>**
-    EquipoID:           int  **<<FK>>**
+    PartidoPresente_Id:  int  **<<FK>>**
+    PartidoAnterior_Id:  int  **<<FK>>**
+    Equipo_Id:           int  **<<FK>>**
     Puntaje:            int
 }
 
 
 entity "Partidos"
 {
-   *ID:         int  <<generated>>
+   *Id:         int  <<generated>>
    --
-    GanadorID:  int  **<<FK>>**
+    Ganador_Id:  int  **<<FK>>**
     Ronda:      int
 }
 
 
 entity "Personas"
 {
-   *ID:        int  <<generated>>
+   *Id:        int  <<generated>>
    --
     Nombre:    nvarchar(100)
     Apellido:  nvarchar(100)
@@ -99,7 +99,7 @@ entity "Personas"
 
 entity "Premios"
 {
-    *ID:               int  <<generated>>
+    *Id:               int  <<generated>>
     --
     PuestoNumero:      int
     PuestoNombre:      nvarchar(50)
@@ -109,19 +109,19 @@ entity "Premios"
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
 
-Campeonatos ||--|{ CampeonatoParticipantes
-Campeonatos ||--|{ CampeonatoPremios
+Campeonatos ||--|{ Campeonato_Participantes
+Campeonatos ||--|{ Campeonato_Premios
 
-Equipos     ||--|{ CampeonatoParticipantes
-Equipos     ||--|{ EquipoMiembros
-Equipos     ||--|{ PartidoParticipantes
+Equipos     ||--|{ Campeonato_Participantes
+Equipos     ||--|{ Equipo_Miembros
+Equipos     ||--|{ Partido_Participantes
 Equipos     ||--|{ Partidos
 
-Partidos    ||--|{ PartidoParticipantes
+Partidos    ||--|{ Partido_Participantes
 
-Personas    ||--|{ EquipoMiembros
+Personas    ||--|{ Equipo_Miembros
 
-Premios     ||--|{ CampeonatoPremios
+Premios     ||--|{ Campeonato_Premios
 
 ' ──────────────────────────────────────────────────────────────────────────────
 
