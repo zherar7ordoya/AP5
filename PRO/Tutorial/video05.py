@@ -1,14 +1,12 @@
+""" 
+@title: Video 5 - Sobrecarga de init
+@description: Python no tiene sobrecarga de constructores, pero sí podemos simularlo.
+@author: Gerardo Tordoya
+@date: 2022-09-15
 """
-                        [DESCRIPCIÓN DE ESTE MÓDULO]
-Video 5 - Sobrecarga de init
-"""
-__author__ = "Gerardo Tordoya"
-__date__ = "2022-09-15"
 
-################################################################################
 
 class Alumno:
-    """ Clase Alumno """
     def __init__(self, *args):
         if len(args) == 0:
             self.nombre = "Sin nombre"
@@ -20,14 +18,14 @@ class Alumno:
             self.calificacion = 0
         elif len(args) == 2:
             self.nombre = args[0]
-            if args[1]>=18:
+            if args[1] >= 18:
                 self.edad = args[1]
             else:
                 self.edad = "Sin edad"
             self.calificacion = 0
         elif len(args) == 3:
             self.nombre = args[0]
-            if args[1]>=18:
+            if args[1] >= 18:
                 self.edad = args[1]
             else:
                 self.edad = "Sin edad"
@@ -39,13 +37,12 @@ class Alumno:
             self.calificacion = 0
 
     def muestra_datos(self):
-        """ Muestra los datos del alumno """
         print(self.nombre, self.edad, self.calificacion)
 
-################################################################################
+
+# ─── MAIN ────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-
     alumno1 = Alumno()
     alumno2 = Alumno("Juan")
     alumno3 = Alumno("Juan", 20)

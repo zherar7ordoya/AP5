@@ -159,35 +159,35 @@ if __name__ == '__main__':
 
         operacion = int(input())
 
-        match operacion:
-            case 1:
-                alta_cliente()
-            case 2:
-                baja_cliente()
-            case 3:
-                modificacion_cliente(cliente)
-            case 4:
-                alta_cuenta()
-            case 5:
-                baja_cuenta()
-            case 6:
-                modificacion_cuenta()
-            case 7:
-                print("Ingrese cuenta sobre la que operar (0 ó 1):")
-                cuenta = int(input())
-                depositar()
-            case 8:
-                print("Ingrese cuenta sobre la que operar (0 ó 1):")
-                cuenta = int(input())
-                retirar()
-            case 9:
-                print("Ingrese cuenta sobre la que operar (0 ó 1):")
-                cuenta = int(input())
-                transferir()
-            case 10:
-                os.system('CLS')
-                print_centre("Gracias por utilizar nuestros servicios.\n")
-                break
-            case _:
-                print("Opción inválida.")
-                pausar_pantalla()
+        if operacion == 1:
+            alta_cliente()
+        elif operacion == 2:
+            baja_cliente()
+        elif operacion == 3:
+            modificacion_cliente(cliente)
+        elif operacion == 4:
+            alta_cuenta()
+        elif operacion == 5:
+            baja_cuenta()
+        elif operacion == 6:
+            modificacion_cuenta()
+        elif operacion == 7:
+            print("Ingrese cuenta sobre la que operar (0 ó 1):")
+            cuenta = int(input())
+            depositar()
+        elif operacion == 8:
+            print("Ingrese cuenta sobre la que operar (0 ó 1):")
+            cuenta = int(input())
+            retirar()
+        elif operacion == 9:
+            print("Ingrese cuenta sobre la que operar (0 ó 1):")
+            cuenta = int(input())
+            transferir()
+        elif operacion == 10:
+            os.system('CLS')
+            print_centre("Gracias por utilizar nuestros servicios.\n")
+            break
+        else:
+            print("Opción incorrecta.")
+            pausar_pantalla()
+

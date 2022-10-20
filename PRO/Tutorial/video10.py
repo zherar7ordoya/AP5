@@ -1,6 +1,6 @@
 """
                         [DESCRIPCIÓN DE ESTE MÓDULO]
-Video 6 - Override a la clase padre
+Video 10 - Override a la clase padre
 """
 __author__ = "Gerardo Tordoya"
 __date__ = "2022-09-15"

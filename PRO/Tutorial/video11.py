@@ -1,6 +1,6 @@
 """
                         [DESCRIPCIÓN DE ESTE MÓDULO]
-Video 7 - Herencia múltiple
+Video 11 - Herencia múltiple
 """
 __author__ = "Gerardo Tordoya"
 __date__ = "2022-09-15"
