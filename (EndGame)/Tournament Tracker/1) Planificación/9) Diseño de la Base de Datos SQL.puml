@@ -1,8 +1,8 @@
 /'
-  @title        GESTOR DE CAMPEONATOS
-  @description  Aplicación para crear, organizar y administrar campeonatos.
-  @author       Gerardo Tordoya
-  @date         2022-10-12
+@title:       GESTOR DE CAMPEONATOS
+@description: Aplicación para crear, organizar y administrar campeonatos.
+@author:      Gerardo Tordoya
+@date:        2022-10-12
 '/
 
 @startuml GESTOR DE CAMPEONATOS
@@ -24,87 +24,87 @@ title Diseño de la Base de Datos SQL
 
 entity "Campeonato_Participantes"
 {
-    *Id:           int  <<generated>>
+    *Id:           int <<generated>>
     --
-    Campeonato_Id:  int  **<<FK>>**
-    Equipo_Id:      int  **<<FK>>**
+    Campeonato_Id: int **<<FK>>**
+    Equipo_Id:     int **<<FK>>**
 }
 
 
 entity "Campeonato_Premios"
 {
-    *Id:           int  <<generated>>
+    *Id:           int <<generated>>
     --
-    Campeonato_Id:  int  **<<FK>>**
-    Premio_Id:      int  **<<FK>>**
+    Campeonato_Id: int **<<FK>>**
+    Premio_Id:     int **<<FK>>**
 }
 
 
 entity "Campeonatos"
 {
-    *Id:     int  <<generated>>
+    *Id:    int <<generated>>
     --
-    Nombre:  nvarchar(200)
-    Tarifa:  money
+    Nombre: nvarchar(200)
+    Tarifa: money
 }
 
 
 entity "Equipo_Miembros"
 {
-    *Id:        int  <<generated>>
+    *Id:        int <<generated>>
     --
-    Equipo_Id:   int  **<<FK>>**
-    Persona_Id:  int  **<<FK>>**
+    Equipo_Id:  int **<<FK>>**
+    Persona_Id: int **<<FK>>**
 }
 
 
 entity "Equipos"
 {
-    *Id:     int  <<generated>>
+    *Id:    int <<generated>>
     --
-    Nombre:  nvarchar(100)
+    Nombre: nvarchar(100)
 }
 
 
 entity "Partido_Participantes"
 {
-   *Id:                 int  <<generated>>
+   *Id:                 int <<generated>>
    --
-    PartidoPresente_Id:  int  **<<FK>>**
-    PartidoAnterior_Id:  int  **<<FK>>**
-    Equipo_Id:           int  **<<FK>>**
+    PartidoPresente_Id: int **<<FK>>**
+    PartidoAnterior_Id: int **<<FK>>**
+    Equipo_Id:          int **<<FK>>**
     Puntaje:            int
 }
 
 
 entity "Partidos"
 {
-   *Id:         int  <<generated>>
+   *Id:         int <<generated>>
    --
-    Ganador_Id:  int  **<<FK>>**
+    Ganador_Id: int **<<FK>>**
     Ronda:      int
 }
 
 
 entity "Personas"
 {
-   *Id:        int  <<generated>>
+   *Id:       int <<generated>>
    --
-    Nombre:    nvarchar(100)
-    Apellido:  nvarchar(100)
-    Email:     nvarchar(100)
-    Celular:   nvarchar(20)
+    Nombre:   nvarchar(100)
+    Apellido: nvarchar(100)
+    Email:    nvarchar(100)
+    Celular:  nvarchar(20)
 }
 
 
 entity "Premios"
 {
-    *Id:               int  <<generated>>
+    *Id:              int <<generated>>
     --
-    PuestoNumero:      int
-    PuestoNombre:      nvarchar(50)
-    PremioMonto:       money
-    PremioPorcentaje:  float
+    PuestoNumero:     int
+    PuestoNombre:     nvarchar(50)
+    PremioMonto:      money
+    PremioPorcentaje: float
 }
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
@@ -125,7 +125,7 @@ Premios     ||--|{ Campeonato_Premios
 
 ' ──────────────────────────────────────────────────────────────────────────────
 
-caption AUTOR \n **Gerardo Tordoya** \n 2022-10-12
+caption Última actualización: 2022-10-21
 
 ' ──────────────────────────────────────────────────────────────────────────────
 
