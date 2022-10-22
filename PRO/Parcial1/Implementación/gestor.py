@@ -229,9 +229,9 @@ class Operacion:
             input("\nPulse ENTER para continuar...")
             return
 
-        if int(pesos) > 10000:
+        if int(pesos) > 15000:
             print(
-                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en pesos es de $ 10.000 {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en pesos es de $ 15.000 {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
@@ -256,9 +256,9 @@ class Operacion:
             input("\nPulse ENTER para continuar...")
             return
 
-        if int(dolares) > 100:
+        if int(dolares) > 150:
             print(
-                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en dólares es de U$S 100 {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en dólares es de U$S 150 {informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
