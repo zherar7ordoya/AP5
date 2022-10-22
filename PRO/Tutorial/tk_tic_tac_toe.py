@@ -4,23 +4,21 @@ import tkinter as tk
 class TTT(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Tic Tao Toe")
+        self.title("Tic Tac Toe")
         self.btns = []
         self.turn = True
         self.count = 0
         self.resizable(False, False)
-        self.Start()
+        self.start()
 
-    def Start(self):
+    def start(self):
         for i in range(0, 3):
             row = []
             for j in range(0, 3):
-                row.append(tk.Button(self, width=5, height=3, font="time 12 bold",
-                                     command=lambda x=i, y=j: self.clicked(x, y)))
+                row.append(tk.Button(self, width=8, height=4, font="Verdana 12 bold", command=lambda x=i, y=j: self.clicked(x, y)))
                 row[j].grid(row=i, column=j)
             self.btns.append(row)
-        tk.Button(self, text="Restart", bg='blue', fg='white', activebackground='blue3', activeforeground='white',
-                  command=self.Restart).grid(row=3, column=1)
+        tk.Button(self, text="Restart", bg='blue', fg='white', activebackground='blue3', activeforeground='white', command=self.restart).grid(row=3, column=1)
 
     def clicked(self, x, y):
         self.count += 1
@@ -30,10 +28,10 @@ class TTT(tk.Tk):
         else:
             char = 'O'
             self.btns[x][y].config(text='O', bg='white', state="disabled")
-        self.checkWinner(char)
+        self.check_winner(char)
         self.turn = not self.turn
 
-    def checkWinner(self, char):  # Can be improved
+    def check_winner(self, char):  # Can be improved
         # horizontal
         if (((self.btns[0][0]["text"] == char) and (self.btns[0][1]["text"] == char) and (
                 self.btns[0][2]["text"] == char)) or
@@ -53,29 +51,28 @@ class TTT(tk.Tk):
                         self.btns[2][2]["text"] == char)) or
                 ((self.btns[0][2]["text"] == char) and (self.btns[1][1]["text"] == char) and (
                         self.btns[2][0]["text"] == char))):
-            self.Winner(char)
+            self.winner(char)
         elif self.count == 9:
-            self.Winner("DRAW")
+            self.winner("DRAW")
 
-    def Winner(self, char):
+    def winner(self, char):
         top = tk.Toplevel(self)
         top.title("Congratulations!")
         if char == "DRAW":
-            topText = tk.Label(top, text=f"Its a DRAW !", font="Verdana 12 bold")
+            top_text = tk.Label(top, text=f"\tIt's a DRAW!\t", font="Verdana 12 bold")
         else:
-            topText = tk.Label(top, text=f"{char} is the WINNER !", font="Verdana 12 bold")
-        topButton = tk.Button(top, text="Restart", bg='blue', fg='white', activebackground='blue3',
-                              activeforeground='white', command=self.Restart)
-        topText.grid(row=0, column=0, padx=10, pady=10)
-        topButton.grid(row=1, column=0)
+            top_text = tk.Label(top, text=f"{char} is the WINNER!", font="Verdana 20 Bold")
+        top_button = tk.Button(top, text="Restart", bg='blue', fg='white', activebackground='blue3', activeforeground='white', command=self.restart)
+        top_text.grid(row=0, column=0, padx=10, pady=10)
+        top_button.grid(row=1, column=0)
 
-    def Restart(self):
+    def restart(self):
         for widget in self.winfo_children():
             widget.destroy()
         self.btns = []
         self.turn = True
         self.count = 0
-        self.Start()
+        self.start()
 
 
 TTT().mainloop()
