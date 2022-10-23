@@ -17,23 +17,22 @@ GO
 -- Author:      Gerardo Tordoya
 -- Create date: 2022-10-13
 -- Description: Obtiene los premios de un campeonato
--- @remark:     Usar DBO (que es: DataBase Owner)    -->                     ...
---              (No usar "spanish": acentos, etc.)
--- =================================================
-CREATE PROCEDURE dbo.Premios_GetByCampeonato         -->                 Aqui...
-    -- Add the parameters for the stored procedure here
-    @campeonato_id INT
-AS
-BEGIN
-    -- SET NOCOUNT ON added to prevent extra result sets from
-    -- interfering with SELECT statements.
-    SET NOCOUNT ON;
-
-    -- Insert statements for procedure here
-    SELECT *
-    FROM dbo.Premios p                               -->            ...y aqui...
-    INNER JOIN dbo.Campeonato_Premios cp             -->   ...y finalmente, aqui
-    ON p.Id = cp.Premio_Id
-    WHERE cp.Campeonato_Id = @campeonato_id;         -->  (No te olvides de ";")
+-- @remark:     Usar DBO (que es: DataBase Owner)   --> ******************* <──┐
+--              (No usar "spanish": acentos, etc.)                             │
+-- =================================================                           │
+CREATE PROCEDURE dbo.Premios_GetByCampeonato        -->             Aqui... <──┤
+    -- Add the parameters for the stored procedure here                        │
+    @campeonato_id INT                              --                         │
+AS                                                  --                         │
+BEGIN                                               --                         │
+    -- SET NOCOUNT ON added to prevent extra result sets from interfering with SELECT statements.
+    SET NOCOUNT ON;                                 --                         │
+                                                    --                         │
+    -- Insert statements for procedure here                                    │
+    SELECT *                                        --                         │
+    FROM dbo.Premios p                              -->          ...y aqui, <──┤
+    INNER JOIN dbo.CampeonatoPremios cp             -->          ...y aqui. <──┤
+    ON p.PremioID = cp.PremioID                     --                         │
+    WHERE cp.CampeonatoID = @campeonato_id;         --> *** No olvidar  ";" <──┘
 END
 GO

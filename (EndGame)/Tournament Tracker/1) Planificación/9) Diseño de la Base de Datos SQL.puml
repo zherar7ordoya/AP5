@@ -1,35 +1,34 @@
+@startuml GESTOR DE CAMPEONATOS
+
 /'
-@title:       GESTOR DE CAMPEONATOS
-@description: Aplicación para crear, organizar y administrar campeonatos.
-@author:      Gerardo Tordoya
-@date:        2022-10-12
-@remarks:     *) Para los nombres se usó la convención de WideWorldImporters.
+@title        GESTOR DE CAMPEONATOS
+@description  Aplicación para crear, organizar y administrar campeonatos.
+@author       Gerardo Tordoya
+@date         2022-10-12
+@remarks      *) Para los nombres se usó la convención de WideWorldImporters.
               *) Para los diagramas se usó la convención de Vertabelo.
 '/
 
-@startuml GESTOR DE CAMPEONATOS
-
+' ─── CONFIGURACIONES ──────────────────────────────────────────────────────────
 ' Configuración de plantilla.
 skin rose
-skinparam classFontName Calibri
-skinparam shadowing false
+' skinparam classFontName Calibri
+' skinparam shadowing false
 
 ' Configuración de diagrama.
 hide circle
 skinparam linetype ortho
 
-' ──────────────────────────────────────────────────────────────────────────────
-
+' ─── TÍTULO ───────────────────────────────────────────────────────────────────
 title Diseño de la Base de Datos SQL
 
-' ─── OBJETOS ──────────────────────────────────────────────────────────────────
-
+' ─── ENTIDADES ────────────────────────────────────────────────────────────────
 entity "CampeonatoParticipantes"
 {
     CampeonatoParticipanteID \t int \t PK 
     ---
-    CampeonatoID         \t\t\t int \t FK
-    EquipoID           \t\t\t\t int \t FK
+    CampeonatoID           \t\t int \t FK
+    EquipoID             \t\t\t int \t FK
 }
 
 
@@ -44,11 +43,11 @@ entity "CampeonatoPremios"
 
 entity "Campeonatos"
 {
-    CampeonatoID \t int \t\t\t\t PK
+    CampeonatoID \t int \t\t\t PK
     ---
     Nombre     \t\t nvarchar(200)
-    Tarifa     \t\t money
-    Activo     \t\t bit
+    Tarifa   \t\t\t money
+    Activo   \t\t\t bit
 }
 
 
@@ -56,102 +55,92 @@ entity "EquipoMiembros"
 {
     EquipoMiembroID \t int \t PK
     ---
-    EquipoID    \t\t\t int \t FK
+    EquipoID      \t\t int \t FK
     PersonaID     \t\t int \t FK
 }
 
 
 entity "Equipos"
 {
-   *EquipoID: \t int
+    EquipoID \t int \t\t\t PK
     ---
-    Nombre: \t nvarchar(100)
+    Nombre   \t nvarchar(100)
 }
 
 
-entity "PartidoParticipantes"
+entity "PartidoJugadores"
 {
-    *PartidoParticipanteID: int
-    --
-    PartidoActualID:     \t int   \t FK
-    PartidoAnteriorID:   \t int   \t FK **N**
-    EquipoID:          \t\t int   \t FK **N**
-    Puntaje:           \t\t float \t **N**
+    PartidoJugadorID      \t int \t\t PK
+    ---
+    PartidoActualID     \t\t int \t\t FK
+    PartidoAnteriorID   \t\t int \t\t FK N
+    EquipoID            \t\t int \t\t FK N
+    Puntaje           \t\t\t float \t N
 }
 
 
 entity "Partidos"
 {
-    *PartidoID:      int
-    --
-    CampeonatoID: \t int \t FK
-    GanadorID:    \t int \t FK **N**
-    Ronda:      \t\t int
+    PartidoID  \t\t int \t PK
+    ---
+    CampeonatoID \t int \t FK
+    GanadorID  \t\t int \t FK N
+    Ronda      \t\t int
 }
 
 
 entity "Personas"
 {
-    *PersonaID:  int
-    --
-    Nombre:   \t nvarchar(100)
-    Apellido: \t nvarchar(100)
-    Email:  \t\t nvarchar(100)
-    Celular:  \t varchar(20)   \t **N**
+    PersonaID  \t int         \t\t PK
+    ---
+    Nombre     \t nvarchar(100)
+    Apellido \t\t nvarchar(100)
+    Email    \t\t nvarchar(100)
+    Celular  \t\t varchar(20)   \t N
 }
 
 
 entity "Premios"
 {
-    *PremioID:           int
-    --
-    PuestoNumero:     \t int
-    PuestoNombre:     \t nvarchar(50)
-    PremioMonto:      \t money
-    PremioPorcentaje: \t float
+    PremioID       \t\t int \t\t\t PK
+    ---
+    PuestoNumero     \t int
+    PuestoNombre     \t nvarchar(50)
+    PremioMonto      \t money
+    PremioPorcentaje \t float
 }
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
-
 Campeonatos ||--|{ CampeonatoParticipantes
 Campeonatos ||--|{ CampeonatoPremios
 
 Equipos     ||--|{ CampeonatoParticipantes
 Equipos     ||--|{ EquipoMiembros
-Equipos     ||--|{ PartidoParticipantes
+Equipos     ||--|{ PartidoJugadores
 Equipos     ||--|{ Partidos
 
-Partidos    ||--|{ PartidoParticipantes
+Partidos    ||--|{ PartidoJugadores
 
 Personas    ||--|{ EquipoMiembros
 
 Premios     ||--|{ CampeonatoPremios
 
 ' ─── NOTAS ────────────────────────────────────────────────────────────────────
-note top of Premios: Prizes
+note top of Personas: Sobre nvarchar \n**n:** //unicode// \n**var**: //variable length// \n**char**: //character//
+
+note left of Premios: Prizes
 note top of Campeonatos: Tournaments
 note top of Equipos: Teams
-note top of Personas: People
+note right of Personas: People
 
-note "TournamentPrizes" as N1
-CampeonatoPremios .. N1
+note left of CampeonatoPremios: TournamentPrizes
+note bottom of CampeonatoParticipantes: TournamentEntries
+note bottom of Partidos: Matchups
+note right of PartidoJugadores: MatchupEntries
+note right of EquipoMiembros: TeamMembers
 
-note "TournamentEntries" as N2
-CampeonatoParticipantes .. N2
-
-note "MatchupEntries" as N3
-PartidoParticipantes .. N3
-
-note "Matchups" as N4
-Partidos .. N4
-
-note "TeamMembers" as N5
-EquipoMiembros .. N5
-
-' ──────────────────────────────────────────────────────────────────────────────
-
+' ─── SUBTÍTULO ────────────────────────────────────────────────────────────────
 caption Última actualización: 2022-10-22
 
-' ──────────────────────────────────────────────────────────────────────────────
-
+' ─── FIN ──────────────────────────────────────────────────────────────────────
 @enduml
