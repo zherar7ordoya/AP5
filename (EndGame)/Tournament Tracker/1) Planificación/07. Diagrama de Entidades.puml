@@ -1,0 +1,76 @@
+/'
+  @title        GESTOR DE CAMPEONATOS
+  @description  Aplicación para crear, organizar y administrar campeonatos.
+  @author       Gerardo Tordoya
+  @date         2022-10-09
+'/
+
+@startuml GESTOR DE CAMPEONATOS
+
+' Configuración de plantilla.
+skin rose
+skinparam classFontName Calibri
+skinparam shadowing false
+
+' Configuración de diagrama.
+hide circle
+skinparam linetype ortho
+
+' ──────────────────────────────────────────────────────────────────────────────
+
+title Diagrama de Entidades
+
+' ─── OBJETOS ──────────────────────────────────────────────────────────────────
+
+entity "Equipo" {
+    EquipoMiembros:     List\<Persona>
+    EquipoNombre:       String
+}
+
+entity "Persona" {
+    PersonaNombre:      String
+    PersonaApellido:    String
+    PersonaEmail:       String
+    PersonaTelefono:    String
+}
+
+entity "Campeonato" {
+    CampeonatoNombre:   String
+    CampeonatoTarifa:   Decimal
+    EquiposInscritos:   List<Equipo>
+    Premios:            List<Premio>
+    Rondas:             List<List<Partido>>
+}
+
+entity "Premio" {
+    PuestoNumero:       Integer
+    PuestoNombre:       String
+    PremioMonto:        Decimal
+    PremioPorcentaje:   Double
+}
+
+' MATCHUP
+entity "Partido" {
+    Participante:       List\<Participante>
+    Ganador:            Equipo
+    PartidoRonda:       Integer
+}
+
+entity "Participante" {
+    ParticipanteEquipo: Equipo
+    ParticipantePuntos: Double
+    PartidoAnterior:    Partido
+}
+
+' ─── RELACIONES ───────────────────────────────────────────────────────────────
+
+'e01 ||..o{ e02
+'e01 |o..o{ e03
+
+' ──────────────────────────────────────────────────────────────────────────────
+
+caption Diagramado por Gerardo Tordoya el 2022-10-09
+
+' ──────────────────────────────────────────────────────────────────────────────
+
+@enduml
