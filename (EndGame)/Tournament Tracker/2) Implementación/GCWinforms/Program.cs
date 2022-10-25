@@ -15,7 +15,7 @@ namespace GCWinforms
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Iniciar las conexiones
-            GCLibrary.ConfiguracionGlobal.IniciarConexiones(true, true);
+            // GCLibrary.ConfiguracionGlobal.IniciarConexiones(true, true);
 
             Application.Run(new PremiosForm());
         }

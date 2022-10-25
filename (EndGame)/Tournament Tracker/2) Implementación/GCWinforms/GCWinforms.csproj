@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
@@ -49,12 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="PremiosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,9 +84,6 @@
     <Compile Include="VisorForm.Designer.cs">
       <DependentUpon>VisorForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PremiosForm.resx">
       <DependentUpon>PremiosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,12 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MasterViewClose.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GCLibrary\GCLibrary.csproj">
-      <Project>{4069d15b-2355-4c58-9054-e4d5092e1611}</Project>
-      <Name>GCLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

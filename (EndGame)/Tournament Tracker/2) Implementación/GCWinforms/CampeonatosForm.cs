@@ -4,6 +4,9 @@ namespace GCWinforms
 {
     public partial class CampeonatosForm : Form
     {
-        public CampeonatosForm() => InitializeComponent();
+        public CampeonatosForm()
+        {
+            InitializeComponent();
+        }
     }
 }

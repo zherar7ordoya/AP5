@@ -4,6 +4,9 @@ namespace GCWinforms
 {
     public partial class VisorForm : Form
     {
-        public VisorForm() => InitializeComponent();
+        public VisorForm()
+        {
+            InitializeComponent();
+        }
     }
 }

@@ -4,6 +4,9 @@ namespace GCWinforms
 {
     public partial class TableroForm : Form
     {
-        public TableroForm() => InitializeComponent();
+        public TableroForm()
+        {
+            InitializeComponent();
+        }
     }
 }
