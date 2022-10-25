@@ -201,5 +201,11 @@
   <ItemGroup>
     <None Include="Resources\MasterViewClose.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCLibrary\GCLibrary.csproj">
+      <Project>{4069d15b-2355-4c58-9054-e4d5092e1611}</Project>
+      <Name>GCLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

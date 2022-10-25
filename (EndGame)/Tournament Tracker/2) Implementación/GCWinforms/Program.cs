@@ -13,7 +13,11 @@ namespace GCWinforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // Iniciar las conexiones
+            GCLibrary.ConfiguracionGlobal.IniciarConexiones(true, true);
+
+            Application.Run(new PremiosForm());
         }
     }
 }

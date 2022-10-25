@@ -9,6 +9,11 @@
 public class PremioModel
 {
     /// <summary>
+    /// La PK para el premio.
+    /// </summary>
+    public int PremioID { get; set; }
+    
+    /// <summary>
     /// El identificador numérico del puesto (por ej.: 1 para el primer puesto).
     /// </summary>
     /// <remarks>
