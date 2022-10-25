@@ -33,13 +33,13 @@ namespace GCWinforms
             this.ABMPremiosLabel = new System.Windows.Forms.Label();
             this.NumeroPuestoLabel = new System.Windows.Forms.Label();
             this.NumeroPuestoCombobox = new System.Windows.Forms.ComboBox();
-            this.CrearPremioButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.PorcentajePremioTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.PorcentajePremioLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.MontoPremioTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.MontoPremioLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.NombrePuestoTextbox = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.NombrePuestoLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.NombrePuestoLabel = new System.Windows.Forms.Label();
+            this.MontoPremioLabel = new System.Windows.Forms.Label();
+            this.PorcentajePremioLabel = new System.Windows.Forms.Label();
+            this.CrearPremioButton = new System.Windows.Forms.Button();
+            this.NombrePuestoTextbox = new System.Windows.Forms.TextBox();
+            this.MontoPremioTextbox = new System.Windows.Forms.TextBox();
+            this.PorcentajePremioTextbox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // ABMPremiosLabel
@@ -47,7 +47,7 @@ namespace GCWinforms
             this.ABMPremiosLabel.AutoSize = true;
             this.ABMPremiosLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ABMPremiosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.ABMPremiosLabel.Location = new System.Drawing.Point(11, 8);
+            this.ABMPremiosLabel.Location = new System.Drawing.Point(12, 26);
             this.ABMPremiosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ABMPremiosLabel.Name = "ABMPremiosLabel";
             this.ABMPremiosLabel.Size = new System.Drawing.Size(229, 50);
@@ -75,117 +75,84 @@ namespace GCWinforms
             this.NumeroPuestoCombobox.Size = new System.Drawing.Size(115, 21);
             this.NumeroPuestoCombobox.TabIndex = 34;
             // 
-            // CrearPremioButton
+            // NombrePuestoLabel
             // 
-            this.CrearPremioButton.AutoSize = true;
-            this.CrearPremioButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CrearPremioButton.Depth = 0;
-            this.CrearPremioButton.Location = new System.Drawing.Point(171, 436);
-            this.CrearPremioButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CrearPremioButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CrearPremioButton.Name = "CrearPremioButton";
-            this.CrearPremioButton.Primary = false;
-            this.CrearPremioButton.Size = new System.Drawing.Size(55, 36);
-            this.CrearPremioButton.TabIndex = 35;
-            this.CrearPremioButton.Text = "Crear";
-            this.CrearPremioButton.UseVisualStyleBackColor = true;
-            // 
-            // PorcentajePremioTextbox
-            // 
-            this.PorcentajePremioTextbox.Depth = 0;
-            this.PorcentajePremioTextbox.Hint = "";
-            this.PorcentajePremioTextbox.Location = new System.Drawing.Point(19, 383);
-            this.PorcentajePremioTextbox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PorcentajePremioTextbox.Name = "PorcentajePremioTextbox";
-            this.PorcentajePremioTextbox.PasswordChar = '\0';
-            this.PorcentajePremioTextbox.SelectedText = "";
-            this.PorcentajePremioTextbox.SelectionLength = 0;
-            this.PorcentajePremioTextbox.SelectionStart = 0;
-            this.PorcentajePremioTextbox.Size = new System.Drawing.Size(407, 23);
-            this.PorcentajePremioTextbox.TabIndex = 37;
-            this.PorcentajePremioTextbox.UseSystemPasswordChar = false;
-            // 
-            // PorcentajePremioLabel
-            // 
-            this.PorcentajePremioLabel.AutoSize = true;
-            this.PorcentajePremioLabel.Depth = 0;
-            this.PorcentajePremioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.PorcentajePremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.PorcentajePremioLabel.Location = new System.Drawing.Point(17, 362);
-            this.PorcentajePremioLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.PorcentajePremioLabel.Name = "PorcentajePremioLabel";
-            this.PorcentajePremioLabel.Size = new System.Drawing.Size(158, 18);
-            this.PorcentajePremioLabel.TabIndex = 36;
-            this.PorcentajePremioLabel.Text = "Porcentaje del  Premio";
-            // 
-            // MontoPremioTextbox
-            // 
-            this.MontoPremioTextbox.Depth = 0;
-            this.MontoPremioTextbox.Hint = "";
-            this.MontoPremioTextbox.Location = new System.Drawing.Point(18, 304);
-            this.MontoPremioTextbox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.MontoPremioTextbox.Name = "MontoPremioTextbox";
-            this.MontoPremioTextbox.PasswordChar = '\0';
-            this.MontoPremioTextbox.SelectedText = "";
-            this.MontoPremioTextbox.SelectionLength = 0;
-            this.MontoPremioTextbox.SelectionStart = 0;
-            this.MontoPremioTextbox.Size = new System.Drawing.Size(407, 23);
-            this.MontoPremioTextbox.TabIndex = 39;
-            this.MontoPremioTextbox.UseSystemPasswordChar = false;
+            this.NombrePuestoLabel.AutoSize = true;
+            this.NombrePuestoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NombrePuestoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.NombrePuestoLabel.Location = new System.Drawing.Point(14, 184);
+            this.NombrePuestoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NombrePuestoLabel.Name = "NombrePuestoLabel";
+            this.NombrePuestoLabel.Size = new System.Drawing.Size(246, 37);
+            this.NombrePuestoLabel.TabIndex = 42;
+            this.NombrePuestoLabel.Text = "Nombre del Puesto";
             // 
             // MontoPremioLabel
             // 
             this.MontoPremioLabel.AutoSize = true;
-            this.MontoPremioLabel.Depth = 0;
-            this.MontoPremioLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.MontoPremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MontoPremioLabel.Location = new System.Drawing.Point(16, 283);
-            this.MontoPremioLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.MontoPremioLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MontoPremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.MontoPremioLabel.Location = new System.Drawing.Point(14, 264);
+            this.MontoPremioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MontoPremioLabel.Name = "MontoPremioLabel";
-            this.MontoPremioLabel.Size = new System.Drawing.Size(133, 19);
-            this.MontoPremioLabel.TabIndex = 38;
-            this.MontoPremioLabel.Text = "Monto del  Premio";
+            this.MontoPremioLabel.Size = new System.Drawing.Size(232, 37);
+            this.MontoPremioLabel.TabIndex = 43;
+            this.MontoPremioLabel.Text = "Monto del Premio";
+            // 
+            // PorcentajePremioLabel
+            // 
+            this.PorcentajePremioLabel.AutoSize = true;
+            this.PorcentajePremioLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PorcentajePremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.PorcentajePremioLabel.Location = new System.Drawing.Point(14, 343);
+            this.PorcentajePremioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PorcentajePremioLabel.Name = "PorcentajePremioLabel";
+            this.PorcentajePremioLabel.Size = new System.Drawing.Size(276, 37);
+            this.PorcentajePremioLabel.TabIndex = 44;
+            this.PorcentajePremioLabel.Text = "Porcentaje del Premio";
+            // 
+            // CrearPremioButton
+            // 
+            this.CrearPremioButton.Location = new System.Drawing.Point(297, 448);
+            this.CrearPremioButton.Name = "CrearPremioButton";
+            this.CrearPremioButton.Size = new System.Drawing.Size(75, 23);
+            this.CrearPremioButton.TabIndex = 45;
+            this.CrearPremioButton.Text = "Crear";
+            this.CrearPremioButton.UseVisualStyleBackColor = true;
             // 
             // NombrePuestoTextbox
             // 
-            this.NombrePuestoTextbox.Depth = 0;
-            this.NombrePuestoTextbox.Hint = "";
-            this.NombrePuestoTextbox.Location = new System.Drawing.Point(17, 242);
-            this.NombrePuestoTextbox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.NombrePuestoTextbox.Location = new System.Drawing.Point(312, 192);
             this.NombrePuestoTextbox.Name = "NombrePuestoTextbox";
-            this.NombrePuestoTextbox.PasswordChar = '\0';
-            this.NombrePuestoTextbox.SelectedText = "";
-            this.NombrePuestoTextbox.SelectionLength = 0;
-            this.NombrePuestoTextbox.SelectionStart = 0;
-            this.NombrePuestoTextbox.Size = new System.Drawing.Size(407, 23);
-            this.NombrePuestoTextbox.TabIndex = 41;
-            this.NombrePuestoTextbox.UseSystemPasswordChar = false;
+            this.NombrePuestoTextbox.Size = new System.Drawing.Size(100, 20);
+            this.NombrePuestoTextbox.TabIndex = 46;
             // 
-            // NombrePuestoLabel
+            // MontoPremioTextbox
             // 
-            this.NombrePuestoLabel.AutoSize = true;
-            this.NombrePuestoLabel.Depth = 0;
-            this.NombrePuestoLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.NombrePuestoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.NombrePuestoLabel.Location = new System.Drawing.Point(15, 221);
-            this.NombrePuestoLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.NombrePuestoLabel.Name = "NombrePuestoLabel";
-            this.NombrePuestoLabel.Size = new System.Drawing.Size(138, 19);
-            this.NombrePuestoLabel.TabIndex = 40;
-            this.NombrePuestoLabel.Text = "Nombre del Puesto";
+            this.MontoPremioTextbox.Location = new System.Drawing.Point(297, 271);
+            this.MontoPremioTextbox.Name = "MontoPremioTextbox";
+            this.MontoPremioTextbox.Size = new System.Drawing.Size(100, 20);
+            this.MontoPremioTextbox.TabIndex = 47;
+            // 
+            // PorcentajePremioTextbox
+            // 
+            this.PorcentajePremioTextbox.Location = new System.Drawing.Point(312, 357);
+            this.PorcentajePremioTextbox.Name = "PorcentajePremioTextbox";
+            this.PorcentajePremioTextbox.Size = new System.Drawing.Size(100, 20);
+            this.PorcentajePremioTextbox.TabIndex = 48;
             // 
             // PremiosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 487);
-            this.Controls.Add(this.NombrePuestoTextbox);
-            this.Controls.Add(this.NombrePuestoLabel);
-            this.Controls.Add(this.MontoPremioTextbox);
-            this.Controls.Add(this.MontoPremioLabel);
             this.Controls.Add(this.PorcentajePremioTextbox);
-            this.Controls.Add(this.PorcentajePremioLabel);
+            this.Controls.Add(this.MontoPremioTextbox);
+            this.Controls.Add(this.NombrePuestoTextbox);
             this.Controls.Add(this.CrearPremioButton);
+            this.Controls.Add(this.PorcentajePremioLabel);
+            this.Controls.Add(this.MontoPremioLabel);
+            this.Controls.Add(this.NombrePuestoLabel);
             this.Controls.Add(this.NumeroPuestoCombobox);
             this.Controls.Add(this.NumeroPuestoLabel);
             this.Controls.Add(this.ABMPremiosLabel);
@@ -202,12 +169,12 @@ namespace GCWinforms
         private System.Windows.Forms.Label ABMPremiosLabel;
         private System.Windows.Forms.Label NumeroPuestoLabel;
         private System.Windows.Forms.ComboBox NumeroPuestoCombobox;
-        private MaterialSkin.Controls.MaterialFlatButton CrearPremioButton;
-        private MaterialSkin.Controls.MaterialSingleLineTextField PorcentajePremioTextbox;
-        private MaterialSkin.Controls.MaterialLabel PorcentajePremioLabel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField MontoPremioTextbox;
-        private MaterialSkin.Controls.MaterialLabel MontoPremioLabel;
-        private MaterialSkin.Controls.MaterialSingleLineTextField NombrePuestoTextbox;
-        private MaterialSkin.Controls.MaterialLabel NombrePuestoLabel;
+        private System.Windows.Forms.Label NombrePuestoLabel;
+        private System.Windows.Forms.Label MontoPremioLabel;
+        private System.Windows.Forms.Label PorcentajePremioLabel;
+        private System.Windows.Forms.Button CrearPremioButton;
+        private System.Windows.Forms.TextBox NombrePuestoTextbox;
+        private System.Windows.Forms.TextBox MontoPremioTextbox;
+        private System.Windows.Forms.TextBox PorcentajePremioTextbox;
     }
 }
