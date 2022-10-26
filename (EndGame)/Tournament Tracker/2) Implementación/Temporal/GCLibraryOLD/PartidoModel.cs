@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GCLibrary
+﻿namespace GCLibrary
 {
     /// <summary>
     /// Representa un partido del campeonato.

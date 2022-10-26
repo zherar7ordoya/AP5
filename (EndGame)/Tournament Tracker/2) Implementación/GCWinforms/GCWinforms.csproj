@@ -41,9 +41,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
-    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
-      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net48\System.Windows.Forms.Ribbon.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario.Designer.cs">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </Compile>
     <Compile Include="PremiosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +90,9 @@
     <Compile Include="VisorForm.Designer.cs">
       <DependentUpon>VisorForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Formulario.resx">
+      <DependentUpon>Formulario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PremiosForm.resx">
       <DependentUpon>PremiosForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,76 +133,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\MasterDetail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocument.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentCreateSubdocument.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentInsertSubdocument.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentLockSubdocument.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentMergeSubdocuments.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentShow.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentSplitSubdocuments.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterDocumentUnlinkSubdocument.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterExplorer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterNotesPageOrientation.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageAddNew.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageApplyMenu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageCloseEdit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageDelete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageDuplicate.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageGallery.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageGuides.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageNumberInsert.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageRename.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageTwoPages.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterPageView.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterProperties.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MasterViewClose.png" />
+    <ProjectReference Include="..\GCLibrary\GCLibrary.csproj">
+      <Project>{596d905a-1a50-481d-a1dd-6d3f3c481663}</Project>
+      <Name>GCLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

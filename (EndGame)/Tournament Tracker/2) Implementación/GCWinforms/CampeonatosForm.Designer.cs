@@ -30,246 +30,318 @@ namespace GCWinforms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CampeonatosForm));
-            this.ABMCampeonatosLabel = new System.Windows.Forms.Label();
-            this.NombreCampeonatoTextbox = new System.Windows.Forms.TextBox();
-            this.NombreCampeonatoLabel = new System.Windows.Forms.Label();
-            this.TarifaTextbox = new System.Windows.Forms.TextBox();
-            this.TarifaLabel = new System.Windows.Forms.Label();
-            this.ElegirEquipoCombobox = new System.Windows.Forms.ComboBox();
-            this.ElegirEquipoLabel = new System.Windows.Forms.Label();
             this.CrearNuevoLink = new System.Windows.Forms.LinkLabel();
-            this.AgregarEquipoButton = new System.Windows.Forms.Button();
-            this.CrearPremioButton = new System.Windows.Forms.Button();
-            this.EquiposListbox = new System.Windows.Forms.ListBox();
-            this.EquiposLabel = new System.Windows.Forms.Label();
-            this.QuitarEquipoButton = new System.Windows.Forms.Button();
-            this.QuitarPremioButton = new System.Windows.Forms.Button();
-            this.PremiosLabel = new System.Windows.Forms.Label();
-            this.PremiosListbox = new System.Windows.Forms.ListBox();
-            this.CrearCampeonatoButton = new System.Windows.Forms.Button();
+            this.materialButton1 = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialButton2 = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialButton3 = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialButton4 = new ReaLTaiizor.Controls.MaterialButton();
+            this.materialButton5 = new ReaLTaiizor.Controls.MaterialButton();
+            this.ElegirEquipoLabel = new ReaLTaiizor.Controls.MaterialLabel();
+            this.EquiposLabel = new ReaLTaiizor.Controls.MaterialLabel();
+            this.PremiosLabel = new ReaLTaiizor.Controls.MaterialLabel();
+            this.EquiposListbox = new ReaLTaiizor.Controls.MaterialListBox();
+            this.PremiosListbox = new ReaLTaiizor.Controls.MaterialListBox();
+            this.ElegirEquipoCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.TarifaTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.NombreCampeonatoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.materialDivider1 = new ReaLTaiizor.Controls.MaterialDivider();
             this.SuspendLayout();
-            // 
-            // ABMCampeonatosLabel
-            // 
-            this.ABMCampeonatosLabel.AutoSize = true;
-            this.ABMCampeonatosLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ABMCampeonatosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.ABMCampeonatosLabel.Location = new System.Drawing.Point(26, 26);
-            this.ABMCampeonatosLabel.Name = "ABMCampeonatosLabel";
-            this.ABMCampeonatosLabel.Size = new System.Drawing.Size(322, 50);
-            this.ABMCampeonatosLabel.TabIndex = 1;
-            this.ABMCampeonatosLabel.Text = "ABM Campeonatos";
-            // 
-            // NombreCampeonatoTextbox
-            // 
-            this.NombreCampeonatoTextbox.Location = new System.Drawing.Point(35, 143);
-            this.NombreCampeonatoTextbox.Name = "NombreCampeonatoTextbox";
-            this.NombreCampeonatoTextbox.Size = new System.Drawing.Size(308, 35);
-            this.NombreCampeonatoTextbox.TabIndex = 10;
-            // 
-            // NombreCampeonatoLabel
-            // 
-            this.NombreCampeonatoLabel.AutoSize = true;
-            this.NombreCampeonatoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreCampeonatoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.NombreCampeonatoLabel.Location = new System.Drawing.Point(28, 103);
-            this.NombreCampeonatoLabel.Name = "NombreCampeonatoLabel";
-            this.NombreCampeonatoLabel.Size = new System.Drawing.Size(320, 37);
-            this.NombreCampeonatoLabel.TabIndex = 9;
-            this.NombreCampeonatoLabel.Text = "Nombre del Campeonato";
-            // 
-            // TarifaTextbox
-            // 
-            this.TarifaTextbox.Location = new System.Drawing.Point(159, 204);
-            this.TarifaTextbox.Name = "TarifaTextbox";
-            this.TarifaTextbox.Size = new System.Drawing.Size(100, 35);
-            this.TarifaTextbox.TabIndex = 12;
-            this.TarifaTextbox.Text = "0";
-            // 
-            // TarifaLabel
-            // 
-            this.TarifaLabel.AutoSize = true;
-            this.TarifaLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TarifaLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.TarifaLabel.Location = new System.Drawing.Point(28, 202);
-            this.TarifaLabel.Name = "TarifaLabel";
-            this.TarifaLabel.Size = new System.Drawing.Size(80, 37);
-            this.TarifaLabel.TabIndex = 11;
-            this.TarifaLabel.Text = "Tarifa";
-            // 
-            // ElegirEquipoCombobox
-            // 
-            this.ElegirEquipoCombobox.FormattingEnabled = true;
-            this.ElegirEquipoCombobox.Location = new System.Drawing.Point(35, 331);
-            this.ElegirEquipoCombobox.Name = "ElegirEquipoCombobox";
-            this.ElegirEquipoCombobox.Size = new System.Drawing.Size(308, 38);
-            this.ElegirEquipoCombobox.TabIndex = 14;
-            // 
-            // ElegirEquipoLabel
-            // 
-            this.ElegirEquipoLabel.AutoSize = true;
-            this.ElegirEquipoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ElegirEquipoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.ElegirEquipoLabel.Location = new System.Drawing.Point(28, 291);
-            this.ElegirEquipoLabel.Name = "ElegirEquipoLabel";
-            this.ElegirEquipoLabel.Size = new System.Drawing.Size(175, 37);
-            this.ElegirEquipoLabel.TabIndex = 13;
-            this.ElegirEquipoLabel.Text = "Elegir Equipo";
             // 
             // CrearNuevoLink
             // 
             this.CrearNuevoLink.AutoSize = true;
-            this.CrearNuevoLink.Location = new System.Drawing.Point(219, 297);
+            this.CrearNuevoLink.Location = new System.Drawing.Point(454, 100);
+            this.CrearNuevoLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CrearNuevoLink.Name = "CrearNuevoLink";
-            this.CrearNuevoLink.Size = new System.Drawing.Size(129, 30);
+            this.CrearNuevoLink.Size = new System.Drawing.Size(67, 13);
             this.CrearNuevoLink.TabIndex = 15;
             this.CrearNuevoLink.TabStop = true;
             this.CrearNuevoLink.Text = "Crear Nuevo";
             // 
-            // AgregarEquipoButton
+            // materialButton1
             // 
-            this.AgregarEquipoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.AgregarEquipoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.AgregarEquipoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.AgregarEquipoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AgregarEquipoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarEquipoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.AgregarEquipoButton.Location = new System.Drawing.Point(86, 388);
-            this.AgregarEquipoButton.Name = "AgregarEquipoButton";
-            this.AgregarEquipoButton.Size = new System.Drawing.Size(194, 50);
-            this.AgregarEquipoButton.TabIndex = 16;
-            this.AgregarEquipoButton.Text = "Agregar Equipo";
-            this.AgregarEquipoButton.UseVisualStyleBackColor = true;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton1.Location = new System.Drawing.Point(317, 261);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton1.Size = new System.Drawing.Size(143, 36);
+            this.materialButton1.TabIndex = 25;
+            this.materialButton1.Text = "Agregar Equipo";
+            this.materialButton1.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
             // 
-            // CrearPremioButton
+            // materialButton2
             // 
-            this.CrearPremioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.CrearPremioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.CrearPremioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.CrearPremioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrearPremioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrearPremioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.CrearPremioButton.Location = new System.Drawing.Point(86, 470);
-            this.CrearPremioButton.Name = "CrearPremioButton";
-            this.CrearPremioButton.Size = new System.Drawing.Size(194, 50);
-            this.CrearPremioButton.TabIndex = 17;
-            this.CrearPremioButton.Text = "Crear Premio";
-            this.CrearPremioButton.UseVisualStyleBackColor = true;
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton2.Location = new System.Drawing.Point(317, 518);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton2.Size = new System.Drawing.Size(125, 36);
+            this.materialButton2.TabIndex = 26;
+            this.materialButton2.Text = "Crear Premio";
+            this.materialButton2.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
             // 
-            // EquiposListbox
+            // materialButton3
             // 
-            this.EquiposListbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EquiposListbox.FormattingEnabled = true;
-            this.EquiposListbox.ItemHeight = 30;
-            this.EquiposListbox.Location = new System.Drawing.Point(430, 143);
-            this.EquiposListbox.Name = "EquiposListbox";
-            this.EquiposListbox.Size = new System.Drawing.Size(361, 182);
-            this.EquiposListbox.TabIndex = 18;
+            this.materialButton3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton3.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton3.Depth = 0;
+            this.materialButton3.HighEmphasis = true;
+            this.materialButton3.Icon = null;
+            this.materialButton3.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton3.Location = new System.Drawing.Point(762, 653);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton3.Name = "materialButton3";
+            this.materialButton3.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton3.Size = new System.Drawing.Size(171, 36);
+            this.materialButton3.TabIndex = 27;
+            this.materialButton3.Text = "Crear Campeonato";
+            this.materialButton3.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton3.UseAccentColor = false;
+            this.materialButton3.UseVisualStyleBackColor = true;
+            // 
+            // materialButton4
+            // 
+            this.materialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton4.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton4.Depth = 0;
+            this.materialButton4.HighEmphasis = true;
+            this.materialButton4.Icon = null;
+            this.materialButton4.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton4.Location = new System.Drawing.Point(804, 372);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton4.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton4.Name = "materialButton4";
+            this.materialButton4.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton4.Size = new System.Drawing.Size(131, 36);
+            this.materialButton4.TabIndex = 28;
+            this.materialButton4.Text = "Quitar Premio";
+            this.materialButton4.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton4.UseAccentColor = false;
+            this.materialButton4.UseVisualStyleBackColor = true;
+            // 
+            // materialButton5
+            // 
+            this.materialButton5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton5.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButton5.Depth = 0;
+            this.materialButton5.HighEmphasis = true;
+            this.materialButton5.Icon = null;
+            this.materialButton5.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.materialButton5.Location = new System.Drawing.Point(804, 120);
+            this.materialButton5.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton5.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialButton5.Name = "materialButton5";
+            this.materialButton5.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButton5.Size = new System.Drawing.Size(129, 36);
+            this.materialButton5.TabIndex = 29;
+            this.materialButton5.Text = "Quitar Equipo";
+            this.materialButton5.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton5.UseAccentColor = false;
+            this.materialButton5.UseVisualStyleBackColor = true;
+            // 
+            // ElegirEquipoLabel
+            // 
+            this.ElegirEquipoLabel.AutoSize = true;
+            this.ElegirEquipoLabel.Depth = 0;
+            this.ElegirEquipoLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.ElegirEquipoLabel.Location = new System.Drawing.Point(314, 98);
+            this.ElegirEquipoLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.ElegirEquipoLabel.Name = "ElegirEquipoLabel";
+            this.ElegirEquipoLabel.Size = new System.Drawing.Size(93, 19);
+            this.ElegirEquipoLabel.TabIndex = 30;
+            this.ElegirEquipoLabel.Text = "Elegir Equipo";
             // 
             // EquiposLabel
             // 
             this.EquiposLabel.AutoSize = true;
-            this.EquiposLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EquiposLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.EquiposLabel.Location = new System.Drawing.Point(423, 103);
+            this.EquiposLabel.Depth = 0;
+            this.EquiposLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EquiposLabel.Location = new System.Drawing.Point(621, 98);
+            this.EquiposLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.EquiposLabel.Name = "EquiposLabel";
-            this.EquiposLabel.Size = new System.Drawing.Size(112, 37);
-            this.EquiposLabel.TabIndex = 19;
+            this.EquiposLabel.Size = new System.Drawing.Size(58, 19);
+            this.EquiposLabel.TabIndex = 31;
             this.EquiposLabel.Text = "Equipos";
-            // 
-            // QuitarEquipoButton
-            // 
-            this.QuitarEquipoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.QuitarEquipoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.QuitarEquipoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.QuitarEquipoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuitarEquipoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuitarEquipoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.QuitarEquipoButton.Location = new System.Drawing.Point(808, 187);
-            this.QuitarEquipoButton.Name = "QuitarEquipoButton";
-            this.QuitarEquipoButton.Size = new System.Drawing.Size(115, 72);
-            this.QuitarEquipoButton.TabIndex = 20;
-            this.QuitarEquipoButton.Text = "Quitar Equipo";
-            this.QuitarEquipoButton.UseVisualStyleBackColor = true;
-            // 
-            // QuitarPremioButton
-            // 
-            this.QuitarPremioButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.QuitarPremioButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.QuitarPremioButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.QuitarPremioButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.QuitarPremioButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QuitarPremioButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.QuitarPremioButton.Location = new System.Drawing.Point(808, 448);
-            this.QuitarPremioButton.Name = "QuitarPremioButton";
-            this.QuitarPremioButton.Size = new System.Drawing.Size(115, 72);
-            this.QuitarPremioButton.TabIndex = 23;
-            this.QuitarPremioButton.Text = "Quitar Premio";
-            this.QuitarPremioButton.UseVisualStyleBackColor = true;
             // 
             // PremiosLabel
             // 
             this.PremiosLabel.AutoSize = true;
-            this.PremiosLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PremiosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.PremiosLabel.Location = new System.Drawing.Point(423, 359);
+            this.PremiosLabel.Depth = 0;
+            this.PremiosLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PremiosLabel.Location = new System.Drawing.Point(612, 350);
+            this.PremiosLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.PremiosLabel.Name = "PremiosLabel";
-            this.PremiosLabel.Size = new System.Drawing.Size(112, 37);
-            this.PremiosLabel.TabIndex = 22;
+            this.PremiosLabel.Size = new System.Drawing.Size(59, 19);
+            this.PremiosLabel.TabIndex = 32;
             this.PremiosLabel.Text = "Premios";
+            // 
+            // EquiposListbox
+            // 
+            this.EquiposListbox.BackColor = System.Drawing.Color.White;
+            this.EquiposListbox.BorderColor = System.Drawing.Color.LightGray;
+            this.EquiposListbox.Depth = 0;
+            this.EquiposListbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.EquiposListbox.Location = new System.Drawing.Point(615, 120);
+            this.EquiposListbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.EquiposListbox.Name = "EquiposListbox";
+            this.EquiposListbox.SelectedIndex = -1;
+            this.EquiposListbox.SelectedItem = null;
+            this.EquiposListbox.Size = new System.Drawing.Size(182, 182);
+            this.EquiposListbox.TabIndex = 33;
             // 
             // PremiosListbox
             // 
-            this.PremiosListbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PremiosListbox.FormattingEnabled = true;
-            this.PremiosListbox.ItemHeight = 30;
-            this.PremiosListbox.Location = new System.Drawing.Point(430, 399);
+            this.PremiosListbox.BackColor = System.Drawing.Color.White;
+            this.PremiosListbox.BorderColor = System.Drawing.Color.LightGray;
+            this.PremiosListbox.Depth = 0;
+            this.PremiosListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PremiosListbox.Location = new System.Drawing.Point(615, 372);
+            this.PremiosListbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.PremiosListbox.Name = "PremiosListbox";
-            this.PremiosListbox.Size = new System.Drawing.Size(361, 182);
-            this.PremiosListbox.TabIndex = 21;
+            this.PremiosListbox.SelectedIndex = -1;
+            this.PremiosListbox.SelectedItem = null;
+            this.PremiosListbox.Size = new System.Drawing.Size(182, 182);
+            this.PremiosListbox.TabIndex = 34;
             // 
-            // CrearCampeonatoButton
+            // ElegirEquipoCombobox
             // 
-            this.CrearCampeonatoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.CrearCampeonatoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.CrearCampeonatoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.CrearCampeonatoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrearCampeonatoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrearCampeonatoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.CrearCampeonatoButton.Location = new System.Drawing.Point(310, 627);
-            this.CrearCampeonatoButton.Name = "CrearCampeonatoButton";
-            this.CrearCampeonatoButton.Size = new System.Drawing.Size(242, 81);
-            this.CrearCampeonatoButton.TabIndex = 24;
-            this.CrearCampeonatoButton.Text = "Crear Campeonato";
-            this.CrearCampeonatoButton.UseVisualStyleBackColor = true;
+            this.ElegirEquipoCombobox.AutoResize = false;
+            this.ElegirEquipoCombobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ElegirEquipoCombobox.Depth = 0;
+            this.ElegirEquipoCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.ElegirEquipoCombobox.DropDownHeight = 174;
+            this.ElegirEquipoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ElegirEquipoCombobox.DropDownWidth = 121;
+            this.ElegirEquipoCombobox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ElegirEquipoCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.ElegirEquipoCombobox.FormattingEnabled = true;
+            this.ElegirEquipoCombobox.IntegralHeight = false;
+            this.ElegirEquipoCombobox.ItemHeight = 43;
+            this.ElegirEquipoCombobox.Location = new System.Drawing.Point(317, 138);
+            this.ElegirEquipoCombobox.MaxDropDownItems = 4;
+            this.ElegirEquipoCombobox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.ElegirEquipoCombobox.Name = "ElegirEquipoCombobox";
+            this.ElegirEquipoCombobox.Size = new System.Drawing.Size(121, 49);
+            this.ElegirEquipoCombobox.StartIndex = 0;
+            this.ElegirEquipoCombobox.TabIndex = 35;
+            // 
+            // TarifaTextbox
+            // 
+            this.TarifaTextbox.AnimateReadOnly = false;
+            this.TarifaTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.TarifaTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.TarifaTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.TarifaTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.TarifaTextbox.Depth = 0;
+            this.TarifaTextbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.TarifaTextbox.HideSelection = true;
+            this.TarifaTextbox.LeadingIcon = null;
+            this.TarifaTextbox.Location = new System.Drawing.Point(19, 139);
+            this.TarifaTextbox.MaxLength = 32767;
+            this.TarifaTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.TarifaTextbox.Name = "TarifaTextbox";
+            this.TarifaTextbox.PasswordChar = '\0';
+            this.TarifaTextbox.PrefixSuffixText = null;
+            this.TarifaTextbox.ReadOnly = false;
+            this.TarifaTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.TarifaTextbox.SelectedText = "";
+            this.TarifaTextbox.SelectionLength = 0;
+            this.TarifaTextbox.SelectionStart = 0;
+            this.TarifaTextbox.ShortcutsEnabled = true;
+            this.TarifaTextbox.Size = new System.Drawing.Size(250, 48);
+            this.TarifaTextbox.TabIndex = 36;
+            this.TarifaTextbox.TabStop = false;
+            this.TarifaTextbox.Text = "Tarifa";
+            this.TarifaTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TarifaTextbox.TrailingIcon = null;
+            this.TarifaTextbox.UseSystemPasswordChar = false;
+            // 
+            // NombreCampeonatoTextbox
+            // 
+            this.NombreCampeonatoTextbox.AnimateReadOnly = false;
+            this.NombreCampeonatoTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.NombreCampeonatoTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.NombreCampeonatoTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NombreCampeonatoTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.NombreCampeonatoTextbox.Depth = 0;
+            this.NombreCampeonatoTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NombreCampeonatoTextbox.HideSelection = true;
+            this.NombreCampeonatoTextbox.LeadingIcon = null;
+            this.NombreCampeonatoTextbox.Location = new System.Drawing.Point(19, 85);
+            this.NombreCampeonatoTextbox.MaxLength = 32767;
+            this.NombreCampeonatoTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.NombreCampeonatoTextbox.Name = "NombreCampeonatoTextbox";
+            this.NombreCampeonatoTextbox.PasswordChar = '\0';
+            this.NombreCampeonatoTextbox.PrefixSuffixText = null;
+            this.NombreCampeonatoTextbox.ReadOnly = false;
+            this.NombreCampeonatoTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NombreCampeonatoTextbox.SelectedText = "";
+            this.NombreCampeonatoTextbox.SelectionLength = 0;
+            this.NombreCampeonatoTextbox.SelectionStart = 0;
+            this.NombreCampeonatoTextbox.ShortcutsEnabled = true;
+            this.NombreCampeonatoTextbox.Size = new System.Drawing.Size(250, 48);
+            this.NombreCampeonatoTextbox.TabIndex = 37;
+            this.NombreCampeonatoTextbox.TabStop = false;
+            this.NombreCampeonatoTextbox.Text = "Nombre del Campeonato";
+            this.NombreCampeonatoTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NombreCampeonatoTextbox.TrailingIcon = null;
+            this.NombreCampeonatoTextbox.UseSystemPasswordChar = false;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(19, 608);
+            this.materialDivider1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(914, 3);
+            this.materialDivider1.TabIndex = 38;
+            this.materialDivider1.Text = "materialDivider1";
             // 
             // CampeonatosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(206)))));
-            this.ClientSize = new System.Drawing.Size(951, 745);
-            this.Controls.Add(this.CrearCampeonatoButton);
-            this.Controls.Add(this.QuitarPremioButton);
-            this.Controls.Add(this.PremiosLabel);
-            this.Controls.Add(this.PremiosListbox);
-            this.Controls.Add(this.QuitarEquipoButton);
-            this.Controls.Add(this.EquiposLabel);
-            this.Controls.Add(this.EquiposListbox);
-            this.Controls.Add(this.CrearPremioButton);
-            this.Controls.Add(this.AgregarEquipoButton);
-            this.Controls.Add(this.CrearNuevoLink);
-            this.Controls.Add(this.ElegirEquipoCombobox);
-            this.Controls.Add(this.ElegirEquipoLabel);
-            this.Controls.Add(this.TarifaTextbox);
-            this.Controls.Add(this.TarifaLabel);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(969, 719);
+            this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.NombreCampeonatoTextbox);
-            this.Controls.Add(this.NombreCampeonatoLabel);
-            this.Controls.Add(this.ABMCampeonatosLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.TarifaTextbox);
+            this.Controls.Add(this.ElegirEquipoCombobox);
+            this.Controls.Add(this.PremiosListbox);
+            this.Controls.Add(this.EquiposListbox);
+            this.Controls.Add(this.PremiosLabel);
+            this.Controls.Add(this.EquiposLabel);
+            this.Controls.Add(this.ElegirEquipoLabel);
+            this.Controls.Add(this.materialButton5);
+            this.Controls.Add(this.materialButton4);
+            this.Controls.Add(this.materialButton3);
+            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.CrearNuevoLink);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "CampeonatosForm";
+            this.Padding = new System.Windows.Forms.Padding(2, 28, 2, 1);
             this.Text = "Campeonatos";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -277,23 +349,20 @@ namespace GCWinforms
         }
 
         #endregion
-
-        private System.Windows.Forms.Label ABMCampeonatosLabel;
-        private System.Windows.Forms.TextBox NombreCampeonatoTextbox;
-        private System.Windows.Forms.Label NombreCampeonatoLabel;
-        private System.Windows.Forms.TextBox TarifaTextbox;
-        private System.Windows.Forms.Label TarifaLabel;
-        private System.Windows.Forms.ComboBox ElegirEquipoCombobox;
-        private System.Windows.Forms.Label ElegirEquipoLabel;
         private System.Windows.Forms.LinkLabel CrearNuevoLink;
-        private System.Windows.Forms.Button AgregarEquipoButton;
-        private System.Windows.Forms.Button CrearPremioButton;
-        private System.Windows.Forms.ListBox EquiposListbox;
-        private System.Windows.Forms.Label EquiposLabel;
-        private System.Windows.Forms.Button QuitarEquipoButton;
-        private System.Windows.Forms.Button QuitarPremioButton;
-        private System.Windows.Forms.Label PremiosLabel;
-        private System.Windows.Forms.ListBox PremiosListbox;
-        private System.Windows.Forms.Button CrearCampeonatoButton;
+        private ReaLTaiizor.Controls.MaterialButton materialButton1;
+        private ReaLTaiizor.Controls.MaterialButton materialButton2;
+        private ReaLTaiizor.Controls.MaterialButton materialButton3;
+        private ReaLTaiizor.Controls.MaterialButton materialButton4;
+        private ReaLTaiizor.Controls.MaterialButton materialButton5;
+        private ReaLTaiizor.Controls.MaterialLabel ElegirEquipoLabel;
+        private ReaLTaiizor.Controls.MaterialLabel EquiposLabel;
+        private ReaLTaiizor.Controls.MaterialLabel PremiosLabel;
+        private ReaLTaiizor.Controls.MaterialListBox EquiposListbox;
+        private ReaLTaiizor.Controls.MaterialListBox PremiosListbox;
+        private ReaLTaiizor.Controls.MaterialComboBox ElegirEquipoCombobox;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit TarifaTextbox;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit NombreCampeonatoTextbox;
+        private ReaLTaiizor.Controls.MaterialDivider materialDivider1;
     }
 }

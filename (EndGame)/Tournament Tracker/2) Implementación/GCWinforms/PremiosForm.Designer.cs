@@ -30,132 +30,172 @@ namespace GCWinforms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PremiosForm));
-            this.ABMPremiosLabel = new System.Windows.Forms.Label();
-            this.NumeroPuestoLabel = new System.Windows.Forms.Label();
-            this.NumeroPuestoCombobox = new System.Windows.Forms.ComboBox();
-            this.NombrePuestoLabel = new System.Windows.Forms.Label();
-            this.MontoPremioLabel = new System.Windows.Forms.Label();
-            this.PorcentajePremioLabel = new System.Windows.Forms.Label();
-            this.CrearPremioButton = new System.Windows.Forms.Button();
-            this.NombrePuestoTextbox = new System.Windows.Forms.TextBox();
-            this.MontoPremioTextbox = new System.Windows.Forms.TextBox();
-            this.PorcentajePremioTextbox = new System.Windows.Forms.TextBox();
+            this.NumeroPuestoCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.NumeroPuestoLabel = new ReaLTaiizor.Controls.MaterialLabel();
+            this.NombrePuestoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.MontoPremioTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.PorcentajePremioTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.CrearPremioButton = new ReaLTaiizor.Controls.MaterialButton();
             this.SuspendLayout();
             // 
-            // ABMPremiosLabel
+            // NumeroPuestoCombobox
             // 
-            this.ABMPremiosLabel.AutoSize = true;
-            this.ABMPremiosLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ABMPremiosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.ABMPremiosLabel.Location = new System.Drawing.Point(12, 26);
-            this.ABMPremiosLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.ABMPremiosLabel.Name = "ABMPremiosLabel";
-            this.ABMPremiosLabel.Size = new System.Drawing.Size(229, 50);
-            this.ABMPremiosLabel.TabIndex = 12;
-            this.ABMPremiosLabel.Text = "ABM Premios";
+            this.NumeroPuestoCombobox.AutoResize = false;
+            this.NumeroPuestoCombobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.NumeroPuestoCombobox.Depth = 0;
+            this.NumeroPuestoCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.NumeroPuestoCombobox.DropDownHeight = 174;
+            this.NumeroPuestoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NumeroPuestoCombobox.DropDownWidth = 121;
+            this.NumeroPuestoCombobox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.NumeroPuestoCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.NumeroPuestoCombobox.FormattingEnabled = true;
+            this.NumeroPuestoCombobox.IntegralHeight = false;
+            this.NumeroPuestoCombobox.ItemHeight = 43;
+            this.NumeroPuestoCombobox.Location = new System.Drawing.Point(6, 111);
+            this.NumeroPuestoCombobox.MaxDropDownItems = 4;
+            this.NumeroPuestoCombobox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.NumeroPuestoCombobox.Name = "NumeroPuestoCombobox";
+            this.NumeroPuestoCombobox.Size = new System.Drawing.Size(121, 49);
+            this.NumeroPuestoCombobox.StartIndex = 0;
+            this.NumeroPuestoCombobox.TabIndex = 49;
             // 
             // NumeroPuestoLabel
             // 
             this.NumeroPuestoLabel.AutoSize = true;
-            this.NumeroPuestoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NumeroPuestoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.NumeroPuestoLabel.Location = new System.Drawing.Point(-2, 108);
-            this.NumeroPuestoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NumeroPuestoLabel.Depth = 0;
+            this.NumeroPuestoLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NumeroPuestoLabel.Location = new System.Drawing.Point(6, 89);
+            this.NumeroPuestoLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.NumeroPuestoLabel.Name = "NumeroPuestoLabel";
-            this.NumeroPuestoLabel.Size = new System.Drawing.Size(238, 37);
-            this.NumeroPuestoLabel.TabIndex = 23;
+            this.NumeroPuestoLabel.Size = new System.Drawing.Size(131, 19);
+            this.NumeroPuestoLabel.TabIndex = 50;
             this.NumeroPuestoLabel.Text = "Número de Puesto";
-            // 
-            // NumeroPuestoCombobox
-            // 
-            this.NumeroPuestoCombobox.FormattingEnabled = true;
-            this.NumeroPuestoCombobox.Location = new System.Drawing.Point(240, 108);
-            this.NumeroPuestoCombobox.Margin = new System.Windows.Forms.Padding(2);
-            this.NumeroPuestoCombobox.Name = "NumeroPuestoCombobox";
-            this.NumeroPuestoCombobox.Size = new System.Drawing.Size(115, 21);
-            this.NumeroPuestoCombobox.TabIndex = 34;
-            // 
-            // NombrePuestoLabel
-            // 
-            this.NombrePuestoLabel.AutoSize = true;
-            this.NombrePuestoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombrePuestoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.NombrePuestoLabel.Location = new System.Drawing.Point(14, 184);
-            this.NombrePuestoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.NombrePuestoLabel.Name = "NombrePuestoLabel";
-            this.NombrePuestoLabel.Size = new System.Drawing.Size(246, 37);
-            this.NombrePuestoLabel.TabIndex = 42;
-            this.NombrePuestoLabel.Text = "Nombre del Puesto";
-            // 
-            // MontoPremioLabel
-            // 
-            this.MontoPremioLabel.AutoSize = true;
-            this.MontoPremioLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MontoPremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.MontoPremioLabel.Location = new System.Drawing.Point(14, 264);
-            this.MontoPremioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.MontoPremioLabel.Name = "MontoPremioLabel";
-            this.MontoPremioLabel.Size = new System.Drawing.Size(232, 37);
-            this.MontoPremioLabel.TabIndex = 43;
-            this.MontoPremioLabel.Text = "Monto del Premio";
-            // 
-            // PorcentajePremioLabel
-            // 
-            this.PorcentajePremioLabel.AutoSize = true;
-            this.PorcentajePremioLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PorcentajePremioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.PorcentajePremioLabel.Location = new System.Drawing.Point(14, 343);
-            this.PorcentajePremioLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.PorcentajePremioLabel.Name = "PorcentajePremioLabel";
-            this.PorcentajePremioLabel.Size = new System.Drawing.Size(276, 37);
-            this.PorcentajePremioLabel.TabIndex = 44;
-            this.PorcentajePremioLabel.Text = "Porcentaje del Premio";
-            // 
-            // CrearPremioButton
-            // 
-            this.CrearPremioButton.Location = new System.Drawing.Point(297, 448);
-            this.CrearPremioButton.Name = "CrearPremioButton";
-            this.CrearPremioButton.Size = new System.Drawing.Size(75, 23);
-            this.CrearPremioButton.TabIndex = 45;
-            this.CrearPremioButton.Text = "Crear";
-            this.CrearPremioButton.UseVisualStyleBackColor = true;
             // 
             // NombrePuestoTextbox
             // 
-            this.NombrePuestoTextbox.Location = new System.Drawing.Point(312, 192);
+            this.NombrePuestoTextbox.AnimateReadOnly = false;
+            this.NombrePuestoTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.NombrePuestoTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.NombrePuestoTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NombrePuestoTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.NombrePuestoTextbox.Depth = 0;
+            this.NombrePuestoTextbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NombrePuestoTextbox.HideSelection = true;
+            this.NombrePuestoTextbox.LeadingIcon = null;
+            this.NombrePuestoTextbox.Location = new System.Drawing.Point(9, 179);
+            this.NombrePuestoTextbox.MaxLength = 32767;
+            this.NombrePuestoTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.NombrePuestoTextbox.Name = "NombrePuestoTextbox";
-            this.NombrePuestoTextbox.Size = new System.Drawing.Size(100, 20);
-            this.NombrePuestoTextbox.TabIndex = 46;
+            this.NombrePuestoTextbox.PasswordChar = '\0';
+            this.NombrePuestoTextbox.PrefixSuffixText = null;
+            this.NombrePuestoTextbox.ReadOnly = false;
+            this.NombrePuestoTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NombrePuestoTextbox.SelectedText = "";
+            this.NombrePuestoTextbox.SelectionLength = 0;
+            this.NombrePuestoTextbox.SelectionStart = 0;
+            this.NombrePuestoTextbox.ShortcutsEnabled = true;
+            this.NombrePuestoTextbox.Size = new System.Drawing.Size(250, 48);
+            this.NombrePuestoTextbox.TabIndex = 54;
+            this.NombrePuestoTextbox.TabStop = false;
+            this.NombrePuestoTextbox.Text = "Nombre del Puesto";
+            this.NombrePuestoTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NombrePuestoTextbox.TrailingIcon = null;
+            this.NombrePuestoTextbox.UseSystemPasswordChar = false;
             // 
             // MontoPremioTextbox
             // 
-            this.MontoPremioTextbox.Location = new System.Drawing.Point(297, 271);
+            this.MontoPremioTextbox.AnimateReadOnly = false;
+            this.MontoPremioTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.MontoPremioTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.MontoPremioTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.MontoPremioTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.MontoPremioTextbox.Depth = 0;
+            this.MontoPremioTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.MontoPremioTextbox.HideSelection = true;
+            this.MontoPremioTextbox.LeadingIcon = null;
+            this.MontoPremioTextbox.Location = new System.Drawing.Point(9, 256);
+            this.MontoPremioTextbox.MaxLength = 32767;
+            this.MontoPremioTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.MontoPremioTextbox.Name = "MontoPremioTextbox";
-            this.MontoPremioTextbox.Size = new System.Drawing.Size(100, 20);
-            this.MontoPremioTextbox.TabIndex = 47;
+            this.MontoPremioTextbox.PasswordChar = '\0';
+            this.MontoPremioTextbox.PrefixSuffixText = null;
+            this.MontoPremioTextbox.ReadOnly = false;
+            this.MontoPremioTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.MontoPremioTextbox.SelectedText = "";
+            this.MontoPremioTextbox.SelectionLength = 0;
+            this.MontoPremioTextbox.SelectionStart = 0;
+            this.MontoPremioTextbox.ShortcutsEnabled = true;
+            this.MontoPremioTextbox.Size = new System.Drawing.Size(250, 48);
+            this.MontoPremioTextbox.TabIndex = 55;
+            this.MontoPremioTextbox.TabStop = false;
+            this.MontoPremioTextbox.Text = "Monto del Premio";
+            this.MontoPremioTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.MontoPremioTextbox.TrailingIcon = null;
+            this.MontoPremioTextbox.UseSystemPasswordChar = false;
             // 
             // PorcentajePremioTextbox
             // 
-            this.PorcentajePremioTextbox.Location = new System.Drawing.Point(312, 357);
+            this.PorcentajePremioTextbox.AnimateReadOnly = false;
+            this.PorcentajePremioTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.PorcentajePremioTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.PorcentajePremioTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PorcentajePremioTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.PorcentajePremioTextbox.Depth = 0;
+            this.PorcentajePremioTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PorcentajePremioTextbox.HideSelection = true;
+            this.PorcentajePremioTextbox.LeadingIcon = null;
+            this.PorcentajePremioTextbox.Location = new System.Drawing.Point(9, 332);
+            this.PorcentajePremioTextbox.MaxLength = 32767;
+            this.PorcentajePremioTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.PorcentajePremioTextbox.Name = "PorcentajePremioTextbox";
-            this.PorcentajePremioTextbox.Size = new System.Drawing.Size(100, 20);
-            this.PorcentajePremioTextbox.TabIndex = 48;
+            this.PorcentajePremioTextbox.PasswordChar = '\0';
+            this.PorcentajePremioTextbox.PrefixSuffixText = null;
+            this.PorcentajePremioTextbox.ReadOnly = false;
+            this.PorcentajePremioTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PorcentajePremioTextbox.SelectedText = "";
+            this.PorcentajePremioTextbox.SelectionLength = 0;
+            this.PorcentajePremioTextbox.SelectionStart = 0;
+            this.PorcentajePremioTextbox.ShortcutsEnabled = true;
+            this.PorcentajePremioTextbox.Size = new System.Drawing.Size(250, 48);
+            this.PorcentajePremioTextbox.TabIndex = 56;
+            this.PorcentajePremioTextbox.TabStop = false;
+            this.PorcentajePremioTextbox.Text = "Porcentaje del Premio";
+            this.PorcentajePremioTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PorcentajePremioTextbox.TrailingIcon = null;
+            this.PorcentajePremioTextbox.UseSystemPasswordChar = false;
+            // 
+            // CrearPremioButton
+            // 
+            this.CrearPremioButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CrearPremioButton.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.CrearPremioButton.Depth = 0;
+            this.CrearPremioButton.HighEmphasis = true;
+            this.CrearPremioButton.Icon = null;
+            this.CrearPremioButton.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.CrearPremioButton.Location = new System.Drawing.Point(66, 418);
+            this.CrearPremioButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CrearPremioButton.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.CrearPremioButton.Name = "CrearPremioButton";
+            this.CrearPremioButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.CrearPremioButton.Size = new System.Drawing.Size(125, 36);
+            this.CrearPremioButton.TabIndex = 57;
+            this.CrearPremioButton.Text = "Crear Premio";
+            this.CrearPremioButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.CrearPremioButton.UseAccentColor = false;
+            this.CrearPremioButton.UseVisualStyleBackColor = true;
             // 
             // PremiosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 487);
+            this.ClientSize = new System.Drawing.Size(287, 487);
+            this.Controls.Add(this.CrearPremioButton);
             this.Controls.Add(this.PorcentajePremioTextbox);
             this.Controls.Add(this.MontoPremioTextbox);
             this.Controls.Add(this.NombrePuestoTextbox);
-            this.Controls.Add(this.CrearPremioButton);
-            this.Controls.Add(this.PorcentajePremioLabel);
-            this.Controls.Add(this.MontoPremioLabel);
-            this.Controls.Add(this.NombrePuestoLabel);
-            this.Controls.Add(this.NumeroPuestoCombobox);
             this.Controls.Add(this.NumeroPuestoLabel);
-            this.Controls.Add(this.ABMPremiosLabel);
+            this.Controls.Add(this.NumeroPuestoCombobox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PremiosForm";
             this.Text = "Premios";
@@ -166,15 +206,11 @@ namespace GCWinforms
 
         #endregion
 
-        private System.Windows.Forms.Label ABMPremiosLabel;
-        private System.Windows.Forms.Label NumeroPuestoLabel;
-        private System.Windows.Forms.ComboBox NumeroPuestoCombobox;
-        private System.Windows.Forms.Label NombrePuestoLabel;
-        private System.Windows.Forms.Label MontoPremioLabel;
-        private System.Windows.Forms.Label PorcentajePremioLabel;
-        private System.Windows.Forms.Button CrearPremioButton;
-        private System.Windows.Forms.TextBox NombrePuestoTextbox;
-        private System.Windows.Forms.TextBox MontoPremioTextbox;
-        private System.Windows.Forms.TextBox PorcentajePremioTextbox;
+        private ReaLTaiizor.Controls.MaterialComboBox NumeroPuestoCombobox;
+        private ReaLTaiizor.Controls.MaterialLabel NumeroPuestoLabel;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit NombrePuestoTextbox;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit MontoPremioTextbox;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit PorcentajePremioTextbox;
+        private ReaLTaiizor.Controls.MaterialButton CrearPremioButton;
     }
 }
