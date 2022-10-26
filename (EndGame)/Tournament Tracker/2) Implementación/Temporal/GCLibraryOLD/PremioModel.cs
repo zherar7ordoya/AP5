@@ -27,7 +27,7 @@
         /// <remarks>
         /// En inglés => PlaceName
         /// </remarks>
-        public string PuestoNombre { get; set; }
+        public string? PuestoNombre { get; set; }
 
         /// <summary>
         /// El monto fijo monetario para este puesto (cero si no se usa).

@@ -3,9 +3,9 @@ using ReaLTaiizor.Manager;
 
 namespace GCWinforms
 {
-    public partial class PremiosForm : MaterialForm
+    public partial class Formulario : MaterialForm
     {
-        public PremiosForm(MaterialSkinManager msm)
+        public Formulario(MaterialSkinManager msm)
         {
             InitializeComponent();
 

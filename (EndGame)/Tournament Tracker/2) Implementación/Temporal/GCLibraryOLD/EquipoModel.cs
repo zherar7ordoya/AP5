@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GCLibrary
+﻿namespace GCLibrary
 {
     /// <summary>
     /// Equipo de un campeonato.
@@ -24,6 +22,6 @@ namespace GCLibrary
         /// <remarks>
         /// En inglés => TeamName
         /// </remarks>
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
     }
 }

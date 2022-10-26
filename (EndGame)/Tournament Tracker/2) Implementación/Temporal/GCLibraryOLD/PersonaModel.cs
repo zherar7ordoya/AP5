@@ -14,7 +14,7 @@
         /// <remarks>
         /// En inglés => FirstName
         /// </remarks>
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         /// <summary>
         /// Apellido de la persona.
@@ -22,7 +22,7 @@
         /// <remarks>
         /// En inglés => LastName
         /// </remarks>
-        public string Apellido { get; set; }
+        public string? Apellido { get; set; }
 
         /// <summary>
         /// El correo electrónico de la persona.
@@ -30,7 +30,7 @@
         /// <remarks>
         /// En inglés => EmailAddress
         /// </remarks>
-        public string Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// El número de celular de la persona.
@@ -38,6 +38,6 @@
         /// <remarks>
         /// En inglés => CellphoneNumber
         /// </remarks>
-        public string Celular { get; set; }
+        public string? Celular { get; set; }
     }
 }

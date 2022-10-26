@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace GCLibrary
+﻿namespace GCLibrary
 {
     /// <summary>
     /// Representa un campeonato, con todas las rondas, partidos, premios y resultados.
@@ -16,7 +14,7 @@ namespace GCLibrary
         /// <remarks>
         /// En inglés => TournamentName
         /// </remarks>
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
 
         /// <summary>
         /// La cantidad de dinero que cada equipo necesita pagar para participar.

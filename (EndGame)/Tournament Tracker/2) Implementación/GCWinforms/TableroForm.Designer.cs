@@ -30,89 +30,100 @@ namespace GCWinforms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TableroForm));
-            this.TableroCampeonatosLabel = new System.Windows.Forms.Label();
-            this.CargarCampeonatoCombobox = new System.Windows.Forms.ComboBox();
-            this.CargarCampeonatoLabel = new System.Windows.Forms.Label();
-            this.CargarCampeonatoButton = new System.Windows.Forms.Button();
-            this.CrearCampeonatoButton = new System.Windows.Forms.Button();
+            this.CargarCampeonatoCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.CargarCampeonatoButton = new ReaLTaiizor.Controls.MaterialButton();
+            this.CrearCampeonatoButton = new ReaLTaiizor.Controls.MaterialButton();
+            this.Divisor = new ReaLTaiizor.Controls.MaterialDivider();
             this.SuspendLayout();
-            // 
-            // TableroCampeonatosLabel
-            // 
-            this.TableroCampeonatosLabel.AutoSize = true;
-            this.TableroCampeonatosLabel.Font = new System.Drawing.Font("Segoe UI Light", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TableroCampeonatosLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.TableroCampeonatosLabel.Location = new System.Drawing.Point(152, 25);
-            this.TableroCampeonatosLabel.Name = "TableroCampeonatosLabel";
-            this.TableroCampeonatosLabel.Size = new System.Drawing.Size(409, 50);
-            this.TableroCampeonatosLabel.TabIndex = 13;
-            this.TableroCampeonatosLabel.Text = "Tablero de Campeonatos";
             // 
             // CargarCampeonatoCombobox
             // 
+            this.CargarCampeonatoCombobox.AutoResize = false;
+            this.CargarCampeonatoCombobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.CargarCampeonatoCombobox.Depth = 0;
+            this.CargarCampeonatoCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.CargarCampeonatoCombobox.DropDownHeight = 174;
+            this.CargarCampeonatoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CargarCampeonatoCombobox.DropDownWidth = 121;
+            this.CargarCampeonatoCombobox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.CargarCampeonatoCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.CargarCampeonatoCombobox.FormattingEnabled = true;
-            this.CargarCampeonatoCombobox.Location = new System.Drawing.Point(124, 137);
+            this.CargarCampeonatoCombobox.IntegralHeight = false;
+            this.CargarCampeonatoCombobox.ItemHeight = 43;
+            this.CargarCampeonatoCombobox.Location = new System.Drawing.Point(17, 89);
+            this.CargarCampeonatoCombobox.MaxDropDownItems = 4;
+            this.CargarCampeonatoCombobox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             this.CargarCampeonatoCombobox.Name = "CargarCampeonatoCombobox";
-            this.CargarCampeonatoCombobox.Size = new System.Drawing.Size(422, 38);
-            this.CargarCampeonatoCombobox.TabIndex = 20;
-            // 
-            // CargarCampeonatoLabel
-            // 
-            this.CargarCampeonatoLabel.AutoSize = true;
-            this.CargarCampeonatoLabel.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CargarCampeonatoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.CargarCampeonatoLabel.Location = new System.Drawing.Point(174, 97);
-            this.CargarCampeonatoLabel.Name = "CargarCampeonatoLabel";
-            this.CargarCampeonatoLabel.Size = new System.Drawing.Size(257, 37);
-            this.CargarCampeonatoLabel.TabIndex = 19;
-            this.CargarCampeonatoLabel.Text = "Cargar Campeonato";
+            this.CargarCampeonatoCombobox.Size = new System.Drawing.Size(245, 49);
+            this.CargarCampeonatoCombobox.StartIndex = 0;
+            this.CargarCampeonatoCombobox.TabIndex = 34;
             // 
             // CargarCampeonatoButton
             // 
-            this.CargarCampeonatoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.CargarCampeonatoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.CargarCampeonatoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.CargarCampeonatoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CargarCampeonatoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CargarCampeonatoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.CargarCampeonatoButton.Location = new System.Drawing.Point(238, 193);
+            this.CargarCampeonatoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CargarCampeonatoButton.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.CargarCampeonatoButton.Depth = 0;
+            this.CargarCampeonatoButton.HighEmphasis = true;
+            this.CargarCampeonatoButton.Icon = null;
+            this.CargarCampeonatoButton.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.CargarCampeonatoButton.Location = new System.Drawing.Point(269, 102);
+            this.CargarCampeonatoButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CargarCampeonatoButton.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.CargarCampeonatoButton.Name = "CargarCampeonatoButton";
-            this.CargarCampeonatoButton.Size = new System.Drawing.Size(194, 50);
-            this.CargarCampeonatoButton.TabIndex = 21;
+            this.CargarCampeonatoButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.CargarCampeonatoButton.Size = new System.Drawing.Size(182, 36);
+            this.CargarCampeonatoButton.TabIndex = 35;
             this.CargarCampeonatoButton.Text = "Cargar Campeonato";
+            this.CargarCampeonatoButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.CargarCampeonatoButton.UseAccentColor = false;
             this.CargarCampeonatoButton.UseVisualStyleBackColor = true;
             // 
             // CrearCampeonatoButton
             // 
-            this.CrearCampeonatoButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(0)))), ((int)(((byte)(54)))));
-            this.CrearCampeonatoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.CrearCampeonatoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.CrearCampeonatoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CrearCampeonatoButton.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CrearCampeonatoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
-            this.CrearCampeonatoButton.Location = new System.Drawing.Point(214, 264);
+            this.CrearCampeonatoButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CrearCampeonatoButton.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.CrearCampeonatoButton.Depth = 0;
+            this.CrearCampeonatoButton.HighEmphasis = true;
+            this.CrearCampeonatoButton.Icon = null;
+            this.CrearCampeonatoButton.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.CrearCampeonatoButton.Location = new System.Drawing.Point(143, 225);
+            this.CrearCampeonatoButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CrearCampeonatoButton.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.CrearCampeonatoButton.Name = "CrearCampeonatoButton";
-            this.CrearCampeonatoButton.Size = new System.Drawing.Size(242, 81);
-            this.CrearCampeonatoButton.TabIndex = 33;
+            this.CrearCampeonatoButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.CrearCampeonatoButton.Size = new System.Drawing.Size(171, 36);
+            this.CrearCampeonatoButton.TabIndex = 36;
             this.CrearCampeonatoButton.Text = "Crear Campeonato";
+            this.CrearCampeonatoButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.CrearCampeonatoButton.UseAccentColor = false;
             this.CrearCampeonatoButton.UseVisualStyleBackColor = true;
+            // 
+            // Divisor
+            // 
+            this.Divisor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Divisor.Depth = 0;
+            this.Divisor.Location = new System.Drawing.Point(17, 211);
+            this.Divisor.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.Divisor.Name = "Divisor";
+            this.Divisor.Size = new System.Drawing.Size(434, 3);
+            this.Divisor.TabIndex = 37;
+            this.Divisor.Text = "materialDivider1";
             // 
             // TableroForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(206)))));
-            this.ClientSize = new System.Drawing.Size(671, 390);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(475, 274);
+            this.Controls.Add(this.Divisor);
             this.Controls.Add(this.CrearCampeonatoButton);
             this.Controls.Add(this.CargarCampeonatoButton);
             this.Controls.Add(this.CargarCampeonatoCombobox);
-            this.Controls.Add(this.CargarCampeonatoLabel);
-            this.Controls.Add(this.TableroCampeonatosLabel);
-            this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "TableroForm";
-            this.Text = "Tablero";
+            this.Padding = new System.Windows.Forms.Padding(2, 28, 2, 1);
+            this.Text = "Tablero de Campeonatos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,10 +131,9 @@ namespace GCWinforms
 
         #endregion
 
-        private System.Windows.Forms.Label TableroCampeonatosLabel;
-        private System.Windows.Forms.ComboBox CargarCampeonatoCombobox;
-        private System.Windows.Forms.Label CargarCampeonatoLabel;
-        private System.Windows.Forms.Button CargarCampeonatoButton;
-        private System.Windows.Forms.Button CrearCampeonatoButton;
+        private ReaLTaiizor.Controls.MaterialComboBox CargarCampeonatoCombobox;
+        private ReaLTaiizor.Controls.MaterialButton CargarCampeonatoButton;
+        private ReaLTaiizor.Controls.MaterialButton CrearCampeonatoButton;
+        private ReaLTaiizor.Controls.MaterialDivider Divisor;
     }
 }
