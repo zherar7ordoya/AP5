@@ -30,7 +30,6 @@ namespace GCWinforms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EquiposForm));
-            this.QuitarIntegranteButton = new ReaLTaiizor.Controls.MaterialButton();
             this.AgregarIntegranteButton = new ReaLTaiizor.Controls.MaterialButton();
             this.CrearIntegranteButton = new ReaLTaiizor.Controls.MaterialButton();
             this.CrearEquipoButton = new ReaLTaiizor.Controls.MaterialButton();
@@ -44,27 +43,8 @@ namespace GCWinforms
             this.ElegirIntegranteCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
             this.NombreEquipoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.materialDivider1 = new ReaLTaiizor.Controls.MaterialDivider();
+            this.QuitarIntegranteButton = new ReaLTaiizor.Controls.MaterialButton();
             this.SuspendLayout();
-            // 
-            // QuitarIntegranteButton
-            // 
-            this.QuitarIntegranteButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.QuitarIntegranteButton.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.QuitarIntegranteButton.Depth = 0;
-            this.QuitarIntegranteButton.HighEmphasis = true;
-            this.QuitarIntegranteButton.Icon = null;
-            this.QuitarIntegranteButton.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.QuitarIntegranteButton.Location = new System.Drawing.Point(623, 444);
-            this.QuitarIntegranteButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.QuitarIntegranteButton.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.QuitarIntegranteButton.Name = "QuitarIntegranteButton";
-            this.QuitarIntegranteButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.QuitarIntegranteButton.Size = new System.Drawing.Size(166, 36);
-            this.QuitarIntegranteButton.TabIndex = 26;
-            this.QuitarIntegranteButton.Text = "Quitar Integrante";
-            this.QuitarIntegranteButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.QuitarIntegranteButton.UseAccentColor = false;
-            this.QuitarIntegranteButton.UseVisualStyleBackColor = true;
             // 
             // AgregarIntegranteButton
             // 
@@ -131,7 +111,7 @@ namespace GCWinforms
             this.IntegrantesListbox.BackColor = System.Drawing.Color.White;
             this.IntegrantesListbox.BorderColor = System.Drawing.Color.LightGray;
             this.IntegrantesListbox.Depth = 0;
-            this.IntegrantesListbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.IntegrantesListbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.IntegrantesListbox.Location = new System.Drawing.Point(569, 225);
             this.IntegrantesListbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             this.IntegrantesListbox.Name = "IntegrantesListbox";
@@ -148,7 +128,7 @@ namespace GCWinforms
             this.NombreIntegranteTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NombreIntegranteTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.NombreIntegranteTextbox.Depth = 0;
-            this.NombreIntegranteTextbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NombreIntegranteTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.NombreIntegranteTextbox.HideSelection = true;
             this.NombreIntegranteTextbox.LeadingIcon = null;
             this.NombreIntegranteTextbox.Location = new System.Drawing.Point(22, 225);
@@ -297,7 +277,7 @@ namespace GCWinforms
             this.ElegirIntegranteCombobox.DropDownHeight = 174;
             this.ElegirIntegranteCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ElegirIntegranteCombobox.DropDownWidth = 121;
-            this.ElegirIntegranteCombobox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.ElegirIntegranteCombobox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.ElegirIntegranteCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.ElegirIntegranteCombobox.FormattingEnabled = true;
             this.ElegirIntegranteCombobox.IntegralHeight = false;
@@ -352,12 +332,33 @@ namespace GCWinforms
             this.materialDivider1.TabIndex = 39;
             this.materialDivider1.Text = "materialDivider1";
             // 
+            // QuitarIntegranteButton
+            // 
+            this.QuitarIntegranteButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.QuitarIntegranteButton.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.QuitarIntegranteButton.Depth = 0;
+            this.QuitarIntegranteButton.HighEmphasis = true;
+            this.QuitarIntegranteButton.Icon = null;
+            this.QuitarIntegranteButton.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.QuitarIntegranteButton.Location = new System.Drawing.Point(623, 444);
+            this.QuitarIntegranteButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.QuitarIntegranteButton.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.QuitarIntegranteButton.Name = "QuitarIntegranteButton";
+            this.QuitarIntegranteButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.QuitarIntegranteButton.Size = new System.Drawing.Size(166, 36);
+            this.QuitarIntegranteButton.TabIndex = 40;
+            this.QuitarIntegranteButton.Text = "Quitar Integrante";
+            this.QuitarIntegranteButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.QuitarIntegranteButton.UseAccentColor = false;
+            this.QuitarIntegranteButton.UseVisualStyleBackColor = true;
+            // 
             // EquiposForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(823, 621);
+            this.Controls.Add(this.QuitarIntegranteButton);
             this.Controls.Add(this.materialDivider1);
             this.Controls.Add(this.NombreEquipoTextbox);
             this.Controls.Add(this.ElegirIntegranteCombobox);
@@ -371,7 +372,6 @@ namespace GCWinforms
             this.Controls.Add(this.IntegrantesListbox);
             this.Controls.Add(this.CrearEquipoButton);
             this.Controls.Add(this.AgregarIntegranteButton);
-            this.Controls.Add(this.QuitarIntegranteButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EquiposForm";
@@ -383,8 +383,6 @@ namespace GCWinforms
         }
 
         #endregion
-
-        private ReaLTaiizor.Controls.MaterialButton QuitarIntegranteButton;
         private ReaLTaiizor.Controls.MaterialButton AgregarIntegranteButton;
         private ReaLTaiizor.Controls.MaterialButton CrearIntegranteButton;
         private ReaLTaiizor.Controls.MaterialButton CrearEquipoButton;
@@ -398,5 +396,6 @@ namespace GCWinforms
         private ReaLTaiizor.Controls.MaterialComboBox ElegirIntegranteCombobox;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit NombreEquipoTextbox;
         private ReaLTaiizor.Controls.MaterialDivider materialDivider1;
+        private ReaLTaiizor.Controls.MaterialButton QuitarIntegranteButton;
     }
 }
