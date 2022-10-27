@@ -11,7 +11,7 @@ Alas, this appears to require a registry setting:
 * Set EnableHexNumpad to "1"
 * If you have to add it, set the type to be REG_SZ.
 
-## Usar Notepad (Block de Notas) para digitar caracteres Unicode
+## Usar Notepad (Block de Notas) cuando "interfiera" con la aplicación de destino
 
 |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
 |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
