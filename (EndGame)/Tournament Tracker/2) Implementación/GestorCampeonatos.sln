@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCWinforms", "GCWinforms\GC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GCLibrary", "GCLibrary\GCLibrary.csproj", "{596D905A-1A50-481D-A1DD-6D3F3C481663}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xtras", "Xtras", "{6889B8E9-B50B-4ADA-ACB4-6ABD55A5EDF0}"
+	ProjectSection(SolutionItems) = preProject
+		Box-drawing character.md = Box-drawing character.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
