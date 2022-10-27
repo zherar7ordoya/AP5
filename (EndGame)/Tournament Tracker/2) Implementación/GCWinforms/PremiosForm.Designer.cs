@@ -30,47 +30,12 @@ namespace GCWinforms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PremiosForm));
-            this.NumeroPuestoCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.NumeroPuestoLabel = new ReaLTaiizor.Controls.MaterialLabel();
             this.NombrePuestoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.MontoPremioTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.PorcentajePremioTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.CrearPremioButton = new ReaLTaiizor.Controls.MaterialButton();
+            this.NumeroPuestoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.SuspendLayout();
-            // 
-            // NumeroPuestoCombobox
-            // 
-            this.NumeroPuestoCombobox.AutoResize = false;
-            this.NumeroPuestoCombobox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.NumeroPuestoCombobox.Depth = 0;
-            this.NumeroPuestoCombobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.NumeroPuestoCombobox.DropDownHeight = 174;
-            this.NumeroPuestoCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.NumeroPuestoCombobox.DropDownWidth = 121;
-            this.NumeroPuestoCombobox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.NumeroPuestoCombobox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.NumeroPuestoCombobox.FormattingEnabled = true;
-            this.NumeroPuestoCombobox.IntegralHeight = false;
-            this.NumeroPuestoCombobox.ItemHeight = 43;
-            this.NumeroPuestoCombobox.Location = new System.Drawing.Point(6, 111);
-            this.NumeroPuestoCombobox.MaxDropDownItems = 4;
-            this.NumeroPuestoCombobox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.NumeroPuestoCombobox.Name = "NumeroPuestoCombobox";
-            this.NumeroPuestoCombobox.Size = new System.Drawing.Size(121, 49);
-            this.NumeroPuestoCombobox.StartIndex = 0;
-            this.NumeroPuestoCombobox.TabIndex = 49;
-            // 
-            // NumeroPuestoLabel
-            // 
-            this.NumeroPuestoLabel.AutoSize = true;
-            this.NumeroPuestoLabel.Depth = 0;
-            this.NumeroPuestoLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.NumeroPuestoLabel.Location = new System.Drawing.Point(6, 89);
-            this.NumeroPuestoLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.NumeroPuestoLabel.Name = "NumeroPuestoLabel";
-            this.NumeroPuestoLabel.Size = new System.Drawing.Size(131, 19);
-            this.NumeroPuestoLabel.TabIndex = 50;
-            this.NumeroPuestoLabel.Text = "Número de Puesto";
             // 
             // NombrePuestoTextbox
             // 
@@ -80,7 +45,7 @@ namespace GCWinforms
             this.NombrePuestoTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.NombrePuestoTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.NombrePuestoTextbox.Depth = 0;
-            this.NombrePuestoTextbox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NombrePuestoTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.NombrePuestoTextbox.HideSelection = true;
             this.NombrePuestoTextbox.LeadingIcon = null;
             this.NombrePuestoTextbox.Location = new System.Drawing.Point(9, 179);
@@ -184,18 +149,49 @@ namespace GCWinforms
             this.CrearPremioButton.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             this.CrearPremioButton.UseAccentColor = false;
             this.CrearPremioButton.UseVisualStyleBackColor = true;
+            this.CrearPremioButton.Click += new System.EventHandler(this.CrearPremioButton_Click);
+            // 
+            // NumeroPuestoTextbox
+            // 
+            this.NumeroPuestoTextbox.AnimateReadOnly = false;
+            this.NumeroPuestoTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.NumeroPuestoTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.NumeroPuestoTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.NumeroPuestoTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.NumeroPuestoTextbox.Depth = 0;
+            this.NumeroPuestoTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.NumeroPuestoTextbox.HideSelection = true;
+            this.NumeroPuestoTextbox.LeadingIcon = null;
+            this.NumeroPuestoTextbox.Location = new System.Drawing.Point(9, 111);
+            this.NumeroPuestoTextbox.MaxLength = 32767;
+            this.NumeroPuestoTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.NumeroPuestoTextbox.Name = "NumeroPuestoTextbox";
+            this.NumeroPuestoTextbox.PasswordChar = '\0';
+            this.NumeroPuestoTextbox.PrefixSuffixText = null;
+            this.NumeroPuestoTextbox.ReadOnly = false;
+            this.NumeroPuestoTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NumeroPuestoTextbox.SelectedText = "";
+            this.NumeroPuestoTextbox.SelectionLength = 0;
+            this.NumeroPuestoTextbox.SelectionStart = 0;
+            this.NumeroPuestoTextbox.ShortcutsEnabled = true;
+            this.NumeroPuestoTextbox.Size = new System.Drawing.Size(250, 48);
+            this.NumeroPuestoTextbox.TabIndex = 58;
+            this.NumeroPuestoTextbox.TabStop = false;
+            this.NumeroPuestoTextbox.Text = "Número del Puesto";
+            this.NumeroPuestoTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.NumeroPuestoTextbox.TrailingIcon = null;
+            this.NumeroPuestoTextbox.UseSystemPasswordChar = false;
             // 
             // PremiosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 487);
+            this.ClientSize = new System.Drawing.Size(493, 621);
+            this.Controls.Add(this.NumeroPuestoTextbox);
             this.Controls.Add(this.CrearPremioButton);
             this.Controls.Add(this.PorcentajePremioTextbox);
             this.Controls.Add(this.MontoPremioTextbox);
             this.Controls.Add(this.NombrePuestoTextbox);
-            this.Controls.Add(this.NumeroPuestoLabel);
-            this.Controls.Add(this.NumeroPuestoCombobox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PremiosForm";
             this.Text = "Premios";
@@ -205,12 +201,10 @@ namespace GCWinforms
         }
 
         #endregion
-
-        private ReaLTaiizor.Controls.MaterialComboBox NumeroPuestoCombobox;
-        private ReaLTaiizor.Controls.MaterialLabel NumeroPuestoLabel;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit NombrePuestoTextbox;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit MontoPremioTextbox;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit PorcentajePremioTextbox;
         private ReaLTaiizor.Controls.MaterialButton CrearPremioButton;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit NumeroPuestoTextbox;
     }
 }

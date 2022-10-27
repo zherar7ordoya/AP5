@@ -16,14 +16,14 @@ namespace GCWinforms
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Iniciar las conexiones
+            // Iniciar las conexiones a los repositorios
             GCLibrary.ConfiguracionGlobal.IniciarConexiones(true, true);
 
             // Iniciar MaterialSkinManager
             MaterialSkinManager msm = MaterialSkinManager.Instance;
             msm.EnforceBackcolorOnAllComponents = true;
 
-            Application.Run(new EquiposForm(msm));
+            Application.Run(new PremiosForm(msm));
         }
     }
 }
