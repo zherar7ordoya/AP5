@@ -29,18 +29,22 @@ namespace GCWinforms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PremiosForm));
             this.NombreTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.CrearPremioButton = new ReaLTaiizor.Controls.MaterialButton();
-            this.PosicionTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.PosiciónLabel = new ReaLTaiizor.Controls.MaterialLabel();
+            this.PuestoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.PuestoLabel = new ReaLTaiizor.Controls.MaterialLabel();
             this.NombreLabel = new ReaLTaiizor.Controls.MaterialLabel();
             this.PremioGroupbox = new System.Windows.Forms.GroupBox();
             this.PorcentajeCombobox = new ReaLTaiizor.Controls.MaterialComboBox();
             this.PorcentajeRadio = new ReaLTaiizor.Controls.MaterialRadioButton();
             this.MontoRadio = new ReaLTaiizor.Controls.MaterialRadioButton();
             this.MontoTextbox = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            this.ErrorTimer = new System.Windows.Forms.Timer(this.components);
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.PremioGroupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // NombreTextbox
@@ -94,48 +98,48 @@ namespace GCWinforms
             this.CrearPremioButton.UseVisualStyleBackColor = true;
             this.CrearPremioButton.Click += new System.EventHandler(this.CrearPremioButton_Click);
             // 
-            // PosicionTextbox
+            // PuestoTextbox
             // 
-            this.PosicionTextbox.AnimateReadOnly = false;
-            this.PosicionTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.PosicionTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.PosicionTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PosicionTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.PosicionTextbox.Depth = 0;
-            this.PosicionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.PosicionTextbox.HideSelection = true;
-            this.PosicionTextbox.LeadingIcon = null;
-            this.PosicionTextbox.Location = new System.Drawing.Point(98, 88);
-            this.PosicionTextbox.MaxLength = 32767;
-            this.PosicionTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.PosicionTextbox.Name = "PosicionTextbox";
-            this.PosicionTextbox.PasswordChar = '\0';
-            this.PosicionTextbox.PrefixSuffixText = null;
-            this.PosicionTextbox.ReadOnly = false;
-            this.PosicionTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PosicionTextbox.SelectedText = "";
-            this.PosicionTextbox.SelectionLength = 0;
-            this.PosicionTextbox.SelectionStart = 0;
-            this.PosicionTextbox.ShortcutsEnabled = true;
-            this.PosicionTextbox.Size = new System.Drawing.Size(250, 48);
-            this.PosicionTextbox.TabIndex = 0;
-            this.PosicionTextbox.TabStop = false;
-            this.PosicionTextbox.Text = "0";
-            this.PosicionTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.PosicionTextbox.TrailingIcon = null;
-            this.PosicionTextbox.UseSystemPasswordChar = false;
+            this.PuestoTextbox.AnimateReadOnly = false;
+            this.PuestoTextbox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.PuestoTextbox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.PuestoTextbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PuestoTextbox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.PuestoTextbox.Depth = 0;
+            this.PuestoTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PuestoTextbox.HideSelection = true;
+            this.PuestoTextbox.LeadingIcon = null;
+            this.PuestoTextbox.Location = new System.Drawing.Point(98, 88);
+            this.PuestoTextbox.MaxLength = 32767;
+            this.PuestoTextbox.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.PuestoTextbox.Name = "PuestoTextbox";
+            this.PuestoTextbox.PasswordChar = '\0';
+            this.PuestoTextbox.PrefixSuffixText = null;
+            this.PuestoTextbox.ReadOnly = false;
+            this.PuestoTextbox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PuestoTextbox.SelectedText = "";
+            this.PuestoTextbox.SelectionLength = 0;
+            this.PuestoTextbox.SelectionStart = 0;
+            this.PuestoTextbox.ShortcutsEnabled = true;
+            this.PuestoTextbox.Size = new System.Drawing.Size(250, 48);
+            this.PuestoTextbox.TabIndex = 0;
+            this.PuestoTextbox.TabStop = false;
+            this.PuestoTextbox.Text = "0";
+            this.PuestoTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.PuestoTextbox.TrailingIcon = null;
+            this.PuestoTextbox.UseSystemPasswordChar = false;
             // 
-            // PosiciónLabel
+            // PuestoLabel
             // 
-            this.PosiciónLabel.AutoSize = true;
-            this.PosiciónLabel.Depth = 0;
-            this.PosiciónLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.PosiciónLabel.Location = new System.Drawing.Point(30, 101);
-            this.PosiciónLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.PosiciónLabel.Name = "PosiciónLabel";
-            this.PosiciónLabel.Size = new System.Drawing.Size(62, 19);
-            this.PosiciónLabel.TabIndex = 80;
-            this.PosiciónLabel.Text = "Posición";
+            this.PuestoLabel.AutoSize = true;
+            this.PuestoLabel.Depth = 0;
+            this.PuestoLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.PuestoLabel.Location = new System.Drawing.Point(30, 101);
+            this.PuestoLabel.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.PuestoLabel.Name = "PuestoLabel";
+            this.PuestoLabel.Size = new System.Drawing.Size(50, 19);
+            this.PuestoLabel.TabIndex = 80;
+            this.PuestoLabel.Text = "Puesto";
             // 
             // NombreLabel
             // 
@@ -256,6 +260,15 @@ namespace GCWinforms
             this.MontoTextbox.TrailingIcon = null;
             this.MontoTextbox.UseSystemPasswordChar = false;
             // 
+            // ErrorTimer
+            // 
+            this.ErrorTimer.Interval = 15000;
+            this.ErrorTimer.Tick += new System.EventHandler(this.ErrorTimer_Tick);
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // PremiosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,8 +276,8 @@ namespace GCWinforms
             this.ClientSize = new System.Drawing.Size(384, 476);
             this.Controls.Add(this.PremioGroupbox);
             this.Controls.Add(this.NombreLabel);
-            this.Controls.Add(this.PosiciónLabel);
-            this.Controls.Add(this.PosicionTextbox);
+            this.Controls.Add(this.PuestoLabel);
+            this.Controls.Add(this.PuestoTextbox);
             this.Controls.Add(this.CrearPremioButton);
             this.Controls.Add(this.NombreTextbox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -273,6 +286,7 @@ namespace GCWinforms
             this.Text = "Premios";
             this.PremioGroupbox.ResumeLayout(false);
             this.PremioGroupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,13 +295,15 @@ namespace GCWinforms
         #endregion
         private ReaLTaiizor.Controls.MaterialTextBoxEdit NombreTextbox;
         private ReaLTaiizor.Controls.MaterialButton CrearPremioButton;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit PosicionTextbox;
-        private ReaLTaiizor.Controls.MaterialLabel PosiciónLabel;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit PuestoTextbox;
+        private ReaLTaiizor.Controls.MaterialLabel PuestoLabel;
         private ReaLTaiizor.Controls.MaterialLabel NombreLabel;
         private System.Windows.Forms.GroupBox PremioGroupbox;
         private ReaLTaiizor.Controls.MaterialComboBox PorcentajeCombobox;
         private ReaLTaiizor.Controls.MaterialRadioButton PorcentajeRadio;
         private ReaLTaiizor.Controls.MaterialRadioButton MontoRadio;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit MontoTextbox;
+        private System.Windows.Forms.Timer ErrorTimer;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }

@@ -5,6 +5,7 @@ namespace GCLibrary
     public static class ConfiguracionGlobal
     {
         public static List<IConexion> Conexiones { get; private set; } = new List<IConexion>();
+        
         public static void IniciarConexiones
             (
             bool sql_server,

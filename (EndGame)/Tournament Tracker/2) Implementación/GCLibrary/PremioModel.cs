@@ -44,5 +44,20 @@
         /// En inglés => PrizePercentage
         /// </remarks>
         public double PremioPorcentaje { get; set; } = new double();
+
+
+        // --- CONSTRUCTORES ---------------------------------------------------
+        public PremioModel()
+        {
+            ;
+        }
+
+        public PremioModel(string puesto, string nombre, string monto, string porcentaje)
+        {
+            PuestoNumero = int.Parse(puesto);
+            PuestoNombre = nombre;
+            PremioMonto = decimal.Parse(monto);
+            PremioPorcentaje = double.Parse(porcentaje);
+        }
     }
 }
