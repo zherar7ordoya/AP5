@@ -16,7 +16,7 @@ namespace GCDataAccess.ProcesadorCSV
             return $"{ConfigurationManager.AppSettings["CarpetaCSV"]}\\{archivo}";
         }
 
-        public static List<string> CargarArchivo(this string archivo)
+        public static List<string> ConvertirArchivoTextoEnListaString(this string archivo)
         {
             if (File.Exists(archivo) == false)
             {
@@ -25,7 +25,7 @@ namespace GCDataAccess.ProcesadorCSV
             return File.ReadAllLines(archivo).ToList();
         }
 
-        public static List<PremioModel> ConvertirEnPremioModel(this List<string> lineas)
+        public static List<PremioModel> ConvertirListaStringEnListaPremioModel(this List<string> lineas)
         {
             List<PremioModel> retorno = new List<PremioModel>();
 

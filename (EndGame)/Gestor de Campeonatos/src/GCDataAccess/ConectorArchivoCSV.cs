@@ -9,12 +9,12 @@ namespace GCDataAccess
     {
 
         // ┌── EMPIEZA NOMBRES ARCHIVOS CSV ───────────────────────────────────┐
-        private const string CampeonatosArchivo = "Campeonatos.csv";
-        private const string EquiposArchivo = "Equipos.csv";
-        private const string PartidoJugadoresArchivo = "PartidoJugadores.csv";
-        private const string PartidosArchivo = "Partidos.csv";
-        private const string PersonasArchivo = "Personas.csv";
-        private const string PremiosArchivo = "Premios.csv";
+        private const string ArchivoCampeonatos = "Campeonatos.csv";
+        private const string ArchivoEquipos = "Equipos.csv";
+        private const string ArchivoPartidoJugadores = "PartidoJugadores.csv";
+        private const string ArchivoPartidos = "Partidos.csv";
+        private const string ArchivoPersonas = "Personas.csv";
+        private const string ArchivoPremios = "Premios.csv";
         // └── TERMINA NOMBRES ARCHIVOS CSV ───────────────────────────────────┘
         
 
@@ -27,21 +27,22 @@ namespace GCDataAccess
         public PremioModel CrearPremio(PremioModel modelo)
         {
             // Cargo el archivo y convierto el archivo a List<PremioModel>
-            List<PremioModel> premios = PremiosArchivo.ArchivoPath().CargarArchivo().ConvertirEnPremioModel();
+            List<PremioModel> premios = ArchivoPremios.ArchivoPath().ConvertirArchivoTextoEnListaString().ConvertirListaStringEnListaPremioModel();
 
             // Encuentro el máximo ID y agrego el nuevo registro con un nuevo ID (máximo + 1)
+
             if (premios.Count > 0)  // Si ya hay premios en el archivo CSV
             {
                 modelo.PremioID = premios.OrderByDescending(x => x.PremioID).First().PremioID + 1;
             }
-            else                    // Si aún no hay premios en el archivo CSV
+            else  // Si aún no hay premios en el archivo CSV
             {
                 modelo.PremioID = 1;
             }
             premios.Add(modelo);
 
             // Convierto los premios a List<string> y guardo la List<string> al archivo CSV
-            premios.GuardarArchivoPremios(PremiosArchivo);
+            premios.GuardarArchivoPremios(ArchivoPremios);
 
             return modelo;
         }
