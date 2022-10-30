@@ -18,7 +18,7 @@ namespace GCWinforms
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Iniciar las conexiones a los repositorios
-            ConfiguracionGlobal.IniciarConexion(DatastoreType.SQLServer);
+            ConfiguracionGlobal.IniciarConexion(DatastoreType.ArchivoCSV);
 
             // Iniciar MaterialSkinManager
             MaterialSkinManager msm = MaterialSkinManager.Instance;
