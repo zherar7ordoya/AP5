@@ -59,5 +59,14 @@ namespace GCWinforms.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string Nombre {
+            get {
+                return ResourceManager.GetString("Nombre", resourceCulture);
+            }
+        }
     }
 }

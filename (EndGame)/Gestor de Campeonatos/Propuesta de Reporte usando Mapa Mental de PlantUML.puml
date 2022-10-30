@@ -1,0 +1,55 @@
+@startmindmap Gestor de Campeonatos
+
+
+' =============================================================
+' Author:      Gerardo Tordoya
+' Create date: 2022-10-29
+' Description: Propuesta de Reporte del Cuadro de Eliminatorias
+' =============================================================
+
+
+' ..............................................................................
+
+title Cuadro de Eliminatorias
+
+' ─── DIAGRAMA ─────────────────────────────────────────────────────────────────
+
+* Variables
+
+left side
+
+    ** <&flag>Cualitativas
+
+        *** Nominales
+            **** Nombre
+            **** Marca
+            **** Color
+            **** Estado Civil
+
+        *** Ordinales
+            **** Nivel de escolaridad
+            **** Grado militar
+            **** Calificacion
+            **** Etapa de desarrollo
+
+right side
+
+    ** Cuantitativas
+
+        *** Discretas
+        **** Cantidad de mascotas
+        **** Edad (en años)
+        **** Número de páginas
+
+        *** Continuas
+        **** Saldo bancario
+        **** Tiempo
+        **** Velocidad
+
+' ──────────────────────────────────────────────────────────────────────────────
+
+caption Propuesta de Reporte usando Mapa Mental de PlantUML
+
+' ..............................................................................
+
+@endmindmap

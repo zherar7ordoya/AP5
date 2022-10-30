@@ -6,6 +6,7 @@
 * Calling a Javascript function in the C# webBrowser control: Ejemplo en [StackOverflow](https://stackoverflow.com/a/1437353/14009797)
 * El archivo de LICENCIA de este repositorio
 * Implementar patrón de diseño Fábrica
+* Hacer que el MDF se pueda abrir desde cualquier lugar
 * ...
 
 [//]: # (This is a comment, it will not be included)

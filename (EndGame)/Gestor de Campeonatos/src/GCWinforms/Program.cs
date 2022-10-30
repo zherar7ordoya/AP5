@@ -1,4 +1,5 @@
-﻿using ReaLTaiizor.Manager;
+﻿using GCDataAccess;
+using ReaLTaiizor.Manager;
 using System;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace GCWinforms
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Iniciar las conexiones a los repositorios
-            GCLibrary.ConfiguracionGlobal.IniciarConexiones(true, true);
+            ConfiguracionGlobal.IniciarConexion(DatastoreType.SQLServer);
 
             // Iniciar MaterialSkinManager
             MaterialSkinManager msm = MaterialSkinManager.Instance;

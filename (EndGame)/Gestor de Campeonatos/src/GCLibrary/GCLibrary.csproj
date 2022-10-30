@@ -41,17 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CampeonatoModel.cs" />
-    <Compile Include="ConectorSQLServer.cs" />
-    <Compile Include="ConectorTextoPlano.cs" />
-    <Compile Include="ConfiguracionGlobal.cs" />
-    <Compile Include="EquipoModel.cs" />
-    <Compile Include="IConexion.cs" />
-    <Compile Include="ParticipanteModel.cs" />
-    <Compile Include="PartidoModel.cs" />
-    <Compile Include="PersonaModel.cs" />
-    <Compile Include="PremioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GCDataAccess\GCDataAccess.csproj">
+      <Project>{ae5c3a5b-9e73-4486-a1ac-58df96759b42}</Project>
+      <Name>GCDataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

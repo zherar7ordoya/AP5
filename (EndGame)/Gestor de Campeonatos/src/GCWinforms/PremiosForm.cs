@@ -1,4 +1,5 @@
-﻿using GCLibrary;
+﻿using GCDataAccess;
+using GCModels;
 using ReaLTaiizor.Forms;
 using ReaLTaiizor.Manager;
 using System;
@@ -32,19 +33,23 @@ namespace GCWinforms
                     PorcentajeCombobox.Text
                 );
 
-                foreach (IConexion repositorio in ConfiguracionGlobal.Conexiones)
-                {
-                    repositorio.CrearPremio(premio);
-                }
+                var modelo = ConfiguracionGlobal.Conexion.CrearPremio(premio);
 
-                MessageBox.Show
-                    (
-                    "Premio creado exitosamente",
-                    "Premio Creado",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                    );
-                ReiniciarForm();
+                if (modelo.PremioID > 0)
+                {
+                    MessageBox.Show
+                        (
+                        "Premio creado exitosamente",
+                        "Premio Creado",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                        );
+                    ReiniciarForm();
+                }
+                else
+                {
+                    MessageBox.Show("Hubo un error al crear el premio");
+                }
             }
             else MessageBox.Show
                 (
