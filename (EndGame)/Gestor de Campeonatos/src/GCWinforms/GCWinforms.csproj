@@ -133,14 +133,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GCDataAccess\GCDataAccess.csproj">
-      <Project>{ae5c3a5b-9e73-4486-a1ac-58df96759b42}</Project>
-      <Name>GCDataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GCLibrary\GCLibrary.csproj">
-      <Project>{596d905a-1a50-481d-a1dd-6d3f3c481663}</Project>
-      <Name>GCLibrary</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GCModels\GCModels.csproj">
       <Project>{280cda58-0ee5-42bf-9d25-6fcbb5536131}</Project>
       <Name>GCModels</Name>

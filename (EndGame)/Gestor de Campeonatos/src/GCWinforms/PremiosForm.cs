@@ -33,6 +33,11 @@ namespace GCWinforms
                     PorcentajeCombobox.Text
                 );
 
+                // TODO => Referencia a la DAL
+                // Ver: http://web.archive.org/web/20190124023839/http://www.dotnetspark.com:80/kb/266-inversion-control-ioc-and-dependency-injection.aspx
+                // Mientras tanto, se puede hacer el "pasamanos" apelando a
+                // repetir las clases en GCLogic. Ya hemos visto esta mecánica
+                // en LUG.
                 var modelo = ConfiguracionGlobal.Conexion.CrearPremio(premio);
 
                 if (modelo.PremioID > 0)
@@ -119,19 +124,6 @@ namespace GCWinforms
 
             ErrorTimer.Start();
             return validacion;
-
-            // TODO => Validar que el puesto no se repita. Esto no lo puedo hacer
-            //         ahora hasta que tenga claro la forma de interactuar con
-            //         el/los repositorio/s.
-
-            // TODO => Validar que el monto no sea mayor al total de la venta
-            //         (si se especifica). Con respecto a esto, como está
-            //         implementado el sistema, no se puede saber el total de
-            //         la venta hasta que se haya cerrado la misma. Por lo tanto,
-            //         habría que validar esto al cerrar la venta.
-            //         No veo factible esto. Las ventas las maneja otra aplicación
-            //         y además esta instancia de organizar un campeonato (los
-            //         premios) se hace antes de que se cierre la venta.
         }
 
 

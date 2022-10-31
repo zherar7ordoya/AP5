@@ -1,0 +1,36 @@
+@startuml Layered
+
+package "<<model>> Multi-Layered Application <<model>>" as app
+{
+    package Users { }
+
+    package "Presentation Layer" as presentation
+    {
+        package "User Interface" as UI
+        {
+
+        }
+
+        package "Presentation Logic" as PL
+        {
+
+        }
+
+        ' PL ..> UI
+    }
+
+    Users ..> presentation
+
+    package "Business Layer"
+    {
+        package "Application Facade"
+        {
+
+        }
+    }
+
+    presentation ..> "Business Layer"
+
+}
+
+@enduml
