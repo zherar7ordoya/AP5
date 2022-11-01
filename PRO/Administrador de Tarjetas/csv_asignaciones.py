@@ -1,9 +1,9 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Operaciones de asignación de tarjetas
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
+# ==================================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Operaciones de asignación de tarjetas
+# ==================================================
+
 
 from datetime import date
 from decimal import Decimal
@@ -14,7 +14,7 @@ ARCHIVO_TARJETAS = 'tarjetas.csv'
 ARCHIVO_TITULARES = 'titulares.csv'
 
 
-# ─── MÉTODOS ESTÁTICOS ───────────────────────────────────────────────────────
+# --- MÉTODOS ESTÁTICOS -------------------------------------------------------
 def agregar_years(desde, years):
     """
     Agrega años a una fecha y devuelve la fecha resultante.
@@ -35,7 +35,7 @@ class Asignacion:
         self.tarjetas = pandas.read_csv(ARCHIVO_TARJETAS)
         self.titulares = pandas.read_csv(ARCHIVO_TITULARES)
 
-    # ─── MÉTODOS DE INSTANCIA ────────────────────────────────────────────────
+    # --- MÉTODOS DE INSTANCIA ------------------------------------------------
     def asignar_tarjeta(self, id_tarjeta, id_titular, saldo_pesos, saldo_dolares):
         """ Asigna una tarjeta a un titular """
 

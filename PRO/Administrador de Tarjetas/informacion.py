@@ -1,15 +1,14 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Información en pantalla pedida por el ejercicio
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
+# ====================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Información en pantalla
+# ====================================
 
 import csv_abm_tarjetas
 import csv_abm_titulares
 
 
-# ─── MÉTODO ESTÁTICO ─────────────────────────────────────────────────────────
+# --- MÉTODO ESTÁTICO ---------------------------------------------------------
 
 def mostrar():
     tarjetas = csv_abm_tarjetas.ABMTarjetas()
@@ -39,7 +38,7 @@ def mostrar():
         print("")
 
 
-# ─── CLASE MOTORA ────────────────────────────────────────────────────────────
+# --- CLASE MOTORA ------------------------------------------------------------
 
 class BColors:
     HEADER = '\033[95m'

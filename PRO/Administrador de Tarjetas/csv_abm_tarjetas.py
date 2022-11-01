@@ -1,9 +1,10 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Implementación ABM archivo CSV para tarjetas
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
+# =========================================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Implementación ABM archivo CSV para tarjetas
+# =========================================================
+
+
 
 import datetime
 
@@ -19,12 +20,12 @@ class ABMTarjetas:
         """ Constructor """
         self.tarjetas = pandas.read_csv(ARCHIVO_TARJETAS)
 
-    # ─── PERSISTENCIA ────────────────────────────────────────────────────────
+    # --- PERSISTENCIA --------------------------------------------------------
     def guardar_tarjeta(self):
         """ Guarda las tarjetas en el archivo CSV """
         self.tarjetas.to_csv(ARCHIVO_TARJETAS, index=False)
 
-    # ─── (C) CREAR ───────────────────────────────────────────────────────────
+    # --- (C) CREAR -----------------------------------------------------------
     def crear_tarjeta(self, tarjeta_numero, tarjeta_tipo):
         """ Crea una nueva tarjeta """
 
@@ -59,7 +60,7 @@ class ABMTarjetas:
         self.guardar_tarjeta()
         print('Tarjeta creada con éxito.')
 
-    # ─── (R) LEER ────────────────────────────────────────────────────────────
+    # --- (R) LEER ------------------------------------------------------------
     def leer_tarjeta(self, id_tarjeta):
         """
         Devuelve la tarjeta con el ID especificado.
@@ -99,7 +100,7 @@ class ABMTarjetas:
         """ Devuelve todas las tarjetas en un DataFrame """
         return self.tarjetas
 
-    # ─── (U) ACTUALIZAR ──────────────────────────────────────────────────────
+    # --- (U) ACTUALIZAR ------------------------------------------------------
     def actualizar_tarjeta(self, id_tarjeta, titular_documento, saldo_pesos,
                            saldo_dolares, fecha_otorgamiento, fecha_vencimiento):
         """ Actualiza los datos de la tarjeta """
@@ -132,7 +133,7 @@ class ABMTarjetas:
         else:
             print('Tarjeta actualizada con éxito.')
 
-    # ─── (D) BORRAR ──────────────────────────────────────────────────────────
+    # --- (D) BORRAR ----------------------------------------------------------
     def borrar_tarjeta(self, id_tarjeta):
         """ Borra la tarjeta con el ID especificado """
         conteo = 0
