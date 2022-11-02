@@ -1,9 +1,8 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Persistencia en archivo CSV de los consumos
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
+# ========================================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Persistencia en archivo CSV de los consumos
+# ========================================================
 
 import pandas
 

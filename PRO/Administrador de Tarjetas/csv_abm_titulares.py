@@ -1,9 +1,8 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Implementación ABM archivo CSV para titulares
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
+# ==========================================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Implementación ABM archivo CSV para titulares
+# ==========================================================
 
 import pandas
 
@@ -17,12 +16,12 @@ class ABMTitulares:
         """ Constructor """
         self.titulares = pandas.read_csv(ARCHIVO_TITULARES)
 
-    # ─── PERSISTENCIA ────────────────────────────────────────────────────────
+    # --- PERSISTENCIA --------------------------------------------------------
     def guardar_titular(self):
         """ Guarda los titulares en el archivo CSV """
         self.titulares.to_csv(ARCHIVO_TITULARES, index=False)
 
-    # ─── (C) CREAR ───────────────────────────────────────────────────────────
+    # --- (C) CREAR -----------------------------------------------------------
     def crear_titular(self, nombre, apellido, documento_tipo, documento_numero):
         """ Crea un nuevo titular """
         titular = {
@@ -39,7 +38,7 @@ class ABMTitulares:
         else:
             print('El titular ya existe.')
 
-    # ─── (R) LEER ────────────────────────────────────────────────────────────
+    # --- (R) LEER ------------------------------------------------------------
     def leer_titular(self, id_titular):
         """
         Devuelve el titular con el ID especificado.
@@ -59,7 +58,7 @@ class ABMTitulares:
         """ Devuelve todos los titulares en un DataFrame """
         return self.titulares
 
-    # ─── (U) ACTUALIZAR ──────────────────────────────────────────────────────
+    # --- (U) ACTUALIZAR ------------------------------------------------------
     def actualizar_titular(self, id_titular, nombre, apellido, documento_tipo):
         """ Actualiza los datos del titular """
         conteo = 0
@@ -75,7 +74,7 @@ class ABMTitulares:
         else:
             print('Titular actualizado con éxito.')
 
-    # ─── (D) BORRAR ──────────────────────────────────────────────────────────
+    # --- (D) BORRAR ----------------------------------------------------------
     def borrar_titular(self, id_titular):
         """ Borra el titular con el ID especificado """
         conteo = 0

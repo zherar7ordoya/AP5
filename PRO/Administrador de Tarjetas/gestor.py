@@ -1,11 +1,8 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Lógica de la aplicación
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
-
-from dateutil import parser
+# ====================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Lógica de la aplicación
+# ====================================
 
 import csv_abm_tarjetas
 import csv_abm_titulares
@@ -13,6 +10,7 @@ import csv_asignaciones
 import csv_consumos
 import csv_pagos
 import informacion
+from dateutil import parser
 
 
 class Operacion:
@@ -23,7 +21,7 @@ class Operacion:
         self.consumos = csv_consumos.Consumo()
         self.pagos = csv_pagos.Pago()
 
-    # ─── CRUD TARJETAS ───────────────────────────────────────────────────────
+    # --- CRUD TARJETAS -------------------------------------------------------
     def alta_tarjeta(self):
         print()
 
@@ -74,17 +72,26 @@ class Operacion:
         fecha_otorgamiento = input("Fecha de Otorgamiento (AAAA-MM-DD): ")
         fecha_vencimiento = input("Fecha de Vencimiento (AAAA-MM-DD): ")
 
-        if tarjeta_numero == "" or titular_documento == "" or saldo_pesos == "" or saldo_dolares == "" or fecha_otorgamiento == "" or fecha_vencimiento == "":
+        if tarjeta_numero == "" or \
+           titular_documento == "" or \
+           saldo_pesos == "" or \
+           saldo_dolares == "" or \
+           fecha_otorgamiento == "" or \
+           fecha_vencimiento == "":
             print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
 
-        if not tarjeta_numero.isdigit() and not titular_documento.isdigit() and not saldo_pesos.isdigit() and not saldo_dolares.isdigit():
+        if not tarjeta_numero.isdigit() and \
+           not titular_documento.isdigit() and \
+           not saldo_pesos.isdigit() and \
+           not saldo_dolares.isdigit():
             print("Los datos ingresados no son válidos.")
             input("\nPulse ENTER para continuar...")
             return
 
-        if not bool(parser.parse(fecha_otorgamiento)) and not bool(parser.parse(fecha_vencimiento)):
+        if not bool(parser.parse(fecha_otorgamiento)) and \
+           not bool(parser.parse(fecha_vencimiento)):
             print("Las fechas ingresadas no son válidas.")
             input("\nPulse ENTER para continuar...")
             return
@@ -98,7 +105,7 @@ class Operacion:
             fecha_vencimiento)
         input("\nPulse ENTER para continuar...")
 
-    # ─── CRUD TITULARES ──────────────────────────────────────────────────────
+    # --- CRUD TITULARES ------------------------------------------------------
     def alta_titular(self):
         print()
         nombre = input("Nombre: ")
@@ -106,7 +113,10 @@ class Operacion:
         documento_tipo = input("Tipo de Documento: ")
         documento_numero = input("Número de Documento: ")
 
-        if nombre == "" or apellido == "" or documento_tipo == "" or documento_numero == "":
+        if nombre == "" or \
+           apellido == "" or \
+           documento_tipo == "" or \
+           documento_numero == "":
             print("No se ingresaron datos.")
             input("\nPulse ENTER para continuar...")
             return
@@ -162,7 +172,7 @@ class Operacion:
         self.titulares.actualizar_titular(id_titular, nombre, apellido, documento_tipo)
         input("\nPulse ENTER para continuar...")
 
-    # ─── ASIGNACIONES ────────────────────────────────────────────────────────
+    # --- ASIGNACIONES --------------------------------------------------------
     def asignar_tarjeta(self):
         print()
         print(self.tarjetas.leer_tarjetas_no_asignadas())
@@ -180,7 +190,10 @@ class Operacion:
             input("\nPulse ENTER para continuar...")
             return
 
-        if not id_tarjeta.isdigit() and not id_titular.isdigit() and not saldo_pesos.isdigit() and not saldo_dolares.isdigit():
+        if not id_tarjeta.isdigit() and \
+           not id_titular.isdigit() and \
+           not saldo_pesos.isdigit() and \
+           not saldo_dolares.isdigit():
             print("Los datos ingresados no son válidos.")
             input("\nPulse ENTER para continuar...")
             return
@@ -210,7 +223,7 @@ class Operacion:
         self.asignaciones.desasignar_tarjeta(tarjeta_numero)
         input("\nPulse ENTER para continuar...")
 
-    # ─── CONSUMOS ────────────────────────────────────────────────────────────
+    # --- CONSUMOS ------------------------------------------------------------
     def consumo_pesos(self):
         print()
         print(self.tarjetas.leer_tarjetas_activas())
@@ -231,7 +244,9 @@ class Operacion:
 
         if int(pesos) > 15000:
             print(
-                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en pesos es de $ 15.000 {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"El monto máximo de consumo en pesos es de $ 15.000 "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
@@ -258,14 +273,16 @@ class Operacion:
 
         if int(dolares) > 150:
             print(
-                f"\n{informacion.BColors.FAIL}\t El monto máximo de consumo en dólares es de U$S 150 {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"El monto máximo de consumo en dólares es de U$S 150 "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
         else:
             self.consumos.consumo_dolares(tarjeta_numero, dolares)
         input("\nPulse ENTER para continuar...")
 
-    # ─── PAGOS ───────────────────────────────────────────────────────────────
+    # --- PAGOS ---------------------------------------------------------------
     def pago_pesos(self):
         print()
         print(self.tarjetas.leer_tarjetas_activas())
@@ -281,7 +298,9 @@ class Operacion:
 
         if not tarjeta_numero.isdigit() and not pesos.isdigit():
             print(
-                f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"El número de tarjeta y el monto deben ser numéricos "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -294,7 +313,9 @@ class Operacion:
             pesos = int(pesos) * 1.3
         else:
             print(
-                f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"Se ha detectado una anomalía. Verifique los datos ingresados. "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -317,7 +338,9 @@ class Operacion:
 
         if not tarjeta_numero.isdigit() and not dolares.isdigit():
             print(
-                f"\n{informacion.BColors.FAIL}\t El número de tarjeta y el monto deben ser numéricos {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"El número de tarjeta y el monto deben ser numéricos "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 
@@ -330,7 +353,9 @@ class Operacion:
             dolares = int(dolares) * 1.03
         else:
             print(
-                f"\n{informacion.BColors.FAIL}\t Se ha detectado una anomalía. Verifique los datos ingresados. {informacion.BColors.ENDC}\n")
+                f"\n{informacion.BColors.FAIL}\t "
+                f"Se ha detectado una anomalía. Verifique los datos ingresados. "
+                f"{informacion.BColors.ENDC}\n")
             input("\nPulse ENTER para continuar...")
             return
 

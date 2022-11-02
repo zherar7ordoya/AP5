@@ -1,14 +1,13 @@
-"""
-  @title        MI PROGRAMA EN PYTHON v1.0
-  @description  Gestor de tarjetas de crédito
-  @author       Gerardo Tordoya
-  @date         2022-10-16
-"""
-
-# ─── UNICODE BLOCKS -----------------------------------------------------------
-#          Box Drawing      => www.compart.com/en/unicode/block/U+2500         #
-#          Block Elements   => www.compart.com/en/unicode/block/U+2580         #
-#          Geometric Shapes => www.compart.com/en/unicode/block/U+25A0         #
+# ==========================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-10-16
+# Description: Gestor de Tarjetas de Crédito
+# ******************************************
+# SUMMARY OF CHANGES
+# Date         Comments
+# ----------   -----------------------------
+# 2022-11-01   Elimino caracteres Unicode
+# ==========================================
 
 import os
 import sys
@@ -17,7 +16,7 @@ import gestor
 import informacion
 
 
-# ─── HERRAMIENTAS DE INTERFAZ ────────────────────────────────────────────────
+# --- HERRAMIENTAS DE INTERFAZ ------------------------------------------------
 def limpiar_pantalla():
     """ Limpia la pantalla de la consola usando CLS en Windows y CLEAR en Linux. """
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -25,10 +24,10 @@ def limpiar_pantalla():
 
 def linea_horizontal():
     """ Imprime una línea horizontal decorativa. """
-    print("───────────────────────────────────────────────")
+    print("-----------------------------------------------")
 
 
-# ─── MENU ────────────────────────────────────────────────────────────────────
+# --- MENU --------------------------------------------------------------------
 
 def mostrar_menu():
     """ Muestra el menú principal de la aplicación, la cual actúa como interfaz. """
@@ -36,25 +35,25 @@ def mostrar_menu():
     limpiar_pantalla()
     print()
     print("""
-        ┌────────────────┐  ╭───────────────────────────────╮
-        │                │  │ ► 1 ABM Tarjetas              │
-        │   FINANCIERA   │  ├───────────────────────────────┤
-        │                │  │ ► 2 ABM Titulares             │
-        │      ╭┼┼╮      │  ├───────────────────────────────┤
-        │      ╰┼┼╮      │  │ ► 3 Asignaciones de Tarjetas  │
-        │      ╰┼┼╯      │  ├───────────────────────────────┤
-        │                │  │ ► 4 Ingreso de Consumos       │
-        │ ADMINISTRACIÓN │  ├───────────────────────────────┤
-        │    TARJETAS    │  │ ► 5 Ingreso de Pagos          │
-        │   DE CRÉDITO   │  ├───────────────────────────────┤
-        │                │  │ ► 6 Salir                     │
-        └────────────────┘  ╰───────────────────────────────╯
+        .------------.  .-------------------------------.
+        |            |  | > 1 ABM Tarjetas              |
+        | GESTOR DE  |  |-------------------------------|
+        | TARJETAS   |  | > 2 ABM Titulares             |
+        | DE CRÉDITO |  |-------------------------------|
+        |            |  | > 3 Asignaciones de Tarjetas  |
+        |            |  |-------------------------------|
+        |            |  | > 4 Ingreso de Consumos       |
+        |            |  |-------------------------------|
+        |            |  | > 5 Ingreso de Pagos          |
+        |            |  |-------------------------------|
+        |            |  | > 6 Salir                     |
+        ¨------------¨  ¨-------------------------------¨
     """)
-    opcion = input("     Ingrese número de opción ► ")
+    opcion = input("     Ingrese número de opción > ")
     limpiar_pantalla()
 
     if opcion == '1':
-        print("─── Altas/Bajas/Modificaciones de Tarjetas ────\n")
+        print("--- Altas/Bajas/Modificaciones de Tarjetas ----\n")
         print("1. Crear Tarjeta")
         print("2. Borrar Tarjeta")
         print("3. Modificar Tarjeta\n")
@@ -72,7 +71,7 @@ def mostrar_menu():
         informacion.mostrar()
 
     if opcion == '2':
-        print("─── Altas/Bajas/Modificaciones de Titulares ───\n")
+        print("--- Altas/Bajas/Modificaciones de Titulares ---\n")
         print("1. Crear Titular")
         print("2. Borrar Titular")
         print("3. Modificar Titular\n")
@@ -90,7 +89,7 @@ def mostrar_menu():
         informacion.mostrar()
 
     if opcion == '3':
-        print("─── Asignaciones de Tarjetas a Titulares ──────\n")
+        print("--- Asignaciones de Tarjetas a Titulares ------\n")
         print("1. Asignar Tarjeta a Titular")
         print("2. Desasignar Tarjeta a Titular\n")
         respuesta = input("Opción: ")
@@ -105,7 +104,7 @@ def mostrar_menu():
         informacion.mostrar()
 
     if opcion == '4':
-        print("─── Ingresos de Consumos ──────────────────────\n")
+        print("--- Ingresos de Consumos ----------------------\n")
         print("1. Ingresar Consumo en Pesos")
         print("2. Ingresar Consumo en Dólares\n")
         respuesta = input("Opción: ")
@@ -120,7 +119,7 @@ def mostrar_menu():
         informacion.mostrar()
 
     if opcion == '5':
-        print("─── Ingresos de Pagos ─────────────────────────\n")
+        print("--- Ingresos de Pagos -------------------------\n")
         print("1. Ingresar Pago en Pesos")
         print("2. Ingresar Pago en Dólares\n")
         respuesta = input("Opción: ")
@@ -135,7 +134,7 @@ def mostrar_menu():
         informacion.mostrar()
 
     if opcion == '6':
-        print("─── Saliendo ──────────────────────────────────\n")
+        print("--- Saliendo ----------------------------------\n")
         print(f"\t{informacion.BColors.OKGREEN}Gracias por utilizar nuestros servicios{informacion.BColors.ENDC}\n")
         sys.exit()
 
@@ -145,6 +144,6 @@ def mostrar_menu():
     print()
 
 
-# ─── MAIN ─────────────────────────────────────────────────────────────────────
+# --- MAIN ---------------------------------------------------------------------
 while True:
     mostrar_menu()
