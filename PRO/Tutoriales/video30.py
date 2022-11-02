@@ -23,7 +23,7 @@ class Vehiculos:
         self.frena = True
 
     def estado(self):
-        print(f"Marca:     \t{self.marca}\n" 
+        print(f"Marca:     \t{self.marca}\n"
               f"Modelo:    \t{self.modelo}\n"
               f"En marcha: \t{self.enmarcha}\n"
               f"Acelerando:\t{self.acelera}\n"
@@ -31,10 +31,22 @@ class Vehiculos:
 
 
 class Moto(Vehiculos):
-    pass
+    caballito = "No, para nada..."
+
+    def wheelie(self):
+        self.caballito = "Haciendo wheelie, ¡wiii!"
+
+    def estado(self):
+        print(f"Marca:     \t{self.marca}\n"
+              f"Modelo:    \t{self.modelo}\n"
+              f"En marcha: \t{self.enmarcha}\n"
+              f"Acelerando:\t{self.acelera}\n"
+              f"Frenando:  \t{self.frena}\n"
+              f"Caballito: \t{self.caballito}")
 
 
 # --- MAIN --------------------------------------------------------------------
 if __name__ == "__main__":
     miMoto = Moto("Honda", "CBR")
+    miMoto.wheelie()
     miMoto.estado()
