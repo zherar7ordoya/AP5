@@ -1,9 +1,9 @@
-# ============================================================
+# ====================================================
 # Author:      Gerardo Tordoya
 # Create date: 2022-11-02
-# Description: POO (Sobreescribir métodos y herencia múltiple)
-#              Video 30 > https://youtu.be/jMQQN9OxwVc
-# ============================================================
+# Description: POO > super() & isinstance()
+#              Video 31 > https://youtu.be/oe04X1B14YY
+# ====================================================
 
 class Vehiculos:
     def __init__(self, marca, modelo):
@@ -67,8 +67,11 @@ class VElectricos:
         self.cargando = True
 
 
-class BicicletaElectrica(Vehiculos, VElectricos):
-    pass
+class BicicletaElectrica(VElectricos, Vehiculos):
+    def __init__(self, marca, modelo):
+        super().__init__()
+        self.marca = marca
+        self.modelo = modelo
 
 
 # --- MAIN --------------------------------------------------------------------

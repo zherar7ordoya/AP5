@@ -1,36 +1,70 @@
-@startuml Layered
+' =======================================
+' Author:      Gerardo Tordoya
+' Create date: 2022-11-02
+' Description: Arquitectura LUG (6 Capas)
+' =======================================
 
-package "<<model>> Multi-Layered Application <<model>>" as app
+@startuml Gestor de Campeonatos
+
+' ─── CONFIGURACIONES ──────────────────────────────────────────────────────────
+skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+' hide circle
+skinparam linetype ortho
+
+' --- TÍTULO ───────────────────────────────────────────────────────────────────
+title Arquitectura UAI de 6 Capas
+
+' ─── ENTIDADES ────────────────────────────────────────────────────────────────
+package BEL
 {
-    package Users { }
-
-    package "Presentation Layer" as presentation
-    {
-        package "User Interface" as UI
-        {
-
-        }
-
-        package "Presentation Logic" as PL
-        {
-
-        }
-
-        ' PL ..> UI
-    }
-
-    Users ..> presentation
-
-    package "Business Layer"
-    {
-        package "Application Facade"
-        {
-
-        }
-    }
-
-    presentation ..> "Business Layer"
-
 }
 
+package UIL
+{
+}
+
+package BLL
+{
+}
+
+package MPP
+{
+}
+
+package DAL
+{
+}
+
+package ABS
+{
+}
+
+package SQL <<Database>>
+{
+}
+
+' ─── RELACIONES ───────────────────────────────────────────────────────────────
+UIL -[plain]-> BLL
+BLL -[plain]-> MPP
+MPP -[plain]-> DAL
+DAL -[plain]-> SQL
+
+UIL -[plain]-> BEL
+BLL -[plain]-> BEL
+MPP -[plain]-> BEL
+
+BLL -[plain]-> ABS
+MPP -[plain]-> ABS
+
+
+
+' ─── NOTAS ────────────────────────────────────────────────────────────────────
+
+
+' ─── SUBTÍTULO ────────────────────────────────────────────────────────────────
+caption Última actualización: 2022-11-02
+
+' ─── FIN ──────────────────────────────────────────────────────────────────────
 @enduml
