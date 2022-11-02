@@ -1,0 +1,62 @@
+' ==============================================
+' Author:      Gerardo Tordoya
+' Create date: 2022-11-02
+' Description: Arquitectura DDD en capas con DIP
+' ==============================================
+
+@startuml Gestor de Campeonatos
+
+' ─── CONFIGURACIONES ──────────────────────────────────────────────────────────
+skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+' hide circle
+skinparam linetype ortho
+
+' --- TÍTULO ───────────────────────────────────────────────────────────────────
+title Arquitectura DDD en capas con DIP
+
+' ─── ENTIDADES ────────────────────────────────────────────────────────────────
+
+package "User Interface"
+{
+    package Winforms {}
+    package Website {}
+}
+
+package Application
+{
+}
+
+package Domain
+{
+}
+
+package Infrastructure
+{
+    package "Data Access" {}
+    package "Cross Cutting" {}
+}
+
+
+' ─── RELACIONES ───────────────────────────────────────────────────────────────
+"User Interface" -[plain]-> Application
+"User Interface" -[plain]-> Domain
+"User Interface" -[plain]-> "Cross Cutting"
+
+Application -[plain]-> Domain
+Application -[plain]-> "Data Access"
+
+Domain -[plain]-> "Cross Cutting"
+
+"Data Access" -[plain]-> Domain
+
+
+' ─── NOTAS ────────────────────────────────────────────────────────────────────
+
+
+' ─── SUBTÍTULO ────────────────────────────────────────────────────────────────
+caption Última actualización: 2022-11-02
+
+' ─── FIN ──────────────────────────────────────────────────────────────────────
+@enduml
