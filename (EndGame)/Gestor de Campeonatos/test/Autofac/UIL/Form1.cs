@@ -1,6 +1,4 @@
-﻿using ABS;
-using Autofac;
-using BEL;
+﻿using BEL;
 using BLL;
 using DAL;
 using System;
@@ -17,22 +15,17 @@ namespace UIL
 
         private void IngresarButton_Click(object sender, EventArgs e)
         {
-            var container = ConfiguracionContainer.Configure();
+            var modelo = new Modelo();
+            var procesador = new Procesador();
+            var database = new Database();
 
-            using (var scope = container.BeginLifetimeScope())
-            {
-                var modelo = scope.Resolve<IModelo>();
-                var procesador = scope.Resolve<IProcesador>();
-                var database = scope.Resolve<IDatabase>();
+            modelo.Nombre = NombreTextbox.Text;
+            modelo.Descripcion = DescripcionTextbox.Text;
 
-                modelo.Nombre = NombreTextbox.Text;
-                modelo.Descripcion = DescripcionTextbox.Text;
+            modelo = procesador.AgregarCodigo(modelo);
+            CodigoTextbox.Text = modelo.Codigo.ToString();
 
-                modelo = procesador.AgregarCodigo((Modelo)modelo);
-                CodigoTextbox.Text = modelo.Codigo.ToString();
-
-                MessageBox.Show(database.Guardar((Modelo)modelo));
-            }
+            MessageBox.Show(database.Guardar(modelo));
         }
     }
 }

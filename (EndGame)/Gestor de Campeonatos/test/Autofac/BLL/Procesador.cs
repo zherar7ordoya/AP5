@@ -3,7 +3,7 @@ using System;
 
 namespace BLL
 {
-    public class Procesador : IProcesador
+    public class Procesador
     {
         public Modelo AgregarCodigo(Modelo modelo)
         {

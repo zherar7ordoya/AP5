@@ -14,7 +14,7 @@ skin rose
 skinparam linetype ortho
 
 ' --- TÍTULO ───────────────────────────────────────────────────────────────────
-title Arquitectura DDD en capas con DIP
+title Arquitectura Tradicional en capas DDD & DIP
 
 ' ─── ENTIDADES ────────────────────────────────────────────────────────────────
 

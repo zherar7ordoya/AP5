@@ -2,11 +2,11 @@
 
 namespace DAL
 {
-    public class Database : IDatabase
+    public class Database
     {
         public string Guardar(Modelo modelo)
         {
-            return "Guardado";
+            return modelo.ToString();
         }
     }
 }
