@@ -58,8 +58,9 @@ class Moto(Vehiculos):
               f"Caballito: \t{self.caballito}")
 
 
-class VElectricos:
-    def __init__(self):
+class VElectricos(Vehiculos):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
         self.cargando = None
         self.autonomia = 100
 
@@ -69,21 +70,41 @@ class VElectricos:
 
 class BicicletaElectrica(VElectricos, Vehiculos):
     def __init__(self, marca, modelo):
-        super().__init__()
+        super().__init__(marca, modelo)
         self.marca = marca
         self.modelo = modelo
 
 
+class Persona:
+    def __init__(self, nombre, edad, residencia):
+        self.nombre = nombre
+        self.edad = edad
+        self.residencia = residencia
+
+    def descripcion(self):
+        print(f"Nombre:    \t{self.nombre}\n"
+              f"Edad:      \t{self.edad}\n"
+              f"Residencia:\t{self.residencia}")
+
+
+class Empleado(Persona):
+    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado, residencia_empleado):
+        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
+        self.salario = salario
+        self.antiguedad = antiguedad
+
+    def descripcion(self):
+        super().descripcion()
+        print(f"Salario:   \t{self.salario}\n"
+              f"Antiguedad:\t{self.antiguedad}")
+
+
 # --- MAIN --------------------------------------------------------------------
-if __name__ == "__main__":
-    # miMoto = Moto("Honda", "CBR")
-    # miMoto.wheelie()
-    # miMoto.estado()
 
-    # miFurgoneta = Furgoneta("Renault", "Kangoo")
-    # miFurgoneta.arrancar()
-    # miFurgoneta.estado()
-    # print(miFurgoneta.carga(True))
+# Manuel = Persona("Manuel", 55, "México")
+# Manuel.descripcion()
+# print(isinstance(Manuel, Empleado))
+# print(isinstance(Manuel, Persona))
 
-    miBici = BicicletaElectrica("Orbea", "H50")
-    miBici.estado()
+MiBici = BicicletaElectrica("Orbea", "H50")
+MiBici.estado()
