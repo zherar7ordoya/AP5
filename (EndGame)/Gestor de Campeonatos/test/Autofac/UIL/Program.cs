@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Autofac;
+using BEL;
 
 namespace UIL
 {
@@ -13,7 +15,27 @@ namespace UIL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Container = Configure();
+            Application.Run(new ProductoForm(Container.Resolve<IProductoRepository>()));
         }
+
+        // --- INVERSIÓN DE DEPENDENCIAS --------------------------------------
+        public static IContainer Container;
+
+        /// <summary>
+        /// Setting dependency injection
+        /// </summary>
+        /// <returns></returns>
+        static IContainer Configure()
+        {
+            var builder = new ContainerBuilder();
+
+            builder.RegisterType<ProductoRepository>().As<IProductoRepository>();
+            builder.RegisterType<ProductoForm>();
+
+            return builder.Build();
+        }
+
     }
 }
