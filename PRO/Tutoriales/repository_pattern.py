@@ -1,4 +1,13 @@
+# =========================================
+# Author:      Gerardo Tordoya
+# Create date: 2022-11-04
+# Description: Patrón de diseño Repositorio
+# =========================================
+
+# NOTA > No crea la tabla, ya debe existir
+
 import sqlite3
+
 
 
 def get_connection():
@@ -10,21 +19,8 @@ class StoreException(Exception):
         Exception.__init__(self, message)
         self.errors = errors
 
-
-# domains
-
-class User():
-    def __init__(self, name):
-        self.name = name
-
-
-class Animal():
-    def __init__(self, name):
-        self.name = name
-
-
-# base store class
-class Store():
+# --- COMIENZA CLASE BASE -------------------------------------------------------
+class Store:
     def __init__(self):
         try:
             self.conn = get_connection()
@@ -58,6 +54,20 @@ class Store():
                     raise StoreException(*e.args)
 
 
+# --- OBJETOS DE DOMINIO ------------------------------------------------------
+
+class User:
+    def __init__(self, name):
+        self.name = name
+
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+
+
+
 # store for User obects
 class UserStore(Store):
 
@@ -65,9 +75,7 @@ class UserStore(Store):
         try:
             c = self.conn.cursor()
             # this needs an appropriate table
-            #c.execute('INSERT INTO user (name) VALUES(?)', (user.name,))
-            #c.execute('INSERT INTO user(name) VALUES(?)', user.name)
-            c.execute('INSERT INTO user(name) VALUES("Gerardo Tordoya")')
+            c.execute(f'INSERT INTO user(name) VALUES("{user.name}")')
         except Exception as e:
             raise StoreException('error storing user')
 
@@ -79,7 +87,7 @@ class AnimalStore(Store):
         try:
             c = self.conn.cursor()
             # this needs an appropriate table
-            c.execute('INSERT INTO animal (name) VALUES(?)', (animal.name,))
+            c.execute(f'INSERT INTO animal(name) VALUES("{animal.name}")')
         except Exception as e:
             raise StoreException('error storing animal')
 
@@ -87,7 +95,7 @@ class AnimalStore(Store):
 # do something
 try:
     with UserStore() as user_store:
-        user_store.add_user(User('John'))
+        user_store.add_user(User('John Doe'))
         user_store.complete()
 
     with AnimalStore() as animal_store:
@@ -96,6 +104,6 @@ try:
         animal_store.add_animal(Animal('Cat'))
         animal_store.add_animal(Animal('Wolf'))
         animal_store.complete()
-except StoreException as e:
+except StoreException as error:
     # exception handling here
-    print(e)
+    print(error)
