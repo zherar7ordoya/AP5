@@ -1,22 +1,25 @@
 ' =======================================
 ' Author:      Gerardo Tordoya
 ' Create date: 2022-11-02
-' Description: Arquitectura LUG (6 Capas)
+' Description: Arquitectura LUG (7 Capas)
 ' =======================================
 
 @startuml Gestor de Campeonatos
 
 ' ─── CONFIGURACIONES ──────────────────────────────────────────────────────────
+
 skin rose
-' skinparam classFontName Calibri
+skinparam classFontName Calibri
 ' skinparam shadowing false
 ' hide circle
 skinparam linetype ortho
 
 ' --- TÍTULO ───────────────────────────────────────────────────────────────────
+
 title Arquitectura UAI de 6 Capas
 
 ' ─── ENTIDADES ────────────────────────────────────────────────────────────────
+
 package BEL
 {
 }
@@ -41,30 +44,31 @@ package ABS
 {
 }
 
-package SQL <<Database>>
+package DAT <<Database>>
 {
 }
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
-UIL -[plain]-> BLL
-BLL -[plain]-> MPP
-MPP -[plain]-> DAL
-DAL -[plain]-> SQL
 
-UIL -[plain]-> BEL
+BLL -[plain]-> MPP
+DAL -[plain]-> DAT
+MPP -[plain]-> DAL
+UIL -[plain]-> BLL
+
 BLL -[plain]-> BEL
 MPP -[plain]-> BEL
+UIL -[plain]-> BEL
 
+BEL -[plain]-> ABS
 BLL -[plain]-> ABS
 MPP -[plain]-> ABS
-
-
 
 ' ─── NOTAS ────────────────────────────────────────────────────────────────────
 
 
 ' ─── SUBTÍTULO ────────────────────────────────────────────────────────────────
-caption Última actualización: 2022-11-02
+
+caption Última actualización: 2022-11-04
 
 ' ─── FIN ──────────────────────────────────────────────────────────────────────
 @enduml
