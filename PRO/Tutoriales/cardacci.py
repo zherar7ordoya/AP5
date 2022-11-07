@@ -11,11 +11,12 @@ import csv
 init()
 
 
-class ExceptionStore(Exception):
+class ExceptionCapturada(Exception):
     def __init__(self, mensaje, *errores):
         Exception.__init__(self, mensaje)
         self.errores = errores
         print(f"\n{Fore.RED}\t{errores[0]}{Fore.RESET}")
+        input("\n\tPresione una tecla para continuar...")
 
 
 # --- DAL ---------------------------------------------------------------------
@@ -35,14 +36,14 @@ class AccesoDatos:
             with open(archivo) as dat:
                 return list(csv.reader(dat))
         except FileNotFoundError as e:
-            raise ExceptionStore("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
+            raise ExceptionCapturada("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
 
     def escribir(self, archivo, lista):
         try:
             with open(archivo, 'w', newline='\n') as dat:
                 csv.writer(dat).writerows(lista)
         except Exception as e:
-            raise ExceptionStore("ERROR AL DESCONECTARSE", *e.args)
+            raise ExceptionCapturada("ERROR AL DESCONECTARSE", *e.args)
 
 
 # --- MAPPER (CRUD) -----------------------------------------------------------
@@ -67,7 +68,7 @@ class AlumnoMapeador(AccesoDatos):
             self.escribir(self.archivo, listado)
 
         except Exception as e:
-            raise ExceptionStore("ERROR AL CREAR", *e.args)
+            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -75,7 +76,7 @@ class AlumnoMapeador(AccesoDatos):
             listado = self.leer(self.archivo)
             return listado[idx]
         except Exception as e:
-            raise ExceptionStore("ERROR AL LEER", *e.args)
+            raise ExceptionCapturada("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -85,7 +86,7 @@ class AlumnoMapeador(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -94,7 +95,7 @@ class AlumnoMapeador(AccesoDatos):
             del listado[idx]
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
 
 
 # *---
@@ -131,7 +132,7 @@ class NotaMapeador(AccesoDatos):
                 raise Exception("EL PADRÓN NO EXISTE")
 
         except Exception as e:
-            raise ExceptionStore("ERROR AL CREAR", *e.args)
+            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -139,7 +140,7 @@ class NotaMapeador(AccesoDatos):
             listado = self.leer(self.archivo)
             return listado[idx]
         except Exception as e:
-            raise ExceptionStore("ERROR AL LEER", *e.args)
+            raise ExceptionCapturada("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -149,7 +150,7 @@ class NotaMapeador(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -158,7 +159,7 @@ class NotaMapeador(AccesoDatos):
             del listado[idx]
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
 
 
 # *---
@@ -176,7 +177,7 @@ class VentaMapeador(AccesoDatos):
             listado.append(nuevo)
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL CREAR", *e.args)
+            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -184,7 +185,7 @@ class VentaMapeador(AccesoDatos):
             listado = self.leer(self.archivo)
             return listado[idx]
         except Exception as e:
-            raise ExceptionStore("ERROR AL LEER", *e.args)
+            raise ExceptionCapturada("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -194,7 +195,7 @@ class VentaMapeador(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -203,7 +204,7 @@ class VentaMapeador(AccesoDatos):
             del listado[idx]
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
+            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
 
 
 # --- ENTIDADES ---------------------------------------------------------------
@@ -235,22 +236,25 @@ class Venta:
 # --- MÉTODOS DE LA 1RA PARTE DEL EJERCICIO -----------------------------------
 
 def alta_alumno():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("ALTA DE ALUMNO")
         print("==============")
-        padron = int(input("Ingrese el padrón del alumno: "))
+        padron = input("Ingrese el padrón del alumno (3 dígitos): ")
         apellido = input("Ingrese el apellido del alumno: ")
         nombre = input("Ingrese el nombre del alumno: ")
         carrera = input("Ingrese la carrera del alumno: ")
         alumno = Alumno(padron, apellido, nombre, carrera)
         alumno_mapeador = AlumnoMapeador()
         alumno_mapeador.create(alumno)
-        print("Alumno creado correctamente")
-    except ExceptionStore as e:
+        print("\nAlumno creado correctamente\n")
+        input("Presione cualquier tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def baja_alumno():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("BAJA DE ALUMNO")
         print("==============")
@@ -258,14 +262,17 @@ def baja_alumno():
         listado = alumno_mapeador.leer(alumno_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
+        print()
         idx = int(input("Ingrese el índice del alumno a eliminar: "))
         alumno_mapeador.delete(idx)
-        print("Alumno eliminado correctamente")
-    except ExceptionStore as e:
+        print("\nAlumno eliminado correctamente\n")
+        input("Presione cualquier tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def modificacion_alumno():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("MODIFICACIÓN DE ALUMNO")
         print("======================")
@@ -273,19 +280,22 @@ def modificacion_alumno():
         listado = alumno_mapeador.leer(alumno_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
+        print()
         idx = int(input("Ingrese el índice del alumno a modificar: "))
-        padron = int(input("Ingrese el padrón del alumno: "))
+        padron = input("Ingrese el padrón del alumno (3 dígitos): ")
         apellido = input("Ingrese el apellido del alumno: ")
         nombre = input("Ingrese el nombre del alumno: ")
         carrera = input("Ingrese la carrera del alumno: ")
         alumno = Alumno(padron, apellido, nombre, carrera)
         alumno_mapeador.update(alumno, idx)
-        print("Alumno modificado correctamente")
-    except ExceptionStore as e:
+        print("\nAlumno modificado correctamente\n")
+        input("Presione cualquier tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def consulta_alumno():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("CONSULTA DE ALUMNO")
         print("==================")
@@ -293,29 +303,36 @@ def consulta_alumno():
         listado = alumno_mapeador.leer(alumno_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice del alumno a consultar: "))
+        idx = int(input("\nIngrese el índice del alumno a consultar: "))
         alumno = alumno_mapeador.read(idx)
+        print()
         print(alumno)
-    except ExceptionStore as e:
+        print("\nConsultado correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
+# ---
+
 def alta_nota():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("ALTA DE NOTA")
         print("============")
-        padron = int(input("Ingrese el padrón del alumno: "))
+        padron = input("Ingrese el padrón del alumno: ")
         materia = input("Ingrese la materia: ")
-        nota = float(input("Ingrese la nota: "))
+        nota = input("Ingrese la nota: ")
         nota = Nota(padron, materia, nota)
         nota_mapeador = NotaMapeador()
         nota_mapeador.create(nota)
         print("Nota creada correctamente")
-    except ExceptionStore as e:
+    except ExceptionCapturada as e:
         print(e)
 
 
 def baja_nota():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("BAJA DE NOTA")
         print("============")
@@ -323,14 +340,16 @@ def baja_nota():
         listado = nota_mapeador.leer(nota_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la nota a eliminar: "))
+        idx = int(input("\nIngrese el índice de la nota a eliminar: "))
         nota_mapeador.delete(idx)
-        print("Nota eliminada correctamente")
-    except ExceptionStore as e:
+        print("\nNota eliminada correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def modificacion_nota():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("MODIFICACIÓN DE NOTA")
         print("====================")
@@ -338,18 +357,20 @@ def modificacion_nota():
         listado = nota_mapeador.leer(nota_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la nota a modificar: "))
-        padron = int(input("Ingrese el padrón del alumno: "))
+        idx = int(input("\nIngrese el índice de la nota a modificar: "))
+        padron = input("Ingrese el padrón del alumno: ")
         materia = input("Ingrese la materia: ")
-        nota = float(input("Ingrese la nota: "))
+        nota = input("Ingrese la nota: ")
         nota = Nota(padron, materia, nota)
         nota_mapeador.update(nota, idx)
-        print("Nota modificada correctamente")
-    except ExceptionStore as e:
+        print("\nNota modificada correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def consulta_nota():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("CONSULTA DE NOTA")
         print("================")
@@ -357,28 +378,39 @@ def consulta_nota():
         listado = nota_mapeador.leer(nota_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la nota a consultar: "))
+        idx = int(input("\nIngrese el índice de la nota a consultar: "))
         nota = nota_mapeador.read(idx)
+        print()
         print(nota)
-    except ExceptionStore as e:
+        print()
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
+# ---
+
 def alta_venta():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("ALTA DE VENTA")
         print("=============")
-        codigo = int(input("Ingrese el código del producto: "))
-        cantidad = int(input("Ingrese la cantidad: "))
-        venta = Venta(codigo, cantidad)
+        cliente = input("Ingrese el nombre del cliente: ")
+        anyo = input("Ingrese el año de venta (AAAA): ")
+        mes = input("Ingrese el mes de venta (MM): ")
+        dia = input("Ingrese el día de venta (DD): ")
+        monto = Decimal(input("Ingrese el monto de venta: "))
+        venta = Venta(cliente, anyo, mes, dia, monto)
         venta_mapeador = VentaMapeador()
         venta_mapeador.create(venta)
-        print("Venta creada correctamente")
-    except ExceptionStore as e:
+        print("\nVenta creada correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def baja_venta():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("BAJA DE VENTA")
         print("=============")
@@ -386,14 +418,16 @@ def baja_venta():
         listado = venta_mapeador.leer(venta_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la venta a eliminar: "))
+        idx = int(input("\nIngrese el índice de la venta a eliminar: "))
         venta_mapeador.delete(idx)
-        print("Venta eliminada correctamente")
-    except ExceptionStore as e:
+        print("\nVenta eliminada correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def modificacion_venta():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("MODIFICACIÓN DE VENTA")
         print("=====================")
@@ -401,17 +435,22 @@ def modificacion_venta():
         listado = venta_mapeador.leer(venta_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la venta a modificar: "))
-        codigo = int(input("Ingrese el código del producto: "))
-        cantidad = int(input("Ingrese la cantidad: "))
-        venta = Venta(codigo, cantidad)
+        idx = int(input("\nIngrese el índice de la venta a modificar: "))
+        cliente = input("Ingrese el nombre del cliente: ")
+        anyo = input("Ingrese el año de venta (AAAA): ")
+        mes = input("Ingrese el mes de venta (MM): ")
+        dia = input("Ingrese el día de venta (DD): ")
+        monto = Decimal(input("Ingrese el monto de venta: "))
+        venta = Venta(cliente, anyo, mes, dia, monto)
         venta_mapeador.update(venta, idx)
-        print("Venta modificada correctamente")
-    except ExceptionStore as e:
+        print("\nVenta modificada correctamente\n")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
 def consulta_venta():
+    os.system('cls' if os.name == 'nt' else 'clear')
     try:
         print("CONSULTA DE VENTA")
         print("=================")
@@ -419,10 +458,13 @@ def consulta_venta():
         listado = venta_mapeador.leer(venta_mapeador.archivo)
         for idx, x in enumerate(listado):
             print(idx, x)
-        idx = int(input("Ingrese el índice de la venta a consultar: "))
+        idx = int(input("\nIngrese el índice de la venta a consultar: "))
         venta = venta_mapeador.read(idx)
+        print()
         print(venta)
-    except ExceptionStore as e:
+        print("\nConsultado correctamente")
+        input("Presione una tecla para continuar...")
+    except ExceptionCapturada as e:
         print(e)
 
 
@@ -481,13 +523,14 @@ def imprimir_notas_alumnos(alumnos, notas):
         except StopIteration:
             alumno = None
 
-
     # Cierro los archivos
     notas_a.close()
     alumnos_a.close()
 
 
 def apareo():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     # Defino los archivos y los proceso (abro, leo, ordeno, escribo)
     archivos = ['alumnos.csv', 'notas.csv']
     try:
@@ -508,53 +551,49 @@ def apareo():
 
 # --- CORTE DE CONTROL --------------------------------------------------------
 
-
+# Recorro el archivo según el formato: cliente, año, mes, día, venta
 def ventas_clientes_mes(archivo_ventas):
-    """ Recorre un archivo csv, con la información almacenada en el
-        formato: cliente,an"o,mes,día,venta """
-    # Inicialización
     ventas = open(archivo_ventas)
     ventas_csv = csv.reader(ventas)
-
-    # item = leer_datos(ventas_csv)
     item = next(ventas_csv, None)
     total = 0
 
+    # Bucle entero (veo si existe registro)
     while item:
-        # Inicialización para el bucle de cliente
-        cliente = item[0]
-        total_cliente = 0
+        cliente, total_cliente = item[0], 0
         print("\n\tCliente %s" % cliente)
 
+        # Bucle cliente
         while item and item[0] == cliente:
-            # Inicialización para el bucle de año
-            anyo = item[1]
-            total_anyo = 0
+            anyo, total_anyo = item[1], 0
             print("\n\t\tAño: %s" % anyo)
 
+            # Bucle año
             while item and item[0] == cliente and item[1] == anyo:
-                mes, monto = item[2], Decimal(item[4])
-                print(f"\t\t\tVentas mes {mes}: {monto}")
-                total_anyo += monto
-                # Siguiente registro
-                item = next(ventas_csv, None)
+                mes, total_mes = item[2], 0
 
-            # Final del bucle de año
-            print(f"\t\t\t\t\t\tTotal {anyo}: {total_anyo}")
+                while item and item[0] == cliente and item[1] == anyo and item[2] == mes:
+                    total_mes += Decimal(item[4])
+                    item = next(ventas_csv, None)
+
+                total_anyo += total_mes
+                print(f"\t\t\tVentas mes {mes}: {total_mes}")
+
+            # Luego bucle año
+            print(f"{Fore.GREEN}\t\t\t\tTotal {anyo}: {total_anyo}{Fore.RESET}")
             total_cliente += total_anyo
 
-        # Final del bucle de cliente
+        # Luego bucle cliente
         print(f"\n\tTotal para {cliente}: {total_cliente}\n")
         total += total_cliente
+        print(Fore.GREEN + "Total general: %.2f" % total + Fore.RESET)
 
-        # Final del bucle principal
-        print("Total general: %.2f" % total)
-
-    # Cierre del archivo
     ventas.close()
 
 
 def corte_de_control():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
     # Defino los archivos y los proceso (abro, leo, ordeno, escribo)
     archivos = ['ventas.csv']
     try:
@@ -569,7 +608,6 @@ def corte_de_control():
     ventas_clientes_mes('ventas.csv')
     print("\nCorte de control realizado correctamente\n")
     input("Presione una tecla para continuar...")
-
 
 
 # --- MAIN --------------------------------------------------------------------
@@ -605,7 +643,6 @@ while True:
     """)
 
     opcion = input("Ingrese opción > ")
-    os.system('cls' if os.name == 'nt' else 'clear')
 
     if opcion == '1':
         alta_alumno()
@@ -636,10 +673,10 @@ while True:
     elif opcion == '14':
         corte_de_control()
     elif opcion == '15':
-        print("¿Está seguro que desea salir? (S/N)")
+        print("\n¿Está seguro que desea salir? (S/N)\n")
         respuesta = input("Respuesta > ")
         if respuesta == 'S' or respuesta == 's':
-            print("Saliendo...")
+            print("\nSaliendo...\n")
             break
         else:
-            print("Continuando...")
+            print("\nContinuando...\n")
