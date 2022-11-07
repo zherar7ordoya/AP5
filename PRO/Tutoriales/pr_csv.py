@@ -4,10 +4,7 @@
 # Description: Patrón de diseño Repositorio
 # =========================================
 
-
 import csv
-
-import sqlite3
 from colorama import Fore, init
 
 init()
@@ -23,6 +20,7 @@ class ExceptionStore(Exception):
 # --- DAL ---------------------------------------------------------------------
 
 class AccesoDatos:
+
     def __enter__(self):
         """ Método mágico para el uso de with que se ejecuta al inicio """
         return self
@@ -31,16 +29,16 @@ class AccesoDatos:
         """ Método mágico para el uso de with que se ejecuta al final """
         return self
 
-    def conectarse(self, txt):
+    def leer(self, archivo):
         try:
-            with open(txt) as dat:
+            with open(archivo) as dat:
                 return list(csv.reader(dat))
         except FileNotFoundError as e:
             raise ExceptionStore("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
 
-    def desconectarse(self, txt, lista):
+    def escribir(self, archivo, lista):
         try:
-            with open(txt, 'w', newline='\n') as dat:
+            with open(archivo, 'w', newline='\n') as dat:
                 csv.writer(dat).writerows(lista)
         except Exception as e:
             raise ExceptionStore("ERROR AL DESCONECTARSE", *e.args)
@@ -49,8 +47,14 @@ class AccesoDatos:
 # --- MAPPER (CRUD) -----------------------------------------------------------
 
 class AlumnoMapeador(AccesoDatos):
-    def create(self, objeto, listado):
+
+    def __init__(self):
+        self.archivo = 'alumnos.csv'
+
+    # *** ALTAS ***
+    def create(self, objeto):
         try:
+            listado = self.leer(self.archivo)
             nuevo = [objeto.padron, objeto.apellido, objeto.nombre, objeto.carrera]
 
             for x in listado:
@@ -59,56 +63,144 @@ class AlumnoMapeador(AccesoDatos):
                         raise Exception("EL PADRÓN YA EXISTE")
 
             listado.append(nuevo)
+            self.escribir(self.archivo, listado)
+
         except Exception as e:
             raise ExceptionStore("ERROR AL CREAR", *e.args)
 
-    def read(self, idx, listado):
+    # *** CONSULTAS ***
+    def read(self, idx):
         try:
+            listado = self.leer(self.archivo)
             return listado[idx]
         except Exception as e:
             raise ExceptionStore("ERROR AL LEER", *e.args)
 
-    def update(self, objeto, idx, listado):
+    # *** MODIFICACIONES ***
+    def update(self, objeto, idx):
         try:
+            listado = self.leer(self.archivo)
             nuevo = [objeto.padron, objeto.apellido, objeto.nombre, objeto.carrera]
             listado[idx] = nuevo
+            self.escribir(self.archivo, listado)
         except Exception as e:
             raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
 
-    def delete(self, idx, listado):
+    # *** BAJAS ***
+    def delete(self, idx):
         try:
+            listado = self.leer(self.archivo)
             del listado[idx]
+            self.escribir(self.archivo, listado)
         except Exception as e:
             raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
 
 
+# *---
 
-# ----
+class NotaMapeador(AccesoDatos):
 
-class VentaMapeador(AccesoDatos):
-    def create(self, objeto, listado):
+    def __init__(self):
+        self.archivo = 'notas.csv'
+
+    # *** ALTAS ***
+    def create(self, objeto):
         try:
-            nuevo = [objeto.cliente, objeto.anio, objeto.mes, objeto.dia, objeto.monto]
-            listado.append(nuevo)
+            nuevo = [objeto.padron, objeto.materia, objeto.nota]
+            listado = self.leer(self.archivo)
+
+            # Necesito la lista de alumnos para validar el padrón
+            alumnos = self.leer('alumnos.csv')
+
+            # Cada alumno tiene varias materias.
+            # Si agrego el objeto en cada coincidencia, se duplica varias veces.
+            existe = False
+
+            for x in alumnos:
+                for y in x:
+                    if y == str(objeto.padron):
+                        # Si el padrón ya existe, habilito la bandera.
+                        # Esto es más sencillo que usar un break.
+                        existe = True
+
+            if existe:
+                listado.append(nuevo)
+                self.escribir(self.archivo, listado)
+            else:
+                raise Exception("EL PADRÓN NO EXISTE")
+
         except Exception as e:
             raise ExceptionStore("ERROR AL CREAR", *e.args)
 
-    def read(self, idx, listado):
+    # *** CONSULTAS ***
+    def read(self, idx):
         try:
+            listado = self.leer(self.archivo)
             return listado[idx]
         except Exception as e:
             raise ExceptionStore("ERROR AL LEER", *e.args)
 
-    def update(self, objeto, idx, listado):
+    # *** MODIFICACIONES ***
+    def update(self, objeto, idx):
         try:
-            nuevo = [objeto.cliente, objeto.anio, objeto.mes, objeto.dia, objeto.monto]
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.padron, objeto.materia, objeto.nota]
             listado[idx] = nuevo
+            self.escribir(self.archivo, listado)
         except Exception as e:
             raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
 
-    def delete(self, idx, listado):
+    # *** BAJAS ***
+    def delete(self, idx):
         try:
+            listado = self.leer(self.archivo)
             del listado[idx]
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
+
+
+# *---
+
+class VentaMapeador(AccesoDatos):
+
+    def __init__(self):
+        self.archivo = 'ventas.csv'
+
+    # *** ALTAS ***
+    def create(self, objeto):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.cliente, objeto.anio, objeto.mes, objeto.dia, objeto.monto]
+            listado.append(nuevo)
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionStore("ERROR AL CREAR", *e.args)
+
+    # *** CONSULTAS ***
+    def read(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+            return listado[idx]
+        except Exception as e:
+            raise ExceptionStore("ERROR AL LEER", *e.args)
+
+    # *** MODIFICACIONES ***
+    def update(self, objeto, idx):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.cliente, objeto.anio, objeto.mes, objeto.dia, objeto.monto]
+            listado[idx] = nuevo
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionStore("ERROR AL ACTUALIZAR", *e.args)
+
+    # *** BAJAS ***
+    def delete(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+            del listado[idx]
+            self.escribir(self.archivo, listado)
         except Exception as e:
             raise ExceptionStore("ERROR AL ELIMINAR", *e.args)
 
@@ -141,66 +233,71 @@ class Venta:
 
 # --- TEST --------------------------------------------------------------------
 
+try:
+    with NotaMapeador() as abm:
+        # Crear
+        abm.create(Nota("107", "Estadistica", "10"))
+        print(f"{Fore.GREEN}NOTA CREADA{Fore.RESET}")
+
+        # Leer
+        registro = abm.read(3)
+        print(registro)
+        print(f"{Fore.GREEN}NOTA LEÍDA{Fore.RESET}")
+
+        # Actualizar
+        registro = Nota("107", "Programacion II", "10")
+        abm.update(registro, 0)
+        print(f"{Fore.GREEN}NOTA ACTUALIZADA{Fore.RESET}")
+
+        # Eliminar
+        abm.delete(0)
+        print(f"{Fore.GREEN}NOTA ELIMINADA (FÍSICAMENTE){Fore.RESET}")
+
+except ExceptionStore as ex:
+    raise ExceptionStore("SE HA DETECTADO UN ERROR. LA APLICACIÓN SE CERRARÁ.", *ex.args)
 
 try:
     with AlumnoMapeador() as abm:
         # Crear
-        # lista = abm.conectarse('alumnos.csv')
-        # abm.create(Alumno("106", "Tordoya", "Gerardo", "Analista Programador Universitario"), lista)
-        # abm.desconectarse('alumnos.csv', lista)
-        # print(f"{Fore.GREEN}ALUMNO CREADO{Fore.RESET}")
+        abm.create(Alumno("107", "Tordoya", "Gerardo", "Analista Programador"))
+        print(f"{Fore.GREEN}ALUMNO CREADO{Fore.RESET}")
 
         # Leer
-        # lista = abm.conectarse('alumnos.csv')
-        # registro = abm.read(3, lista)
-        # abm.desconectarse('alumnos.csv', lista)
-        # print(registro)
-        # print(f"{Fore.GREEN}ALUMNO LEÍDO{Fore.RESET}")
+        registro = abm.read(3)
+        print(registro)
+        print(f"{Fore.GREEN}ALUMNO LEÍDO{Fore.RESET}")
 
         # Actualizar
-        # registro = Alumno("106", "Tordoya", "Gerardo", "Analista Programador Universitario")
-        # lista = abm.conectarse('alumnos.csv')
-        # abm.update(registro, 6, lista)
-        # abm.desconectarse('alumnos.csv', lista)
-        # print(f"{Fore.GREEN}ALUMNO ACTUALIZADO{Fore.RESET}")
+        registro = Alumno("106", "Tordoya", "Gerardo", "Analista Programador Universitario")
+        abm.update(registro, 6)
+        print(f"{Fore.GREEN}ALUMNO ACTUALIZADO{Fore.RESET}")
 
-        # # Eliminar
-        lista = abm.conectarse('alumnos.csv')
-        abm.delete(1, lista)
-        abm.desconectarse('alumnos.csv', lista)
+        # Eliminar
+        abm.delete(1)
         print(f"{Fore.GREEN}ALUMNO ELIMINADO (FÍSICAMENTE){Fore.RESET}")
 
 except ExceptionStore as ex:
+    raise ExceptionStore("SE HA DETECTADO UN ERROR. LA APLICACIÓN SE CERRARÁ.", *ex.args)
+
+try:
+    with VentaMapeador() as abm:
+        # Crear
+        abm.create(Venta("Dario Cardacci", 2022, 11, "06", 9876.54))
+        print(f"{Fore.GREEN}VENTA CREADA{Fore.RESET}")
+
+        # Leer
+        registro = abm.read(7)
+        print(registro)
+        print(f"{Fore.GREEN}VENTA LEÍDA{Fore.RESET}")
+
+        # Actualizar
+        venta = Venta("Dario Cardacci", 2022, 11, "06", 9876.54)
+        abm.update(venta, 11)
+        print(f"{Fore.GREEN}VENTA ACTUALIZADA{Fore.RESET}")
+
+        # Eliminar
+        abm.delete(10)
+        print(f"{Fore.GREEN}VENTA ELIMINADA (FÍSICAMENTE){Fore.RESET}")
+
+except ExceptionStore as ex:
     raise ExceptionStore("ERROR AL ELIMINAR", *ex.args)
-
-
-
-# try:
-#     with VentaMapeador() as abm:
-#         # Crear
-#         lista = abm.conectarse('ventas.csv')
-#         abm.create(Venta("Dario Cardacci", 2022, 11, "06", 9876.54), lista)
-#         abm.desconectarse('ventas.csv', lista)
-#         print(f"{Fore.GREEN}VENTA CREADA{Fore.RESET}")
-#
-#         # Leer
-#         lista = abm.conectarse('ventas.csv')
-#         registro = abm.read(7, lista)
-#         print(registro)
-#         print(f"{Fore.GREEN}VENTA LEÍDA{Fore.RESET}")
-#
-#         # Actualizar
-#         venta = Venta("Dario Cardacci", 2022, 11, "06", 9876.54)
-#         lista = abm.conectarse('ventas.csv')
-#         abm.update(venta, 11, lista)
-#         abm.desconectarse('ventas.csv', lista)
-#         print(f"{Fore.GREEN}VENTA ACTUALIZADA{Fore.RESET}")
-#
-#         # Eliminar
-#         lista = abm.conectarse('ventas.csv')
-#         abm.delete(10, lista)
-#         abm.desconectarse('ventas.csv', lista)
-#         print(f"{Fore.GREEN}VENTA ELIMINADA (FÍSICAMENTE){Fore.RESET}")
-#
-# except ExceptionStore as ex:
-#     raise ExceptionStore("ERROR AL ELIMINAR", *ex.args)
