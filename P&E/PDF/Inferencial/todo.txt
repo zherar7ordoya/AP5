@@ -1,0 +1,21 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 1072-86A2
+
+ Directorio de C:\Documents\AP5\P&E\PDF\Inferencial
+
+08/11/2022  11:40 a. m.    <DIR>          .
+08/11/2022  11:40 a. m.    <DIR>          ..
+11/10/2022  05:21 p. m.               354 Apuntes Video.txt
+06/10/2022  12:42 p. m.           268,646 Clase 09 (Inferencia estad¡stica).pdf
+22/08/2022  08:12 a. m.           381,506 Clase 10 (La Distribuci¢n t de Student).pdf
+22/08/2022  08:12 a. m.           183,460 Clase 11 (La Distribuci¢n chi cuadrado).pdf
+22/08/2022  08:12 a. m.           222,958 Clase 12 (Regresi¢n y Correlaci¢n de variables).pdf
+22/08/2022  08:12 a. m.           342,232 Clase 13 (Interpretaci¢n del error est ndar).pdf
+22/08/2022  08:12 a. m.           255,009 Clase 14 (Las Series Cronol¢gicas).pdf
+22/08/2022  08:12 a. m.           129,786 Clase 15 (Test de Hip¢tesis).pdf
+08/11/2022  11:40 a. m.                 0 todo.txt
+               9 archivos      1,783,951 bytes
+               2 dirs  179,114,770,432 bytes libres
+
+
+estadística inferencial, student, chi, regresión, error, series, hipótesis

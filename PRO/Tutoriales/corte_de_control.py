@@ -1,17 +1,15 @@
-# =============================
+# =============================================================================
 # Author:      Gerardo Tordoya
 # Create date: 2022-11-05
-# Description: Corte de control
-# =============================
+# Description: Corte de control (recorre un archivo de ventas e imprime totales
+#              y subtotales)
+# =============================================================================
 
-# ventas.py: Recorre un archivo de ventas e imprime totales y subtotales
-
-# encoding: latin1
 import csv
 
 
+# No estoy seguro si es necesario, pero lo dejo por las dudas
 def leer_datos(datos):
-    """ Devuelve el siguiente registro o None si no hay más """
     try:
         return datos.next()
     except:
@@ -46,7 +44,7 @@ def ventas_clientes_mes(archivo_ventas):
                 print(f"\t\tVentas del mes {mes}: {monto}")
                 total_anyo += monto
                 # Siguiente registro
-                #item = leer_datos(ventas_csv)
+                # item = leer_datos(ventas_csv)
                 item = next(ventas_csv, None)
 
             # Final del bucle de año

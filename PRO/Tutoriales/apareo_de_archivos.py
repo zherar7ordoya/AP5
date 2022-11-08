@@ -1,20 +1,15 @@
-# ============================
+# ========================================================================
 # Author:      Gerardo Tordoya
 # Create date: 2022-11-05
-# Description: Apareo
-# ============================
+# Description: Apareo de archivos (recorre un archivo de alumnos y otro de
+#              notas e imprime las notas de cada alumno)
+# ========================================================================
 
-# notas.py: Recorre un archivo de alumnos y otro de notas e imprime
-#           las notas que corresponden a cada alumno
-
-# !/usr/bin/env python
-# encoding: latin1
 import csv
 
 
+# No estoy seguro si es necesario, pero lo dejo por las dudas
 def leer_datos(datos):
-    """ Obtiene el siguiente registro, o devuelve None si llegó al fin
-        del archivo. """
     try:
         return datos.next()
     except:

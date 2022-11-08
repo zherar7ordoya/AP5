@@ -1,8 +1,11 @@
-# =========================================
+# ================================================================
 # Author:      Gerardo Tordoya
 # Create date: 2022-11-05
-# Description: Patrón de diseño Repositorio
-# =========================================
+# Description: Patrón de diseño Repositorio para archivos de texto
+# ================================================================
+
+# NOTA: Estoy esperando la respuesta de Cardacci para saber si
+#       efectivamente este código es correcto.
 
 import csv
 from colorama import Fore, init
