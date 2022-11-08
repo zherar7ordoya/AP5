@@ -23,7 +23,7 @@ def conectarse():
 
 
 # No puedo hacer una función porque necesito heredar a Exception
-class DetalleException(Exception):
+class AlarmaException(Exception):
     def __init__(self, mensaje, *excepcion):
         Exception.__init__(self, mensaje)
         self.excepcion = excepcion
@@ -45,7 +45,7 @@ class ClaseBase:
         try:
             self.conexion = conectarse()
         except Exception as e:
-            raise DetalleException(*e.args)
+            raise AlarmaException(*e.args)
         self._completo = False
 
     def __enter__(self):
@@ -67,12 +67,12 @@ class ClaseBase:
                 else:
                     self.conexion.rollback()
             except Exception as e:
-                raise DetalleException(*e.args)
+                raise AlarmaException(*e.args)
             finally:
                 try:
                     self.conexion.close()
                 except Exception as e:
-                    raise DetalleException(*e.args)
+                    raise AlarmaException(*e.args)
 
 
 # --- MAPPER (CRUD) -----------------------------------------------------------
@@ -88,7 +88,7 @@ class UsuarioMapper(ClaseBase):
                               f'{objeto.comentario}")')
             print(f"ID > {indicador.lastrowid}")
         except Exception as e:
-            raise DetalleException("ERROR AL CREAR EL USUARIO", *e.args)
+            raise AlarmaException("ERROR AL CREAR EL USUARIO", *e.args)
 
     def read(self, usuario_id):
         try:
@@ -98,7 +98,7 @@ class UsuarioMapper(ClaseBase):
                               f'WHERE UsuarioID = {usuario_id}')
             return indicador.fetchone()
         except Exception as e:
-            raise DetalleException("ERROR AL LEER EL USUARIO", *e.args)
+            raise AlarmaException("ERROR AL LEER EL USUARIO", *e.args)
 
     def update(self, objeto):
         try:
@@ -110,8 +110,15 @@ class UsuarioMapper(ClaseBase):
                               f'Domicilio = "{objeto.domicilio}", '
                               f'Comentario = "{objeto.comentario}" '
                               f'WHERE UsuarioID = {objeto.usuario_id}')
+            # No encontré documentación al respecto, pero parece que ni insert,
+            # ni update, ni delete arrojan error si "falló" la operación.
+            # Por lo tanto, rowcount es la forma de saber cuántas filas fueron
+            # afectadas, y a partir de allí, saber si la operación fue exitosa.
+            updated = indicador.rowcount
+            if updated == 0:
+                raise Exception("El usuario no existe")
         except Exception as e:
-            raise DetalleException("ERROR AL ACTUALIZAR EL USUARIO", *e.args)
+            raise AlarmaException("ERROR AL ACTUALIZAR EL USUARIO", *e.args)
 
     def delete(self, usuario_id):
         try:
@@ -119,7 +126,7 @@ class UsuarioMapper(ClaseBase):
             indicador.execute(f'DELETE FROM Usuarios '
                               f'WHERE UsuarioID = {usuario_id}')
         except Exception as e:
-            raise DetalleException("ERROR AL ELIMINAR EL USUARIO", *e.args)
+            raise AlarmaException("ERROR AL ELIMINAR EL USUARIO", *e.args)
 
 
 # --- ENTIDADES ---------------------------------------------------------------
@@ -149,7 +156,7 @@ try:
 
         # Actualizar
         usuario = Usuario("Gerardo", "Tordoya", "Alte. Brown", "Prueba de actualización")
-        usuario.usuario_id = 102
+        usuario.usuario_id = 133
         usuario_store.update(usuario)
         usuario_store.completo()
         print(f"{Fore.GREEN}USUARIO ACTUALIZADO{Fore.RESET}")
@@ -159,5 +166,5 @@ try:
         # usuario_store.completo()
         # print(f"{Fore.GREEN}USUARIO ELIMINADO{Fore.RESET}")
 
-except DetalleException as error:
+except AlarmaException as error:
     print(error)
