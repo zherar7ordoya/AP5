@@ -21,6 +21,8 @@ init()
 def conectarse():
     return sqlite3.connect('BDD.sqlite')
 
+# TODO > ¿Qué hace concretamente AlarmaException? Hay casos en los que se la
+#  usa y otros en los que no. Pero, ¿todas las alarmas se ven en la consola?
 
 # No puedo hacer una función porque necesito heredar a Exception
 class AlarmaException(Exception):
@@ -86,6 +88,13 @@ class UsuarioMapper(ClaseBase):
                               f'{objeto.apellido}", "'
                               f'{objeto.domicilio}", "'
                               f'{objeto.comentario}")')
+
+            # No sé si corresponde esta prueba (en update sí es necesaria)
+            created = indicador.rowcount
+            if created == 0:
+                raise Exception("El usuario no fue creado")
+
+            # Todo salió bien, entonces obtengo el ID del usuario creado
             print(f"ID > {indicador.lastrowid}")
         except Exception as e:
             raise AlarmaException("ERROR AL CREAR EL USUARIO", *e.args)
@@ -125,6 +134,14 @@ class UsuarioMapper(ClaseBase):
             indicador = self.conexion.cursor()
             indicador.execute(f'DELETE FROM Usuarios '
                               f'WHERE UsuarioID = {usuario_id}')
+            deleted = indicador.rowcount
+
+            # No sé si corresponde esta prueba (en update sí es necesaria)
+            if deleted == 0:
+                raise Exception("El usuario no existe")
+
+            # Todo salió bien
+            print("Usuario eliminado")
         except Exception as e:
             raise AlarmaException("ERROR AL ELIMINAR EL USUARIO", *e.args)
 
@@ -158,6 +175,8 @@ try:
         usuario = Usuario("Gerardo", "Tordoya", "Alte. Brown", "Prueba de actualización")
         usuario.usuario_id = 133
         usuario_store.update(usuario)
+
+        # TODO > Estas dos líneas, ¿no pueden ser manejadas desde el mapper?
         usuario_store.completo()
         print(f"{Fore.GREEN}USUARIO ACTUALIZADO{Fore.RESET}")
 
