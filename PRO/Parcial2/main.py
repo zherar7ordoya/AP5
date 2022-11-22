@@ -5,7 +5,6 @@
 # =======================================
 
 
-
 # ******************************************************************************
 # NOTA PARA EL PROFESOR CARDACCI:
 # ------------------------------
@@ -180,9 +179,10 @@ class Articulo:
         self.descripcion = descripcion
         self.stock = stock
 
-    # No lo uso... pero no está demás.
     def __str__(self):
-        return f"{self.codigo} - {self.descripcion} - {self.stock}"
+        return f"Código > {self.codigo} || " \
+               f"Descripción > {self.descripcion} || " \
+               f"Stock > {self.stock}"
 
 
 class Venta:
@@ -193,9 +193,12 @@ class Venta:
         self.sucursal = sucursal
         self.importe = importe
 
-    # No lo uso... pero no está demás.
     def __str__(self):
-        return f"{self.fecha} - {self.codigo} - {self.vendedor} - {self.sucursal} - {self.importe}"
+        return f"Fecha > {self.fecha} || " \
+               f"Código > {self.codigo} || " \
+               f"Vendedor > {self.vendedor} || " \
+               f"Sucursal > {self.sucursal} || " \
+               f"Importe > {self.importe}"
 
 
 # --- CAPA DE NEGOCIO (si esto fuera una arquitectura en capas) ----------------
@@ -216,10 +219,14 @@ class Valida:
         articulo_mapeador = ArticuloMapeador()
         listado = articulo_mapeador.leer(articulo_mapeador.archivo)
 
-        for articulo in listado:
-            if articulo[0] == codigo:
-                return True
+        if any(codigo in lista_anidada for lista_anidada in listado):
+            return True
         return False
+
+        # for articulo in listado:
+        #     if articulo[0] == codigo:
+        #         return True
+        # return False
 
     @staticmethod
     def valida_descripcion(descripcion):
@@ -275,7 +282,7 @@ def obtener_codigo():
         if Valida.valida_codigo(codigo) and not Valida.existe_codigo(codigo):
             return codigo
         else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 números (que no repitan un código ya existente)")
+            print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que no existe)")
 
 
 def obtener_descripcion():
@@ -304,10 +311,13 @@ def alta_articulo():
         print("ALTA DE ARTÍCULO")
         print("================\n")
 
-        articulo = Articulo(obtener_codigo(), obtener_descripcion(), obtener_stock())
+        articulo = Articulo(obtener_codigo(),
+                            obtener_descripcion(),
+                            obtener_stock())
         articulo_mapeador = ArticuloMapeador()
         articulo_mapeador.create(articulo)
 
+        print(f"\nIngresado > {articulo}")
         input("\nOperación completada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
@@ -361,9 +371,12 @@ def modificacion_articulo():
                 print("Error. Debe ingresar un número entero")
 
         print("\nIngrese los nuevos datos del artículo")
-        articulo = Articulo(obtener_articulo(), obtener_descripcion(), obtener_stock())
+        articulo = Articulo(obtener_articulo(),
+                            obtener_descripcion(),
+                            obtener_stock())
         articulo_mapeador.update(articulo, idx)
 
+        print(f"\nModificado > {articulo}")
         input("\nOperación completada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
@@ -384,18 +397,16 @@ def obtener_fecha():
             print("Error. Debe ingresar una fecha válida")
 
 
-# Esto necesito aclararlo: obtener_articulo() y obtener_codigo() hacen lo mismo
-# excepto que obtener_articulo() se usa en las modificaciones (update) ya que
-# verifica que exista el codigo del "registro" a modificar. En cambio,
-# obtener_codigo() se usa en las altas (create) porque verifica que el código a
-# dar de alta no exista (es decir, que no esté repetido).
+# Esto necesito aclararlo:
+#   obtener_articulo() > verifica que SÍ exista el codigo
+#   obtener_codigo()   > verifica que NO exista el codigo
 def obtener_articulo():
     while True:
         codigo = input("Código de artículo (LNNN): ")
         if Valida.valida_codigo(codigo) and Valida.existe_codigo(codigo):
             return codigo
         else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 números (que sean un código ya existente)")
+            print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
 
 
 def obtener_vendedor():
@@ -441,6 +452,7 @@ def alta_venta():
         venta_mapeador = VentaMapeador()
         venta_mapeador.create(venta)
 
+        print(f"\nIngresado > {venta}")
         input("\nOperación completada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
@@ -502,6 +514,7 @@ def modificacion_venta():
 
         venta_mapeador.update(venta, idx)
 
+        print(f"\nModificado > {venta}")
         input("\nOperación completada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
@@ -565,6 +578,24 @@ def ordenar_archivo(archivo):
 # Cardacci la puso en 4to lugar. Para respetar su consigna, el algoritmo se
 # modificó para que ordene por esa cuarta columna (o sea, no es un error).
 def ordenar_lista(lista):
+
+    # Vendedor
+    for idx in range(len(lista)):
+        evaluado = idx
+        for x in range(idx + 1, len(lista)):
+            if lista[evaluado][2] > lista[x][2]:
+                evaluado = x
+        lista[idx], lista[evaluado] = lista[evaluado], lista[idx]
+
+    # Artículo
+    for idx in range(len(lista)):
+        evaluado = idx
+        for x in range(idx + 1, len(lista)):
+            if lista[evaluado][1] > lista[x][1]:
+                evaluado = x
+        lista[idx], lista[evaluado] = lista[evaluado], lista[idx]
+
+    # Sucursal
     for idx in range(len(lista)):
         evaluado = idx
         for x in range(idx + 1, len(lista)):
@@ -597,15 +628,16 @@ def get_descripcion(codigo):
 # Bueno profesor, esta es la estrella de la película. No la busque más, aquí
 # está, con sus while anidados.
 
-def imprimir_reporte(archivo):
+def imprimir_reporte(archivo_csv):
     # Esto hay que explicarlo: el corte de control es una operación tan
     # particular que se hace engorroso (más difícil de entender) si descanso
     # sobre el CRUD hecho para todo lo demás. Opero directamente sobre el
     # archivo justificado por la regla de balance (una complejización debe
     # inyectarse para resolver una complejidad mayor, sino no procede).
-    ventas = open(archivo)
-    ventas_csv = csv.reader(ventas)
-    item = next(ventas_csv, None)
+    archivo = open(archivo_csv)
+    ventas = csv.reader(archivo)
+    item = next(ventas, None)
+
     total_general = 0
 
     # Bucle Total General (condición de salida: ítem es None)
@@ -625,7 +657,7 @@ def imprimir_reporte(archivo):
                 # Bucle Total Vendedor
                 while item and item[3] == sucursal and item[1] == articulo and item[2] == vendedor:
                     total_vendedor += Decimal(item[4])
-                    item = next(ventas_csv, None)
+                    item = next(ventas, None)
 
                 total_articulo += total_vendedor
                 print(f"\t\t{vendedor}:\t{total_vendedor}")
@@ -639,7 +671,7 @@ def imprimir_reporte(archivo):
     print(f"{Fore.GREEN}\n\t\t\t\t\tTOTAL GENERAL: {total_general}{Fore.RESET}")
 
     # Como decían los Looney Tunes: ¡Eso es todo, amigos!
-    ventas.close()
+    archivo.close()
 
 
 # Y esto es lo primero que el usuario ve y así se organiza todo.
