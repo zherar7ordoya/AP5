@@ -22,6 +22,7 @@
 # ******************************************************************************
 
 
+import click
 import csv
 import re
 from colorama import init
@@ -180,9 +181,13 @@ class Articulo:
         self.stock = stock
 
     def __str__(self):
-        return f"Código > {self.codigo} || " \
-               f"Descripción > {self.descripcion} || " \
-               f"Stock > {self.stock}"
+        return """
+                 Código  {}
+            Descripción  {}
+                  Stock  {}"""\
+            .format(self.codigo,
+                    self.descripcion,
+                    self.stock)
 
 
 class Venta:
@@ -194,11 +199,17 @@ class Venta:
         self.importe = importe
 
     def __str__(self):
-        return f"Fecha > {self.fecha} || " \
-               f"Código > {self.codigo} || " \
-               f"Vendedor > {self.vendedor} || " \
-               f"Sucursal > {self.sucursal} || " \
-               f"Importe > {self.importe}"
+        return """
+               Fecha  {}
+              Código  {}
+            Vendedor  {}
+            Sucursal  {}
+             Importe  {}"""\
+            .format(self.fecha,
+                    self.codigo,
+                    self.vendedor,
+                    self.sucursal,
+                    self.importe)
 
 
 # --- CAPA DE NEGOCIO (si esto fuera una arquitectura en capas) ----------------
@@ -315,10 +326,13 @@ def alta_articulo():
                             obtener_descripcion(),
                             obtener_stock())
         articulo_mapeador = ArticuloMapeador()
-        articulo_mapeador.create(articulo)
 
-        print(f"\nIngresado > {articulo}")
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma el alta?"):
+            articulo_mapeador.create(articulo)
+            print(f"\nIngresado > {Fore.YELLOW}{articulo}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
@@ -343,9 +357,12 @@ def baja_articulo():
             except ValueError:
                 print("Error. Debe ingresar un número entero")
 
-        articulo_mapeador.delete(idx)
-
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma la baja?"):
+            articulo_mapeador.delete(idx)
+            print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
@@ -371,13 +388,19 @@ def modificacion_articulo():
                 print("Error. Debe ingresar un número entero")
 
         print("\nIngrese los nuevos datos del artículo")
-        articulo = Articulo(obtener_articulo(),
+
+        # En este caso, no se puede usar obtener_codigo() porque el código
+        # no se puede modificar.
+        articulo = Articulo(listado[idx][0],
                             obtener_descripcion(),
                             obtener_stock())
-        articulo_mapeador.update(articulo, idx)
 
-        print(f"\nModificado > {articulo}")
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma la modificación?"):
+            articulo_mapeador.update(articulo, idx)
+            print(f"\nModificado > {Fore.YELLOW}{articulo}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
@@ -570,16 +593,19 @@ def ordenar_archivo(archivo):
 
 
 # Ordenamiento por Selección (Selection Sort)
-# Hay una línea que hay que aclarar: if lista[evaluado][3] > lista[x][3]
+# Esto lo tengo que aclarar:
+# ¿Por qué tres bucles y así: if lista[evaluado][i] > lista[x][i]?
 # El archivo de ventas está ordenado por fecha, artículo, vendedor, sucursal e
-# importe (en ese orden). Cuando yo presenté este algoritmo la primera vez (en
-# el trabajo propuesto por Cardacci) la primera "columna" era la de los códigos
-# (como usualmente lo es). En este caso, la columna ordenadora (sucursales)
-# Cardacci la puso en 4to lugar. Para respetar su consigna, el algoritmo se
-# modificó para que ordene por esa cuarta columna (o sea, no es un error).
+# importe (en ese orden). Cuando yo presenté este algoritmo la primera vez, la
+# primera "columna" era la de los códigos (como usualmente lo es). En este caso,
+# la columna ordenadora (sucursales) está en la posición 4. Pero el reporte no
+# pide solo ese agrupamiento, sino que también pide agrupar por artículo y
+# vendedor. Entonces, para que el algoritmo funcione, tengo que comparar
+# secuencialmente las columnas 2, 1 y 4 (vendedor, artículo y sucursal), ya que
+# así es el agrupamiento pedido en el reporte.
 def ordenar_lista(lista):
 
-    # Vendedor
+    # Ordeno por vendedor
     for idx in range(len(lista)):
         evaluado = idx
         for x in range(idx + 1, len(lista)):
@@ -587,7 +613,7 @@ def ordenar_lista(lista):
                 evaluado = x
         lista[idx], lista[evaluado] = lista[evaluado], lista[idx]
 
-    # Artículo
+    # Ordeno por artículo
     for idx in range(len(lista)):
         evaluado = idx
         for x in range(idx + 1, len(lista)):
@@ -595,7 +621,7 @@ def ordenar_lista(lista):
                 evaluado = x
         lista[idx], lista[evaluado] = lista[evaluado], lista[idx]
 
-    # Sucursal
+    # Ordeno por sucursal
     for idx in range(len(lista)):
         evaluado = idx
         for x in range(idx + 1, len(lista)):
@@ -663,12 +689,13 @@ def imprimir_reporte(archivo_csv):
                 print(f"\t\t{vendedor}:\t{total_vendedor}")
 
             total_sucursal += total_articulo
-            print(f"{Fore.RED}\t\t\tTotal {get_descripcion(articulo)}: {total_articulo}\n{Fore.RESET}")
+            # Muestro el código porque me desequilibra el reporte si muestro el nombre
+            print(f"{Fore.RED}\t\t\tTotal {articulo}:\t{total_articulo}\n{Fore.RESET}")
 
         total_general += total_sucursal
-        print(f"{Fore.YELLOW}\t\t\t\tTotal {sucursal}: {total_sucursal}{Fore.RESET}")
+        print(f"{Fore.YELLOW}\t\t\t\tTotal {sucursal}:\t{total_sucursal}{Fore.RESET}")
 
-    print(f"{Fore.GREEN}\n\t\t\t\t\tTOTAL GENERAL: {total_general}{Fore.RESET}")
+    print(f"{Fore.GREEN}\n\t\t\t\t\tTOTAL GENERAL:\t{total_general}{Fore.RESET}")
 
     # Como decían los Looney Tunes: ¡Eso es todo, amigos!
     archivo.close()
