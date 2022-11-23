@@ -1,9 +1,19 @@
-# =======================================
-# Author:      Gerardo Tordoya
-# Create date: 2022-11-21
-# Description: Mi Programa en Python v2.0
-# =======================================
+# ========================================
+# Author:       Gerardo Tordoya
+# Create date:  2022-11-22
+# Description:  Mi Programa en Python v2.0
+# ========================================
 
+# TODO > El uso de las comas en el ingreso de los artículos (verificar su efecto)
+# TODO > Unificar los métodos de archivo de ventas en borrado en cascada
+#        (artículos) y corte de control
+# TODO > Redefinir la BEL para que sea más orientado a objetos (valorar
+#        funciones estáticas)
+# TODO > Revisar el tipo ingresado en la "columna" importes (que sea decimal)
+# TODO > Definir el uso concreto de la clase ExceptionCapturada
+# TODO > Si bien falta información, pero es necesario conectar ventas y stock
+#        (como dije, no tengo cómo conectarlas: ni Artículos tiene precio ni
+#        Ventas tiene cantidad de artículos vendidos)
 
 # ******************************************************************************
 # NOTA PARA EL PROFESOR CARDACCI:
@@ -30,6 +40,7 @@ from colorama import Fore
 from consolemenu import *
 from consolemenu.items import *
 from decimal import Decimal
+
 
 # Esto es lo más que se puede lograr con Colorama en VS: que init() filtre las
 # secuencias de escape ANSI y las reemplace por una cadena vacía.
@@ -93,7 +104,9 @@ class ArticuloMapeador(AccesoDatos):
     def create(self, objeto):
         try:
             listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo, objeto.descripcion, objeto.stock]
+            nuevo = [objeto.codigo,
+                     objeto.descripcion,
+                     objeto.stock]
             listado.append(nuevo)
             self.escribir(self.archivo, listado)
         except Exception as e:
@@ -111,7 +124,9 @@ class ArticuloMapeador(AccesoDatos):
     def update(self, objeto, idx):
         try:
             listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo, objeto.descripcion, objeto.stock]
+            nuevo = [objeto.codigo,
+                     objeto.descripcion,
+                     objeto.stock]
             listado[idx] = nuevo
             self.escribir(self.archivo, listado)
         except Exception as e:
@@ -121,8 +136,42 @@ class ArticuloMapeador(AccesoDatos):
     def delete(self, idx):
         try:
             listado = self.leer(self.archivo)
+            
+            # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
+            # Esto tengo que explicarlo:
+            # Supongamos que borro un artículo e inmediatamente después pido el
+            # reporte de ventas (corte de control): se producirá una excepción
+            # ya que ventas remite a un artículo que no existe.
+            # Ventas es dependiente de Artículos y por eso se hace necesario un
+            # borrado en cascada.
+            #
+            # Sí, pendiente. Yo había hecho salvedad cuando programé el corte de
+            # control porque las circunstancias lo ameritaban. Me dí cuenta de
+            # que estaba obligado al borrado en cascada luego, y esto ya
+            # ameritaba que me base en el CRUD (porque ya estaba repitiendo
+            # código "excepcional"). ¿Por qué no lo hice? Porque esto es un 
+            # examen y el tiempo se me estaba acabando (no iba a llegar a
+            # probarlo, por ejemplo). Así que queda pendiente (aunque funciona).
+            codigo = listado[idx][0]
+            archivo = open("ventas.csv")
+            ventas = csv.reader(archivo)
+            reemplazo = []
+            item = next(ventas, None)
+
+            while item:
+                if item[1] != codigo:
+                    reemplazo.append(item)
+                item = next(ventas, None)
+
+            with open("ventas.csv", 'w', newline='\n') as dat:
+                csv.writer(dat).writerows(reemplazo)
+
+            archivo.close()
+
+            # Ahora sí puedo borrar el artículo
             del listado[idx]
             self.escribir(self.archivo, listado)
+
         except Exception as e:
             raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
 
@@ -138,7 +187,11 @@ class VentaMapeador(AccesoDatos):
     def create(self, objeto):
         try:
             listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha, objeto.codigo, objeto.vendedor, objeto.sucursal, objeto.importe]
+            nuevo = [objeto.fecha,
+                     objeto.codigo,
+                     objeto.vendedor,
+                     objeto.sucursal,
+                     objeto.importe]
             listado.append(nuevo)
             self.escribir(self.archivo, listado)
         except Exception as e:
@@ -156,7 +209,11 @@ class VentaMapeador(AccesoDatos):
     def update(self, objeto, cod):
         try:
             listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha, objeto.codigo, objeto.vendedor, objeto.sucursal, objeto.importe]
+            nuevo = [objeto.fecha,
+                     objeto.codigo,
+                     objeto.vendedor,
+                     objeto.sucursal,
+                     objeto.importe]
             listado[cod] = nuevo
             self.escribir(self.archivo, listado)
         except Exception as e:
@@ -234,11 +291,6 @@ class Valida:
             return True
         return False
 
-        # for articulo in listado:
-        #     if articulo[0] == codigo:
-        #         return True
-        # return False
-
     @staticmethod
     def valida_descripcion(descripcion):
         if re.match("([A-Z]\w{3,})", descripcion):
@@ -286,7 +338,8 @@ class Valida:
 #   -)  obtener_articulo() se usa en las modificaciones (update), ya que
 #       verifica que exista el "registro" (código) a modificar.
 #   -)  En cambio, obtener_codigo() se utiliza en las altas (create) porque
-#       revisa que el código a dar de alta no exista (no esté repetido).
+#       revisa que el código a dar de alta no exista (que no esté repetido).
+
 def obtener_codigo():
     while True:
         codigo = input("Código (LNNN): ")
@@ -357,6 +410,8 @@ def baja_articulo():
             except ValueError:
                 print("Error. Debe ingresar un número entero")
 
+        print(f"\n{Fore.RED}ADVERTENCIA: Esta operación también eliminará los registros asociados de Ventas{Fore.RESET}")
+
         if click.confirm(f"\n¿Confirma la baja?"):
             articulo_mapeador.delete(idx)
             print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
@@ -390,7 +445,8 @@ def modificacion_articulo():
         print("\nIngrese los nuevos datos del artículo")
 
         # En este caso, no se puede usar obtener_codigo() porque el código
-        # no se puede modificar.
+        # no se puede modificar, ya que es la "clave primaria" (siendo los datos
+        # de ventas la "clave foránea"). Es decir, Ventas depende de Artículos.
         articulo = Articulo(listado[idx][0],
                             obtener_descripcion(),
                             obtener_stock())
@@ -421,8 +477,8 @@ def obtener_fecha():
 
 
 # Esto necesito aclararlo:
-#   obtener_articulo() > verifica que SÍ exista el codigo
-#   obtener_codigo()   > verifica que NO exista el codigo
+#   obtener_articulo() > verifica que SÍ exista el código
+#   obtener_codigo()   > verifica que NO exista el código
 def obtener_articulo():
     while True:
         codigo = input("Código de artículo (LNNN): ")
@@ -473,10 +529,13 @@ def alta_venta():
                       obtener_sucursal(),
                       obtener_importe())
         venta_mapeador = VentaMapeador()
-        venta_mapeador.create(venta)
 
-        print(f"\nIngresado > {venta}")
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma el alta?"):
+            venta_mapeador.create(venta)
+            print(f"\nAgregado > {Fore.YELLOW}{venta}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
@@ -501,9 +560,12 @@ def baja_venta():
             except ValueError:
                 print("Error. Debe ingresar un número entero")
 
-        venta_mapeador.delete(idx)
-
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma la baja?"):
+            venta_mapeador.delete(idx)
+            print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
@@ -535,16 +597,19 @@ def modificacion_venta():
                       obtener_sucursal(),
                       obtener_importe())
 
-        venta_mapeador.update(venta, idx)
-
-        print(f"\nModificado > {venta}")
-        input("\nOperación completada (presione una tecla para continuar)")
+        if click.confirm(f"\n¿Confirma la modificación?"):
+            venta_mapeador.update(venta, idx)
+            print(f"\nModificado > {Fore.YELLOW}{venta}{Fore.RESET}")
+            input("\nOperación completada (presione una tecla para continuar)")
+        else:
+            input("\nOperación cancelada (presione una tecla para continuar)")
 
     except ExceptionCapturada as e:
         print(e)
 
 
 # LISTADOS Y REPORTES (CONSULTAS) **********************************************
+
 def listado_articulos():
     try:
         print("LISTADO DE ARTÍCULOS")
@@ -600,7 +665,7 @@ def ordenar_archivo(archivo):
 # primera "columna" era la de los códigos (como usualmente lo es). En este caso,
 # la columna ordenadora (sucursales) está en la posición 4. Pero el reporte no
 # pide solo ese agrupamiento, sino que también pide agrupar por artículo y
-# vendedor. Entonces, para que el algoritmo funcione, tengo que comparar
+# vendedor. Entonces, para que el algoritmo sea eficaz, tengo que comparar
 # secuencialmente las columnas 2, 1 y 4 (vendedor, artículo y sucursal), ya que
 # así es el agrupamiento pedido en el reporte.
 def ordenar_lista(lista):
@@ -657,8 +722,8 @@ def get_descripcion(codigo):
 def imprimir_reporte(archivo_csv):
     # Esto hay que explicarlo: el corte de control es una operación tan
     # particular que se hace engorroso (más difícil de entender) si descanso
-    # sobre el CRUD hecho para todo lo demás. Opero directamente sobre el
-    # archivo justificado por la regla de balance (una complejización debe
+    # sobre el CRUD hecho para lo demás. Opero directamente sobre el archivo
+    # justificado por la regla de balance (una complejización debe solo debe
     # inyectarse para resolver una complejidad mayor, sino no procede).
     archivo = open(archivo_csv)
     ventas = csv.reader(archivo)
@@ -697,11 +762,11 @@ def imprimir_reporte(archivo_csv):
 
     print(f"{Fore.GREEN}\n\t\t\t\t\tTOTAL GENERAL:\t{total_general}{Fore.RESET}")
 
-    # Como decían los Looney Tunes: ¡Eso es todo, amigos!
+    """ Como decían los Looney Tunes: ¡Eso es todo, amigos! """
     archivo.close()
 
 
-# Y esto es lo primero que el usuario ve y así se organiza todo.
+# Y esto es lo primero que el usuario ve y así se organiza lo demás.
 def reporte_sucursales():
     try:
         print("REPORTE DE SUCURSALES")
@@ -781,3 +846,10 @@ def main():
 # El punto de entrada en Python es tan simple que asusta...
 if __name__ == "__main__":
     main()
+
+
+# --- NOTA PARA EL PROGRAMADOR QUE VAYA A EDITAR ESTO --------------------------
+# No uses Visual Studio ni VSCode.
+# Visual Studio tiene problemas para entender las indentaciones de Python.
+# VSCode tiene fugas de memoria bastante feas con algunas librerías de Python.
+# Apostá por PyCharm.

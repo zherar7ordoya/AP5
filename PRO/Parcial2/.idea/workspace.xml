@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d03a922b-d96b-4049-be9c-d7882f66b72d" name="Changes" comment="" />
+    <list default="true" id="ad2de526-bb92-4a35-bc5d-daa5670d0fa0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,7 +16,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HozTGQChjTqvlXhaMo7vPsWa87" />
+  <component name="ProjectId" id="2HvbrrbWCHvQshj6dq8sC5TkHHW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,34 +25,19 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Documents/AP5/PRO/Parcial2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d03a922b-d96b-4049-be9c-d7882f66b72d" name="Changes" comment="" />
-      <created>1668966231035</created>
+      <changelist id="ad2de526-bb92-4a35-bc5d-daa5670d0fa0" name="Changes" comment="" />
+      <created>1669168714184</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668966231035</updated>
-      <workItem from="1668967484901" duration="16622000" />
-      <workItem from="1668997016922" duration="12595000" />
-      <workItem from="1669042840618" duration="9678000" />
-      <workItem from="1669080101891" duration="3493000" />
-      <workItem from="1669125345476" duration="11165000" />
+      <updated>1669168714184</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -64,8 +49,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Parcial2$main.coverage" NAME="main Coverage Results" MODIFIED="1669141796569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
