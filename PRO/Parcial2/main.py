@@ -88,85 +88,8 @@ class AccesoDatos:
             raise ExceptionCapturada("ERROR AL CERRAR EL ARCHIVO", *e.args)
 
 
-# --- MAPPER (si esto fuera una arquitectura en capas) -------------------------
 
 
-# MAPPER DE LA ENTIDAD VENTA
-
-class VentaMapeador(AccesoDatos):
-
-    def __init__(self):
-        self.archivo = 'ventas.csv'
-
-    # *** ALTAS ***
-    def create(self, objeto):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha,
-                     objeto.codigo,
-                     objeto.vendedor,
-                     objeto.sucursal,
-                     objeto.importe]
-            listado.append(nuevo)
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
-
-    # *** CONSULTAS ***
-    def read(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            return listado[idx]
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
-
-    # *** MODIFICACIONES ***
-    def update(self, objeto, cod):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha,
-                     objeto.codigo,
-                     objeto.vendedor,
-                     objeto.sucursal,
-                     objeto.importe]
-            listado[cod] = nuevo
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
-
-    # *** BAJAS ***
-    def delete(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            del listado[idx]
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
-
-
-# --- ENTIDADES (si esto fuera una arquitectura en capas) ----------------------
-
-
-class Venta:
-    def __init__(self, fecha, codigo, vendedor, sucursal, importe):
-        self.fecha = fecha
-        self.codigo = codigo
-        self.vendedor = vendedor
-        self.sucursal = sucursal
-        self.importe = importe
-
-    def __str__(self):
-        return """
-               Fecha  {}
-              Código  {}
-            Vendedor  {}
-            Sucursal  {}
-             Importe  {}"""\
-            .format(self.fecha,
-                    self.codigo,
-                    self.vendedor,
-                    self.sucursal,
-                    self.importe)
 
 
 # --- CAPA DE NEGOCIO (si esto fuera una arquitectura en capas) ----------------
@@ -228,23 +151,7 @@ class Valida:
         return False
 
 
-# ASISTENTES DE ABM DE ARTÍCULOS ***********************************************
-# Solo una cosa voy a decir de estas funciones. Son validadoras, y mientras no
-# den por bueno el análisis, no salen del bucle. Y es por eso que no vi la
-# necesidad de ningún error-handler.
-#
-# Esto necesito aclararlo: obtener_articulo() y obtener_codigo() hacen lo mismo
-# excepto que:
-#   -)  obtener_articulo() se usa en las modificaciones (update), ya que
-#       verifica que exista el "registro" (código) a modificar.
-#   -)  En cambio, obtener_codigo() se utiliza en las altas (create) porque
-#       revisa que el código a dar de alta no exista (que no esté repetido).
-
-
-# MAPPER DE LA ENTIDAD ARTÍCULO
-# La estrategia del mapeador, en líneas generales, es siempre la misma: leer,
-# operar, escribir. Leer y escribir están en la clase base, así que me
-# despreocupo de eso y me concentro en las operaciones CRUD en sí.
+# ||||||||||||||||||||||||||||||||| ARTICULOS |||||||||||||||||||||||||||||||||
 
 class ArticuloMPP(AccesoDatos):
 
@@ -373,8 +280,6 @@ class ArticuloBLL(ArticuloMPP):
         else:
             input("\nOperación cancelada (presione una tecla para continuar)")
 
-
-
     # Nuevo
     def modificacion(self):
         print("MODIFICACIÓN DE ARTÍCULO\n========================\n")
@@ -391,7 +296,6 @@ class ArticuloBLL(ArticuloMPP):
             except ValueError:
                 print("Error. Debe ingresar un número entero")
 
-
         codigo = listado[idx][0]
         descripcion = self.obtener_descripcion()
         stock = self.obtener_stock()
@@ -403,13 +307,6 @@ class ArticuloBLL(ArticuloMPP):
             input("\nOperación completada (presione una tecla para continuar)")
         else:
             input("\nOperación cancelada (presione una tecla para continuar)")
-
-
-
-
-
-
-
 
     # quedó flotando  //////////////////////////////////////////////////////////
     def consulta(self):
@@ -430,7 +327,6 @@ class ArticuloBLL(ArticuloMPP):
                 print("El código ingresado no es válido.")
     # //////////////////////////////////////////////////////////////////////////
 
-
     # Nuevo
     def obtener_codigo(self):
         while True:
@@ -443,8 +339,6 @@ class ArticuloBLL(ArticuloMPP):
             else:
                 print("El código ingresado no es válido.")
 
-
-
     #Nuevo
     def obtener_descripcion(self):
         while True:
@@ -454,7 +348,6 @@ class ArticuloBLL(ArticuloMPP):
             else:
                 print("La descripción ingresada no es válida. Debe ingresar 1 letra mayúscula + 3 letras o más")
 
-
     # Nuevo
     def obtener_stock(self):
         while True:
@@ -463,9 +356,6 @@ class ArticuloBLL(ArticuloMPP):
                 return stock
             else:
                 print("El stock ingresado no es válido. Debe ingresar un número mayor a 0")
-
-
-
 
 
 class ArticuloBEL:
@@ -484,164 +374,220 @@ class ArticuloBEL:
                     self.stock)
 
 
+# ||||||||||||||||||||||||||||||||||| VENTAS |||||||||||||||||||||||||||||||||||
+
+class VentaMPP(AccesoDatos):
+
+    def __init__(self):
+        self.archivo = 'ventas.csv'
+
+    # *** ALTAS ***
+    def create(self, objeto):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.fecha,
+                     objeto.codigo,
+                     objeto.vendedor,
+                     objeto.sucursal,
+                     objeto.importe]
+            listado.append(nuevo)
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
+
+    # *** CONSULTAS ***
+    def read(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+            return listado[idx]
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL LEER", *e.args)
+
+    # *** MODIFICACIONES ***
+    def update(self, objeto, cod):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.fecha,
+                     objeto.codigo,
+                     objeto.vendedor,
+                     objeto.sucursal,
+                     objeto.importe]
+            listado[cod] = nuevo
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
+
+    # *** BAJAS ***
+    def delete(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+            del listado[idx]
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
+
+
+class VentaBEL:
+    def __init__(self, fecha, codigo, vendedor, sucursal, importe):
+        self.fecha = fecha
+        self.codigo = codigo
+        self.vendedor = vendedor
+        self.sucursal = sucursal
+        self.importe = importe
+
+    def __str__(self):
+        return """
+               Fecha  {}
+              Código  {}
+            Vendedor  {}
+            Sucursal  {}
+             Importe  {}"""\
+            .format(self.fecha,
+                    self.codigo,
+                    self.vendedor,
+                    self.sucursal,
+                    self.importe)
 
 
 
 
+class VentaBLL:
+
+    def alta(self):
+        try:
+            print("ALTA DE VENTA\n=============\n")
+
+            venta = VentaBEL(self.obtener_fecha(),
+                             self.obtener_articulo(),
+                             self.obtener_vendedor(),
+                             self.obtener_sucursal(),
+                             self.obtener_importe())
+            venta_mpp = VentaMPP()
+
+            if click.confirm(f"\n¿Confirma el alta?"):
+                venta_mpp.create(venta)
+                print(f"\nAgregado > {Fore.YELLOW}{venta}{Fore.RESET}")
+                input("\nOperación completada (presione una tecla para continuar)")
+            else:
+                input("\nOperación cancelada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
 
 
-# ABM DE ARTÍCULOS *************************************************************
-# La idea era que estas funciones quedaran cortitas y fáciles de leer.
+    def baja(self):
+        try:
+            print("BAJA DE VENTA\n=============\n")
+
+            venta_mpp = VentaMPP()
+
+            listado = venta_mpp.leer(venta_mpp.archivo)
+            for idx, x in enumerate(listado):
+                print(idx, x)
+
+            # Este es un caso especial. Exception no abarca a ValueError.
+            while True:
+                try:
+                    idx = int(input("\nIngrese el número de registro de la venta a eliminar: "))
+                    break
+                except ValueError:
+                    print("Error. Debe ingresar un número entero")
+
+            if click.confirm(f"\n¿Confirma la baja?"):
+                venta_mpp.delete(idx)
+                print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
+                input("\nOperación completada (presione una tecla para continuar)")
+            else:
+                input("\nOperación cancelada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
 
 
+    def modificacion(self):
+        try:
+            print("MODIFICACIÓN DE VENTA\n=====================\n")
+
+            venta_mpp = VentaMPP()
+            listado = venta_mpp.leer(venta_mpp.archivo)
+
+            for idx, x in enumerate(listado):
+                print(idx, x)
+
+            # Este es un caso especial. Exception no abarca a ValueError.
+            while True:
+                try:
+                    idx = int(input("\nIngrese el número de registro de la venta a modificar: "))
+                    break
+                except ValueError:
+                    print("Error. Debe ingresar un número entero")
+
+            print("\nIngrese los nuevos datos de la venta")
+            venta = VentaBEL(self.obtener_fecha(),
+                             self.obtener_articulo(),
+                             self.obtener_vendedor(),
+                             self.obtener_sucursal(),
+                             self.obtener_importe())
+
+            if click.confirm(f"\n¿Confirma la modificación?"):
+                venta_mpp.update(venta, idx)
+                print(f"\nModificado > {Fore.YELLOW}{venta}{Fore.RESET}")
+                input("\nOperación completada (presione una tecla para continuar)")
+            else:
+                input("\nOperación cancelada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
 
 
-
-
-# ASISTENTES DE ABM DE VENTAS **************************************************
-# Solo una cosa voy a decir de estas funciones. Son validadoras, y mientras no
-# den por bueno el análisis, no salen del bucle. Y es por eso que no vi la
-# necesidad de ningún error-handler.
-
-def obtener_fecha():
-    while True:
-        fecha = input("Fecha (dd/mm/aaaa): ")
-        if Valida.valida_fecha(fecha):
-            return fecha
-        else:
-            print("Error. Debe ingresar una fecha válida")
-
-
-# Esto necesito aclararlo:
-#   obtener_articulo() > verifica que SÍ exista el código
-#   obtener_codigo()   > verifica que NO exista el código
-def obtener_articulo():
-    while True:
-        codigo = input("Código de artículo (LNNN): ")
-        if Valida.valida_codigo(codigo) and Valida.existe_codigo(codigo):
-            return codigo
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
-
-
-def obtener_vendedor():
-    while True:
-        vendedor = input("Vendedor: ")
-        if Valida.valida_vendedor(vendedor):
-            return vendedor
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 letras o más")
-
-
-def obtener_sucursal():
-    while True:
-        sucursal = input("Sucursal (LLLNNN): ")
-        if Valida.valida_sucursal(sucursal):
-            return sucursal
-        else:
-            print("Error. Debe ingresar 3 letras mayúsculas + 3 números")
-
-
-def obtener_importe():
-    while True:
-        importe = input("Importe: ")
-        if Valida.valida_importe(importe):
-            return importe
-        else:
-            print("Error. Debe ingresar un importe válido (NN.DD)")
-
-
-# ABM DE VENTAS ****************************************************************
-# La idea era que estas funciones quedaran cortitas y fáciles de leer.
-
-def alta_venta():
-    try:
-        print("ALTA DE VENTA")
-        print("=============\n")
-
-        venta = Venta(obtener_fecha(),
-                      obtener_articulo(),
-                      obtener_vendedor(),
-                      obtener_sucursal(),
-                      obtener_importe())
-        venta_mapeador = VentaMapeador()
-
-        if click.confirm(f"\n¿Confirma el alta?"):
-            venta_mapeador.create(venta)
-            print(f"\nAgregado > {Fore.YELLOW}{venta}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
-
-    except ExceptionCapturada as e:
-        print(e)
-
-
-def baja_venta():
-    try:
-        print("BAJA DE VENTA")
-        print("=============\n")
-
-        venta_mapeador = VentaMapeador()
-
-        listado = venta_mapeador.leer(venta_mapeador.archivo)
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        # Este es un caso especial. Exception no abarca a ValueError.
+    def obtener_fecha(self):
         while True:
-            try:
-                idx = int(input("\nIngrese el número de registro de la venta a eliminar: "))
-                break
-            except ValueError:
-                print("Error. Debe ingresar un número entero")
-
-        if click.confirm(f"\n¿Confirma la baja?"):
-            venta_mapeador.delete(idx)
-            print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
-
-    except ExceptionCapturada as e:
-        print(e)
+            fecha = input("Fecha (dd/mm/aaaa): ")
+            if Valida.valida_fecha(fecha):
+                return fecha
+            else:
+                print("Error. Debe ingresar una fecha válida")
 
 
-def modificacion_venta():
-    try:
-        print("MODIFICACIÓN DE VENTA")
-        print("=====================\n")
-
-        venta_mapeador = VentaMapeador()
-        listado = venta_mapeador.leer(venta_mapeador.archivo)
-
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        # Este es un caso especial. Exception no abarca a ValueError.
+    # Esto necesito aclararlo:
+    #   obtener_articulo() > verifica que SÍ exista el código
+    #   obtener_codigo()   > verifica que NO exista el código
+    def obtener_articulo(self):
         while True:
-            try:
-                idx = int(input("\nIngrese el número de registro de la venta a modificar: "))
-                break
-            except ValueError:
-                print("Error. Debe ingresar un número entero")
+            codigo = input("Código de artículo (LNNN): ")
+            if Valida.valida_codigo(codigo) and Valida.existe_codigo(codigo):
+                return codigo
+            else:
+                print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
 
-        print("\nIngrese los nuevos datos de la venta")
-        venta = Venta(obtener_fecha(),
-                      obtener_articulo(),
-                      obtener_vendedor(),
-                      obtener_sucursal(),
-                      obtener_importe())
 
-        if click.confirm(f"\n¿Confirma la modificación?"):
-            venta_mapeador.update(venta, idx)
-            print(f"\nModificado > {Fore.YELLOW}{venta}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
+    def obtener_vendedor(self):
+        while True:
+            vendedor = input("Vendedor: ")
+            if Valida.valida_vendedor(vendedor):
+                return vendedor
+            else:
+                print("Error. Debe ingresar 1 letra mayúscula + 3 letras o más")
 
-    except ExceptionCapturada as e:
-        print(e)
+
+    def obtener_sucursal(self):
+        while True:
+            sucursal = input("Sucursal (LLLNNN): ")
+            if Valida.valida_sucursal(sucursal):
+                return sucursal
+            else:
+                print("Error. Debe ingresar 3 letras mayúsculas + 3 números")
+
+
+    def obtener_importe(self):
+        while True:
+            importe = input("Importe: ")
+            if Valida.valida_importe(importe):
+                return importe
+            else:
+                print("Error. Debe ingresar un importe válido (NN.DD)")
+
+
 
 
 # LISTADOS Y REPORTES (CONSULTAS) **********************************************
@@ -668,7 +614,7 @@ def listado_ventas():
         print("LISTADO DE VENTAS")
         print("=================\n")
 
-        venta_mapeador = VentaMapeador()
+        venta_mapeador = VentaMPP()
         listado = venta_mapeador.leer(venta_mapeador.archivo)
 
         for idx, x in enumerate(listado):
@@ -808,7 +754,7 @@ def reporte_sucursales():
         print("REPORTE DE SUCURSALES")
         print("=====================\n")
 
-        venta_mapeador = VentaMapeador()
+        venta_mapeador = VentaMPP()
         ordenar_archivo(venta_mapeador.archivo)
         imprimir_reporte(venta_mapeador.archivo)
 
@@ -845,12 +791,15 @@ def main():
     submenu_articulos.append_item(FunctionItem("Modificación de artículo",
                                                articulo.modificacion))
 
+    venta = VentaBLL()
     submenu_ventas.append_item(FunctionItem("Alta de venta",
-                                            alta_venta))
+                                            venta.alta))
     submenu_ventas.append_item(FunctionItem("Baja de venta",
-                                            baja_venta))
+                                            venta.baja))
     submenu_ventas.append_item(FunctionItem("Modificación de venta",
-                                            modificacion_venta))
+                                            venta.modificacion))
+
+
     submenu_listados.append_item(FunctionItem("Listado de Artículos",
                                               listado_articulos))
     submenu_listados.append_item(FunctionItem("Listado de Ventas",
