@@ -90,91 +90,6 @@ class AccesoDatos:
 
 # --- MAPPER (si esto fuera una arquitectura en capas) -------------------------
 
-# MAPPER DE LA ENTIDAD ARTÍCULO
-# La estrategia del mapeador, en líneas generales, es siempre la misma: leer,
-# operar, escribir. Leer y escribir están en la clase base, así que me
-# despreocupo de eso y me concentro en las operaciones CRUD en sí.
-
-class ArticuloMapeador(AccesoDatos):
-
-    def __init__(self):
-        self.archivo = 'articulos.csv'
-
-    # *** ALTAS ***
-    def create(self, objeto):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo,
-                     objeto.descripcion,
-                     objeto.stock]
-            listado.append(nuevo)
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
-
-    # *** CONSULTAS ***
-    def read(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            return listado[idx]
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
-
-    # *** MODIFICACIONES ***
-    def update(self, objeto, idx):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo,
-                     objeto.descripcion,
-                     objeto.stock]
-            listado[idx] = nuevo
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
-
-    # *** BAJAS ***
-    def delete(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            
-            # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
-            # Esto tengo que explicarlo:
-            # Supongamos que borro un artículo e inmediatamente después pido el
-            # reporte de ventas (corte de control): se producirá una excepción
-            # ya que ventas remite a un artículo que no existe.
-            # Ventas es dependiente de Artículos y por eso se hace necesario un
-            # borrado en cascada.
-            #
-            # Sí, pendiente. Yo había hecho salvedad cuando programé el corte de
-            # control porque las circunstancias lo ameritaban. Me dí cuenta de
-            # que estaba obligado al borrado en cascada luego, y esto ya
-            # ameritaba que me base en el CRUD (porque ya estaba repitiendo
-            # código "excepcional"). ¿Por qué no lo hice? Porque esto es un 
-            # examen y el tiempo se me estaba acabando (no iba a llegar a
-            # probarlo, por ejemplo). Así que queda pendiente (aunque funciona).
-            codigo = listado[idx][0]
-            archivo = open("ventas.csv")
-            ventas = csv.reader(archivo)
-            reemplazo = []
-            item = next(ventas, None)
-
-            while item:
-                if item[1] != codigo:
-                    reemplazo.append(item)
-                item = next(ventas, None)
-
-            with open("ventas.csv", 'w', newline='\n') as dat:
-                csv.writer(dat).writerows(reemplazo)
-
-            archivo.close()
-
-            # Ahora sí puedo borrar el artículo
-            del listado[idx]
-            self.escribir(self.archivo, listado)
-
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
-
 
 # MAPPER DE LA ENTIDAD VENTA
 
@@ -231,21 +146,6 @@ class VentaMapeador(AccesoDatos):
 
 # --- ENTIDADES (si esto fuera una arquitectura en capas) ----------------------
 
-class Articulo:
-    def __init__(self, codigo, descripcion, stock):
-        self.codigo = codigo
-        self.descripcion = descripcion
-        self.stock = stock
-
-    def __str__(self):
-        return """
-                 Código  {}
-            Descripción  {}
-                  Stock  {}"""\
-            .format(self.codigo,
-                    self.descripcion,
-                    self.stock)
-
 
 class Venta:
     def __init__(self, fecha, codigo, vendedor, sucursal, importe):
@@ -284,7 +184,7 @@ class Valida:
 
     @staticmethod
     def existe_codigo(codigo):
-        articulo_mapeador = ArticuloMapeador()
+        articulo_mapeador = ArticuloBLL()
         listado = articulo_mapeador.leer(articulo_mapeador.archivo)
 
         if any(codigo in lista_anidada for lista_anidada in listado):
@@ -340,69 +240,123 @@ class Valida:
 #   -)  En cambio, obtener_codigo() se utiliza en las altas (create) porque
 #       revisa que el código a dar de alta no exista (que no esté repetido).
 
-def obtener_codigo():
-    while True:
-        codigo = input("Código (LNNN): ")
-        if Valida.valida_codigo(codigo) and not Valida.existe_codigo(codigo):
-            return codigo
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que no existe)")
+
+# MAPPER DE LA ENTIDAD ARTÍCULO
+# La estrategia del mapeador, en líneas generales, es siempre la misma: leer,
+# operar, escribir. Leer y escribir están en la clase base, así que me
+# despreocupo de eso y me concentro en las operaciones CRUD en sí.
+
+class ArticuloMPP(AccesoDatos):
+
+    def __init__(self):
+        self.archivo = 'articulos.csv'
+
+    # *** ALTAS ***
+    def create(self, objeto):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.codigo,
+                     objeto.descripcion,
+                     objeto.stock]
+            listado.append(nuevo)
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
+
+    # *** CONSULTAS ***
+    def read(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+            return listado[idx]
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL LEER", *e.args)
+
+    # *** MODIFICACIONES ***
+    def update(self, objeto, idx):
+        try:
+            listado = self.leer(self.archivo)
+            nuevo = [objeto.codigo,
+                     objeto.descripcion,
+                     objeto.stock]
+            listado[idx] = nuevo
+            self.escribir(self.archivo, listado)
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
+
+    # *** BAJAS ***
+    def delete(self, idx):
+        try:
+            listado = self.leer(self.archivo)
+
+            # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
+            # Esto tengo que explicarlo:
+            # Supongamos que borro un artículo e inmediatamente después pido el
+            # reporte de ventas (corte de control): se producirá una excepción
+            # ya que ventas remite a un artículo que no existe.
+            # Ventas es dependiente de Artículos y por eso se hace necesario un
+            # borrado en cascada.
+            #
+            # Sí, pendiente. Yo había hecho salvedad cuando programé el corte de
+            # control porque las circunstancias lo ameritaban. Me dí cuenta de
+            # que estaba obligado al borrado en cascada luego, y esto ya
+            # ameritaba que me base en el CRUD (porque ya estaba repitiendo
+            # código "excepcional"). ¿Por qué no lo hice? Porque esto es un
+            # examen y el tiempo se me estaba acabando (no iba a llegar a
+            # probarlo, por ejemplo). Así que queda pendiente (aunque funciona).
+            codigo = listado[idx][0]
+            archivo = open("ventas.csv")
+            ventas = csv.reader(archivo)
+            reemplazo = []
+            item = next(ventas, None)
+
+            while item:
+                if item[1] != codigo:
+                    reemplazo.append(item)
+                item = next(ventas, None)
+
+            with open("ventas.csv", 'w', newline='\n') as dat:
+                csv.writer(dat).writerows(reemplazo)
+
+            archivo.close()
+
+            # Ahora sí puedo borrar el artículo
+            del listado[idx]
+            self.escribir(self.archivo, listado)
+
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
 
 
-def obtener_descripcion():
-    while True:
-        descripcion = input("Descripción: ")
-        if Valida.valida_descripcion(descripcion):
-            return descripcion
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 letras o más")
+class ArticuloBLL(ArticuloMPP):
 
+    # Nuevo
+    def alta(self):
+        try:
+            print("ALTA DE ARTÍCULO\n================\n")
+            codigo = self.obtener_codigo()
+            descripcion = self.obtener_descripcion()
+            stock = self.obtener_stock()
+            articulo = ArticuloBEL(codigo, descripcion, stock)
+            articulo_mpp = ArticuloMPP()
 
-def obtener_stock():
-    while True:
-        stock = input("Stock (N): ")
-        if Valida.valida_stock(stock):
-            return stock
-        else:
-            print("Error. Debe ingresar 1 número mayor a 0")
+            if click.confirm(f"\n¿Confirma el alta?"):
+                articulo_mpp.create(articulo)
+                print(f"\nIngresado > {Fore.YELLOW}{articulo}{Fore.RESET}")
+                input("\nOperación completada (presione una tecla para continuar)")
+            else:
+                input("\nOperación cancelada (presione una tecla para continuar)")
+        except Exception as e:
+            raise ExceptionCapturada("ERROR AL DAR DE ALTA", *e.args)
 
-
-# ABM DE ARTÍCULOS *************************************************************
-# La idea era que estas funciones quedaran cortitas y fáciles de leer.
-
-def alta_articulo():
-    try:
-        print("ALTA DE ARTÍCULO")
-        print("================\n")
-
-        articulo = Articulo(obtener_codigo(),
-                            obtener_descripcion(),
-                            obtener_stock())
-        articulo_mapeador = ArticuloMapeador()
-
-        if click.confirm(f"\n¿Confirma el alta?"):
-            articulo_mapeador.create(articulo)
-            print(f"\nIngresado > {Fore.YELLOW}{articulo}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
-
-    except ExceptionCapturada as e:
-        print(e)
-
-
-def baja_articulo():
-    try:
-        print("BAJA DE ARTÍCULO")
-        print("================\n")
-
-        articulo_mapeador = ArticuloMapeador()
-        listado = articulo_mapeador.leer(articulo_mapeador.archivo)
+    # Nuevo
+    def baja(self):
+        print("BAJA DE ARTÍCULO\n================\n")
+        articulo_mpp = ArticuloMPP()
+        listado = articulo_mpp.leer(articulo_mpp.archivo)
 
         for idx, x in enumerate(listado):
             print(idx, x)
 
-        # Este es un caso especial. Exception no abarca a ValueError.
         while True:
             try:
                 idx = int(input("\nIngrese el número de registro del artículo a eliminar: "))
@@ -413,28 +367,23 @@ def baja_articulo():
         print(f"\n{Fore.RED}ADVERTENCIA: Esta operación también eliminará los registros asociados de Ventas{Fore.RESET}")
 
         if click.confirm(f"\n¿Confirma la baja?"):
-            articulo_mapeador.delete(idx)
+            articulo_mpp.delete(idx)
             print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
             input("\nOperación completada (presione una tecla para continuar)")
         else:
             input("\nOperación cancelada (presione una tecla para continuar)")
 
-    except ExceptionCapturada as e:
-        print(e)
 
 
-def modificacion_articulo():
-    try:
-        print("MODIFICACIÓN DE ARTÍCULO")
-        print("========================\n")
-
-        articulo_mapeador = ArticuloMapeador()
-        listado = articulo_mapeador.leer(articulo_mapeador.archivo)
+    # Nuevo
+    def modificacion(self):
+        print("MODIFICACIÓN DE ARTÍCULO\n========================\n")
+        articulo_mpp = ArticuloMPP()
+        listado = articulo_mpp.leer(articulo_mpp.archivo)
 
         for idx, x in enumerate(listado):
             print(idx, x)
 
-        # Este es un caso especial. Exception no abarca a ValueError.
         while True:
             try:
                 idx = int(input("\nIngrese el número de registro del artículo a modificar: "))
@@ -442,24 +391,111 @@ def modificacion_articulo():
             except ValueError:
                 print("Error. Debe ingresar un número entero")
 
-        print("\nIngrese los nuevos datos del artículo")
 
-        # En este caso, no se puede usar obtener_codigo() porque el código
-        # no se puede modificar, ya que es la "clave primaria" (siendo los datos
-        # de ventas la "clave foránea"). Es decir, Ventas depende de Artículos.
-        articulo = Articulo(listado[idx][0],
-                            obtener_descripcion(),
-                            obtener_stock())
+        codigo = listado[idx][0]
+        descripcion = self.obtener_descripcion()
+        stock = self.obtener_stock()
+        articulo = ArticuloBEL(codigo, descripcion, stock)
 
         if click.confirm(f"\n¿Confirma la modificación?"):
-            articulo_mapeador.update(articulo, idx)
+            articulo_mpp.update(articulo, idx)
             print(f"\nModificado > {Fore.YELLOW}{articulo}{Fore.RESET}")
             input("\nOperación completada (presione una tecla para continuar)")
         else:
             input("\nOperación cancelada (presione una tecla para continuar)")
 
-    except ExceptionCapturada as e:
-        print(e)
+
+
+
+
+
+
+
+    # quedó flotando  //////////////////////////////////////////////////////////
+    def consulta(self):
+        codigo = self.obtener_codigo()
+        articulo_mpp = ArticuloMPP()
+        articulo = articulo_mpp.read(codigo)
+        return articulo
+
+    def obtener_articulo(self):
+        while True:
+            codigo = input("Ingrese el código del artículo a modificar: ")
+            if Valida.valida_codigo(codigo):
+                if Valida.existe_codigo(codigo):
+                    return codigo
+                else:
+                    print("El código ingresado no existe.")
+            else:
+                print("El código ingresado no es válido.")
+    # //////////////////////////////////////////////////////////////////////////
+
+
+    # Nuevo
+    def obtener_codigo(self):
+        while True:
+            codigo = input("Ingrese el código del artículo (LNNN): ")
+            if Valida.valida_codigo(codigo):
+                if not Valida.existe_codigo(codigo):
+                    return codigo
+                else:
+                    print("El código ingresado ya existe.")
+            else:
+                print("El código ingresado no es válido.")
+
+
+
+    #Nuevo
+    def obtener_descripcion(self):
+        while True:
+            descripcion = input("Ingrese la descripción del artículo: ")
+            if Valida.valida_descripcion(descripcion):
+                return descripcion
+            else:
+                print("La descripción ingresada no es válida. Debe ingresar 1 letra mayúscula + 3 letras o más")
+
+
+    # Nuevo
+    def obtener_stock(self):
+        while True:
+            stock = input("Ingrese el stock del artículo: ")
+            if Valida.valida_stock(stock):
+                return stock
+            else:
+                print("El stock ingresado no es válido. Debe ingresar un número mayor a 0")
+
+
+
+
+
+class ArticuloBEL:
+    def __init__(self, codigo, descripcion, stock):
+        self.codigo = codigo
+        self.descripcion = descripcion
+        self.stock = stock
+
+    def __str__(self):
+        return """
+                 Código  {}
+            Descripción  {}
+                  Stock  {}"""\
+            .format(self.codigo,
+                    self.descripcion,
+                    self.stock)
+
+
+
+
+
+
+
+
+# ABM DE ARTÍCULOS *************************************************************
+# La idea era que estas funciones quedaran cortitas y fáciles de leer.
+
+
+
+
 
 
 # ASISTENTES DE ABM DE VENTAS **************************************************
@@ -615,7 +651,7 @@ def listado_articulos():
         print("LISTADO DE ARTÍCULOS")
         print("====================\n")
 
-        articulo_mapeador = ArticuloMapeador()
+        articulo_mapeador = ArticuloBLL()
         listado = articulo_mapeador.leer(articulo_mapeador.archivo)
 
         for idx, x in enumerate(listado):
@@ -703,7 +739,7 @@ def ordenar_lista(lista):
 def get_descripcion(codigo):
     try:
 
-        articulo_mapeador = ArticuloMapeador()
+        articulo_mapeador = ArticuloBLL()
         listado = articulo_mapeador.leer(articulo_mapeador.archivo)
 
         # Le ahorro tiempo al programador que quiera eliminar idx: no lo hagas.
@@ -801,12 +837,14 @@ def main():
                                      subtitle="Seleccione una opción")
 
     # Creo los items del submenú usando FunctionItem (que toma una función)
+    articulo = ArticuloBLL()
     submenu_articulos.append_item(FunctionItem("Alta de artículo",
-                                               alta_articulo))
+                                               articulo.alta))
     submenu_articulos.append_item(FunctionItem("Baja de artículo",
-                                               baja_articulo))
+                                               articulo.baja))
     submenu_articulos.append_item(FunctionItem("Modificación de artículo",
-                                               modificacion_articulo))
+                                               articulo.modificacion))
+
     submenu_ventas.append_item(FunctionItem("Alta de venta",
                                             alta_venta))
     submenu_ventas.append_item(FunctionItem("Baja de venta",
