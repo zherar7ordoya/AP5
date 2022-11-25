@@ -1,11 +1,10 @@
 import csv
-
 from excepcion_capturada import ExceptionCapturada
 
 
-# --- DAL (si esto fuera una arquitectura en capas) ----------------------------
-
 class AccesoDatos:
+    def __init__(self, archivo):
+        self.archivo = archivo
 
     def __enter__(self):
         """ Método mágico para el uso de with que se ejecuta al inicio """
@@ -17,22 +16,17 @@ class AccesoDatos:
         return self
 
     # Pylint me dice que el método leer() puede ser estático, pero no me lo justifica.
-    def leer(self, archivo):
+    def leer(self):
         try:
-            with open(archivo) as dat:
+            with open(self.archivo) as dat:
                 return list(csv.reader(dat))
         except FileNotFoundError as e:
             raise ExceptionCapturada("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
 
     # Pylint me dice que el método escribir() puede ser estático, pero no me lo justifica.
-    def escribir(self, archivo, lista):
+    def escribir(self, listado):
         try:
-            with open(archivo, 'w', newline='\n') as dat:
-                csv.writer(dat).writerows(lista)
+            with open(self.archivo, 'w', newline='\n') as dat:
+                csv.writer(dat).writerows(listado)
         except Exception as e:
             raise ExceptionCapturada("ERROR AL CERRAR EL ARCHIVO", *e.args)
-
-
-
-
-

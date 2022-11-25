@@ -4,7 +4,8 @@ from excepcion_capturada import ExceptionCapturada
 
 class VentaMPP(AccesoDatos):
 
-    def __init__(self):
+    def __init__(self, archivo):
+        super().__init__(archivo)
         self.archivo = 'ventas.csv'
 
     # *** ALTAS ***

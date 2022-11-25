@@ -1,27 +1,20 @@
 import re
+from articulo_bll import ArticuloBLL
 
-from articulo_mpp import ArticuloMPP
-
-
-# --- CAPA DE NEGOCIO (si esto fuera una arquitectura en capas) ----------------
-
-# VALIDACIONES
-# A qué japonés se le ocurrió las regex...
 
 class Valida:
+    def __init__(self):
+        self.articulo_bll = ArticuloBLL()
 
-    @staticmethod
-    def valida_codigo(codigo):
-        if re.match("([A-Z]\d{3})", codigo):
+    def existe_codigo(self, codigo):
+        listado = self.articulo_bll.leer()
+        if any(codigo in lista_anidada for lista_anidada in listado):
             return True
         return False
 
     @staticmethod
-    def existe_codigo(codigo):
-        articulo_mpp = ArticuloMPP()
-        listado = articulo_mpp.leer(articulo_mpp.archivo)
-
-        if any(codigo in lista_anidada for lista_anidada in listado):
+    def valida_codigo(codigo):
+        if re.match("([A-Z]\d{3})", codigo):
             return True
         return False
 
@@ -51,7 +44,7 @@ class Valida:
 
     @staticmethod
     def valida_sucursal(sucursal):
-        if re.match("([A-Z]{3,3}\d{3,3})", sucursal):
+        if re.match("([A-Z]{3}\d{3})", sucursal):
             return True
         return False
 
@@ -60,4 +53,3 @@ class Valida:
         if re.match("(\d*\.?\d*)", importe):
             return True
         return False
-

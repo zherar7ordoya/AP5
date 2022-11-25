@@ -6,7 +6,8 @@ from excepcion_capturada import ExceptionCapturada
 
 class ArticuloMPP(AccesoDatos):
 
-    def __init__(self):
+    def __init__(self, archivo):
+        super().__init__(archivo)
         self.archivo = 'articulos.csv'
 
     # *** ALTAS ***
