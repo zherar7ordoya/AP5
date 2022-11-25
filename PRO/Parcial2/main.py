@@ -3,634 +3,24 @@
 # Create date:  2022-11-22
 # Description:  Mi Programa en Python v2.0
 # ========================================
-
-# TODO > El uso de las comas en el ingreso de los artículos (verificar su efecto)
-# TODO > Unificar los métodos de archivo de ventas en borrado en cascada
-#        (artículos) y corte de control
-# TODO > Redefinir la BEL para que sea más orientado a objetos (valorar
-#        funciones estáticas)
-# TODO > Revisar el tipo ingresado en la "columna" importes (que sea decimal)
-# TODO > Definir el uso concreto de la clase ExceptionCapturada
-# TODO > Si bien falta información, pero es necesario conectar ventas y stock
-#        (como dije, no tengo cómo conectarlas: ni Artículos tiene precio ni
-#        Ventas tiene cantidad de artículos vendidos)
-
-# ******************************************************************************
-# NOTA PARA EL PROFESOR CARDACCI:
-# ------------------------------
-#
-# En la consola de Visual Studio, Colorama se niega a trabajar como lo hace en
-# otras consolas. Igual que con el 1er parcial, para ver los colores, se debe
-# ejecutar el programa desde la consola de Windows.
-# Referencia: https://pypi.org/project/colorama/
-#
-# WHY DOESN'T COLORAMA WORK WITH VISUAL STUDIO?
-# Well, these are (and colorama would do that for non-windows terminals I
-# presume) ANSI escape codes which are interpreted by the terminal emulation.
-# I.e. most likely VS does terminal emulation does not support them. 
-# Referencia: https://stackoverflow.com/questions/65365077/why-doesnt-colorama-work-with-visual-studio
-# ******************************************************************************
-
-
-import click
 import csv
-import re
 from colorama import init
 from colorama import Fore
 from consolemenu import *
 from consolemenu.items import *
 from decimal import Decimal
+from excepcion_capturada import ExceptionCapturada
+from articulo_bll import ArticuloBLL
+from articulo_mpp import ArticuloMPP
+from venta_bll import VentaBLL
+from venta_mpp import VentaMPP
 
-
-# Esto es lo más que se puede lograr con Colorama en VS: que init() filtre las
-# secuencias de escape ANSI y las reemplace por una cadena vacía.
 init()
 
 
-# --- CAPA TRANSVERSAL (si esto fuera una arquitectura en capas) ---------------
 
-# Todavía estoy investigando esta técnica.
-class ExceptionCapturada(Exception):
-    def __init__(self, mensaje, *errores):
-        Exception.__init__(self, mensaje)
-        self.errores = errores
-        print(f"\n{Fore.RED}{errores[0]}{Fore.RESET}")
-        input("Presione una tecla para continuar...")
 
 
-# --- DAL (si esto fuera una arquitectura en capas) ----------------------------
-
-class AccesoDatos:
-
-    def __enter__(self):
-        """ Método mágico para el uso de with que se ejecuta al inicio """
-        return self
-
-    # No toques los argumentos, no importa lo que Pylint diga.
-    def __exit__(self, *args, **kwargs):
-        """ Método mágico para el uso de with que se ejecuta al final """
-        return self
-
-    # Pylint me dice que el método leer() puede ser estático, pero no me lo justifica.
-    def leer(self, archivo):
-        try:
-            with open(archivo) as dat:
-                return list(csv.reader(dat))
-        except FileNotFoundError as e:
-            raise ExceptionCapturada("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
-
-    # Pylint me dice que el método escribir() puede ser estático, pero no me lo justifica.
-    def escribir(self, archivo, lista):
-        try:
-            with open(archivo, 'w', newline='\n') as dat:
-                csv.writer(dat).writerows(lista)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL CERRAR EL ARCHIVO", *e.args)
-
-
-
-
-
-
-# --- CAPA DE NEGOCIO (si esto fuera una arquitectura en capas) ----------------
-
-# VALIDACIONES
-# A qué japonés se le ocurrió las regex...
-
-class Valida:
-
-    @staticmethod
-    def valida_codigo(codigo):
-        if re.match("([A-Z]\d{3})", codigo):
-            return True
-        return False
-
-    @staticmethod
-    def existe_codigo(codigo):
-        articulo_mapeador = ArticuloBLL()
-        listado = articulo_mapeador.leer(articulo_mapeador.archivo)
-
-        if any(codigo in lista_anidada for lista_anidada in listado):
-            return True
-        return False
-
-    @staticmethod
-    def valida_descripcion(descripcion):
-        if re.match("([A-Z]\w{3,})", descripcion):
-            return True
-        return False
-
-    @staticmethod
-    def valida_stock(stock):
-        if re.match("([1-9]\d*)", stock):
-            return True
-        return False
-
-    @staticmethod
-    def valida_fecha(fecha):
-        if re.match("(\d{2}/\d{2}/\d{4})", fecha):
-            return True
-        return False
-
-    @staticmethod
-    def valida_vendedor(vendedor):
-        if re.match("([A-Za-z]\w{3,})", vendedor):
-            return True
-        return False
-
-    @staticmethod
-    def valida_sucursal(sucursal):
-        if re.match("([A-Z]{3,3}\d{3,3})", sucursal):
-            return True
-        return False
-
-    @staticmethod
-    def valida_importe(importe):
-        if re.match("(\d*\.?\d*)", importe):
-            return True
-        return False
-
-
-# ||||||||||||||||||||||||||||||||| ARTICULOS |||||||||||||||||||||||||||||||||
-
-class ArticuloMPP(AccesoDatos):
-
-    def __init__(self):
-        self.archivo = 'articulos.csv'
-
-    # *** ALTAS ***
-    def create(self, objeto):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo,
-                     objeto.descripcion,
-                     objeto.stock]
-            listado.append(nuevo)
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
-
-    # *** CONSULTAS ***
-    def read(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            return listado[idx]
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
-
-    # *** MODIFICACIONES ***
-    def update(self, objeto, idx):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.codigo,
-                     objeto.descripcion,
-                     objeto.stock]
-            listado[idx] = nuevo
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
-
-    # *** BAJAS ***
-    def delete(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-
-            # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
-            # Esto tengo que explicarlo:
-            # Supongamos que borro un artículo e inmediatamente después pido el
-            # reporte de ventas (corte de control): se producirá una excepción
-            # ya que ventas remite a un artículo que no existe.
-            # Ventas es dependiente de Artículos y por eso se hace necesario un
-            # borrado en cascada.
-            #
-            # Sí, pendiente. Yo había hecho salvedad cuando programé el corte de
-            # control porque las circunstancias lo ameritaban. Me dí cuenta de
-            # que estaba obligado al borrado en cascada luego, y esto ya
-            # ameritaba que me base en el CRUD (porque ya estaba repitiendo
-            # código "excepcional"). ¿Por qué no lo hice? Porque esto es un
-            # examen y el tiempo se me estaba acabando (no iba a llegar a
-            # probarlo, por ejemplo). Así que queda pendiente (aunque funciona).
-            codigo = listado[idx][0]
-            archivo = open("ventas.csv")
-            ventas = csv.reader(archivo)
-            reemplazo = []
-            item = next(ventas, None)
-
-            while item:
-                if item[1] != codigo:
-                    reemplazo.append(item)
-                item = next(ventas, None)
-
-            with open("ventas.csv", 'w', newline='\n') as dat:
-                csv.writer(dat).writerows(reemplazo)
-
-            archivo.close()
-
-            # Ahora sí puedo borrar el artículo
-            del listado[idx]
-            self.escribir(self.archivo, listado)
-
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
-
-
-class ArticuloBLL(ArticuloMPP):
-
-    # Nuevo
-    def alta(self):
-        try:
-            print("ALTA DE ARTÍCULO\n================\n")
-            codigo = self.obtener_codigo()
-            descripcion = self.obtener_descripcion()
-            stock = self.obtener_stock()
-            articulo = ArticuloBEL(codigo, descripcion, stock)
-            articulo_mpp = ArticuloMPP()
-
-            if click.confirm(f"\n¿Confirma el alta?"):
-                articulo_mpp.create(articulo)
-                print(f"\nIngresado > {Fore.YELLOW}{articulo}{Fore.RESET}")
-                input("\nOperación completada (presione una tecla para continuar)")
-            else:
-                input("\nOperación cancelada (presione una tecla para continuar)")
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL DAR DE ALTA", *e.args)
-
-    # Nuevo
-    def baja(self):
-        print("BAJA DE ARTÍCULO\n================\n")
-        articulo_mpp = ArticuloMPP()
-        listado = articulo_mpp.leer(articulo_mpp.archivo)
-
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        while True:
-            try:
-                idx = int(input("\nIngrese el número de registro del artículo a eliminar: "))
-                break
-            except ValueError:
-                print("Error. Debe ingresar un número entero")
-
-        print(f"\n{Fore.RED}ADVERTENCIA: Esta operación también eliminará los registros asociados de Ventas{Fore.RESET}")
-
-        if click.confirm(f"\n¿Confirma la baja?"):
-            articulo_mpp.delete(idx)
-            print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
-
-    # Nuevo
-    def modificacion(self):
-        print("MODIFICACIÓN DE ARTÍCULO\n========================\n")
-        articulo_mpp = ArticuloMPP()
-        listado = articulo_mpp.leer(articulo_mpp.archivo)
-
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        while True:
-            try:
-                idx = int(input("\nIngrese el número de registro del artículo a modificar: "))
-                break
-            except ValueError:
-                print("Error. Debe ingresar un número entero")
-
-        codigo = listado[idx][0]
-        descripcion = self.obtener_descripcion()
-        stock = self.obtener_stock()
-        articulo = ArticuloBEL(codigo, descripcion, stock)
-
-        if click.confirm(f"\n¿Confirma la modificación?"):
-            articulo_mpp.update(articulo, idx)
-            print(f"\nModificado > {Fore.YELLOW}{articulo}{Fore.RESET}")
-            input("\nOperación completada (presione una tecla para continuar)")
-        else:
-            input("\nOperación cancelada (presione una tecla para continuar)")
-
-    # quedó flotando  //////////////////////////////////////////////////////////
-    def consulta(self):
-        codigo = self.obtener_codigo()
-        articulo_mpp = ArticuloMPP()
-        articulo = articulo_mpp.read(codigo)
-        return articulo
-
-    def obtener_articulo(self):
-        while True:
-            codigo = input("Ingrese el código del artículo a modificar: ")
-            if Valida.valida_codigo(codigo):
-                if Valida.existe_codigo(codigo):
-                    return codigo
-                else:
-                    print("El código ingresado no existe.")
-            else:
-                print("El código ingresado no es válido.")
-    # //////////////////////////////////////////////////////////////////////////
-
-    # Nuevo
-    def obtener_codigo(self):
-        while True:
-            codigo = input("Ingrese el código del artículo (LNNN): ")
-            if Valida.valida_codigo(codigo):
-                if not Valida.existe_codigo(codigo):
-                    return codigo
-                else:
-                    print("El código ingresado ya existe.")
-            else:
-                print("El código ingresado no es válido.")
-
-    #Nuevo
-    def obtener_descripcion(self):
-        while True:
-            descripcion = input("Ingrese la descripción del artículo: ")
-            if Valida.valida_descripcion(descripcion):
-                return descripcion
-            else:
-                print("La descripción ingresada no es válida. Debe ingresar 1 letra mayúscula + 3 letras o más")
-
-    # Nuevo
-    def obtener_stock(self):
-        while True:
-            stock = input("Ingrese el stock del artículo: ")
-            if Valida.valida_stock(stock):
-                return stock
-            else:
-                print("El stock ingresado no es válido. Debe ingresar un número mayor a 0")
-
-
-class ArticuloBEL:
-    def __init__(self, codigo, descripcion, stock):
-        self.codigo = codigo
-        self.descripcion = descripcion
-        self.stock = stock
-
-    def __str__(self):
-        return """
-                 Código  {}
-            Descripción  {}
-                  Stock  {}"""\
-            .format(self.codigo,
-                    self.descripcion,
-                    self.stock)
-
-
-# ||||||||||||||||||||||||||||||||||| VENTAS |||||||||||||||||||||||||||||||||||
-
-class VentaMPP(AccesoDatos):
-
-    def __init__(self):
-        self.archivo = 'ventas.csv'
-
-    # *** ALTAS ***
-    def create(self, objeto):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha,
-                     objeto.codigo,
-                     objeto.vendedor,
-                     objeto.sucursal,
-                     objeto.importe]
-            listado.append(nuevo)
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
-
-    # *** CONSULTAS ***
-    def read(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            return listado[idx]
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
-
-    # *** MODIFICACIONES ***
-    def update(self, objeto, cod):
-        try:
-            listado = self.leer(self.archivo)
-            nuevo = [objeto.fecha,
-                     objeto.codigo,
-                     objeto.vendedor,
-                     objeto.sucursal,
-                     objeto.importe]
-            listado[cod] = nuevo
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
-
-    # *** BAJAS ***
-    def delete(self, idx):
-        try:
-            listado = self.leer(self.archivo)
-            del listado[idx]
-            self.escribir(self.archivo, listado)
-        except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
-
-
-class VentaBEL:
-    def __init__(self, fecha, codigo, vendedor, sucursal, importe):
-        self.fecha = fecha
-        self.codigo = codigo
-        self.vendedor = vendedor
-        self.sucursal = sucursal
-        self.importe = importe
-
-    def __str__(self):
-        return """
-               Fecha  {}
-              Código  {}
-            Vendedor  {}
-            Sucursal  {}
-             Importe  {}"""\
-            .format(self.fecha,
-                    self.codigo,
-                    self.vendedor,
-                    self.sucursal,
-                    self.importe)
-
-
-
-
-class VentaBLL:
-
-    def alta(self):
-        try:
-            print("ALTA DE VENTA\n=============\n")
-
-            venta = VentaBEL(self.obtener_fecha(),
-                             self.obtener_articulo(),
-                             self.obtener_vendedor(),
-                             self.obtener_sucursal(),
-                             self.obtener_importe())
-            venta_mpp = VentaMPP()
-
-            if click.confirm(f"\n¿Confirma el alta?"):
-                venta_mpp.create(venta)
-                print(f"\nAgregado > {Fore.YELLOW}{venta}{Fore.RESET}")
-                input("\nOperación completada (presione una tecla para continuar)")
-            else:
-                input("\nOperación cancelada (presione una tecla para continuar)")
-
-        except ExceptionCapturada as e:
-            print(e)
-
-
-    def baja(self):
-        try:
-            print("BAJA DE VENTA\n=============\n")
-
-            venta_mpp = VentaMPP()
-
-            listado = venta_mpp.leer(venta_mpp.archivo)
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            # Este es un caso especial. Exception no abarca a ValueError.
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro de la venta a eliminar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            if click.confirm(f"\n¿Confirma la baja?"):
-                venta_mpp.delete(idx)
-                print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
-                input("\nOperación completada (presione una tecla para continuar)")
-            else:
-                input("\nOperación cancelada (presione una tecla para continuar)")
-
-        except ExceptionCapturada as e:
-            print(e)
-
-
-    def modificacion(self):
-        try:
-            print("MODIFICACIÓN DE VENTA\n=====================\n")
-
-            venta_mpp = VentaMPP()
-            listado = venta_mpp.leer(venta_mpp.archivo)
-
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            # Este es un caso especial. Exception no abarca a ValueError.
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro de la venta a modificar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            print("\nIngrese los nuevos datos de la venta")
-            venta = VentaBEL(self.obtener_fecha(),
-                             self.obtener_articulo(),
-                             self.obtener_vendedor(),
-                             self.obtener_sucursal(),
-                             self.obtener_importe())
-
-            if click.confirm(f"\n¿Confirma la modificación?"):
-                venta_mpp.update(venta, idx)
-                print(f"\nModificado > {Fore.YELLOW}{venta}{Fore.RESET}")
-                input("\nOperación completada (presione una tecla para continuar)")
-            else:
-                input("\nOperación cancelada (presione una tecla para continuar)")
-
-        except ExceptionCapturada as e:
-            print(e)
-
-
-    def obtener_fecha(self):
-        while True:
-            fecha = input("Fecha (dd/mm/aaaa): ")
-            if Valida.valida_fecha(fecha):
-                return fecha
-            else:
-                print("Error. Debe ingresar una fecha válida")
-
-
-    # Esto necesito aclararlo:
-    #   obtener_articulo() > verifica que SÍ exista el código
-    #   obtener_codigo()   > verifica que NO exista el código
-    def obtener_articulo(self):
-        while True:
-            codigo = input("Código de artículo (LNNN): ")
-            if Valida.valida_codigo(codigo) and Valida.existe_codigo(codigo):
-                return codigo
-            else:
-                print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
-
-
-    def obtener_vendedor(self):
-        while True:
-            vendedor = input("Vendedor: ")
-            if Valida.valida_vendedor(vendedor):
-                return vendedor
-            else:
-                print("Error. Debe ingresar 1 letra mayúscula + 3 letras o más")
-
-
-    def obtener_sucursal(self):
-        while True:
-            sucursal = input("Sucursal (LLLNNN): ")
-            if Valida.valida_sucursal(sucursal):
-                return sucursal
-            else:
-                print("Error. Debe ingresar 3 letras mayúsculas + 3 números")
-
-
-    def obtener_importe(self):
-        while True:
-            importe = input("Importe: ")
-            if Valida.valida_importe(importe):
-                return importe
-            else:
-                print("Error. Debe ingresar un importe válido (NN.DD)")
-
-
-
-
-# LISTADOS Y REPORTES (CONSULTAS) **********************************************
-
-def listado_articulos():
-    try:
-        print("LISTADO DE ARTÍCULOS")
-        print("====================\n")
-
-        articulo_mapeador = ArticuloBLL()
-        listado = articulo_mapeador.leer(articulo_mapeador.archivo)
-
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        input("\nOperación completada (presione una tecla para continuar)")
-
-    except ExceptionCapturada as e:
-        print(e)
-
-
-def listado_ventas():
-    try:
-        print("LISTADO DE VENTAS")
-        print("=================\n")
-
-        venta_mapeador = VentaMPP()
-        listado = venta_mapeador.leer(venta_mapeador.archivo)
-
-        for idx, x in enumerate(listado):
-            print(idx, x)
-
-        input("\nOperación completada (presione una tecla para continuar)")
-
-    except ExceptionCapturada as e:
-        print(e)
-
-
-# APAREO Y CORTE DE CONTROL ****************************************************
-# Esta es una sección especial y por eso la dejo con su propio título
-
-# ASISTENTES DE APOYO
-# Abro, leo, ordeno y guardo el archivo
 def ordenar_archivo(archivo):
     with open(archivo) as dat:
         lista = list(csv.reader(dat))
@@ -639,19 +29,7 @@ def ordenar_archivo(archivo):
         csv.writer(dat).writerows(lista)
 
 
-# Ordenamiento por Selección (Selection Sort)
-# Esto lo tengo que aclarar:
-# ¿Por qué tres bucles y así: if lista[evaluado][i] > lista[x][i]?
-# El archivo de ventas está ordenado por fecha, artículo, vendedor, sucursal e
-# importe (en ese orden). Cuando yo presenté este algoritmo la primera vez, la
-# primera "columna" era la de los códigos (como usualmente lo es). En este caso,
-# la columna ordenadora (sucursales) está en la posición 4. Pero el reporte no
-# pide solo ese agrupamiento, sino que también pide agrupar por artículo y
-# vendedor. Entonces, para que el algoritmo sea eficaz, tengo que comparar
-# secuencialmente las columnas 2, 1 y 4 (vendedor, artículo y sucursal), ya que
-# así es el agrupamiento pedido en el reporte.
 def ordenar_lista(lista):
-
     # Ordeno por vendedor
     for idx in range(len(lista)):
         evaluado = idx
@@ -677,11 +55,6 @@ def ordenar_lista(lista):
         lista[idx], lista[evaluado] = lista[evaluado], lista[idx]
 
 
-# Esto hay que explicarlo: si hay apareo, solo sucede con este ítem. En la
-# consigna de Cardacci, se pide agrupar por artículos (específicamente: por el
-# nombre de los artículos). Internamente (en los while) trabajo con los códigos
-# de los artículos, pero le muestro al usuario el nombre del artículo, y eso
-# explica esta función tan extraña.
 def get_descripcion(codigo):
     try:
 
@@ -697,16 +70,8 @@ def get_descripcion(codigo):
         print(e)
 
 
-# PROCEDIMIENTO PRINCIPAL DE APAREO Y CORTE DE CONTROL
-# Bueno profesor, esta es la estrella de la película. No la busque más, aquí
-# está, con sus while anidados.
 
 def imprimir_reporte(archivo_csv):
-    # Esto hay que explicarlo: el corte de control es una operación tan
-    # particular que se hace engorroso (más difícil de entender) si descanso
-    # sobre el CRUD hecho para lo demás. Opero directamente sobre el archivo
-    # justificado por la regla de balance (una complejización debe solo debe
-    # inyectarse para resolver una complejidad mayor, sino no procede).
     archivo = open(archivo_csv)
     ventas = csv.reader(archivo)
     item = next(ventas, None)
@@ -748,20 +113,52 @@ def imprimir_reporte(archivo_csv):
     archivo.close()
 
 
-# Y esto es lo primero que el usuario ve y así se organiza lo demás.
-def reporte_sucursales():
-    try:
-        print("REPORTE DE SUCURSALES")
-        print("=====================\n")
 
-        venta_mapeador = VentaMPP()
-        ordenar_archivo(venta_mapeador.archivo)
-        imprimir_reporte(venta_mapeador.archivo)
 
-        input("\nOperación completada (presione una tecla para continuar)")
+class ListadoBLL:
 
-    except ExceptionCapturada as e:
-        print(e)
+    def articulos(self):
+        try:
+            print("LISTADO DE ARTÍCULOS\n====================\n")
+
+            articulo_bll = ArticuloBLL()
+            listado = articulo_bll.leer(articulo_bll.archivo)
+
+            for idx, x in enumerate(listado):
+                print(idx, x)
+
+            input("\nOperación completada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
+
+    def ventas(self):
+        try:
+            print("LISTADO DE VENTAS\n=================\n")
+
+            venta_mpp = VentaMPP()
+            listado = venta_mpp.leer(venta_mpp.archivo)
+
+            for idx, x in enumerate(listado):
+                print(idx, x)
+
+            input("\nOperación completada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
+
+    def sucursales(self):
+        try:
+            print("REPORTE DE SUCURSALES\n=====================\n")
+
+            venta_mpp = VentaMPP()
+            ordenar_archivo(venta_mpp.archivo)
+            imprimir_reporte(venta_mpp.archivo)
+
+            input("\nOperación completada (presione una tecla para continuar)")
+
+        except ExceptionCapturada as e:
+            print(e)
 
 
 # --- CAPA DE PRESENTACIÓN (si esto fuera una arquitectura en capas) -----------
@@ -783,6 +180,7 @@ def main():
                                      subtitle="Seleccione una opción")
 
     # Creo los items del submenú usando FunctionItem (que toma una función)
+
     articulo = ArticuloBLL()
     submenu_articulos.append_item(FunctionItem("Alta de artículo",
                                                articulo.alta))
@@ -799,13 +197,13 @@ def main():
     submenu_ventas.append_item(FunctionItem("Modificación de venta",
                                             venta.modificacion))
 
-
+    listado = ListadoBLL()
     submenu_listados.append_item(FunctionItem("Listado de Artículos",
-                                              listado_articulos))
+                                              listado.articulos))
     submenu_listados.append_item(FunctionItem("Listado de Ventas",
-                                              listado_ventas))
+                                              listado.ventas()))
     submenu_listados.append_item(FunctionItem("Reporte de Sucursales",
-                                              reporte_sucursales))
+                                              listado.sucursales()))
 
     # Creo los ítems del menú principal usando SubmenuItem (que toma un submenú)
     submenu_item_articulos = SubmenuItem("Artículos\t>>   altas, bajas y modificaciones",
@@ -833,7 +231,6 @@ def main():
 # El punto de entrada en Python es tan simple que asusta...
 if __name__ == "__main__":
     main()
-
 
 # --- NOTA PARA EL PROGRAMADOR QUE VAYA A EDITAR ESTO --------------------------
 # No uses Visual Studio ni VSCode.
