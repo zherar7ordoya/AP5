@@ -8,9 +8,9 @@ from venta_bll import VentaBLL
 
 
 class ListadoBLL:
-    def __init__(self, archivo):
-        self.articulo_bll = ArticuloBLL(archivo)
-        self.venta_bll = VentaBLL(archivo)
+    def __init__(self):
+        self.articulo_bll = ArticuloBLL()
+        self.venta_bll = VentaBLL()
 
     def articulos(self):
         try:

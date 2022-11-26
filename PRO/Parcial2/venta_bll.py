@@ -53,9 +53,10 @@ def obtener_importe():
 
 
 class VentaBLL(VentaMPP):
-    def __init__(self, archivo):
-        super().__init__(archivo)
-        self.venta_mpp = VentaMPP(archivo)
+
+    def __init__(self):
+        super().__init__()
+        self.venta_mpp = VentaMPP()
 
     def alta(self):
         try:

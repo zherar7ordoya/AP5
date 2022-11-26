@@ -6,26 +6,25 @@ from excepcion_capturada import ExceptionCapturada
 
 class ArticuloMPP(AccesoDatos):
 
-    def __init__(self, archivo):
-        super().__init__(archivo)
-        self.archivo = 'articulos.csv'
+    def __init__(self):
+        super().__init__('articulos.csv')
 
     # *** ALTAS ***
     def create(self, objeto):
         try:
-            listado = self.leer(self.archivo)
+            listado = self.leer()
             nuevo = [objeto.codigo,
                      objeto.descripcion,
                      objeto.stock]
             listado.append(nuevo)
-            self.escribir(self.archivo, listado)
+            self.escribir(listado)
         except Exception as e:
             raise ExceptionCapturada("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
         try:
-            listado = self.leer(self.archivo)
+            listado = self.leer()
             return listado[idx]
         except Exception as e:
             raise ExceptionCapturada("ERROR AL LEER", *e.args)
@@ -33,19 +32,19 @@ class ArticuloMPP(AccesoDatos):
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
         try:
-            listado = self.leer(self.archivo)
+            listado = self.leer()
             nuevo = [objeto.codigo,
                      objeto.descripcion,
                      objeto.stock]
             listado[idx] = nuevo
-            self.escribir(self.archivo, listado)
+            self.escribir(listado)
         except Exception as e:
             raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
         try:
-            listado = self.leer(self.archivo)
+            listado = self.leer()
 
             # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
             # Esto tengo que explicarlo:
@@ -80,7 +79,7 @@ class ArticuloMPP(AccesoDatos):
 
             # Ahora sí puedo borrar el artículo
             del listado[idx]
-            self.escribir(self.archivo, listado)
+            self.escribir(listado)
 
         except Exception as e:
             raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)

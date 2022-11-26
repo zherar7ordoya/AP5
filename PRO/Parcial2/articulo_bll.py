@@ -38,9 +38,10 @@ def obtener_stock():
 
 
 class ArticuloBLL(ArticuloMPP):
-    def __init__(self, archivo):
-        super().__init__(archivo)
-        self.articulo_mpp = ArticuloMPP(archivo)
+
+    def __init__(self):
+        super().__init__()
+        self.articulo_mpp = ArticuloMPP()
 
     def alta(self):
         try:
