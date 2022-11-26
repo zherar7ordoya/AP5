@@ -1,10 +1,10 @@
 import csv
 
 from acceso_datos import AccesoDatos
-from excepcion_capturada import ExceptionCapturada
+from excepcion_capturada import RegistroSistematicoExcepciones
 
 
-class ArticuloMPP(AccesoDatos):
+class ArticuloMapper(AccesoDatos):
 
     def __init__(self):
         super().__init__('articulos.csv')
@@ -19,7 +19,7 @@ class ArticuloMPP(AccesoDatos):
             listado.append(nuevo)
             self.escribir(listado)
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class ArticuloMPP(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -39,30 +39,16 @@ class ArticuloMPP(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
         try:
             listado = self.leer()
 
-            # ELIMINACIÓN DE LOS REGISTROS ASOCIADOS EN EL ARCHIVO DE VENTAS
-            # Esto tengo que explicarlo:
-            # Supongamos que borro un artículo e inmediatamente después pido el
-            # reporte de ventas (corte de control): se producirá una excepción
-            # ya que ventas remite a un artículo que no existe.
-            # Ventas es dependiente de Artículos y por eso se hace necesario un
-            # borrado en cascada.
-            #
-            # Sí, pendiente. Yo había hecho salvedad cuando programé el corte de
-            # control porque las circunstancias lo ameritaban. Me dí cuenta de
-            # que estaba obligado al borrado en cascada luego, y esto ya
-            # ameritaba que me base en el CRUD (porque ya estaba repitiendo
-            # código "excepcional"). ¿Por qué no lo hice? Porque esto es un
-            # examen y el tiempo se me estaba acabando (no iba a llegar a
-            # probarlo, por ejemplo). Así que queda pendiente (aunque funciona).
+            # TODO - Usar CRUD (!)
             codigo = listado[idx][0]
-            archivo = open("ventas.csv")
+            archivo = open("../ventas.csv")
             ventas = csv.reader(archivo)
             reemplazo = []
             item = next(ventas, None)
@@ -72,7 +58,7 @@ class ArticuloMPP(AccesoDatos):
                     reemplazo.append(item)
                 item = next(ventas, None)
 
-            with open("ventas.csv", 'w', newline='\n') as dat:
+            with open("../ventas.csv", 'w', newline='\n') as dat:
                 csv.writer(dat).writerows(reemplazo)
 
             archivo.close()
@@ -82,5 +68,5 @@ class ArticuloMPP(AccesoDatos):
             self.escribir(listado)
 
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL ELIMINAR", *e.args)
 

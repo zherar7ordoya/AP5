@@ -1,14 +1,14 @@
 import re
 
 
-from articulo_mpp import ArticuloMPP
+from MPP.articulo_mapper import ArticuloMapper
 
 
-class Valida(ArticuloMPP):
+class Valida(ArticuloMapper):
 
     def __init__(self):
         super().__init__()
-        self.articulo_mpp = ArticuloMPP()
+        self.articulo_mpp = ArticuloMapper()
 
     def existe_codigo(self, codigo):
         listado = self.articulo_mpp.leer()

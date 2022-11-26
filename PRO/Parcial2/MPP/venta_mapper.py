@@ -1,8 +1,8 @@
 from acceso_datos import AccesoDatos
-from excepcion_capturada import ExceptionCapturada
+from excepcion_capturada import RegistroSistematicoExcepciones
 
 
-class VentaMPP(AccesoDatos):
+class VentaMapper(AccesoDatos):
 
     def __init__(self):
         super().__init__('ventas.csv')
@@ -19,7 +19,7 @@ class VentaMPP(AccesoDatos):
             listado.append(nuevo)
             self.escribir(self.archivo, listado)
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL CREAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class VentaMPP(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL LEER", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, cod):
@@ -41,7 +41,7 @@ class VentaMPP(AccesoDatos):
             listado[cod] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL ACTUALIZAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -50,5 +50,5 @@ class VentaMPP(AccesoDatos):
             del listado[idx]
             self.escribir(listado)
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL ELIMINAR", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL ELIMINAR", *e.args)
 

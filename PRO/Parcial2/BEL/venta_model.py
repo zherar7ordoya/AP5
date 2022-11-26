@@ -1,4 +1,4 @@
-class VentaBEL:
+class VentaModel:
     def __init__(self, fecha, codigo, vendedor, sucursal, importe):
         self.fecha = fecha
         self.codigo = codigo

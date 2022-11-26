@@ -1,10 +1,10 @@
 import click
 from colorama import Fore
 
-from excepcion_capturada import ExceptionCapturada
+from excepcion_capturada import RegistroSistematicoExcepciones
 from validaciones import Valida
-from venta_bel import VentaBEL
-from venta_mpp import VentaMPP
+from BEL.venta_model import VentaModel
+from MPP.venta_mapper import VentaMapper
 
 
 def obtener_fecha():
@@ -52,21 +52,21 @@ def obtener_importe():
             print("Error. Debe ingresar un importe válido (NN.DD)")
 
 
-class VentaBLL(VentaMPP):
+class VentaLogic(VentaMapper):
 
     def __init__(self):
         super().__init__()
-        self.venta_mpp = VentaMPP()
+        self.venta_mpp = VentaMapper()
 
     def alta(self):
         try:
             print("ALTA DE VENTA\n=============\n")
 
-            venta = VentaBEL(obtener_fecha(),
-                             obtener_articulo(),
-                             obtener_vendedor(),
-                             obtener_sucursal(),
-                             obtener_importe())
+            venta = VentaModel(obtener_fecha(),
+                               obtener_articulo(),
+                               obtener_vendedor(),
+                               obtener_sucursal(),
+                               obtener_importe())
 
             if click.confirm(f"\n¿Confirma el alta?"):
                 self.venta_mpp.create(venta)
@@ -75,8 +75,8 @@ class VentaBLL(VentaMPP):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
 
     def baja(self):
         try:
@@ -101,8 +101,8 @@ class VentaBLL(VentaMPP):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
 
     def modificacion(self):
         try:
@@ -122,11 +122,11 @@ class VentaBLL(VentaMPP):
                     print("Error. Debe ingresar un número entero")
 
             print("\nIngrese los nuevos datos de la venta")
-            venta = VentaBEL(obtener_fecha(),
-                             obtener_articulo(),
-                             obtener_vendedor(),
-                             obtener_sucursal(),
-                             obtener_importe())
+            venta = VentaModel(obtener_fecha(),
+                               obtener_articulo(),
+                               obtener_vendedor(),
+                               obtener_sucursal(),
+                               obtener_importe())
 
             if click.confirm(f"\n¿Confirma la modificación?"):
                 self.venta_mpp.update(venta, idx)
@@ -135,5 +135,5 @@ class VentaBLL(VentaMPP):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)

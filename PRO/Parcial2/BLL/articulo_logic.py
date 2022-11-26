@@ -1,9 +1,9 @@
 import click
 from colorama import Fore
 
-from articulo_bel import ArticuloBEL
-from articulo_mpp import ArticuloMPP
-from excepcion_capturada import ExceptionCapturada
+from BEL.articulo_model import ArticuloModel
+from MPP.articulo_mapper import ArticuloMapper
+from excepcion_capturada import RegistroSistematicoExcepciones
 from validaciones import Valida
 
 
@@ -37,11 +37,11 @@ def obtener_stock():
             print("El stock ingresado no es válido. Debe ingresar un número mayor a 0")
 
 
-class ArticuloBLL(ArticuloMPP):
+class ArticuloLogic(ArticuloMapper):
 
     def __init__(self):
         super().__init__()
-        self.articulo_mpp = ArticuloMPP()
+        self.articulo_mpp = ArticuloMapper()
 
     def alta(self):
         try:
@@ -50,7 +50,7 @@ class ArticuloBLL(ArticuloMPP):
             descripcion = obtener_descripcion()
             stock = obtener_stock()
 
-            articulo = ArticuloBEL(codigo, descripcion, stock)
+            articulo = ArticuloModel(codigo, descripcion, stock)
 
             if click.confirm(f"\n¿Confirma el alta?"):
                 self.articulo_mpp.create(articulo)
@@ -59,7 +59,7 @@ class ArticuloBLL(ArticuloMPP):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise ExceptionCapturada("ERROR AL DAR DE ALTA", *e.args)
+            raise RegistroSistematicoExcepciones("ERROR AL DAR DE ALTA", *e.args)
 
     def baja(self):
         print("BAJA DE ARTÍCULO\n================\n")
@@ -104,7 +104,7 @@ class ArticuloBLL(ArticuloMPP):
         codigo = listado[idx][0]
         descripcion = obtener_descripcion()
         stock = obtener_stock()
-        articulo = ArticuloBEL(codigo, descripcion, stock)
+        articulo = ArticuloModel(codigo, descripcion, stock)
 
         if click.confirm(f"\n¿Confirma la modificación?"):
             self.articulo_mpp.update(articulo, idx)

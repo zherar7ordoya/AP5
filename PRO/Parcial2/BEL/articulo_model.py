@@ -1,4 +1,4 @@
-class ArticuloBEL:
+class ArticuloModel:
     def __init__(self, codigo, descripcion, stock):
         self.codigo = codigo
         self.descripcion = descripcion

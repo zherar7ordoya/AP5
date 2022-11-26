@@ -1,16 +1,14 @@
 from decimal import Decimal
-
 from colorama import Fore
+from BLL.articulo_logic import ArticuloLogic
+from excepcion_capturada import RegistroSistematicoExcepciones
+from venta_logic import VentaLogic
 
-from articulo_bll import ArticuloBLL
-from excepcion_capturada import ExceptionCapturada
-from venta_bll import VentaBLL
 
-
-class ListadoBLL:
+class ListadoLogic:
     def __init__(self):
-        self.articulo_bll = ArticuloBLL()
-        self.venta_bll = VentaBLL()
+        self.articulo_bll = ArticuloLogic()
+        self.venta_bll = VentaLogic()
 
     def articulos(self):
         try:
@@ -19,8 +17,8 @@ class ListadoBLL:
             for idx, x in enumerate(listado):
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
 
     def ventas(self):
         try:
@@ -29,8 +27,8 @@ class ListadoBLL:
             for idx, x in enumerate(listado):
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
 
     def sucursales(self):
         try:
@@ -38,8 +36,8 @@ class ListadoBLL:
             self.ordenar_archivo()
             self.imprimir_reporte()
             input("\nOperación completada (presione una tecla para continuar)")
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
 
     def ordenar_archivo(self):
         # Leo el archivo de ventas
@@ -119,5 +117,5 @@ class ListadoBLL:
             for idx, x in enumerate(listado):
                 if x[0] == codigo:
                     return x[1]
-        except ExceptionCapturada as e:
-            print(e)
+        except Exception as e:
+            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)

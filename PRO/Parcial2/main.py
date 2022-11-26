@@ -4,13 +4,14 @@
 # Description:  Mi Programa en Python v2.0
 # ========================================
 
+
 from colorama import Fore
 from consolemenu import *
 from consolemenu.items import *
 
-from articulo_bll import ArticuloBLL
-from listado_bll import ListadoBLL
-from venta_bll import VentaBLL
+from BLL.articulo_logic import ArticuloLogic
+from BLL.listado_logic import ListadoLogic
+from BLL.venta_logic import VentaLogic
 
 
 def main():
@@ -23,19 +24,19 @@ def main():
     submenu_listados = SelectionMenu([], title="LISTADOS", subtitle="Seleccione una opción")
 
     # Agrego los items del submenú artículos
-    articulo = ArticuloBLL()
+    articulo = ArticuloLogic()
     submenu_articulos.append_item(FunctionItem("Alta de artículo", articulo.alta))
     submenu_articulos.append_item(FunctionItem("Baja de artículo", articulo.baja))
     submenu_articulos.append_item(FunctionItem("Modificación de artículo", articulo.modificacion))
 
     # Agrego los items del submenú ventas
-    venta = VentaBLL()
+    venta = VentaLogic()
     submenu_ventas.append_item(FunctionItem("Alta de venta", venta.alta))
     submenu_ventas.append_item(FunctionItem("Baja de venta", venta.baja))
     submenu_ventas.append_item(FunctionItem("Modificación de venta", venta.modificacion))
 
     # Agrego los items del submenú listados
-    listado = ListadoBLL()
+    listado = ListadoLogic()
     submenu_listados.append_item(FunctionItem("Listado de Artículos", listado.articulos))
     submenu_listados.append_item(FunctionItem("Listado de Ventas", listado.ventas))
     submenu_listados.append_item(FunctionItem("Listado de Sucursales", listado.sucursales))
