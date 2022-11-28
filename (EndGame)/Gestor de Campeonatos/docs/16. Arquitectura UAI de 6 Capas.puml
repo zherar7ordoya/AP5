@@ -1,51 +1,98 @@
 ' =======================================
 ' Author:      Gerardo Tordoya
 ' Create date: 2022-11-02
-' Description: Arquitectura LUG (7 Capas)
+' Description: Arquitectura UAI (7 Capas)
 ' =======================================
 
 @startuml Gestor de Campeonatos
 
 ' ─── CONFIGURACIONES ──────────────────────────────────────────────────────────
 
-skin rose
-skinparam classFontName Calibri
+' skin rose
+' skinparam classFontName Calibri
 ' skinparam shadowing false
 ' hide circle
 skinparam linetype ortho
 
 ' --- TÍTULO ───────────────────────────────────────────────────────────────────
 
-title Arquitectura UAI de 6 Capas
+title Arquitectura UAI (7 Capas)
 
 ' ─── ENTIDADES ────────────────────────────────────────────────────────────────
 
-package BEL
+package BEL <<Rectangle>>
 {
+    class PremioModel
+    {
+        - int id
+        - string nombre
+        - string descripcion
+        - int puntos
+    }
 }
 
-package UIL
+package UIL <<Rectangle>>
 {
+    class PremioView
+    {
+        - int id
+        - string nombre
+        - string descripcion
+        - int puntos
+    }
 }
 
-package BLL
+package BLL <<Rectangle>>
 {
+    class PremioLogic
+    {
+        + Alta(PremioModel premio)
+        + Baja(PremioModel premio)
+        + Modificacion(PremioModel premio)
+    }
 }
 
-package MPP
+package MPP <<Rectangle>>
 {
+    class PremioMapper
+    {
+        + Create(PremioModel premio)
+        + Read(PremioModel premio)
+        + Update(PremioModel premio)
+        + Delete(PremioModel premio)
+    }
 }
 
-package DAL
+package DAL <<Rectangle>>
 {
+    class PremioDAL
+    {
+        + Leer()
+        + Escribir()
+    }
+    
 }
 
-package ABS
+package ABS <<Rectangle>>
 {
+    interface IEntidad
+    {
+        int id
+    }
+    interface IGestor
+    {
+        Alta(IEntidad entidad)
+        Baja(IEntidad entidad)
+        Modificacion(IEntidad entidad)
+    }
 }
 
 package DAT <<Database>>
 {
+    annotation Premios_GetAll
+    {
+        @SELECT * FROM Premios
+    }
 }
 
 ' ─── RELACIONES ───────────────────────────────────────────────────────────────
@@ -68,7 +115,7 @@ MPP -[plain]-> ABS
 
 ' ─── SUBTÍTULO ────────────────────────────────────────────────────────────────
 
-caption Última actualización: 2022-11-04
+caption Última actualización: 2022-11-28
 
 ' ─── FIN ──────────────────────────────────────────────────────────────────────
 @enduml
