@@ -1,7 +1,10 @@
 import click
 from colorama import Fore
 
-from SEC.excepcion import Monitor
+from consolemenu.prompt_utils import PromptUtils
+from colors import color
+
+from SEC.excepcion import RSE
 from BLL.validaciones import Valida
 from BEL.venta_model import VentaModel
 from MPP.venta_mapper import VentaMapper
@@ -78,7 +81,7 @@ class VentaLogic(VentaMapper):
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise Monitor(*e.args, **e.kwargs)
+            raise RSE(*e.args)
 
     def baja(self):
         try:
@@ -98,7 +101,7 @@ class VentaLogic(VentaMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise Monitor("Debe ingresar un número de registro válido")
+                raise RSE("Debe ingresar un número de registro válido")
 
             if click.confirm(f"\n¿Confirma la baja?"):
                 self.venta_mpp.delete(idx)
@@ -108,7 +111,7 @@ class VentaLogic(VentaMapper):
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise Monitor(*e.args, **e.kwargs)
+            raise RSE(*e.args)
 
     def modificacion(self):
         try:
@@ -129,8 +132,7 @@ class VentaLogic(VentaMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise Monitor("Debe ingresar un número de registro válido")
-
+                raise RSE("Debe ingresar un número de registro válido")
 
             print("\nIngrese los nuevos datos de la venta")
             venta = VentaModel(obtener_fecha(),
@@ -146,8 +148,5 @@ class VentaLogic(VentaMapper):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
-        except IndexError as e:
-            raise Monitor(*e.args, **e.kwargs)
         except Exception as e:
-            raise Monitor(*e.args, **e.kwargs)
-
+            raise RSE(*e.args)

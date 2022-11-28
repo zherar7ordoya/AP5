@@ -5,20 +5,18 @@
 # ========================================
 
 
-from colorama import Fore, init
 from consolemenu import *
 from consolemenu.items import *
+from colors import color
 
 from BLL.articulo_logic import ArticuloLogic
 from BLL.listado_logic import ListadoLogic
 from BLL.venta_logic import VentaLogic
 
-init()
-
 
 def main():
     # Menu principal
-    menu = ConsoleMenu(f"{Fore.GREEN}ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS{Fore.RESET}", "Seleccione una opción")
+    menu = ConsoleMenu(color(f"ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS", fg='green'), "Seleccione una opción")
 
     # Creo los submenús
     submenu_articulos = SelectionMenu([], title="ABM ARTÍCULOS", subtitle="Seleccione una opción")

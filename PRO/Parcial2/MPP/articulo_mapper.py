@@ -1,6 +1,6 @@
 from DAL.acceso_datos import AccesoDatos
 from MPP.venta_mapper import VentaMapper
-from SEC.excepcion import Monitor
+from SEC.excepcion import RSE
 
 
 class ArticuloMapper(AccesoDatos):
@@ -19,7 +19,7 @@ class ArticuloMapper(AccesoDatos):
             listado.append(nuevo)
             self.escribir(listado)
         except Exception as e:
-            raise Monitor("ERROR AL CREAR", *e.args)
+            raise RSE("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class ArticuloMapper(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise Monitor("ERROR AL LEER", *e.args)
+            raise RSE("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -39,7 +39,7 @@ class ArticuloMapper(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise Monitor("ERROR AL ACTUALIZAR", *e.args)
+            raise RSE("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -64,4 +64,4 @@ class ArticuloMapper(AccesoDatos):
             self.escribir(lista_articulos)
 
         except Exception as e:
-            raise Monitor("ERROR AL ELIMINAR", *e.args)
+            raise RSE("ERROR AL ELIMINAR", *e.args)
