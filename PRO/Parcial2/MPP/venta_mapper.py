@@ -1,11 +1,11 @@
-from acceso_datos import AccesoDatos
-from excepcion_capturada import RegistroSistematicoExcepciones
+from DAL.acceso_datos import AccesoDatos
+from SEC.excepcion import Monitor
 
 
 class VentaMapper(AccesoDatos):
 
     def __init__(self):
-        super().__init__('ventas.csv')
+        super().__init__('DAT\\ventas.csv')
 
     # *** ALTAS ***
     def create(self, objeto):
@@ -17,9 +17,9 @@ class VentaMapper(AccesoDatos):
                      objeto.sucursal,
                      objeto.importe]
             listado.append(nuevo)
-            self.escribir(self.archivo, listado)
+            self.escribir(listado)
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL CREAR", *e.args)
+            raise Monitor("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class VentaMapper(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL LEER", *e.args)
+            raise Monitor("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, cod):
@@ -41,7 +41,7 @@ class VentaMapper(AccesoDatos):
             listado[cod] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL ACTUALIZAR", *e.args)
+            raise Monitor("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -50,5 +50,5 @@ class VentaMapper(AccesoDatos):
             del listado[idx]
             self.escribir(listado)
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL ELIMINAR", *e.args)
+            raise Monitor("ERROR AL ELIMINAR", *e.args)
 

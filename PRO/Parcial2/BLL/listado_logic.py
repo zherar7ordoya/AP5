@@ -1,8 +1,9 @@
 from decimal import Decimal
 from colorama import Fore
+
 from BLL.articulo_logic import ArticuloLogic
-from excepcion_capturada import RegistroSistematicoExcepciones
-from venta_logic import VentaLogic
+from BLL.venta_logic import VentaLogic
+from SEC.excepcion import Monitor
 
 
 class ListadoLogic:
@@ -18,7 +19,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
 
     def ventas(self):
         try:
@@ -28,7 +29,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
 
     def sucursales(self):
         try:
@@ -37,7 +38,7 @@ class ListadoLogic:
             self.imprimir_reporte()
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
 
     def ordenar_archivo(self):
         # Leo el archivo de ventas
@@ -118,4 +119,4 @@ class ListadoLogic:
                 if x[0] == codigo:
                     return x[1]
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)

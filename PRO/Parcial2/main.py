@@ -1,17 +1,19 @@
 # ========================================
 # Author:       Gerardo Tordoya
-# Create date:  2022-11-22
-# Description:  Mi Programa en Python v2.0
+# Create date:  2022-11-28
+# Description:  Mi Programa en Python v2.1
 # ========================================
 
 
-from colorama import Fore
+from colorama import Fore, init
 from consolemenu import *
 from consolemenu.items import *
 
 from BLL.articulo_logic import ArticuloLogic
 from BLL.listado_logic import ListadoLogic
 from BLL.venta_logic import VentaLogic
+
+init()
 
 
 def main():

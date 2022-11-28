@@ -1,8 +1,8 @@
 import click
 from colorama import Fore
 
-from excepcion_capturada import RegistroSistematicoExcepciones
-from validaciones import Valida
+from SEC.excepcion import Monitor
+from BLL.validaciones import Valida
 from BEL.venta_model import VentaModel
 from MPP.venta_mapper import VentaMapper
 
@@ -18,8 +18,10 @@ def obtener_fecha():
 
 def obtener_articulo():
     while True:
+        # Necesito instancia porque valida_codigo() no es un método estático
+        validacion = Valida()
         codigo = input("Código de artículo (LNNN): ")
-        if Valida.valida_codigo(codigo) and Valida.existe_codigo(codigo):
+        if Valida.valida_codigo(codigo) and validacion.existe_codigo(codigo):
             return codigo
         else:
             print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
@@ -76,7 +78,7 @@ class VentaLogic(VentaMapper):
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
 
     def baja(self):
         try:
@@ -94,6 +96,10 @@ class VentaLogic(VentaMapper):
                 except ValueError:
                     print("Error. Debe ingresar un número entero")
 
+            # Y este es un caso a prueba de chistosos o distraídos.
+            if idx < 0 or idx > len(listado) - 1:
+                raise Monitor("Debe ingresar un número de registro válido")
+
             if click.confirm(f"\n¿Confirma la baja?"):
                 self.venta_mpp.delete(idx)
                 print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
@@ -102,7 +108,7 @@ class VentaLogic(VentaMapper):
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
 
     def modificacion(self):
         try:
@@ -121,6 +127,11 @@ class VentaLogic(VentaMapper):
                 except ValueError:
                     print("Error. Debe ingresar un número entero")
 
+            # Y este es un caso a prueba de chistosos o distraídos.
+            if idx < 0 or idx > len(listado) - 1:
+                raise Monitor("Debe ingresar un número de registro válido")
+
+
             print("\nIngrese los nuevos datos de la venta")
             venta = VentaModel(obtener_fecha(),
                                obtener_articulo(),
@@ -135,5 +146,8 @@ class VentaLogic(VentaMapper):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
+        except IndexError as e:
+            raise Monitor(*e.args, **e.kwargs)
         except Exception as e:
-            raise RegistroSistematicoExcepciones(*e.args, **e.kwargs)
+            raise Monitor(*e.args, **e.kwargs)
+

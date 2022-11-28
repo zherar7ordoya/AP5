@@ -1,6 +1,5 @@
 import re
 
-
 from MPP.articulo_mapper import ArticuloMapper
 
 

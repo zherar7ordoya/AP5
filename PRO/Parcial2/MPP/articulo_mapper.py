@@ -1,13 +1,13 @@
-import csv
-
-from acceso_datos import AccesoDatos
-from excepcion_capturada import RegistroSistematicoExcepciones
+from DAL.acceso_datos import AccesoDatos
+from MPP.venta_mapper import VentaMapper
+from SEC.excepcion import Monitor
 
 
 class ArticuloMapper(AccesoDatos):
 
     def __init__(self):
-        super().__init__('articulos.csv')
+        super().__init__('DAT\\articulos.csv')
+        self.ventas_mpp = VentaMapper()
 
     # *** ALTAS ***
     def create(self, objeto):
@@ -19,7 +19,7 @@ class ArticuloMapper(AccesoDatos):
             listado.append(nuevo)
             self.escribir(listado)
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL CREAR", *e.args)
+            raise Monitor("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class ArticuloMapper(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL LEER", *e.args)
+            raise Monitor("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -39,34 +39,29 @@ class ArticuloMapper(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL ACTUALIZAR", *e.args)
+            raise Monitor("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
         try:
-            listado = self.leer()
+            lista_articulos = self.leer()
 
-            # TODO - Usar CRUD (!)
-            codigo = listado[idx][0]
-            archivo = open("../ventas.csv")
-            ventas = csv.reader(archivo)
+            # Borro las ventas asociadas al artículo
+            codigo = lista_articulos[idx][0]
+            lista_ventas = iter(self.ventas_mpp.leer())
             reemplazo = []
-            item = next(ventas, None)
+            item = next(lista_ventas, None)
 
             while item:
                 if item[1] != codigo:
                     reemplazo.append(item)
-                item = next(ventas, None)
+                item = next(lista_ventas, None)
 
-            with open("../ventas.csv", 'w', newline='\n') as dat:
-                csv.writer(dat).writerows(reemplazo)
-
-            archivo.close()
+            self.ventas_mpp.escribir(reemplazo)
 
             # Ahora sí puedo borrar el artículo
-            del listado[idx]
-            self.escribir(listado)
+            del lista_articulos[idx]
+            self.escribir(lista_articulos)
 
         except Exception as e:
-            raise RegistroSistematicoExcepciones("ERROR AL ELIMINAR", *e.args)
-
+            raise Monitor("ERROR AL ELIMINAR", *e.args)
