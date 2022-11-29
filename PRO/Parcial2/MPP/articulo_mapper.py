@@ -6,7 +6,7 @@ from EHL.handler_logger import RegistradorExcepciones
 class ArticuloMapper(AccesoDatos):
 
     def __init__(self):
-        super().__init__('DAT\\articulos.csv')
+        super().__init__('DAT\\Harticulos.csv')
         self.ventas_mpp = VentaMapper()
 
     # *** ALTAS ***

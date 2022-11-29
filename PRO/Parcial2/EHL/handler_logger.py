@@ -4,27 +4,23 @@
 # Description:  Error/Exception Handler Layer (EHL)
 # =================================================
 
-from datetime import date
+
+from datetime import datetime
 from colors import color
-from consolemenu import *
-from consolemenu.prompt_utils import PromptUtils
-
-import logging
-
-logging.basicConfig(filename='EHL/excepciones.log', level=logging.ERROR)
 
 
-# Exception/Error Handler/Logger
 class RegistradorExcepciones(Exception):
     def __init__(self, message, *errors):
         Exception.__init__(self, message)
-        self.errors = errors
 
-        # self.log = open("EHL/excepciones.log", "a")
-        # self.log.write(f"{date.today()} > {message} > {errors}\n")
-        # self.log.close()
+        registro = f"{datetime.now().strftime('%Y-%m-%d %H:%M')} > " \
+                   f"{message} > " \
+                   f"{errors}"
 
-        logging.exception(str(errors[1]))
+        with open('EHL/excepciones.log', 'r+') as archivo:
+            registros = archivo.read()
+            archivo.seek(0, 0)
+            archivo.write(f"{registro}\n{registros}")
 
-        print(color(f"\n{message} > {errors[1]}\n", fg="red"))
-        PromptUtils(Screen()).enter_to_continue()
+        print(color(f"\n{message} > {errors}\n", fg="red"))
+        input("\nPresione una tecla para continuar...")
