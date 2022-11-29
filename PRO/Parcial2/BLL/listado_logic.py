@@ -6,7 +6,8 @@ from colors import color
 
 from BLL.articulo_logic import ArticuloLogic
 from BLL.venta_logic import VentaLogic
-from SEC.excepcion import RSE
+from EHL.handler_logger import RegistradorExcepciones
+
 
 
 class ListadoLogic:
@@ -22,7 +23,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)
 
     def ventas(self):
         try:
@@ -32,7 +33,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)
 
     def sucursales(self):
         try:
@@ -41,7 +42,7 @@ class ListadoLogic:
             self.imprimir_reporte()
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)
 
     def ordenar_archivo(self):
         # Leo el archivo de ventas
@@ -122,4 +123,4 @@ class ListadoLogic:
                 if x[0] == codigo:
                     return x[1]
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)

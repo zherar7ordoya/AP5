@@ -21,3 +21,33 @@
 2022-11-28 > NO SE ENCONTRÓ EL ARCHIVO > (2, 'No such file or directory')
 2022-11-28 > NO SE ENCONTRÓ EL ARCHIVO > ()
 2022-11-28 > NO SE ENCONTRÓ EL ARCHIVO > ()
+2022-11-29 > NO SE ENCONTRÓ EL ARCHIVO > (2, 'No such file or directory')
+2022-11-29 > NO SE ENCONTRÓ EL ARCHIVO > ()
+ERROR:root:(2, 'No such file or directory')
+Traceback (most recent call last):
+  File "C:\Documents\AP5\PRO\Parcial2\DAL\acceso_datos.py", line 21, in leer
+    with open(self.archivo) as dat:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'DAT\\harticulos.csv'
+ERROR:root:()
+Traceback (most recent call last):
+  File "C:\Documents\AP5\PRO\Parcial2\DAL\acceso_datos.py", line 21, in leer
+    with open(self.archivo) as dat:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'DAT\\harticulos.csv'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Documents\AP5\PRO\Parcial2\BLL\listado_logic.py", line 21, in articulos
+    listado = self.articulo_bll.leer()
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Documents\AP5\PRO\Parcial2\DAL\acceso_datos.py", line 24, in leer
+    raise RegistradorExcepciones("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
+EHL.handler_logger.RegistradorExcepciones: NO SE ENCONTRÓ EL ARCHIVO
+ERROR:root:No such file or directory
+Traceback (most recent call last):
+  File "C:\Documents\AP5\PRO\Parcial2\DAL\acceso_datos.py", line 21, in leer
+    with open(self.archivo) as dat:
+         ^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'DAT\\harticulos.csv'

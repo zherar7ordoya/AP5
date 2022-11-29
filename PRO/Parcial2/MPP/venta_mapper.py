@@ -1,5 +1,5 @@
 from DAL.acceso_datos import AccesoDatos
-from SEC.excepcion import RSE
+from EHL.handler_logger import RegistradorExcepciones
 
 
 class VentaMapper(AccesoDatos):
@@ -19,7 +19,7 @@ class VentaMapper(AccesoDatos):
             listado.append(nuevo)
             self.escribir(listado)
         except Exception as e:
-            raise RSE("ERROR AL CREAR", *e.args)
+            raise RegistradorExcepciones("ERROR AL CREAR", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class VentaMapper(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise RSE("ERROR AL LEER", *e.args)
+            raise RegistradorExcepciones("ERROR AL LEER", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, cod):
@@ -41,7 +41,7 @@ class VentaMapper(AccesoDatos):
             listado[cod] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise RSE("ERROR AL ACTUALIZAR", *e.args)
+            raise RegistradorExcepciones("ERROR AL ACTUALIZAR", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -50,5 +50,5 @@ class VentaMapper(AccesoDatos):
             del listado[idx]
             self.escribir(listado)
         except Exception as e:
-            raise RSE("ERROR AL ELIMINAR", *e.args)
+            raise RegistradorExcepciones("ERROR AL ELIMINAR", *e.args)
 

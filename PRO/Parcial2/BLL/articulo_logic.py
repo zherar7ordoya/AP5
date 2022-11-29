@@ -6,7 +6,7 @@ from colors import color
 
 from BEL.articulo_model import ArticuloModel
 from MPP.articulo_mapper import ArticuloMapper
-from SEC.excepcion import RSE
+from EHL.handler_logger import RegistradorExcepciones
 from BLL.validaciones import Valida
 
 
@@ -64,7 +64,7 @@ class ArticuloLogic(ArticuloMapper):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE("ERROR AL DAR DE ALTA", *e.args)
+            raise RegistradorExcepciones("ERROR AL DAR DE ALTA", *e.args)
 
     def baja(self):
         try:
@@ -84,7 +84,7 @@ class ArticuloLogic(ArticuloMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RSE("Debe ingresar un número de registro válido")
+                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
 
             print(
                 f"\n{Fore.RED}ADVERTENCIA:"
@@ -97,7 +97,7 @@ class ArticuloLogic(ArticuloMapper):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)
 
     def modificacion(self):
         try:
@@ -117,7 +117,7 @@ class ArticuloLogic(ArticuloMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RSE("Debe ingresar un número de registro válido")
+                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
 
             codigo = listado[idx][0]
             descripcion = obtener_descripcion()
@@ -131,4 +131,4 @@ class ArticuloLogic(ArticuloMapper):
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RSE(*e.args)
+            raise RegistradorExcepciones(*e.args)
