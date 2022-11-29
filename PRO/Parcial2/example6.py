@@ -1,9 +1,9 @@
+
 from consolemenu import *
 from consolemenu.items import *
 from consolemenu.prompt_utils import PromptUtils
 
 from colors import color
-
 
 #
 # Example 6 shows the use of colors in a ConsoleMenu.
@@ -23,6 +23,7 @@ light. A vast silence reigned over the land.
 
 
 def main():
+
     # Create the root menu
     menu = ConsoleMenu("Color Menu", "This is a Console Menu with Colors")
 
@@ -31,10 +32,6 @@ def main():
     menu.append_item(FunctionItem("Show {} text".format(color("Blue", fg='blue')), action, args=['blue']))
     menu.append_item(FunctionItem("Show {} text".format(color("Yellow", fg='yellow')), action, args=['yellow']))
     menu.append_item(FunctionItem("Show {} text".format(color("Green", fg='green')), action, args=['green']))
-    menu.append_item(FunctionItem(color("Gerardo Tordoya", fg='green'), action, args=['green']))
-
-    # Show the menu
-    menu.show()
 
     # Show the menu
     menu.start()

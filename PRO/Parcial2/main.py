@@ -14,10 +14,14 @@ from BLL.listado_logic import ListadoLogic
 from BLL.venta_logic import VentaLogic
 
 
+# ANSI Colors:
+# https://pypi.org/project/ansicolors/
+# https://www.ditig.com/256-colors-cheat-sheet
+
 def main():
     # Menu principal
-    menu = ConsoleMenu(color("ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS", fg='green'),
-                       color("Seleccione una opción", fg='yellow'))
+    menu = ConsoleMenu(color("ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS", fg='LightGreen', style='bold+italic+underline'),
+                       color("Seleccione una opción", fg=226))
 
     # Creo los submenús
     submenu_articulos = SelectionMenu([], title=color("ABM ARTÍCULOS", fg='green'),
