@@ -16,12 +16,16 @@ from BLL.venta_logic import VentaLogic
 
 def main():
     # Menu principal
-    menu = ConsoleMenu(color(f"ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS", fg='green'), "Seleccione una opción")
+    menu = ConsoleMenu(color("ADMINISTRACIÓN DE ARTÍCULOS Y VENTAS", fg='green'),
+                       color("Seleccione una opción", fg='yellow'))
 
     # Creo los submenús
-    submenu_articulos = SelectionMenu([], title="ABM ARTÍCULOS", subtitle="Seleccione una opción")
-    submenu_ventas = SelectionMenu([], title="ABM VENTAS", subtitle="Seleccione una opción")
-    submenu_listados = SelectionMenu([], title="LISTADOS", subtitle="Seleccione una opción")
+    submenu_articulos = SelectionMenu([], title=color("ABM ARTÍCULOS", fg='green'),
+                                      subtitle=color("Seleccione una opción", fg='yellow'))
+    submenu_ventas = SelectionMenu([], title=color("ABM VENTAS", fg='green'),
+                                   subtitle=color("Seleccione una opción", fg='yellow'))
+    submenu_listados = SelectionMenu([], title=color("LISTADOS", fg='green'),
+                                     subtitle=color("Seleccione una opción", fg='yellow'))
 
     # Agrego los items del submenú artículos
     articulo = ArticuloLogic()

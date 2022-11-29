@@ -69,6 +69,10 @@
       <workItem from="1669607097801" duration="94000" />
       <workItem from="1669607255263" duration="427000" />
       <workItem from="1669684189073" duration="18000" />
+      <workItem from="1669684281101" duration="160000" />
+      <workItem from="1669685143035" duration="646000" />
+      <workItem from="1669685938013" duration="81000" />
+      <workItem from="1669686052078" duration="600000" />
     </task>
     <servers />
   </component>
@@ -96,5 +100,8 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Parcial2$main.coverage" NAME="main Coverage Results" MODIFIED="1669686521329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
