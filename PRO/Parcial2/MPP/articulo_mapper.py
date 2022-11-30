@@ -1,12 +1,12 @@
 from DAL.acceso_datos import AccesoDatos
 from MPP.venta_mapper import VentaMapper
-from EHL.handler_logger import RegistradorExcepciones
+from EHL.handler_logger import CapturadorExcepciones
 
 
 class ArticuloMapper(AccesoDatos):
 
     def __init__(self):
-        super().__init__('DAT\\Harticulos.csv')
+        super().__init__('DAT\\articulos.csv')
         self.ventas_mpp = VentaMapper()
 
     # *** ALTAS ***
@@ -19,7 +19,7 @@ class ArticuloMapper(AccesoDatos):
             listado.append(nuevo)
             self.escribir(listado)
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL CREAR", *e.args)
+            raise CapturadorExcepciones("Error de creación de artículo", *e.args)
 
     # *** CONSULTAS ***
     def read(self, idx):
@@ -27,7 +27,7 @@ class ArticuloMapper(AccesoDatos):
             listado = self.leer()
             return listado[idx]
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL LEER", *e.args)
+            raise CapturadorExcepciones("Error de lectura de artículo", *e.args)
 
     # *** MODIFICACIONES ***
     def update(self, objeto, idx):
@@ -39,7 +39,7 @@ class ArticuloMapper(AccesoDatos):
             listado[idx] = nuevo
             self.escribir(listado)
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL ACTUALIZAR", *e.args)
+            raise CapturadorExcepciones("Error de actualización de artículo", *e.args)
 
     # *** BAJAS ***
     def delete(self, idx):
@@ -64,4 +64,4 @@ class ArticuloMapper(AccesoDatos):
             self.escribir(lista_articulos)
 
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL ELIMINAR", *e.args)
+            raise CapturadorExcepciones("Error de eliminación de artículo", *e.args)

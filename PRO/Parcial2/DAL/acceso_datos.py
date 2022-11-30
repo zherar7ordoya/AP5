@@ -1,5 +1,5 @@
 import csv
-from EHL.handler_logger import RegistradorExcepciones
+from EHL.handler_logger import CapturadorExcepciones
 
 
 class AccesoDatos:
@@ -21,7 +21,7 @@ class AccesoDatos:
             with open(self.archivo) as dat:
                 return list(csv.reader(dat))
         except FileNotFoundError as e:
-            raise RegistradorExcepciones("NO SE ENCONTRÓ EL ARCHIVO", *e.args)
+            raise CapturadorExcepciones("Error: Archivo no encontrado", *e.args)
 
     # Pylint me dice que el método escribir() puede ser estático, pero no me lo justifica.
     def escribir(self, listado):
@@ -29,4 +29,4 @@ class AccesoDatos:
             with open(self.archivo, 'w', newline='\n') as dat:
                 csv.writer(dat).writerows(listado)
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL CERRAR EL ARCHIVO", *e.args)
+            raise CapturadorExcepciones("Error al cerrar el archivo", *e.args)

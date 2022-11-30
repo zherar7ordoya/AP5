@@ -1,12 +1,10 @@
 import click
-from colorama import Fore
 
-from consolemenu.prompt_utils import PromptUtils
 from colors import color
 
 from BEL.articulo_model import ArticuloModel
 from MPP.articulo_mapper import ArticuloMapper
-from EHL.handler_logger import RegistradorExcepciones
+from EHL.handler_logger import CapturadorExcepciones
 from BLL.validaciones import Valida
 
 
@@ -59,12 +57,12 @@ class ArticuloLogic(ArticuloMapper):
 
             if click.confirm(f"\n¿Confirma el alta?"):
                 self.articulo_mpp.create(articulo)
-                print(f"\nIngresado > {Fore.YELLOW}{articulo}{Fore.RESET}")
+                print(f"\nIngresado > " + color(f"{articulo}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones("ERROR AL DAR DE ALTA", *e.args)
+            raise CapturadorExcepciones("Error al dar de alta", *e.args)
 
     def baja(self):
         try:
@@ -84,20 +82,19 @@ class ArticuloLogic(ArticuloMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
+                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
 
-            print(
-                f"\n{Fore.RED}ADVERTENCIA:"
-                f"Esta operación también eliminará los registros asociados de Ventas{Fore.RESET}")
+            print(color(f"\nADVERTENCIA:\n"
+                        f"Esta operación también eliminará los registros asociados de Ventas\n", fg='red'))
 
             if click.confirm(f"\n¿Confirma la baja?"):
                 self.articulo_mpp.delete(idx)
-                print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
+                print(f"\nEliminado > " + color(f"{listado[idx]}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al dar la baja", *e.args)
 
     def modificacion(self):
         try:
@@ -117,7 +114,7 @@ class ArticuloLogic(ArticuloMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
+                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
 
             codigo = listado[idx][0]
             descripcion = obtener_descripcion()
@@ -126,9 +123,9 @@ class ArticuloLogic(ArticuloMapper):
 
             if click.confirm(f"\n¿Confirma la modificación?"):
                 self.articulo_mpp.update(articulo, idx)
-                print(f"\nModificado > {Fore.YELLOW}{articulo}{Fore.RESET}")
+                print(f"\nModificado > " + color(f"{articulo}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al modificar", *e.args)

@@ -1,10 +1,8 @@
 import click
-from colorama import Fore
 
-from consolemenu.prompt_utils import PromptUtils
 from colors import color
 
-from EHL.handler_logger import RegistradorExcepciones
+from EHL.handler_logger import CapturadorExcepciones
 from BLL.validaciones import Valida
 from BEL.venta_model import VentaModel
 from MPP.venta_mapper import VentaMapper
@@ -75,13 +73,13 @@ class VentaLogic(VentaMapper):
 
             if click.confirm(f"\n¿Confirma el alta?"):
                 self.venta_mpp.create(venta)
-                print(f"\nAgregado > {Fore.YELLOW}{venta}{Fore.RESET}")
+                print(f"\nAgregado > " + color(f"{venta}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al dar el alta a la venta", *e.args)
 
     def baja(self):
         try:
@@ -101,17 +99,17 @@ class VentaLogic(VentaMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
+                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
 
             if click.confirm(f"\n¿Confirma la baja?"):
                 self.venta_mpp.delete(idx)
-                print(f"\nEliminado > {Fore.YELLOW}{listado[idx]}{Fore.RESET}")
+                print(f"\nEliminado > " + color(f"{listado[idx]}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al intentar dar de baja la venta", *e.args)
 
     def modificacion(self):
         try:
@@ -132,7 +130,7 @@ class VentaLogic(VentaMapper):
 
             # Y este es un caso a prueba de chistosos o distraídos.
             if idx < 0 or idx > len(listado) - 1:
-                raise RegistradorExcepciones("Debe ingresar un número de registro válido")
+                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
 
             print("\nIngrese los nuevos datos de la venta")
             venta = VentaModel(obtener_fecha(),
@@ -143,10 +141,10 @@ class VentaLogic(VentaMapper):
 
             if click.confirm(f"\n¿Confirma la modificación?"):
                 self.venta_mpp.update(venta, idx)
-                print(f"\nModificado > {Fore.YELLOW}{venta}{Fore.RESET}")
+                print(f"\nModificado > " + color(f"{venta}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")
 
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al modificar la venta", *e.args)

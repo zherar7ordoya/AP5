@@ -1,12 +1,9 @@
 from decimal import Decimal
-from colorama import Fore
-
-from consolemenu.prompt_utils import PromptUtils
 from colors import color
 
 from BLL.articulo_logic import ArticuloLogic
 from BLL.venta_logic import VentaLogic
-from EHL.handler_logger import RegistradorExcepciones
+from EHL.handler_logger import CapturadorExcepciones
 
 
 
@@ -23,7 +20,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al generar el listado", *e.args)
 
     def ventas(self):
         try:
@@ -33,7 +30,7 @@ class ListadoLogic:
                 print(idx, x)
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al general el listado de ventas", *e.args)
 
     def sucursales(self):
         try:
@@ -42,7 +39,7 @@ class ListadoLogic:
             self.imprimir_reporte()
             input("\nOperación completada (presione una tecla para continuar)")
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al general el listado de sucursales", *e.args)
 
     def ordenar_archivo(self):
         # Leo el archivo de ventas
@@ -88,12 +85,12 @@ class ListadoLogic:
 
         while item:
             sucursal, total_sucursal = item[3], 0
-            print(f"{Fore.YELLOW}\nSucursal {sucursal}\n{Fore.RESET}")
+            print(color(f"\nSucursal {sucursal}\n", fg="yellow"))
 
             # Bucle Total Sucursal
             while item and item[3] == sucursal:
                 articulo, total_articulo = item[1], 0
-                print(f"{Fore.RED}\t{self.get_descripcion(articulo)}{Fore.RESET}")
+                print(color(f"\t{self.get_descripcion(articulo)}", fg="green"))
 
                 # Bucle Total Artículo
                 while item and item[3] == sucursal and item[1] == articulo:
@@ -109,12 +106,12 @@ class ListadoLogic:
 
                 total_sucursal += total_articulo
                 # Muestro el código porque me desequilibra el reporte si muestro el nombre
-                print(f"{Fore.RED}\t\t\tTotal {articulo}:\t{total_articulo}\n{Fore.RESET}")
+                print(color(f"\t\t\tTotal {articulo}:\t{total_articulo}\n", fg="green"))
 
             total_general += total_sucursal
-            print(f"{Fore.YELLOW}\t\t\t\tTotal {sucursal}:\t{total_sucursal}{Fore.RESET}")
+            print(color(f"\t\t\t\tTotal {sucursal}:\t{total_sucursal}", fg="yellow"))
 
-        print(f"{Fore.GREEN}\n\t\t\t\t\tTOTAL GENERAL:\t{total_general}{Fore.RESET}")
+        print(color(f"\n\t\t\t\t\tTOTAL GENERAL:\t{total_general}", fg="red"))
 
     def get_descripcion(self, codigo):
         try:
@@ -123,4 +120,4 @@ class ListadoLogic:
                 if x[0] == codigo:
                     return x[1]
         except Exception as e:
-            raise RegistradorExcepciones(*e.args)
+            raise CapturadorExcepciones("Error al obtener la descripción del artículo", *e.args)
