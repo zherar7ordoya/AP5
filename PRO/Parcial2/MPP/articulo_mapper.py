@@ -1,3 +1,5 @@
+from colors import color
+
 from DAL.acceso_datos import AccesoDatos
 from MPP.venta_mapper import VentaMapper
 from EHL.handler_logger import CapturadorExcepciones
@@ -55,6 +57,8 @@ class ArticuloMapper(AccesoDatos):
             while item:
                 if item[1] != codigo:
                     reemplazo.append(item)
+                else:
+                    print(color(f"Venta eliminada > {item}", fg="red"))
                 item = next(lista_ventas, None)
 
             self.ventas_mpp.escribir(reemplazo)

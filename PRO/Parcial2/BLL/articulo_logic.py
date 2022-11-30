@@ -85,11 +85,11 @@ class ArticuloLogic(ArticuloMapper):
                 raise CapturadorExcepciones("Debe ingresar un número de registro válido")
 
             print(color(f"\nADVERTENCIA:\n"
-                        f"Esta operación también eliminará los registros asociados de Ventas\n", fg='red'))
+                        f"Esta operación también eliminará los registros asociados de Ventas", fg='red'))
 
-            if click.confirm(f"\n¿Confirma la baja?"):
+            if click.confirm(f"\n¿Confirma la baja?\n"):
                 self.articulo_mpp.delete(idx)
-                print(f"\nEliminado > " + color(f"{listado[idx]}", fg="yellow"))
+                print(f"\nArtículo eliminado > " + color(f"{listado[idx]}", fg="yellow"))
                 input("\nOperación completada (presione una tecla para continuar)")
             else:
                 input("\nOperación cancelada (presione una tecla para continuar)")

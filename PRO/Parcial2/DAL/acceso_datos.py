@@ -21,7 +21,9 @@ class AccesoDatos:
             with open(self.archivo) as dat:
                 return list(csv.reader(dat))
         except FileNotFoundError as e:
-            raise CapturadorExcepciones("Error: Archivo no encontrado", *e.args)
+            raise CapturadorExcepciones("Archivo no encontrado", *e.args)
+        except Exception as e:
+            raise CapturadorExcepciones("Error de lectura", *e.args)
 
     # Pylint me dice que el método escribir() puede ser estático, pero no me lo justifica.
     def escribir(self, listado):
@@ -29,4 +31,4 @@ class AccesoDatos:
             with open(self.archivo, 'w', newline='\n') as dat:
                 csv.writer(dat).writerows(listado)
         except Exception as e:
-            raise CapturadorExcepciones("Error al cerrar el archivo", *e.args)
+            raise CapturadorExcepciones("Error de escritura", *e.args)
