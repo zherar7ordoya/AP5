@@ -53,6 +53,7 @@ class Valida(ArticuloMapper):
 
     @staticmethod
     def valida_importe(importe):
-        if re.match(r"(\d*\.?\d*)", importe):
+        r = re.compile(r"^\d*[.,]?\d*$")
+        if r.match(importe):
             return True
         return False

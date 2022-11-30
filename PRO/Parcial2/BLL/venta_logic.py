@@ -1,6 +1,5 @@
 import click
 from colors import color
-from decimal import Decimal
 
 from EHL.handler_logger import CapturadorExcepciones
 from BLL.validaciones import Valida
@@ -50,9 +49,10 @@ def obtener_importe():
     while True:
         importe = input("Importe: ")
         if Valida.valida_importe(importe):
-            return format(Decimal(importe), '.2f')
+            importe = float(importe.replace(",", "."))
+            return format(importe, '.2f')
         else:
-            print("Error. Debe ingresar un importe válido (NN.DD)")
+            print(color("\nError. Debe ingresar un importe válido (número con 2 decimales)\n", fg="yellow"))
 
 
 class VentaLogic(VentaMapper):
