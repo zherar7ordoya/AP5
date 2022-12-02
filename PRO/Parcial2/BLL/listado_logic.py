@@ -6,7 +6,6 @@ from BLL.venta_logic import VentaLogic
 from EHL.handler_logger import CapturadorExcepciones
 
 
-
 class ListadoLogic:
     def __init__(self):
         self.articulo_bll = ArticuloLogic()

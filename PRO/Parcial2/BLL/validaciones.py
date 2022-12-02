@@ -41,7 +41,7 @@ class Valida(ArticuloMapper):
 
     @staticmethod
     def valida_vendedor(vendedor):
-        if re.match(r"([A-Za-z]\w{3,})", vendedor):
+        if re.match(r"([A-Za-z]\w{2})", vendedor):
             return True
         return False
 
