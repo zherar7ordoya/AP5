@@ -1,0 +1,44 @@
+' ========================================
+' Author:       Gerardo Tordoya
+' Create date:  2022-12-02
+' Description:  Probabilidad y Estadística
+' ========================================
+
+
+@startmindmap Clase 05
+skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+' hide circle
+' skinparam linetype ortho
+
+' ------------------------------------------------------------------------------
+
+title Diferenciar entre combinación, permutación o variación
+
+' ─── DIAGRAMA ─────────────────────────────────────────────────────────────────
+
+* ¿Importa el orden?
+
+'left side
+
+    ** Sí
+        *** ¿Todos los elementos?
+            **** Sí
+                *****_ <b>Permutacion</b>
+            **** No
+                *****_ <b>Variación</b>
+
+'right side
+
+    ** No
+        ***_ <b>Combinacion</b>
+
+
+' ──────────────────────────────────────────────────────────────────────────────
+
+caption Actualizado el 2022-12-02
+
+' ..............................................................................
+
+@endmindmap
