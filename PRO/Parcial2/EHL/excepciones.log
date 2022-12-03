@@ -1,3 +1,8 @@
+2022-12-03 11:11 > Error al modificar > <class 'NameError'> > ("name 'color' is not defined",)
+2022-12-03 10:52 > Error al modificar > <class 'UnicodeDecodeError'> > ('utf-8', b'\xff', 0, 1, 'invalid start byte')
+2022-12-03 09:07 > Error al modificar > <class 'UnicodeDecodeError'> > ('utf-8', b'\xff', 0, 1, 'invalid start byte')
+2022-12-03 09:02 > Error al modificar > <class 'EHL.handler_logger.CapturadorExcepciones'> > ('Debe ingresar un número de registro válido',)
+2022-12-03 09:01 > Debe ingresar un número de registro válido > None > ()
 2022-12-02 10:49 > Error al modificar > <class 'EHL.handler_logger.CapturadorExcepciones'> > ('Debe ingresar un número de registro válido',)
 2022-12-02 10:49 > Debe ingresar un número de registro válido > None > ()
 2022-11-30 12:02 > Error al dar el alta a la venta > <class 'ValueError'> > ("Unknown format code 'f' for object of type 'str'",)

@@ -1,6 +1,7 @@
 import click
 from colors import color
 
+from BLL.compartido import Compartido
 from EHL.handler_logger import CapturadorExcepciones
 from BLL.validaciones import Valida
 from BEL.venta_model import VentaModel
@@ -86,20 +87,7 @@ class VentaLogic(VentaMapper):
             print("BAJA DE VENTA\n=============\n")
 
             listado = self.venta_mpp.leer()
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            # Este es un caso especial. Exception no abarca a ValueError.
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro de la venta a eliminar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            # Y este es un caso a prueba de chistosos o distraídos.
-            if idx < 0 or idx > len(listado) - 1:
-                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
+            idx = Compartido.obtener_idx(listado)
 
             if click.confirm(f"\n¿Confirma la baja?"):
                 self.venta_mpp.delete(idx)
@@ -116,21 +104,7 @@ class VentaLogic(VentaMapper):
             print("MODIFICACIÓN DE VENTA\n=====================\n")
 
             listado = self.venta_mpp.leer()
-
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            # Este es un caso especial. Exception no abarca a ValueError.
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro de la venta a modificar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            # Y este es un caso a prueba de chistosos o distraídos.
-            if idx < 0 or idx > len(listado) - 1:
-                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
+            idx = Compartido.obtener_idx(listado)
 
             print("\nIngrese los nuevos datos de la venta")
             venta = VentaModel(obtener_fecha(),

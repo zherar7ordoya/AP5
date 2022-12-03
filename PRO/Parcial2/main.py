@@ -4,6 +4,7 @@
 # Description:  Mi Programa en Python v2.2
 # ========================================
 
+# TODO > Mover a compartido todos los procedimientos "sueltos" (BLL)
 
 from consolemenu import *
 from consolemenu.items import *

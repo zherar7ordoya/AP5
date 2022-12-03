@@ -3,6 +3,7 @@ import click
 from colors import color
 
 from BEL.articulo_model import ArticuloModel
+from BLL.compartido import Compartido
 from MPP.articulo_mapper import ArticuloMapper
 from EHL.handler_logger import CapturadorExcepciones
 from BLL.validaciones import Valida
@@ -40,6 +41,9 @@ def obtener_stock():
             print("El stock ingresado no es válido. Debe ingresar un número mayor a 0")
 
 
+
+
+
 class ArticuloLogic(ArticuloMapper):
 
     def __init__(self):
@@ -69,20 +73,7 @@ class ArticuloLogic(ArticuloMapper):
             print("BAJA DE ARTÍCULO\n================\n")
 
             listado = self.articulo_mpp.leer()
-
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro del artículo a eliminar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            # Y este es un caso a prueba de chistosos o distraídos.
-            if idx < 0 or idx > len(listado) - 1:
-                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
+            idx = obtener_idx(listado)
 
             print(color(f"\nADVERTENCIA:\n"
                         f"Esta operación también eliminará los registros asociados de Ventas", fg='red'))
@@ -101,20 +92,7 @@ class ArticuloLogic(ArticuloMapper):
             print("MODIFICACIÓN DE ARTÍCULO\n========================\n")
 
             listado = self.articulo_mpp.leer()
-
-            for idx, x in enumerate(listado):
-                print(idx, x)
-
-            while True:
-                try:
-                    idx = int(input("\nIngrese el número de registro del artículo a modificar: "))
-                    break
-                except ValueError:
-                    print("Error. Debe ingresar un número entero")
-
-            # Y este es un caso a prueba de chistosos o distraídos.
-            if idx < 0 or idx > len(listado) - 1:
-                raise CapturadorExcepciones("Debe ingresar un número de registro válido")
+            idx = Compartido.obtener_idx(listado)
 
             codigo = listado[idx][0]
             descripcion = obtener_descripcion()
