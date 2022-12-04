@@ -4,7 +4,6 @@
 # Description:  Mi Programa en Python v2.2
 # ========================================
 
-# TODO > Mover a compartido todos los procedimientos "sueltos" (BLL)
 
 from consolemenu import *
 from consolemenu.items import *
@@ -15,10 +14,6 @@ from BLL.listado_logic import ListadoLogic
 from BLL.venta_logic import VentaLogic
 from EHL.handler_logger import CapturadorExcepciones
 
-
-# ANSI Colors:
-# https://pypi.org/project/ansicolors/
-# https://www.ditig.com/256-colors-cheat-sheet
 
 def main():
     try:

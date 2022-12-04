@@ -1,59 +1,9 @@
 import click
 from colors import color
-
 from BLL.compartido import Compartido
 from EHL.handler_logger import CapturadorExcepciones
-from BLL.validaciones import Valida
 from BEL.venta_model import VentaModel
 from MPP.venta_mapper import VentaMapper
-
-
-def obtener_fecha():
-    while True:
-        fecha = input("Fecha (dd/mm/aaaa): ")
-        if Valida.valida_fecha(fecha):
-            return fecha
-        else:
-            print("Error. Debe ingresar una fecha válida")
-
-
-def obtener_articulo():
-    while True:
-        # Necesito instancia porque valida_codigo() no es un método estático
-        validacion = Valida()
-        codigo = input("Código de artículo (LNNN): ")
-        if Valida.valida_codigo(codigo) and validacion.existe_codigo(codigo):
-            return codigo
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 números (de un código que sí existe)")
-
-
-def obtener_vendedor():
-    while True:
-        vendedor = input("Vendedor: ")
-        if Valida.valida_vendedor(vendedor):
-            return vendedor
-        else:
-            print("Error. Debe ingresar 1 letra mayúscula + 3 letras o más")
-
-
-def obtener_sucursal():
-    while True:
-        sucursal = input("Sucursal (LLLNNN): ")
-        if Valida.valida_sucursal(sucursal):
-            return sucursal
-        else:
-            print("Error. Debe ingresar 3 letras mayúsculas + 3 números")
-
-
-def obtener_importe():
-    while True:
-        importe = input("Importe: ")
-        if Valida.valida_importe(importe):
-            importe = float(importe.replace(",", "."))
-            return format(importe, '.2f')
-        else:
-            print(color("\nError. Debe ingresar un importe válido (número con 2 decimales)\n", fg="yellow"))
 
 
 class VentaLogic(VentaMapper):
@@ -62,15 +12,16 @@ class VentaLogic(VentaMapper):
         super().__init__()
         self.venta_mpp = VentaMapper()
 
+
     def alta(self):
         try:
             print("ALTA DE VENTA\n=============\n")
 
-            venta = VentaModel(obtener_fecha(),
-                               obtener_articulo(),
-                               obtener_vendedor(),
-                               obtener_sucursal(),
-                               obtener_importe())
+            venta = VentaModel(Compartido.obtener_fecha(),
+                               Compartido.obtener_articulo(),
+                               Compartido.obtener_vendedor(),
+                               Compartido.obtener_sucursal(),
+                               Compartido.obtener_importe())
 
             if click.confirm(f"\n¿Confirma el alta?"):
                 self.venta_mpp.create(venta)
@@ -81,6 +32,7 @@ class VentaLogic(VentaMapper):
 
         except Exception as e:
             raise CapturadorExcepciones("Error al dar el alta a la venta", *e.args)
+
 
     def baja(self):
         try:
@@ -99,6 +51,7 @@ class VentaLogic(VentaMapper):
         except Exception as e:
             raise CapturadorExcepciones("Error al intentar dar de baja la venta", *e.args)
 
+
     def modificacion(self):
         try:
             print("MODIFICACIÓN DE VENTA\n=====================\n")
@@ -107,11 +60,11 @@ class VentaLogic(VentaMapper):
             idx = Compartido.obtener_idx(listado)
 
             print("\nIngrese los nuevos datos de la venta")
-            venta = VentaModel(obtener_fecha(),
-                               obtener_articulo(),
-                               obtener_vendedor(),
-                               obtener_sucursal(),
-                               obtener_importe())
+            venta = VentaModel(Compartido.obtener_fecha(),
+                               Compartido.obtener_articulo(),
+                               Compartido.obtener_vendedor(),
+                               Compartido.obtener_sucursal(),
+                               Compartido.obtener_importe())
 
             if click.confirm(f"\n¿Confirma la modificación?"):
                 self.venta_mpp.update(venta, idx)

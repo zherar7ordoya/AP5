@@ -54,11 +54,12 @@ class ArticuloMapper(AccesoDatos):
             reemplazo = []
             item = next(lista_ventas, None)
 
+            print()
             while item:
                 if item[1] != codigo:
                     reemplazo.append(item)
                 else:
-                    print(color(f"Venta eliminada > {item}", fg="red"))
+                    print("Venta eliminada > " + color(f"{item}", fg="yellow"))
                 item = next(lista_ventas, None)
 
             self.ventas_mpp.escribir(reemplazo)
