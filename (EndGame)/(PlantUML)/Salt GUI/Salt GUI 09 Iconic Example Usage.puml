@@ -1,9 +1,0 @@
-@startsalt Samples
-
-{
-    <&person> Login | "Gerardo   "
-    <&key> Password | "****      "
-    [OK <&account-login>] | [Cancel <&circle-x>]
-}
-
-@endsalt

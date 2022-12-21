@@ -1,7 +1,0 @@
-@startsalt Samples
-{
-    <&person*2> | "Gerardo Tordoya       "
-    <&key*2>    | "****                  "
-    [Cancel <&circle-x>] | [OK <&account-login>]
-}
-@endsalt
