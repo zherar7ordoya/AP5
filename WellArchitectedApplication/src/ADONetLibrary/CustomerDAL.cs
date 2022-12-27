@@ -7,6 +7,8 @@ using Interfaces; // We need business objects here to get them inserted in datab
 using Microsoft.Data.SqlClient;
 using Factory;
 using InterfacesDAL;
+using System.Globalization;
+
 namespace ADONetLibrary
 {
     public class CustomerDAL : TemplateADO<CustomerBase>,IRepository<CustomerBase>
@@ -18,6 +20,11 @@ namespace ADONetLibrary
         
         protected override void ExecuteCommand(CustomerBase obj)
         {
+            // CONVERTIR LA MALDITA FECHA A YYYY-MM-DD
+            //DateTime temp = DateTime.ParseExact(obj.BillDate, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            string fecha = obj.BillDate.ToString("yyyy-MM-dd");
+
+
             // A simple insert statement to insert into tblCustomer
             objCommand.CommandText = "Insert into tblCustomer(" +
                                       "FullName," +
@@ -30,7 +37,7 @@ namespace ADONetLibrary
                                       obj.FullName + "','" +
                                       obj.CustomerType + "','" +
                                       obj.BillAmount + "','" +
-                                      obj.BillDate + "','" +
+                                      fecha + "','" +
                                       obj.PhoneNumber + "','" +
                                       obj.Address + "')";
             objCommand.ExecuteNonQuery();

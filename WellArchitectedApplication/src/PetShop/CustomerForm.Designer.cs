@@ -160,7 +160,7 @@ namespace PetShop
             "Customer"});
             this.cboCustType.Location = new System.Drawing.Point(155, 52);
             this.cboCustType.Name = "cboCustType";
-            this.cboCustType.Size = new System.Drawing.Size(121, 23);
+            this.cboCustType.Size = new System.Drawing.Size(200, 23);
             this.cboCustType.TabIndex = 11;
             this.cboCustType.SelectedIndexChanged += new System.EventHandler(this.cboCustType_SelectedIndexChanged);
             // 
@@ -182,7 +182,7 @@ namespace PetShop
             // 
             this.txtBillAmount.Location = new System.Drawing.Point(521, 57);
             this.txtBillAmount.Name = "txtBillAmount";
-            this.txtBillAmount.Size = new System.Drawing.Size(159, 23);
+            this.txtBillAmount.Size = new System.Drawing.Size(230, 23);
             this.txtBillAmount.TabIndex = 14;
             this.txtBillAmount.Text = "0";
             // 
@@ -197,7 +197,7 @@ namespace PetShop
             // 
             this.dtBillDate.Location = new System.Drawing.Point(521, 89);
             this.dtBillDate.Name = "dtBillDate";
-            this.dtBillDate.Size = new System.Drawing.Size(200, 23);
+            this.dtBillDate.Size = new System.Drawing.Size(230, 23);
             this.dtBillDate.TabIndex = 16;
             // 
             // ddChooseDAL
