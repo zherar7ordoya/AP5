@@ -14,6 +14,7 @@
     <ProjectReference Include="..\DataAccessLibrary\DataAccessLibrary.csproj" />
     <ProjectReference Include="..\EFDALLibrary\EFDALLibrary.csproj" />
     <ProjectReference Include="..\InterfacesDAL\InterfacesDAL.csproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

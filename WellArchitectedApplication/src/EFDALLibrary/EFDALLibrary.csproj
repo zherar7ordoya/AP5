@@ -10,9 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustomerFactory\Factory.csproj" />
-    <ProjectReference Include="..\ICustomerLIb\Interfaces.csproj" />
+    <ProjectReference Include="..\Factory\Factory.csproj" />
     <ProjectReference Include="..\InterfacesDAL\InterfacesDAL.csproj" />
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

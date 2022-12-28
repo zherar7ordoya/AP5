@@ -1,9 +1,8 @@
-﻿using System;
-using Interfaces;
+﻿using Interfaces;
 
 namespace CustomerLibrary
 {
-   
+
     public class Customer : CustomerBase
     {
         //In the individual child class creating the constructor to call the Validation 

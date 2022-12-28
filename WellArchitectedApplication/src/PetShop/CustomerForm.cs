@@ -5,7 +5,7 @@ using Factory;
 using FactoryDAL;
 using InterfacesDAL;
 using System.Collections.Generic;
-using CustomerLibrary;
+
 namespace PetShop
 {
     public partial class frmCustomer : Form

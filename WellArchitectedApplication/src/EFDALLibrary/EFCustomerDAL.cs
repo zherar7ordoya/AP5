@@ -1,5 +1,4 @@
 ﻿using Interfaces;
-using Microsoft.EntityFrameworkCore;
 
 namespace EFDALLibrary
 {

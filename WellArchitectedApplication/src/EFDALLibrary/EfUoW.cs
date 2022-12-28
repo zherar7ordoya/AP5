@@ -2,7 +2,6 @@
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
-using Microsoft.Extensions.Logging;
 namespace EFDALLibrary
 {
     public class EfUoW : DbContext, IUow

@@ -7,11 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerLibrary", "Customer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop", "PetShop\PetShop.csproj", "{7C28CAA8-47D0-4BA0-AA02-07D64EEE535E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "ICustomerLIb\Interfaces.csproj", "{16CD7928-3EE9-4A23-A23B-25469A37D83A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{16CD7928-3EE9-4A23-A23B-25469A37D83A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "CustomerFactory\Factory.csproj", "{9BB995EF-B78D-4030-8390-FB90C0031644}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Factory", "Factory\Factory.csproj", "{9BB995EF-B78D-4030-8390-FB90C0031644}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationLogic", "ValidationAlgos\ValidationLogic.csproj", "{BFEC3055-7FE7-425B-A6AB-982032528808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationLogic", "ValidationLogic\ValidationLogic.csproj", "{BFEC3055-7FE7-425B-A6AB-982032528808}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterfacesDAL", "InterfacesDAL\InterfacesDAL.csproj", "{0AA35867-F897-47AE-9352-737BDB13429D}"
 EndProject

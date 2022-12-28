@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Interfaces; // We need business objects here to get them inserted in database
 using Microsoft.Data.SqlClient;
 using Factory;
 using InterfacesDAL;
-using System.Globalization;
 
 namespace ADONetLibrary
 {
