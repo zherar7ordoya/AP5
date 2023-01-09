@@ -1,11 +1,12 @@
 (readme) markdown
 (docs) uml
 (permisos) instalador
-(powershell) dir -Path "C:\Documents\AP5" -Recurse  | Unblock-File
+(powershell) dir -Path "C:\Documents\AP5\Eugenio" -Recurse  | Unblock-File
 (bak) mdf
-(bd) permisos sa
+(bd) permisos sa **
 (sql) https://www.dpriver.com/pp/sqlformat.htm
 (procedimiento almacenado) hacer 1 por abm
+
 (login) solitario
 (conexión) app.config
 (using) limpiar
@@ -14,13 +15,24 @@
 (string conexion) todo junto
 (métodos) separar un poco
 (clases) comentarios xml
+
 (ioc/inyección de dependencias) falta
 (vehiculo) si hay herencia (bll no la hace) es confusa
+
 (ux) muy cargado y descolorido
 (ui) sin singleton
+
 (presupuestar) carga mucha responsabilidad (bll y mpp)
+
 (login) capturar enter luego de poner la clave
+
 (capas) más de las pedidas
+
 (no funcional) [menu procedimientos] tiempo muy largo
-(mapper) tiene sus propia conexion (esto está mal)
 (sin conexion) no avisa, no da error
+(mapper) tiene su propia conexion... fin de la evaluación
+
+(sa) no me permite hacer un diagrama **
+(sa) ALTER AUTHORIZATION ON DATABASE:: Presupuestador TO [sa]
+(tablas) no están relacionadas
+(3FN) no procede... fin de la evaluación
