@@ -1,0 +1,58 @@
+@startuml MDS
+
+' skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+hide circle
+skinparam linetype ortho
+
+title Diagrama de Libro
+
+class Informe
+note top of Informe: ...Preliminar de Investigación
+
+class Prototipos
+
+class Presupuesto
+note right of Presupuesto: ...y Programa
+
+'---
+
+class Especificaciones
+note right of Especificaciones: ...de Requerimientos
+
+class Casos
+{
+    -Todos de alto nivel
+    -Algunos esenciales expandidos
+}
+note right of Casos: ...de Uso
+
+class Diagramas
+note right of Diagramas: ...de Casos de Uso
+
+class Modelo
+note right of Modelo: ...Conceptual Preliminar
+
+class Glosario
+
+Informe <-- Especificaciones
+
+Prototipos <-- Especificaciones
+Prototipos <-- Casos
+
+Presupuesto --> Especificaciones
+Presupuesto --> Casos
+Presupuesto --> Modelo
+
+Especificaciones <-- Casos
+Casos <-- Diagramas
+
+Modelo --> Casos
+Modelo --> Especificaciones
+
+Glosario -> Casos
+Glosario -> Especificaciones
+
+
+@enduml
