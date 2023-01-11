@@ -8,51 +8,43 @@ skinparam linetype ortho
 
 title Diagrama de Libro
 
-class Informe
-note top of Informe: ...Preliminar de Investigación
+class "Informe Preliminar de Investigación"
 
 class Prototipos
 
-class Presupuesto
-note right of Presupuesto: ...y Programa
+class "Presupuesto y Programa"
 
-'---
+class "Especificaciones de Requerimientos"
 
-class Especificaciones
-note right of Especificaciones: ...de Requerimientos
-
-class Casos
+class "Casos de Uso"
 {
     -Todos de alto nivel
     -Algunos esenciales expandidos
 }
-note right of Casos: ...de Uso
 
-class Diagramas
-note right of Diagramas: ...de Casos de Uso
+class "Diagramas de Casos de Uso"
 
-class Modelo
-note right of Modelo: ...Conceptual Preliminar
+class "Modelo Conceptual Preliminar"
 
 class Glosario
 
-Informe <-- Especificaciones
+"Informe Preliminar de Investigación" <-- "Especificaciones de Requerimientos"
 
-Prototipos <-- Especificaciones
-Prototipos <-- Casos
+Prototipos <-- "Especificaciones de Requerimientos"
+Prototipos <-- "Casos de Uso"
 
-Presupuesto --> Especificaciones
-Presupuesto --> Casos
-Presupuesto --> Modelo
+"Presupuesto y Programa" --> "Especificaciones de Requerimientos"
+"Presupuesto y Programa" --> "Casos de Uso"
+"Presupuesto y Programa" --> "Modelo Conceptual Preliminar"
 
-Especificaciones <-- Casos
-Casos <-- Diagramas
+"Especificaciones de Requerimientos" <-- "Casos de Uso"
+"Casos de Uso" <-- "Diagramas de Casos de Uso"
 
-Modelo --> Casos
-Modelo --> Especificaciones
+"Modelo Conceptual Preliminar" --> "Casos de Uso"
+"Modelo Conceptual Preliminar" --> "Especificaciones de Requerimientos"
 
-Glosario -> Casos
-Glosario -> Especificaciones
+Glosario -> "Casos de Uso"
+Glosario -> "Especificaciones de Requerimientos"
 
 
 @enduml
