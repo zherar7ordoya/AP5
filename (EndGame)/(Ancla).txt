@@ -4,15 +4,11 @@
   |  LECTURA  |  PAGINAS  |  LEIDO  |
   +-----------+-----------+---------+
   |    BDD    |   81/175  |   46%   |
-  |    MDS    |  171/499  |   34%   |
+  |    MDS    |  199/499  |   39%   |
   |    POO    |  105/389  |   26%   |
   |    PRO    |   58/115  |   50%   |
   +-----------+-----------+---------+
 
 
 *---
-
-El análisis se centra en la investigación del problema (no en la manera de definir una solución).
-El diseño se centra en la solución lógica: los diseños se implementan en software y hardware.
-La construcción (o programación  orientada  a  objetos) implementa los componentes del diseño.
 
