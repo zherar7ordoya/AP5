@@ -1,3 +1,17 @@
+# ====================================================================
+# Author:       Gerardo Tordoya
+# Create date:  2023-01-19
+# Description:  Gerardo, te sugiero que dividas en tres este proyecto:
+#                   1) MVC sin persistencia
+#                   2) MVC con persistencia
+#                   3) MVC con ORM
+# ====================================================================
+
+# FUENTE:
+# https://www.giacomodebidda.com/posts/mvc-pattern-in-python-introduction-and-basicmodel/
+
+
+
 # This is a sample Python script.
 
 # Press Mayús+F10 to execute it or replace it with your code.

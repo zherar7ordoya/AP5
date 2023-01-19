@@ -1,7 +1,23 @@
+# ====================================================================
+# Author:       Gerardo Tordoya
+# Create date:  2023-01-19
+# Description:  Gerardo, te sugiero que dividas en tres este proyecto:
+#                   1) MVC sin persistencia
+#                   2) MVC con persistencia
+#                   3) MVC con ORM
+# ====================================================================
+
+# FUENTE:
+# https://www.giacomodebidda.com/posts/mvc-pattern-in-python-introduction-and-basicmodel/
+
+
+
+
 # model_view_controller.py
 import basic_backend
+import sqlite_backend
+import dataset_backend
 import mvc_exceptions as mvc_exc
-
 
 
 # /////////////////////////////////////////////////////////////// BUSINESS LOGIC
@@ -208,57 +224,214 @@ class Controller(object):
 
 
 
-# TEST.-------------------------------------------------------------------------
+
+
+class ModelSQLite(object):
+
+    def __init__(self, application_items):
+        self._item_type = 'product'
+        self._connection = sqlite_backend.connect_to_db(sqlite_backend.DB_name)
+        sqlite_backend.create_table(self.connection, self._item_type)
+        self.create_items(application_items)
+
+    @property
+    def connection(self):
+        return self._connection
+
+    @property
+    def item_type(self):
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, new_item_type):
+        self._item_type = new_item_type
+
+    def create_item(self, name, price, quantity):
+        sqlite_backend.insert_one(
+            self.connection, name, price, quantity, table_name=self.item_type)
+
+    def create_items(self, items):
+        sqlite_backend.insert_many(
+            self.connection, items, table_name=self.item_type)
+
+    def read_item(self, name):
+        return sqlite_backend.select_one(
+            self.connection, name, table_name=self.item_type)
+
+    def read_items(self):
+        return sqlite_backend.select_all(
+            self.connection, table_name=self.item_type)
+
+    def update_item(self, name, price, quantity):
+        sqlite_backend.update_one(
+            self.connection, name, price, quantity, table_name=self.item_type)
+
+    def delete_item(self, name):
+        sqlite_backend.delete_one(
+            self.connection, name, table_name=self.item_type)
+
+
+
+
+
+class ModelDataset(object):
+
+    def __init__(self, application_items):
+        self._item_type = 'product'
+        self._connection = dataset_backend.connect_to_db(
+            dataset_backend.DB_name, db_engine='sqlite')
+        dataset_backend.create_table(self.connection, self._item_type)
+        self.create_items(application_items)
+
+    @property
+    def item_type(self):
+        return self._item_type
+
+    @item_type.setter
+    def item_type(self, new_item_type):
+        self._item_type = new_item_type
+
+    @property
+    def connection(self):
+        return self._connection
+
+    def create_item(self, name, price, quantity):
+        dataset_backend.insert_one(
+            self.connection, name, price, quantity, table_name=self.item_type)
+
+    def create_items(self, items):
+        dataset_backend.insert_many(
+            self.connection, items, table_name=self.item_type)
+
+    def read_item(self, name):
+        return dataset_backend.select_one(
+            self.connection, name, table_name=self.item_type)
+
+    def read_items(self):
+        return dataset_backend.select_all(
+            self.connection, table_name=self.item_type)
+
+    def update_item(self, name, price, quantity):
+        dataset_backend.update_one(
+            self.connection, name, price, quantity, table_name=self.item_type)
+
+    def delete_item(self, name):
+        dataset_backend.delete_one(
+            self.connection, name, table_name=self.item_type)
+
+
+
+
+
+
+
 
 
 
 # Test.-------------------------------------------------------------------------
 
-def main():
-    my_items = [
-        {'name': 'bread', 'price': 0.5, 'quantity': 20},
-        {'name': 'milk', 'price': 1.0, 'quantity': 10},
-        {'name': 'wine', 'price': 10.0, 'quantity': 5},
-    ]
+# def main():
+#     my_items = [
+#         {'name': 'bread', 'price': 0.5, 'quantity': 20},
+#         {'name': 'milk', 'price': 1.0, 'quantity': 10},
+#         {'name': 'wine', 'price': 10.0, 'quantity': 5},
+#     ]
+#
+#     c = Controller(ModelBasic(my_items), View())
+#
+#     # Show all items as number point list.
+#     c.show_items()
+#
+#     # Show all items as bullet point list.
+#     c.show_items(bullet_points=True)
+#
+#     # Show a single item when does not exist.
+#     c.show_item('chocolate')
+#
+#     # Show a single item when exists.
+#     c.show_item('bread')
+#
+#     # Insert a repeated item.
+#     c.insert_item('bread', price=1.0, quantity=5)
+#
+#     # Insert a new item.
+#     c.insert_item('chocolate', price=2.0, quantity=10)
+#
+#     # Check that the item has been inserted.
+#     c.show_item('chocolate')
+#
+#     # Update an unexisting item.
+#     c.update_item('ice cream', price=3.5, quantity=20)
+#
+#     # Update an existing item.
+#     c.update_item('milk', price=1.2, quantity=20)
+#
+#     # Delete an unexisting item.
+#     c.delete_item('fish')
+#
+#     # Delete an existing item.
+#     c.delete_item('bread')
 
-    c = Controller(ModelBasic(my_items), View())
-
-    # Show all items as number point list.
-    c.show_items()
-
-    # Show all items as bullet point list.
-    c.show_items(bullet_points=True)
-
-    # Show a single item when does not exist.
-    c.show_item('chocolate')
-
-    # Show a single item when exists.
-    c.show_item('bread')
-
-    # Insert a repeated item.
-    c.insert_item('bread', price=1.0, quantity=5)
-
-    # Insert a new item.
-    c.insert_item('chocolate', price=2.0, quantity=10)
-
-    # Check that the item has been inserted.
-    c.show_item('chocolate')
-
-    # Update an unexisting item.
-    c.update_item('ice cream', price=3.5, quantity=20)
-
-    # Update an existing item.
-    c.update_item('milk', price=1.2, quantity=20)
-
-    # Delete an unexisting item.
-    c.delete_item('fish')
-
-    # Delete an existing item.
-    c.delete_item('bread')
 
 
 
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+
+    # my_items = [
+    #     {'name': 'bread', 'price': 0.5, 'quantity': 20},
+    #     {'name': 'milk', 'price': 1.0, 'quantity': 10},
+    #     {'name': 'wine', 'price': 10.0, 'quantity': 5},
+    # ]
+    #
+    # c = Controller(ModelSQLite(my_items), View())
+    # c.show_items()
+    # c.show_items(bullet_points=True)
+    # c.show_item('chocolate')
+    # c.show_item('bread')
+    #
+    # c.insert_item('bread', price=1.0, quantity=5)
+    # c.insert_item('chocolate', price=2.0, quantity=10)
+    # c.show_item('chocolate')
+    #
+    # c.update_item('milk', price=1.2, quantity=20)
+    # c.update_item('ice cream', price=3.5, quantity=20)
+    #
+    # c.delete_item('fish')
+    # c.delete_item('bread')
+    #
+    # c.show_items()
+    #
+    # # we close the current sqlite database connection explicitly
+    # if type(c.model) is ModelSQLite:
+    #     sqlite_backend.disconnect_from_db(
+    #         sqlite_backend.DB_name, c.model.connection)
+    #     # the sqlite backend understands that it needs to open a new connection
+    #     c.show_items()
+
+    my_items = [
+        {'name': 'bread', 'price': 0.5, 'quantity': 20},
+        {'name': 'milk', 'price': 1.0, 'quantity': 10},
+        {'name': 'wine', 'price': 10.0, 'quantity': 5},
+    ]
+
+    c = Controller(ModelDataset(my_items), View())
+
+    c.show_items()
+    c.show_items(bullet_points=True)
+    c.show_item('chocolate')
+    c.show_item('bread')
+
+    c.insert_item('bread', price=1.0, quantity=5)
+    c.insert_item('chocolate', price=2.0, quantity=10)
+    c.show_item('chocolate')
+
+    c.update_item('milk', price=1.2, quantity=20)
+    c.update_item('ice cream', price=3.5, quantity=20)
+
+    c.delete_item('fish')
+    c.delete_item('bread')
+
+    c.show_items()
