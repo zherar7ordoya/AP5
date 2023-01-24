@@ -4,10 +4,13 @@
   |  LECTURA  |  PAGINAS  |  LEIDO  |
   +-----------+-----------+---------+
   |    BDD    |  133/175  |   76 %  |
-  |    MDS    |  276/499  |   55 %  |
+  |    MDS    |  279/499  |   55 %  |
   |    POO    |  135/389  |   34 %  |
   +-----------+-----------+---------+
 
 
 *---
 
+Un diagrama de interacción explica gráficamente las interacciones existentes entre las instancias (y las clases). El punto de partida de las interacciones es el cumplimiento de las poscondiciones de los contratos de operación. El UML define dos tipos de estos diagramas; ambos sirven para  expresar interacciones semejantes o idénticas de mensaje (métodos):
+1. Los diagramas de colaboración describen las interacciones entre los objetos en un formato de grafo o red.
+2. Los diagramas de secuencia describen las interacciones en una especie de formato de cerca o muro.
