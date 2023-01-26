@@ -4,6 +4,14 @@
 	|  LECTURA  |  PAGINAS  |  LEIDO  |
 	+-----------+-----------+---------+
 	|    MDS    |  279/499  |   55 %  |
-	|    POO    |  203/389  |   52 %  |
+	|    POO    |  300/389  |   77 %  |
 	+-----------+-----------+---------+
 
+
+*--
+
+IComparable
+IComparer
+IClonable
+IEnumerable
+IEnumerator
