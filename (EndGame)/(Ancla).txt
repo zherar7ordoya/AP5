@@ -3,7 +3,7 @@
 	+-----------+-----------+---------+
 	|  LECTURA  |  PAGINAS  |  LEIDO  |
 	+-----------+-----------+---------+
-	|    MDS    |  318/499  |   63 %  |
+	|    MDS    |  329/499  |   65 %  |
 	+-----------+-----------+---------+
 
 
@@ -14,3 +14,21 @@ IComparer
 IClonable
 IEnumerable
 IEnumerator
+
+*--
+
+
++----------------------+-----------+-----------+-----------------------+
+|         APP          |    VER    |    SRC    |          OBS          |
++----------------------+-----------+-----------+-----------------------+
+| Enterprise Architect | 15        | Mega      |                       |
+| Python               | 3.9       | MS Store  | VS no soporta arriba  |
+| PyCharm              | Community | JetBrains |                       |
+| Mega Sync            |           | Mega      |                       |
+| MSOffice             | 2010      | Mega      |                       |
+| SQL Express          | 2022      |           | Incluir ML            |
+| Visio                | 2019      | Mega      | Pertt                 |
+| Visual Studio        | 2022      |           | Solo Desktop Workload |
+| PortableApps         |           | Mega      | PDF X en Mega         |
++----------------------+-----------+-----------+-----------------------+
+
