@@ -1,14 +1,4 @@
 
-
-	+-----------+-----------+---------+
-	|  LECTURA  |  PAGINAS  |  LEIDO  |
-	+-----------+-----------+---------+
-	|    MDS    |  448/499  |   89 %  |
-	+-----------+-----------+---------+
-
-
-*--
-
 IComparable
 IComparer
 IClonable
@@ -16,7 +6,6 @@ IEnumerable
 IEnumerator
 
 *--
-
 
 +----------------------+-----------+-----------+-----------------------+
 |         APP          |    VER    |    SRC    |          OBS          |
@@ -30,5 +19,5 @@ IEnumerator
 | Visio                | 2019      | Mega      | Pertt                 |
 | Visual Studio        | 2022      |           | Solo Desktop Workload |
 | PortableApps         |           | Mega      | PDF X en Mega         |
+| Realm Studio         |           |           |                       |
 +----------------------+-----------+-----------+-----------------------+
-

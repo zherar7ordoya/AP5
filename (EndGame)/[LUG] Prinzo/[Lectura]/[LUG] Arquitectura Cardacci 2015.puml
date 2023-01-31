@@ -1,0 +1,77 @@
+@startuml UML y Patrones (Craig Larman)
+
+' =========================================
+' Author:       Gerardo Tordoya
+' Create date:  2023-01-31
+' Description:  Arquitectura Cardacci v2015
+' =========================================
+
+
+' --- CONFIGURACION DEL DIAGRAMA -----------------------------------------------
+
+skin rose
+' skinparam classFontName Calibri
+' skinparam shadowing false
+' hide circle
+' skinparam linetype ortho
+
+' --- TITULO DEL DIAGRAMA ------------------------------------------------------
+
+title Arquitectura Académica de Software
+
+' --- ENTIDADES ----------------------------------------------------------------
+
+package GUI <<Folder>> {
+
+}
+package Controladora <<Folder>> {
+
+}
+package Estructura <<Folder>> {
+
+}
+package Interfaces <<Folder>> {
+
+}
+package Lógica <<Folder>> {
+
+}
+package ORM <<Folder>> {
+
+}
+package "Acceso a Datos" <<Folder>> {
+
+}
+
+package "Base de Datos" <<Database>> {
+
+}
+
+
+' --- RELACIONES ---------------------------------------------------------------
+
+GUI --> Controladora
+
+Controladora --> Estructura
+Controladora --> Interfaces
+Controladora --> Lógica
+
+Estructura --> Interfaces
+
+Lógica --> Interfaces
+Lógica --> Estructura
+Lógica --> ORM
+
+ORM --> Interfaces
+ORM --> Estructura
+ORM --> "Acceso a Datos"
+
+"Acceso a Datos" <--> "Base de Datos"
+
+
+
+' --- PIE DE DIAGRAMA ----------------------------------------------------------
+
+caption Cardacci v2015
+
+@enduml
