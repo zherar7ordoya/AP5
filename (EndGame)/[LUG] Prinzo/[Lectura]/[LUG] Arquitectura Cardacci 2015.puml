@@ -13,7 +13,7 @@ skin rose
 ' skinparam classFontName Calibri
 ' skinparam shadowing false
 ' hide circle
-' skinparam linetype ortho
+skinparam linetype ortho
 
 ' --- TITULO DEL DIAGRAMA ------------------------------------------------------
 
@@ -27,19 +27,19 @@ package GUI <<Folder>> {
 package Controladora <<Folder>> {
 
 }
-package Estructura <<Folder>> {
+package "Estructura (BEL)" <<Folder>> {
 
 }
 package Interfaces <<Folder>> {
 
 }
-package Lógica <<Folder>> {
+package "Lógica (BLL)" <<Folder>> {
 
 }
-package ORM <<Folder>> {
+package "ORM (Mapper)" <<Folder>> {
 
 }
-package "Acceso a Datos" <<Folder>> {
+package "Acceso a Datos (DAL)" <<Folder>> {
 
 }
 
@@ -50,24 +50,20 @@ package "Base de Datos" <<Database>> {
 
 ' --- RELACIONES ---------------------------------------------------------------
 
-GUI --> Controladora
+GUI                     --> Controladora
+Controladora            --> "Lógica (BLL)"
+"Lógica (BLL)"          --> "ORM (Mapper)"
+"ORM (Mapper)"          --> "Acceso a Datos (DAL)"
+"Acceso a Datos (DAL)"  --> "Base de Datos"
 
-Controladora --> Estructura
-Controladora --> Interfaces
-Controladora --> Lógica
+"Estructura (BEL)"  -> Interfaces
 
-Estructura --> Interfaces
-
-Lógica --> Interfaces
-Lógica --> Estructura
-Lógica --> ORM
-
-ORM --> Interfaces
-ORM --> Estructura
-ORM --> "Acceso a Datos"
-
-"Acceso a Datos" <--> "Base de Datos"
-
+Controladora        --> "Estructura (BEL)"
+Controladora        --> Interfaces
+"Lógica (BLL)"      --> Interfaces
+"Lógica (BLL)"      --> "Estructura (BEL)"
+"ORM (Mapper)"      --> Interfaces
+"ORM (Mapper)"      --> "Estructura (BEL)"
 
 
 ' --- PIE DE DIAGRAMA ----------------------------------------------------------
