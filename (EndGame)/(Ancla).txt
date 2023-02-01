@@ -3,7 +3,7 @@
 	+-----------+-----------+---------+
 	|  LECTURA  |  PAGINAS  |  LEIDO  |
 	+-----------+-----------+---------+
-	|    MDS    |  448/499  |   89 %  |
+	|    MDS    |  452/499  |   90 %  |
 	+-----------+-----------+---------+
 
 
@@ -30,5 +30,6 @@ IEnumerator
 | Visio                | 2019      | Mega      | Pertt                 |
 | Visual Studio        | 2022      |           | Solo Desktop Workload |
 | PortableApps         |           | Mega      | PDF X en Mega         |
+| Realm Studio         |           |           |                       |
 +----------------------+-----------+-----------+-----------------------+
 
