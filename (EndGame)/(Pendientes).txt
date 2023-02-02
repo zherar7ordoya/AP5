@@ -7,20 +7,3 @@ IEnumerator
 
 *--
 
-+----------------------+-----------+-----------+-----------------------+
-|         APP          |    VER    |    SRC    |          OBS          |
-+----------------------+-----------+-----------+-----------------------+
-| Enterprise Architect | 15        | Mega      |                       |
-| Mega Sync            |           | Mega      |                       |
-| MSOffice             | 2010      | Mega      |                       |
-| SQL Express          | 2022      |           | Incluir ML            |
-| Visual Studio        | 2022      |           | Solo Desktop Workload |
-| PortableApps         |           | Mega      | PDF X en Mega         |
-SSMS (Español)
-+----------------------+-----------+-----------+-----------------------+
-
-VS:
-	Intellisense
-	Web Python
-	Diagrama Clases
-	Python mismo
