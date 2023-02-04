@@ -38,4 +38,7 @@ public class ClienteVista : ABMC_Interfaces.IABMC<Cliente> // Referencia a Inter
             VclienteD = value;
         }
     }
+
+    
+
 }
