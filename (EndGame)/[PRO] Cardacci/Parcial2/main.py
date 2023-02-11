@@ -1,7 +1,7 @@
 # ========================================
 # Author:       Gerardo Tordoya
-# Create date:  2022-11-30
-# Description:  Mi Programa en Python v2.2
+# Create date:  2023-02-09
+# Description:  Mi Programa en Python v2.3
 # ========================================
 
 
