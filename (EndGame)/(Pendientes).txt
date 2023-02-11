@@ -7,3 +7,24 @@ IEnumerator
 
 *--
 
+Clases están formadas por los siguientes miembros:
+
+Constructores
+Destructores
+
+Métodos
+Eventos
+
+Propiedades
+Campos (Atributos: variables privadas)
+
+*--
+
+EVENTOS (3 momentos)
+
+1) Declaración (se produce en clase propietaria del evento)
+3) Desencadenamiento (se produce en clase propietaria del evento)
+
+3) Suscripción (en la clase que posee una referencia al objeto dueño del evento)
+4) El método le pertenece a la clase que posee una referencia al objeto dueño del evento
+
