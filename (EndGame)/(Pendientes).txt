@@ -12,8 +12,8 @@ Clases están formadas por los siguientes miembros:
 Constructores
 Destructores
 
-Métodos
-Eventos
+Métodos (Acciones)
+Eventos (Reacciones)
 
 Propiedades
 Campos (Atributos: variables privadas)
