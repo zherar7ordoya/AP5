@@ -5,7 +5,7 @@ IClonable
 IEnumerable
 IEnumerator
 
-*--
+*---
 
 Clases están formadas por los siguientes miembros:
 
@@ -18,7 +18,7 @@ Eventos (Reacciones)
 Propiedades
 Campos (Atributos: variables privadas)
 
-*--
+*---
 
 EVENTOS (3 momentos)
 
@@ -27,4 +27,14 @@ EVENTOS (3 momentos)
 
 3) Suscripción (en la clase que posee una referencia al objeto dueño del evento)
 4) El método le pertenece a la clase que posee una referencia al objeto dueño del evento
+
+*---
+
+PYTHON
+Tipos de datos
+
+Listas: entre corchetes 
+Tuplas: entre paréntesis
+Sets:   entre llaves
+Diccio: en conjunto
 

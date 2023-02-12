@@ -1,4 +1,7 @@
-﻿namespace Primer_ejemplo
+﻿using System;
+using System.Windows.Forms;
+
+namespace Primer_ejemplo
 {
     static class Program
     {

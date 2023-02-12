@@ -1,4 +1,7 @@
-﻿namespace Eventos
+﻿using System;
+using System.Windows.Forms;
+
+namespace Eventos
 {
     static class Program
     {
