@@ -1,3 +1,4 @@
+2023-02-12 23:57 > Error al modificar > <class 'EOFError'> > ()
 2022-12-03 11:11 > Error al modificar > <class 'NameError'> > ("name 'color' is not defined",)
 2022-12-03 10:52 > Error al modificar > <class 'UnicodeDecodeError'> > ('utf-8', b'\xff', 0, 1, 'invalid start byte')
 2022-12-03 09:07 > Error al modificar > <class 'UnicodeDecodeError'> > ('utf-8', b'\xff', 0, 1, 'invalid start byte')
