@@ -48,5 +48,10 @@ Procesos de Negocio
 Ciclo de Vida
 Proceso de Desarrollo
 
+*---
 
+Eficiencia + Eficacia = Efectividad
 
+1FN => Valores atómicos
+2FN => Relación completa con las claves
+3FN => Relación entre los valores que no son clave
