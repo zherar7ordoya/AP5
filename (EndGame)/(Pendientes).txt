@@ -1,6 +1,7 @@
 
 IComparable
 IComparer
+IComparer
 IClonable
 IEnumerable
 IEnumerator
@@ -55,3 +56,9 @@ Eficiencia + Eficacia = Efectividad
 1FN => Valores atómicos
 2FN => Relación completa con las claves
 3FN => Relación entre los valores que no son clave
+
+*---
+
+Composición => Yo creo y conservo las referencias
+Agregación  => Yo recibo y conservo las referencias
+Asociación  => Yo creo y entrego las referencias

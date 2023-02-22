@@ -10,24 +10,24 @@ namespace Integrador
     class Concesionario
     {
         List<Auto> _la;
-        List<Persona> _lp;
+        List<Cliente> _lp;
 
         public Concesionario()
         {
             _la = new List<Auto>();
-            _lp = new List<Persona>();
+            _lp = new List<Cliente>();
         }
 
-        public List<Persona> RetornaListaPersonas()
+        public List<Cliente> RetornaListaPersonas()
         {
 
-            List<Persona> _auxlp;
+            List<Cliente> _auxlp;
             try
             {
-                _auxlp = new List<Persona>();
-                foreach (Persona _p in _lp)
+                _auxlp = new List<Cliente>();
+                foreach (Cliente _p in _lp)
                 {
-                    _auxlp.Add(new Persona(_p.DNI, _p.Nombre, _p.Apellido));
+                    _auxlp.Add(new Cliente(_p.DNI, _p.Nombre, _p.Apellido));
                 }
             }
             catch (Exception ex) { throw ex; }
@@ -44,20 +44,20 @@ namespace Integrador
                 foreach (Auto _a in _la)
                 {
                     _auxla.Add(new Auto(_a.Patente, _a.Marca, _a.Modelo, _a.Axo, _a.Precio,
-                                        _a.Get_Dueno() != null ? new Persona(_a.Get_Dueno().DNI, _a.Get_Dueno().Nombre, _a.Get_Dueno().Apellido) : null));
+                                        _a.Get_Dueno() != null ? new Cliente(_a.Get_Dueno().DNI, _a.Get_Dueno().Nombre, _a.Get_Dueno().Apellido) : null));
                 }
             }
             catch (Exception ex) { throw ex; }
 
             return _auxla;
         }
-        public void AgregaPersona(Persona pPersona)
+        public void AgregaPersona(Cliente pPersona)
         {
             try
             {
                 if (pPersona != null)
                 {
-                    _lp.Add(new Persona(pPersona.DNI, pPersona.Nombre, pPersona.Apellido));
+                    _lp.Add(new Cliente(pPersona.DNI, pPersona.Nombre, pPersona.Apellido));
                 }
                 else { throw new Exception("La Persona que intenta agregar es null"); }
             }
@@ -75,7 +75,7 @@ namespace Integrador
             }
             catch (Exception ex) { throw ex; }
         }
-        public void BorraPersona(Persona pPersona)
+        public void BorraPersona(Cliente pPersona)
         {
             try
             {
@@ -83,12 +83,17 @@ namespace Integrador
                 if (pPersona != null)
                 {
                     // Se obtiene la Persona de la lista de personas del concecionario por el DNI de la persona enviada
-                    Persona _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+                    Cliente _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+
                     // Si la persona existe y non tiene autos asignados se permite el borrado
                     if (_auxPersona != null && _auxPersona.RetornaListaAutos().Count == 0)
                     {
                         // Se borra la persona de la lista de personas del concesionario
                         _lp.Remove(_auxPersona);
+
+                        // Con esto disparo el evento de la clase Persona que
+                        // avisa que se ha llamado al destructor.
+                        _auxPersona = null;
                     }
                     else
                     {
@@ -126,7 +131,7 @@ namespace Integrador
             catch (Exception ex) { throw ex; }
         }
 
-        public void ModificaPersona(Persona pPersona)
+        public void ModificaPersona(Cliente pPersona)
         {
             try
             {
@@ -134,7 +139,7 @@ namespace Integrador
                 if (pPersona != null)
                 {
                     // Se ubica la persona en la lista de personas del concesionario usando el DNI de la prsona enviada
-                    Persona _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+                    Cliente _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
                     // Verifica que la persona exista
                     if (_auxPersona != null)
                     {
@@ -147,7 +152,7 @@ namespace Integrador
                         {
                             foreach (Auto _a in _auxPersona.RetornaListaAutos())
                             {
-                                Persona _p = _a.Get_Dueno();
+                                Cliente _p = _a.Get_Dueno();
                                 if (_p != null)
                                 {
                                     _p.DNI = pPersona.DNI;
@@ -159,7 +164,7 @@ namespace Integrador
                                     if (_auto != null)
                                     {
                                         // Se actualiza el estado del dueño de ese auto 
-                                        Persona _persona = _auto.Get_Dueno();
+                                        Cliente _persona = _auto.Get_Dueno();
                                         _persona.DNI = pPersona.DNI;
                                         _persona.Nombre = pPersona.Nombre;
                                         _persona.Apellido = pPersona.Apellido;
@@ -214,13 +219,13 @@ namespace Integrador
         }
 
 
-        public void AsignaAuto(Persona pPersona, Auto pAuto)
+        public void AsignaAuto(Cliente pPersona, Auto pAuto)
         {
             try
             {
                 // Ubica la persona en la lista de personas del concesionario por el DNI de la Persona
                 // que llegó por parámetro
-                Persona _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+                Cliente _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
                 // Ubica el auto en la lista de autos del concisionario por la PATENTE del Auto
                 // que llegó por parámetro
                 Auto _auxAuto = _la.Find(x => x.Patente == pAuto.Patente);
@@ -244,12 +249,12 @@ namespace Integrador
         /* EN REALIDAD, (SEGÚN CARDACCI), NO HACÍA FALTA ENVIAR COMO PARÁMETRO
          * A LA PERSONA, CON ENVIAR AL AUTO SOLO ES SUFICIENTE PARA PODER
          * HACER ESTA OPERACIÓN */
-        public void DesasignaAuto(Persona pPersona, Auto pAuto)
+        public void DesasignaAuto(Cliente pPersona, Auto pAuto)
         {
             try
             {
                 // Se obtiene la persona de la lista de personas del concesionario
-                Persona _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+                Cliente _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
                 // Se obtiene el auto de la lista de autos de esa persona del concesionario cuya patente
                 // coincide con la paternte del auto enviado. (Recordar que el auto que tiene cargado la persona
                 // en su lista de autos y el auto de la lista de autos del concesionario son distintos pues lo clonamos)
@@ -265,12 +270,12 @@ namespace Integrador
 
 
         }
-        public List<Auto> ListaAutosDePersona(Persona pPersona)
+        public List<Auto> ListaAutosDePersona(Cliente pPersona)
         {
             List<Auto> _listaAutos = new List<Auto>();
             try
             {
-                Persona _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
+                Cliente _auxPersona = _lp.Find(x => x.DNI == pPersona.DNI);
                 _listaAutos = _auxPersona.RetornaListaAutos();
             }
             catch (Exception ex) { throw ex; }

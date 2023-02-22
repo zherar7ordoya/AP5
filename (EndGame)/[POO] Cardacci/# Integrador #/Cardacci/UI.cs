@@ -1,10 +1,22 @@
-﻿using System;
+﻿// ============================================================================
+
+/* DICCIONARIO
+ * Destructor: en clase Persona
+ * Herencia: en clase Persona
+ * Evento: en clase Persona
+ */
+
+// ============================================================================
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +26,13 @@ namespace Integrador
 {
     public partial class UI : Form
     {
+
+        public void AvisaDestruccion(object sender, DestructorEventArgs e)
+        {
+            MessageBox.Show($"Llamado el destructor de {e.Persona.Nombre} {e.Persona.Apellido}");
+        }
+
+
         #region VARIABLES DE CLASE, CONSTRUCTOR Y LOAD ------------------------
 
         readonly Concesionario _concesionario;
@@ -49,7 +68,10 @@ namespace Integrador
             {
                 //todo validar DNI
                 string _dni = Interaction.InputBox("DNI: ");
-                _concesionario.AgregaPersona(new Persona(_dni, Interaction.InputBox("Nombre: "), Interaction.InputBox("Apellido: ")));
+                Cliente _persona = new Cliente(_dni, Interaction.InputBox("Nombre: "), Interaction.InputBox("Apellido: "));
+
+                _concesionario.AgregaPersona(_persona);
+                
 
                 ActualizaDatagridview(
                     PersonaListadoDgv,
@@ -67,7 +89,11 @@ namespace Integrador
                 if (PersonaListadoDgv.Rows.Count > 0)
                 {
                     // Se le pasa a BorrarPpersona del concesionario La persona seleccionado en el grilla 1
-                    _concesionario.BorraPersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona);
+                    Cliente _persona = PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente;
+                    
+                    _persona.DestructorEventHandler += AvisaDestruccion;
+                    
+                    _concesionario.BorraPersona(_persona);
 
                     ActualizaDatagridview(
                         PersonaListadoDgv,
@@ -90,7 +116,7 @@ namespace Integrador
                     // Obtiene la persona seleccionada en la grilla 1
 
                     // Si la persona en distinta de nulo se procede a la modificación
-                    if (PersonaListadoDgv.SelectedRows[0].DataBoundItem is Persona _persona)
+                    if (PersonaListadoDgv.SelectedRows[0].DataBoundItem is Cliente _persona)
                     {
                         // Se modifica el nombre
                         _persona.Nombre = Interaction.InputBox("Nombre: ", "Modificando Persona ...", _persona.Nombre);
@@ -129,7 +155,17 @@ namespace Integrador
             try
             {
                 //todo validar PATENTE
-                string _auxpatente = Interaction.InputBox("Patente: ");
+                string _auxpatente = Interaction.InputBox("Patente (3 mayúsculas + 3 dígitos):");
+
+                bool foundMatch = false;
+                Regex regexObj = new Regex(@"^[A-Z]{3}\d{3}$", RegexOptions.Multiline);
+                foundMatch = regexObj.IsMatch(_auxpatente);
+
+                if(!foundMatch)
+                {
+                    throw new Exception("Patente no válida");
+                }
+
                 _concesionario.AgregaAuto(new Auto(
                     _auxpatente,
                     Interaction.InputBox("Marca"),
@@ -213,7 +249,7 @@ namespace Integrador
                             _concesionario.RetornaListaAutos());
                         ActualizaDatagridview(
                             PersonaAutosDgv,
-                            _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona));
+                            _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente));
 
                         // Opción con Clase Vista
                         ActualizaDatagridview(
@@ -241,14 +277,14 @@ namespace Integrador
             {
                 // Se envía a Asignar auto del concesionario la Persona seleccionada en la grilla 1
                 // y el auto seleccionado en la grilla 2
-                Persona _persona = PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona;
+                Cliente _persona = PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente;
                 Auto _auto = AutoListadoDgv.SelectedRows[0].DataBoundItem as Auto;
 
                 _concesionario.AsignaAuto(_persona, _auto);
 
                 ActualizaDatagridview(
                     PersonaAutosDgv,
-                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona));
+                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente));
                 // Opción con LinQ
                 ActualizaDatagridview(
                     AutoDetallesDgv,
@@ -271,11 +307,11 @@ namespace Integrador
                 // 1. La persona seleccionada en la grilla 1 (Esto también se puede ubicar tomando el auto
                 // seleccionado en la grilla 3 y consultandole por su dueño). 
                 // 2. El auto seleccionado en la grilla 3.
-                _concesionario.DesasignaAuto(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona, PersonaAutosDgv.SelectedRows[0].DataBoundItem as Auto);
+                _concesionario.DesasignaAuto(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente, PersonaAutosDgv.SelectedRows[0].DataBoundItem as Auto);
 
                 ActualizaDatagridview(
                     PersonaAutosDgv,
-                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona));
+                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente));
                 // Opción con Clase Vista
                 ActualizaDatagridview(
                     AutoDetallesDgv,
@@ -293,7 +329,7 @@ namespace Integrador
         private void ActualizaPrecioTotal()
         {
             decimal _total = 0;
-            List<Auto> _la = _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona);
+            List<Auto> _la = _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente);
             if (_la.Count > 0)
             {
                 foreach (Auto _a in _la)
@@ -319,7 +355,7 @@ namespace Integrador
             {
                 ActualizaDatagridview(
                     PersonaAutosDgv,
-                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Persona));
+                    _concesionario.ListaAutosDePersona(PersonaListadoDgv.SelectedRows[0].DataBoundItem as Cliente));
                 ActualizaPrecioTotal();
             }
             catch (Exception) { }

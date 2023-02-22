@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Integrador
 {
-    class Auto
+    public class Auto
     {
-        Persona _dueno;
+        Cliente _dueno;
         public Auto()
         {
             //_dueno = null;
         }
-        public Auto(Persona pDueno) { _dueno = pDueno; }
+        public Auto(Cliente pDueno) { _dueno = pDueno; }
         public Auto(
             string pPatente,
             string pMarca,
@@ -33,7 +33,7 @@ namespace Integrador
             string pModelo,
             string pAxo,
             decimal pPrecio,
-            Persona pDueno) : this(pDueno)
+            Cliente pDueno) : this(pDueno)
         {
             Patente = pPatente;
             Marca = pMarca;
@@ -50,12 +50,12 @@ namespace Integrador
         public decimal Precio { get; set; }
 
         // TODO: Retornar un clon del dueño
-        public Persona Get_Dueno() { return _dueno; }
-        public void Set_Dueno(Persona pPersona) 
+        public Cliente Get_Dueno() { return _dueno; }
+        public void Set_Dueno(Cliente pPersona) 
         { 
             // Carga el campo _dueno con un clon de la persona recibida o null.
             // Observar que en este nivel se rompe las referencias ya que al clon de la persona no se le cargan sus autos
-            _dueno = pPersona == null ? null : new Persona(pPersona.DNI, pPersona.Nombre, pPersona.Apellido);
+            _dueno = pPersona == null ? null : new Cliente(pPersona.DNI, pPersona.Nombre, pPersona.Apellido);
 
            
         
