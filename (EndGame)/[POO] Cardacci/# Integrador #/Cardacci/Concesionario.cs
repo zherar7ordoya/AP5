@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Integrador
 {
@@ -18,6 +19,13 @@ namespace Integrador
             _lp = new List<Cliente>();
         }
 
+
+        private void OrdenEjecucion(object sender, OrdenEventArgs e)
+        {
+            MessageBox.Show($"Orden ejecutada por {e.ValorDevuelto}) {e.EnEjecucion.Nombre} {e.EnEjecucion.Apellido}");
+        }
+
+
         public List<Cliente> RetornaListaPersonas()
         {
 
@@ -29,6 +37,11 @@ namespace Integrador
                 {
                     _auxlp.Add(new Cliente(_p.DNI, _p.Nombre, _p.Apellido));
                 }
+                foreach (Cliente _p in _auxlp)
+                {
+                    _p.OrdenEventHandler += OrdenEjecucion;
+                }
+                _auxlp.Sort();
             }
             catch (Exception ex) { throw ex; }
 

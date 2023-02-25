@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// TODO => Implementar Generics!
+
+
 namespace Integrador
 {
     public class Auto
     {
-        Cliente _dueno;
+        Integrador.Cliente _dueno;
         public Auto()
         {
             //_dueno = null;
@@ -50,12 +54,18 @@ namespace Integrador
         public decimal Precio { get; set; }
 
         // TODO: Retornar un clon del dueño
-        public Cliente Get_Dueno() { return _dueno; }
+        public Integrador.Cliente Get_Dueno() { return _dueno; }
         public void Set_Dueno(Cliente pPersona) 
-        { 
+        {
             // Carga el campo _dueno con un clon de la persona recibida o null.
             // Observar que en este nivel se rompe las referencias ya que al clon de la persona no se le cargan sus autos
-            _dueno = pPersona == null ? null : new Cliente(pPersona.DNI, pPersona.Nombre, pPersona.Apellido);
+            _dueno =
+                pPersona == null ?
+                null :
+                new Integrador.Cliente(
+                    pPersona.DNI,
+                    pPersona.Nombre,
+                    pPersona.Apellido);
 
            
         

@@ -53,6 +53,7 @@ namespace Integrador
             this.PersonaListadoDgv.AllowUserToAddRows = false;
             this.PersonaListadoDgv.AllowUserToDeleteRows = false;
             this.PersonaListadoDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.PersonaListadoDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.PersonaListadoDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PersonaListadoDgv.Location = new System.Drawing.Point(11, 11);
             this.PersonaListadoDgv.Margin = new System.Windows.Forms.Padding(2);
@@ -62,13 +63,13 @@ namespace Integrador
             this.PersonaListadoDgv.RowHeadersWidth = 82;
             this.PersonaListadoDgv.RowTemplate.Height = 33;
             this.PersonaListadoDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PersonaListadoDgv.Size = new System.Drawing.Size(248, 204);
+            this.PersonaListadoDgv.Size = new System.Drawing.Size(405, 200);
             this.PersonaListadoDgv.TabIndex = 0;
             this.PersonaListadoDgv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.PersonaListadoDgv_RowEnter);
             // 
             // PersonaAltaBtn
             // 
-            this.PersonaAltaBtn.Location = new System.Drawing.Point(11, 219);
+            this.PersonaAltaBtn.Location = new System.Drawing.Point(168, 216);
             this.PersonaAltaBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PersonaAltaBtn.Name = "PersonaAltaBtn";
             this.PersonaAltaBtn.Size = new System.Drawing.Size(80, 21);
@@ -79,7 +80,7 @@ namespace Integrador
             // 
             // PersonaBorrarBtn
             // 
-            this.PersonaBorrarBtn.Location = new System.Drawing.Point(95, 219);
+            this.PersonaBorrarBtn.Location = new System.Drawing.Point(252, 216);
             this.PersonaBorrarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PersonaBorrarBtn.Name = "PersonaBorrarBtn";
             this.PersonaBorrarBtn.Size = new System.Drawing.Size(80, 21);
@@ -90,7 +91,7 @@ namespace Integrador
             // 
             // PersonaModificarBtn
             // 
-            this.PersonaModificarBtn.Location = new System.Drawing.Point(179, 219);
+            this.PersonaModificarBtn.Location = new System.Drawing.Point(336, 216);
             this.PersonaModificarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.PersonaModificarBtn.Name = "PersonaModificarBtn";
             this.PersonaModificarBtn.Size = new System.Drawing.Size(80, 21);
@@ -101,7 +102,7 @@ namespace Integrador
             // 
             // AutoMoficarBtn
             // 
-            this.AutoMoficarBtn.Location = new System.Drawing.Point(544, 219);
+            this.AutoMoficarBtn.Location = new System.Drawing.Point(784, 216);
             this.AutoMoficarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AutoMoficarBtn.Name = "AutoMoficarBtn";
             this.AutoMoficarBtn.Size = new System.Drawing.Size(89, 21);
@@ -112,7 +113,7 @@ namespace Integrador
             // 
             // AutoBorrarBtn
             // 
-            this.AutoBorrarBtn.Location = new System.Drawing.Point(451, 219);
+            this.AutoBorrarBtn.Location = new System.Drawing.Point(691, 216);
             this.AutoBorrarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AutoBorrarBtn.Name = "AutoBorrarBtn";
             this.AutoBorrarBtn.Size = new System.Drawing.Size(89, 21);
@@ -123,7 +124,7 @@ namespace Integrador
             // 
             // AutoAgregarBtn
             // 
-            this.AutoAgregarBtn.Location = new System.Drawing.Point(358, 219);
+            this.AutoAgregarBtn.Location = new System.Drawing.Point(598, 216);
             this.AutoAgregarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AutoAgregarBtn.Name = "AutoAgregarBtn";
             this.AutoAgregarBtn.Size = new System.Drawing.Size(89, 21);
@@ -134,7 +135,7 @@ namespace Integrador
             // 
             // AutoAsignarBtn
             // 
-            this.AutoAsignarBtn.Location = new System.Drawing.Point(263, 11);
+            this.AutoAsignarBtn.Location = new System.Drawing.Point(420, 11);
             this.AutoAsignarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AutoAsignarBtn.Name = "AutoAsignarBtn";
             this.AutoAsignarBtn.Size = new System.Drawing.Size(89, 21);
@@ -148,6 +149,7 @@ namespace Integrador
             this.PersonaAutosDgv.AllowUserToAddRows = false;
             this.PersonaAutosDgv.AllowUserToDeleteRows = false;
             this.PersonaAutosDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.PersonaAutosDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.PersonaAutosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.PersonaAutosDgv.Location = new System.Drawing.Point(11, 299);
             this.PersonaAutosDgv.Margin = new System.Windows.Forms.Padding(2);
@@ -157,7 +159,7 @@ namespace Integrador
             this.PersonaAutosDgv.RowHeadersWidth = 82;
             this.PersonaAutosDgv.RowTemplate.Height = 33;
             this.PersonaAutosDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.PersonaAutosDgv.Size = new System.Drawing.Size(248, 200);
+            this.PersonaAutosDgv.Size = new System.Drawing.Size(405, 200);
             this.PersonaAutosDgv.TabIndex = 9;
             this.PersonaAutosDgv.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.PersonaAutosDgv_RowsAdded);
             // 
@@ -166,8 +168,9 @@ namespace Integrador
             this.AutoDetallesDgv.AllowUserToAddRows = false;
             this.AutoDetallesDgv.AllowUserToDeleteRows = false;
             this.AutoDetallesDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.AutoDetallesDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.AutoDetallesDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AutoDetallesDgv.Location = new System.Drawing.Point(360, 299);
+            this.AutoDetallesDgv.Location = new System.Drawing.Point(516, 300);
             this.AutoDetallesDgv.Margin = new System.Windows.Forms.Padding(2);
             this.AutoDetallesDgv.MultiSelect = false;
             this.AutoDetallesDgv.Name = "AutoDetallesDgv";
@@ -175,12 +178,12 @@ namespace Integrador
             this.AutoDetallesDgv.RowHeadersWidth = 82;
             this.AutoDetallesDgv.RowTemplate.Height = 33;
             this.AutoDetallesDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AutoDetallesDgv.Size = new System.Drawing.Size(273, 200);
+            this.AutoDetallesDgv.Size = new System.Drawing.Size(357, 200);
             this.AutoDetallesDgv.TabIndex = 10;
             // 
             // AutoQuitarBtn
             // 
-            this.AutoQuitarBtn.Location = new System.Drawing.Point(267, 299);
+            this.AutoQuitarBtn.Location = new System.Drawing.Point(420, 299);
             this.AutoQuitarBtn.Margin = new System.Windows.Forms.Padding(2);
             this.AutoQuitarBtn.Name = "AutoQuitarBtn";
             this.AutoQuitarBtn.Size = new System.Drawing.Size(89, 21);
@@ -191,7 +194,7 @@ namespace Integrador
             // 
             // AutoTotalLbl
             // 
-            this.AutoTotalLbl.Location = new System.Drawing.Point(264, 194);
+            this.AutoTotalLbl.Location = new System.Drawing.Point(421, 190);
             this.AutoTotalLbl.Name = "AutoTotalLbl";
             this.AutoTotalLbl.Size = new System.Drawing.Size(89, 21);
             this.AutoTotalLbl.TabIndex = 12;
@@ -203,20 +206,21 @@ namespace Integrador
             this.AutoListadoDgv.AllowUserToAddRows = false;
             this.AutoListadoDgv.AllowUserToDeleteRows = false;
             this.AutoListadoDgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.AutoListadoDgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.AutoListadoDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.AutoListadoDgv.Location = new System.Drawing.Point(360, 12);
+            this.AutoListadoDgv.Location = new System.Drawing.Point(516, 11);
             this.AutoListadoDgv.MultiSelect = false;
             this.AutoListadoDgv.Name = "AutoListadoDgv";
             this.AutoListadoDgv.ReadOnly = true;
             this.AutoListadoDgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AutoListadoDgv.Size = new System.Drawing.Size(273, 202);
+            this.AutoListadoDgv.Size = new System.Drawing.Size(357, 200);
             this.AutoListadoDgv.TabIndex = 13;
             // 
             // UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(645, 510);
+            this.ClientSize = new System.Drawing.Size(885, 511);
             this.Controls.Add(this.AutoListadoDgv);
             this.Controls.Add(this.AutoTotalLbl);
             this.Controls.Add(this.AutoQuitarBtn);
@@ -234,6 +238,7 @@ namespace Integrador
             this.Name = "UI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UI_FormClosing);
             this.Load += new System.EventHandler(this.UI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PersonaListadoDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PersonaAutosDgv)).EndInit();

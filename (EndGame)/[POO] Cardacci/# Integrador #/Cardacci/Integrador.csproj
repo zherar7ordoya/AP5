@@ -51,6 +51,7 @@
     <Compile Include="Auto.cs" />
     <Compile Include="Concesionario.cs" />
     <Compile Include="DestructorEventArgs.cs" />
+    <Compile Include="OrdenEventArgs.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="UI.cs">
       <SubType>Form</SubType>

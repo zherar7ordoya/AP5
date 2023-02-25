@@ -62,3 +62,11 @@ Eficiencia + Eficacia = Efectividad
 Composición => Yo creo y conservo las referencias
 Agregación  => Yo recibo y conservo las referencias
 Asociación  => Yo creo y entrego las referencias
+
+*---
+
+LinQ to Object*
+LinQ to SQL
+LinQ to XML
+
+*---

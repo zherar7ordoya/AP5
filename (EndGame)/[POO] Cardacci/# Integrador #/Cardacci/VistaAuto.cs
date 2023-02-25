@@ -47,10 +47,10 @@ namespace Integrador
                                in pListaAuto
                                select new
                                {
-                                   Marca = auto.Marca,
-                                   Año = auto.Axo,
-                                   Modelo = auto.Modelo,
-                                   Patente = auto.Patente,
+                                   auto.Marca,
+                                   auto.Axo,
+                                   auto.Modelo,
+                                   auto.Patente,
                                    DNI = auto.Get_Dueno() == null ? "" : auto.Get_Dueno().DNI,
                                    Nombre = auto.Get_Dueno() == null ? "" : auto.Get_Dueno().Nombre,
                                    Apellido = auto.Get_Dueno() == null ? "" : auto.Get_Dueno().Apellido

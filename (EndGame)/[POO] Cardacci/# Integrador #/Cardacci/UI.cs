@@ -32,11 +32,12 @@ namespace Integrador
             MessageBox.Show($"Llamado el destructor de {e.Persona.Nombre} {e.Persona.Apellido}");
         }
 
-
         #region VARIABLES DE CLASE, CONSTRUCTOR Y LOAD ------------------------
 
         readonly Concesionario _concesionario;
         readonly VistaAuto _vista_auto;
+
+        Cliente c1, c2, c3;
 
         public UI()
         {
@@ -45,8 +46,21 @@ namespace Integrador
             _vista_auto = new VistaAuto();
         }
 
+
         private void UI_Load(object sender, EventArgs e)
         {
+            c1 = new Cliente("11111111", "Pedro", "Perez");
+            c2 = new Cliente("22222222", "Ana", "Gomez");
+            c3 = new Cliente("33333333", "Juan", "Lopez");
+
+            c1.DestructorEventHandler += AvisaDestruccion;
+            c2.DestructorEventHandler += AvisaDestruccion;
+            c3.DestructorEventHandler += AvisaDestruccion;
+
+            _concesionario.AgregaPersona(c1);
+            _concesionario.AgregaPersona(c2);
+            _concesionario.AgregaPersona(c3);
+
             ActualizaDatagridview(
                 PersonaListadoDgv,
                 _concesionario.RetornaListaPersonas());
@@ -367,5 +381,15 @@ namespace Integrador
             ActualizaPrecioTotal();
         }
 
+        private void UI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("¿Salir?",
+                                "Pregunta",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

@@ -9,26 +9,23 @@
 
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+
+// TODO => Conciliar Herencia
 
 namespace Integrador
 {
-    public abstract class Persona
+    public class OrdenEventArgs: EventArgs
     {
-        #region Propiedades
-        public string DNI { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        #endregion
-
-        #region Metodos
-        public abstract void AgregarAuto(Auto pAuto);
-        public abstract void BorrarAuto(Auto pAuto);
-        public abstract void ModificarAuto(Auto pAuto);
-        public abstract List<Auto> RetornaListaAutos();
-        #endregion
+        public OrdenEventArgs(Cliente pEnEjecucion, Cliente pObj, int pValorDevuelto)
+        {
+            EnEjecucion = pEnEjecucion;
+            Obj = pObj;
+            ValorDevuelto = pValorDevuelto;
+        }
+        public Cliente EnEjecucion { get; set; }
+        public Cliente Obj { get; set; }
+        public int ValorDevuelto { get; set; }
     }
 }
+
