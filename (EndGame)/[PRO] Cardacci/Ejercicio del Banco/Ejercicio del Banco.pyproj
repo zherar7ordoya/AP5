@@ -3,16 +3,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{ffa85dc4-efdf-4934-ab90-12f1688c20c4}</ProjectGuid>
+    <ProjectGuid>{49107117-02cc-4cd5-98c5-fa587ec18ff5}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>main.py</StartupFile>
+    <StartupFile>estructurada.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId>
-    </InterpreterId>
+    <InterpreterId />
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -20,17 +19,13 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="csv_abm_tarjetas.py" />
-    <Compile Include="csv_abm_titulares.py" />
-    <Compile Include="csv_asignaciones.py" />
-    <Compile Include="csv_consumos.py" />
-    <Compile Include="csv_pagos.py" />
-    <Compile Include="gestor.py" />
-    <Compile Include="informacion.py" />
-    <Compile Include="main.py" />
+    <Content Include="consigna.md" />
+    <Content Include="data.json" />
+    <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="requirements.txt" />
+    <Compile Include="estructurada.py" />
+    <Compile Include="poo.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

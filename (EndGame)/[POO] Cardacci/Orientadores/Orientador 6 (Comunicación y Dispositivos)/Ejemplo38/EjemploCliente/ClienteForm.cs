@@ -72,7 +72,7 @@ namespace EjemploCliente
 
             // Me conecto con los datos ingresados
             cliente.Conectar(ip, puerto);
-            Log($"El cliente se conectó al servidor IP = {cliente.RemoteEndPoint.Address}, Puerto = {cliente.RemoteEndPoint.Port}");
+            Log($"El cliente se conectó al servidor IP = {cliente.RemoteEndPoint.Address}, Puerto = {cliente.RemoteEndPoint.Port}\n");
 
             // Actualizo la GUI
             UpdateUI();

@@ -58,7 +58,7 @@ namespace EjemploServidor
         private void Servidor_ConexionTerminada(object sender, ServidorEventArgs e)
         {
             // Muestro con quién se terminó la conexión
-            Log($"Se ha desconectado el cliente de la IP = {e.EndPoint.Address}, Puerto = {e.EndPoint.Port}");
+            Log($"Se ha desconectado el cliente de la IP {e.EndPoint.Address} al puerto {e.EndPoint.Port}\n");
         }
 
         private void Servidor_DatosRecibidos(object sender, DatosRecibidosEventArgs e)
