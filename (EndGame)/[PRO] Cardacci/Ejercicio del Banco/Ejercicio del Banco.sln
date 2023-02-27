@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Ejercicio del Banco", "Ejercicio del Banco.pyproj", "{49107117-02CC-4CD5-98C5-FA587EC18FF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49107117-02CC-4CD5-98C5-FA587EC18FF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49107117-02CC-4CD5-98C5-FA587EC18FF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F20F9920-1210-4D9A-A4CB-812AD114F174}
+	EndGlobalSection
+EndGlobal

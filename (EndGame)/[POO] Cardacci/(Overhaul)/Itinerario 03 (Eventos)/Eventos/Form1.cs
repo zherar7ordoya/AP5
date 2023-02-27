@@ -62,7 +62,13 @@ namespace Eventos
     public class TemperaturaPeligrosaEventArgs : EventArgs
     {
         int _temperatura;
-        public TemperaturaPeligrosaEventArgs(int pTemperatura) { _temperatura = pTemperatura; }
+
+        // Constructor
+        public TemperaturaPeligrosaEventArgs(int pTemperatura)
+        {
+            _temperatura = pTemperatura;
+        }
+
         public int DatoTemperatura { get { return _temperatura; } }
 
     }

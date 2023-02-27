@@ -1,0 +1,56 @@
+PARTE TEÓRICA 
+
+UNIDAD 4: DISEÑAR UNA ESTRUCTURA DE DATOS EFICIENTE 
+
+1. ¿Cuál es la utilidad de un diccionario de datos?
+OK
+
+2.¿Cuál es la diferencia entre Dependencia Funcional Aumentativa y Dependencia Funcional Transitiva? Explique e indique un ejemplo.
+OK
+
+3. Explique la 1FN, 2FN y 3FN con sus características principales de cada una.
+OK
+
+
+UNIDAD 6: DEFINIENDOLA ESTRUCTURA DE LA BASE DE DATOS
+
+1. ¿Qué se debe tener en cuenta para la definición de la estructura de datos?
+OK
+
+
+UNIDAD 7: INTRODUCCIÓNA MEJORAS EN EL RENDIMIENTO DE UNA BASE DE DATOS
+
+1. Explique y ejemplifique el concepto de desnormalización.
+OK
+
+2. ¿Cuáles son las características principales del optimizador de consultas?
+OK
+
+
+PARTE PRÁCTICA
+
+1. Dada la siguiente relación de Tabla cero que contiene información relativa a los ACTORES y Contexto de una biblioteca. Se pide: Identificar las tres Formas Normales, y realizar la normalización correspondiente.
+OK (se identifican las 3FN por separado como fue pedido).
+
+2. Obtener el modelo lógico del esquema final: indicar sus claves, atributos, etc.
+---Faltan identificar cardinalidades en algunos extremos del DER lógico tanto mínimas como máximas.
+---Falta entidad intermedia de sta lógica.
+---Un libro puede tener más de un autor, por lo que FK no va en libros
+
+3. Crear el modelo de datos en MS SQL SERVER con sus correspondientes campos y relaciones.
+OK
+
+4. Realizar la carga de al menos 15 registros por tabla.
+OK
+
+5. Realizar un script con un query que utilice INNER JOIN.
+OK
+
+6. Realizar un script con un query que utilice IN.
+OK
+
+7. Realizar un script con un query que utilice GROUP BY.
+OK
+
+
+Nota: 7(siete)
