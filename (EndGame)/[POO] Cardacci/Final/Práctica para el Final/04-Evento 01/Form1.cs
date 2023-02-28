@@ -18,11 +18,12 @@ namespace _04_Evento_01
             InitializeComponent();
         }
 
-        ///Vamos a hacer un evento personalizado que se dispare cuando se cargue una persona mayor a 65
-        ///
+        // Vamos a hacer un evento personalizado que se dispare cuando se
+        // cargue una persona mayor a 65.
 
         
         Persona P = new Persona();
+
         private void Form1_Load(object sender, EventArgs e)
         {
            //Suscribo al evento
@@ -104,7 +105,6 @@ namespace _04_Evento_01
 
         public MayordeEdadEventArgs(int pEdad)
         {
-
             Edad = pEdad;
         }
     }
