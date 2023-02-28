@@ -108,12 +108,14 @@ namespace _05_Linq
         public Empresa()
         {
             LP = new List<Persona>();
-            Lint = new List<int>();
-            Lint.Add(40);
-            Lint.Add(41);
-            Lint.Add(42);
-            Lint.Add(43);
-            Lint.Add(44);
+            Lint = new List<int>
+            {
+                40,
+                41,
+                42,
+                43,
+                44
+            };
 
         }
 
