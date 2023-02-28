@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F377996F-58C7-4AB6-94EA-4FDB388C8203}</ProjectGuid>
+    <ProjectGuid>{90E71EF0-12D7-45DC-94C6-B720B793FD42}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_02_IComparer</RootNamespace>
-    <AssemblyName>02-IComparer</AssemblyName>
+    <RootNamespace>InterfazIComparer</RootNamespace>
+    <AssemblyName>InterfazIComparer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,16 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ListaPersonasForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ListaPersonasForm.Designer.cs">
+      <DependentUpon>ListaPersonasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="ListaPersonasForm.resx">
+      <DependentUpon>ListaPersonasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

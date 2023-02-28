@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _02_IComparer
+namespace InterfazIComparer
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _02_IComparer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ListaPersonasForm());
         }
     }
 }

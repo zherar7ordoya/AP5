@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01) IComparable", "01) IComparable\01) IComparable.csproj", "{D597ED64-13E6-4E30-BC07-C3C676F41F59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02-IComparer", "02-IComparer\02-IComparer.csproj", "{F377996F-58C7-4AB6-94EA-4FDB388C8203}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02) IComparer", "02) IComparer\02) IComparer.csproj", "{F377996F-58C7-4AB6-94EA-4FDB388C8203}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-IEnumerable_IEnumarator", "03-IEnumerable_IEnumarator\03-IEnumerable_IEnumarator.csproj", "{0A8940E8-48A9-40B1-9432-DFBBE6970434}"
 EndProject
@@ -32,6 +32,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13-De todo 03", "13-De todo 03\13-De todo 03.csproj", "{824B3D6D-0D9B-402D-8D20-66BF1ABD0F2D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-De_Todo", "14-De_Todo\14-De_Todo.csproj", "{EE00FCAB-9397-4E6B-9D3E-66C142B1A255}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03) IComparer", "03) IComparer\03) IComparer.csproj", "{90E71EF0-12D7-45DC-94C6-B720B793FD42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{EE00FCAB-9397-4E6B-9D3E-66C142B1A255}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE00FCAB-9397-4E6B-9D3E-66C142B1A255}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE00FCAB-9397-4E6B-9D3E-66C142B1A255}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90E71EF0-12D7-45DC-94C6-B720B793FD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90E71EF0-12D7-45DC-94C6-B720B793FD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90E71EF0-12D7-45DC-94C6-B720B793FD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90E71EF0-12D7-45DC-94C6-B720B793FD42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
