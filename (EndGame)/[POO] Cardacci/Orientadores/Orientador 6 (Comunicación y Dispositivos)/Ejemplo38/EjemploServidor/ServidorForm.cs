@@ -52,7 +52,7 @@ namespace EjemploServidor
         private void Servidor_NuevaConexion(object sender, ServidorEventArgs e)
         {
             //  Muestro quién se conectó
-            Log($"Se ha conectado un nuevo cliente desde la IP = {e.EndPoint.Address}, Puerto = {e.EndPoint.Port}");
+            Log($"Se ha conectado un nuevo cliente desde la IP = {e.EndPoint.Address}, Puerto = {e.EndPoint.Port}\n");
         }
 
         private void Servidor_ConexionTerminada(object sender, ServidorEventArgs e)
@@ -64,7 +64,7 @@ namespace EjemploServidor
         private void Servidor_DatosRecibidos(object sender, DatosRecibidosEventArgs e)
         {
             // Muestro quién envió el mensaje
-            Log($"Nuevo mensaje desde el cliente de la IP = {e.EndPoint.Address}, Puerto = {e.EndPoint.Port}");
+            Log($"Nuevo mensaje desde el cliente de la IP = {e.EndPoint.Address}, Puerto = {e.EndPoint.Port}\n");
 
             //  Muestro el mensaje recibido
             Log(e.DatosRecibidos);
