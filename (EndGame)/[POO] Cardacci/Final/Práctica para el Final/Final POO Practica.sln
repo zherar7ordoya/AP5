@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04) IEnumerator", "04) IEnu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05) Evento Personalizado", "05) Evento Personalizado\05) Evento Personalizado.csproj", "{DAF13F99-7227-4C6E-ACF9-68B7ACE66DB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-Linq", "05-Linq\05-Linq.csproj", "{8F191144-B12F-4A9C-8D48-B96C419B2746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06) LinQ Para Objetos", "05-Linq\06) LinQ Para Objetos.csproj", "{8F191144-B12F-4A9C-8D48-B96C419B2746}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-Generics", "06-Generics\06-Generics.csproj", "{FB5D1E8A-0390-4827-A213-80DAD4EBC81A}"
 EndProject
