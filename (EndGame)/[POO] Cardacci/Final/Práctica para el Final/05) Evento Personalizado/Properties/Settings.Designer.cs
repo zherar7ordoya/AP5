@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _04_Evento_01.Properties {
+namespace EventoPersonalizado.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
