@@ -58,6 +58,7 @@
     </Compile>
     <Compile Include="Flor.cs" />
     <Compile Include="Herbivoro.cs" />
+    <Compile Include="Herramientas.cs" />
     <Compile Include="IAlimento.cs" />
     <Compile Include="Leon.cs" />
     <Compile Include="Pasto.cs" />

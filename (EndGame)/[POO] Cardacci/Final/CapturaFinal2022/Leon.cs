@@ -7,17 +7,20 @@ namespace CapturaFinal2022
 {
     public class Leon : Carnivoro
     {
-        public Leon()
+        public string Nombre { get; }
+        public override string FechaInstancia { get; }
+        public override string HoraInstancia { get; }
+
+        public Leon(string nombre)
         {
-            throw new System.NotImplementedException();
+            Nombre = $"León {nombre}";
+            FechaInstancia = Herramientas.GetFecha();
+            HoraInstancia = Herramientas.GetHora();
         }
 
-        public int Nombre
+        public override void Comer(IAlimento alimento)
         {
-            get => default;
-            set
-            {
-            }
+            throw new NotImplementedException();
         }
     }
 }

@@ -7,17 +7,20 @@ namespace CapturaFinal2022
 {
     public class Tigre : Carnivoro
     {
-        public Tigre()
+        public string Nombre { get; }
+        public override string FechaInstancia { get; }
+        public override string HoraInstancia { get; }
+
+        public Tigre(string nombre)
         {
-            throw new System.NotImplementedException();
+            Nombre = $"Tigre {nombre}";
+            FechaInstancia = Herramientas.GetFecha();
+            HoraInstancia = Herramientas.GetHora();
         }
 
-        public int Nombre
+        public override void Comer(IAlimento alimento)
         {
-            get => default;
-            set
-            {
-            }
+            throw new NotImplementedException();
         }
     }
 }

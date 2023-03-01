@@ -5,7 +5,9 @@ using System.Text;
 
 namespace CapturaFinal2022
 {
-    public class Vegetacion
+    public abstract class Vegetacion
     {
+        public abstract string FechaInstancia { get; }
+        public abstract string HoraInstancia { get; }
     }
 }

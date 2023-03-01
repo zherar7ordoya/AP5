@@ -7,17 +7,20 @@ namespace CapturaFinal2022
 {
     public class Ciervo : Herbivoro, IAlimento
     {
-        public Ciervo()
+        public string Nombre { get; }
+        public override string FechaInstancia { get; }
+        public override string HoraInstancia { get; }
+
+        public Ciervo(string nombre)
         {
-            throw new System.NotImplementedException();
+            Nombre = $"Ciervo {nombre}";
+            FechaInstancia = Herramientas.GetFecha();
+            HoraInstancia = Herramientas.GetHora();
         }
 
-        public int Nombre
+        public override void Comer(IAlimento alimento)
         {
-            get => default;
-            set
-            {
-            }
+            throw new NotImplementedException();
         }
     }
 }

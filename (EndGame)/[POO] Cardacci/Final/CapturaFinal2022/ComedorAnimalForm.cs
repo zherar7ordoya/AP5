@@ -23,17 +23,17 @@ namespace CapturaFinal2022
 
         private void ComedorAnimalForm_Load(object sender, EventArgs e)
         {
-            _listaAnimales.Add(new Cebra());
-            _listaAnimales.Add(new Ciervo());
-            _listaAnimales.Add(new Leon());
-            _listaAnimales.Add(new Tigre());
+            _listaAnimales.Add(new Cebra("Rayada"));
+            _listaAnimales.Add(new Ciervo("Bambi"));
+            _listaAnimales.Add(new Leon("Fred"));
+            _listaAnimales.Add(new Tigre("Tom"));
 
-            _listaAlimentos.Add(new Cebra());
-            _listaAlimentos.Add(new Ciervo());
-            _listaAlimentos.Add(new Pasto());
-            _listaAlimentos.Add(new Planta());
+            _listaAlimentos.Add(new Pasto("California"));
+            _listaAlimentos.Add(new Planta("Cactus"));
 
+            ListaAnimalesDgv.DataSource = null;
             ListaAnimalesDgv.DataSource = _listaAnimales;
+            ListaAlimentosDgv.DataSource = null;
             ListaAlimentosDgv.DataSource = _listaAlimentos;
         }
     }

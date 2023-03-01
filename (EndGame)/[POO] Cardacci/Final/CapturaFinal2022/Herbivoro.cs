@@ -5,7 +5,11 @@ using System.Text;
 
 namespace CapturaFinal2022
 {
-    public class Herbivoro : Animal
+    public abstract class Herbivoro : Animal
     {
+        public abstract string FechaInstancia { get; }
+        public abstract string HoraInstancia { get; }
+
+        public abstract void Comer(IAlimento alimento);
     }
 }
