@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAF13F99-7227-4C6E-ACF9-68B7ACE66DB6}</ProjectGuid>
+    <ProjectGuid>{88324BC0-613C-400C-BC49-622724000D3E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>_04_Evento_01</RootNamespace>
-    <AssemblyName>04-Evento 01</AssemblyName>
+    <RootNamespace>CapturaFinal2022</RootNamespace>
+    <AssemblyName>CapturaFinal2022</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,16 +46,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Animal.cs" />
+    <Compile Include="Carnivoro.cs" />
+    <Compile Include="Cebra.cs" />
+    <Compile Include="Ciervo.cs" />
+    <Compile Include="ComedorAnimalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ComedorAnimalForm.Designer.cs">
+      <DependentUpon>ComedorAnimalForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Flor.cs" />
+    <Compile Include="Herbivoro.cs" />
+    <Compile Include="IAlimento.cs" />
+    <Compile Include="Leon.cs" />
+    <Compile Include="Pasto.cs" />
+    <Compile Include="Planta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Tigre.cs" />
+    <Compile Include="Vegetacion.cs" />
+    <EmbeddedResource Include="ComedorAnimalForm.resx">
+      <DependentUpon>ComedorAnimalForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,8 +77,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DiagramaDeClases.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -7,9 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01) IComparable", "01) ICom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02) IComparer", "02) IComparer\02) IComparer.csproj", "{F377996F-58C7-4AB6-94EA-4FDB388C8203}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03-IEnumerable_IEnumarator", "03-IEnumerable_IEnumarator\03-IEnumerable_IEnumarator.csproj", "{0A8940E8-48A9-40B1-9432-DFBBE6970434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04) IEnumerator", "04) IEnumerator\04) IEnumerator.csproj", "{0A8940E8-48A9-40B1-9432-DFBBE6970434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04-Evento 01", "04-Evento 01\04-Evento 01.csproj", "{DAF13F99-7227-4C6E-ACF9-68B7ACE66DB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05) Evento Personalizado", "05) Evento Personalizado\05) Evento Personalizado.csproj", "{DAF13F99-7227-4C6E-ACF9-68B7ACE66DB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-Linq", "05-Linq\05-Linq.csproj", "{8F191144-B12F-4A9C-8D48-B96C419B2746}"
 EndProject
