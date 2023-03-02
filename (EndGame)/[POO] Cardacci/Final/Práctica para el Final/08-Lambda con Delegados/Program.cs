@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _08_Lambda_con_Delegados
+namespace DelegadosLambda
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _08_Lambda_con_Delegados
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Formulario());
         }
     }
 }

@@ -13,11 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05) Evento Personalizado", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06) LinQ Para Objetos", "06) LinQ Para Objetos\06) LinQ Para Objetos.csproj", "{8F191144-B12F-4A9C-8D48-B96C419B2746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06-Generics", "06-Generics\06-Generics.csproj", "{FB5D1E8A-0390-4827-A213-80DAD4EBC81A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07) Genericos", "06-Generics\07) Genericos.csproj", "{FB5D1E8A-0390-4827-A213-80DAD4EBC81A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07-Delegados", "07-Delegados\07-Delegados.csproj", "{2C77B247-085A-421F-9DA7-DCC69242AD27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08) Delegados", "07-Delegados\08) Delegados.csproj", "{2C77B247-085A-421F-9DA7-DCC69242AD27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08-Lambda con Delegados", "08-Lambda con Delegados\08-Lambda con Delegados.csproj", "{492315CD-7EBA-42FF-AB61-F8C2B4FFDCD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09) Delegados Lambda", "08-Lambda con Delegados\09) Delegados Lambda.csproj", "{492315CD-7EBA-42FF-AB61-F8C2B4FFDCD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-Delegados_02", "09-Delegados_02\09-Delegados_02.csproj", "{4F64E554-5EDF-4A75-B8DC-51C7DCD18386}"
 EndProject
@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14-De_Todo", "14-De_Todo\14
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03) IComparer", "03) IComparer\03) IComparer.csproj", "{90E71EF0-12D7-45DC-94C6-B720B793FD42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00) Herencia", "00) Herencia\00) Herencia.csproj", "{88324BC0-613C-400C-BC49-622724000D3E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00) Captura", "00) Herencia\00) Captura.csproj", "{88324BC0-613C-400C-BC49-622724000D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

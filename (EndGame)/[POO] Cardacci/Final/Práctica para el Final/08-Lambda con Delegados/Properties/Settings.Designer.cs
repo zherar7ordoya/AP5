@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _08_Lambda_con_Delegados.Properties {
+namespace DelegadosLambda.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

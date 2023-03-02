@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _06_Generics
+namespace Genericos
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _06_Generics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new PersonaForm());
         }
     }
 }
