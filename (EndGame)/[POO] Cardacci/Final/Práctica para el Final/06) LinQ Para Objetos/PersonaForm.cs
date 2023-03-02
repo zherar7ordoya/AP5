@@ -153,9 +153,9 @@ namespace LinQParaObjetos
         {
             List<Persona> lista = new List<Persona>();
 
-            var personas = from x
+            var personas = from persona
                            in _listaPersonas
-                           select x;
+                           select persona;
 
             foreach (Persona persona in personas)
             {

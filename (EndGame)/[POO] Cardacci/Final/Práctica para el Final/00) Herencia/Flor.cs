@@ -3,24 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CapturaFinal2022
+namespace Herencia
 {
-    public class Tigre : Carnivoro
+    public class Flor : Vegetacion
     {
-        public string Nombre { get; }
+        public override string Nombre { get; }
         public override string FechaInstancia { get; }
         public override string HoraInstancia { get; }
 
-        public Tigre(string nombre)
+        public Flor(string nombre)
         {
-            Nombre = $"Tigre {nombre}";
+            Nombre = $"Flor {nombre}";
             FechaInstancia = Herramientas.GetFecha();
             HoraInstancia = Herramientas.GetHora();
-        }
-
-        public override void Comer(IAlimento alimento)
-        {
-            throw new NotImplementedException();
         }
     }
 }

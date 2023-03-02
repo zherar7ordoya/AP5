@@ -1,4 +1,4 @@
-﻿namespace CapturaFinal2022
+﻿namespace Herencia
 {
     partial class ComedorAnimalForm
     {
@@ -52,7 +52,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(364, 9);
+            this.label2.Location = new System.Drawing.Point(604, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(262, 378);
+            this.label3.Location = new System.Drawing.Point(16, 226);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 25);
             this.label3.TabIndex = 2;
@@ -76,7 +76,7 @@
             this.ListaAnimalesDgv.Location = new System.Drawing.Point(16, 37);
             this.ListaAnimalesDgv.Name = "ListaAnimalesDgv";
             this.ListaAnimalesDgv.ReadOnly = true;
-            this.ListaAnimalesDgv.Size = new System.Drawing.Size(240, 150);
+            this.ListaAnimalesDgv.Size = new System.Drawing.Size(480, 150);
             this.ListaAnimalesDgv.TabIndex = 3;
             // 
             // ListaAlimentosDgv
@@ -84,7 +84,7 @@
             this.ListaAlimentosDgv.AllowUserToAddRows = false;
             this.ListaAlimentosDgv.AllowUserToDeleteRows = false;
             this.ListaAlimentosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ListaAlimentosDgv.Location = new System.Drawing.Point(368, 37);
+            this.ListaAlimentosDgv.Location = new System.Drawing.Point(608, 37);
             this.ListaAlimentosDgv.Name = "ListaAlimentosDgv";
             this.ListaAlimentosDgv.ReadOnly = true;
             this.ListaAlimentosDgv.Size = new System.Drawing.Size(240, 150);
@@ -92,7 +92,7 @@
             // 
             // AlimentarBtn
             // 
-            this.AlimentarBtn.Location = new System.Drawing.Point(262, 37);
+            this.AlimentarBtn.Location = new System.Drawing.Point(502, 37);
             this.AlimentarBtn.Name = "AlimentarBtn";
             this.AlimentarBtn.Size = new System.Drawing.Size(100, 30);
             this.AlimentarBtn.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             // AgregarBtn
             // 
-            this.AgregarBtn.Location = new System.Drawing.Point(156, 193);
+            this.AgregarBtn.Location = new System.Drawing.Point(396, 193);
             this.AgregarBtn.Name = "AgregarBtn";
             this.AgregarBtn.Size = new System.Drawing.Size(100, 30);
             this.AgregarBtn.TabIndex = 6;
@@ -113,7 +113,7 @@
             this.HistorialAlimentosDgv.AllowUserToAddRows = false;
             this.HistorialAlimentosDgv.AllowUserToDeleteRows = false;
             this.HistorialAlimentosDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.HistorialAlimentosDgv.Location = new System.Drawing.Point(16, 253);
+            this.HistorialAlimentosDgv.Location = new System.Drawing.Point(16, 254);
             this.HistorialAlimentosDgv.Name = "HistorialAlimentosDgv";
             this.HistorialAlimentosDgv.ReadOnly = true;
             this.HistorialAlimentosDgv.Size = new System.Drawing.Size(240, 150);
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 423);
+            this.ClientSize = new System.Drawing.Size(932, 423);
             this.Controls.Add(this.HistorialAlimentosDgv);
             this.Controls.Add(this.AgregarBtn);
             this.Controls.Add(this.AlimentarBtn);

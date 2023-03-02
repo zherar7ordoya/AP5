@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapturaFinal2022
+namespace Herencia
 {
     public static class Herramientas
     {

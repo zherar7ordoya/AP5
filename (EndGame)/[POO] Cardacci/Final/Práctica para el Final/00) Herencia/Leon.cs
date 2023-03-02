@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CapturaFinal2022
+namespace Herencia
 {
-    public class Cebra : Herbivoro, IAlimento
+    public class Leon : Animal
     {
-        public string Nombre { get; }
+        public override string Nombre { get; }
+        public override string Categoria { get; }
         public override string FechaInstancia { get; }
         public override string HoraInstancia { get; }
+        public override List<IAlimento> ListaAlimentos { get; set; }
 
-        public Cebra(string nombre)
+        public Leon(string nombre)
         {
-            Nombre = $"Cebra {nombre}";
+            Nombre = $"León {nombre}";
+            Categoria = "Carnívoro";
             FechaInstancia = Herramientas.GetFecha();
             HoraInstancia = Herramientas.GetHora();
         }

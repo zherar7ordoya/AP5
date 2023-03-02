@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapturaFinal2022
+namespace Herencia
 {
     public partial class ComedorAnimalForm : Form
     {
         List<Animal> _listaAnimales = new List<Animal>();
-        List<IAlimento> _listaAlimentos = new List<IAlimento>();
+        List<Vegetacion> _listaAlimentos = new List<Vegetacion>();
 
 
         public ComedorAnimalForm()
@@ -31,9 +31,8 @@ namespace CapturaFinal2022
             _listaAlimentos.Add(new Pasto("California"));
             _listaAlimentos.Add(new Planta("Cactus"));
 
-            ListaAnimalesDgv.DataSource = null;
+
             ListaAnimalesDgv.DataSource = _listaAnimales;
-            ListaAlimentosDgv.DataSource = null;
             ListaAlimentosDgv.DataSource = _listaAlimentos;
         }
     }

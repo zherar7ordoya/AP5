@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CapturaFinal2022
+namespace Herencia
 {
     public interface IAlimento
     {

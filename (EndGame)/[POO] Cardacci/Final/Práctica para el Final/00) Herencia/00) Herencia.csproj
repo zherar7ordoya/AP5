@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{88324BC0-613C-400C-BC49-622724000D3E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CapturaFinal2022</RootNamespace>
-    <AssemblyName>CapturaFinal2022</AssemblyName>
+    <RootNamespace>Herencia</RootNamespace>
+    <AssemblyName>Herencia</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="Carnivoro.cs" />
     <Compile Include="Cebra.cs" />
     <Compile Include="Ciervo.cs" />
     <Compile Include="ComedorAnimalForm.cs">
@@ -57,7 +56,6 @@
       <DependentUpon>ComedorAnimalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Flor.cs" />
-    <Compile Include="Herbivoro.cs" />
     <Compile Include="Herramientas.cs" />
     <Compile Include="IAlimento.cs" />
     <Compile Include="Leon.cs" />
@@ -78,7 +76,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Consigna.MD" />
     <None Include="DiagramaDeClases.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
