@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Herencia
 {
-    public class Cebra : Animal, IAlimento
+    public class Cebra : Animal, IAlimento, IHerbivoro
     {
         public override string Nombre  { get; }
         public override string Categoria { get; }

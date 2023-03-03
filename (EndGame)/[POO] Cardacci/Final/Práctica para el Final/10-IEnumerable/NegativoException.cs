@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _10_IEnumerable
+namespace CloneableEnumerableEnumerator
 {
     class NegativoException : Exception
     {

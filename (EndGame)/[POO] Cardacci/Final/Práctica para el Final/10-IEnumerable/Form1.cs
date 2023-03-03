@@ -1,6 +1,4 @@
-﻿
-
-using System;
+﻿using System;
 using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _10_IEnumerable
+namespace CloneableEnumerableEnumerator
 {
     public partial class Form1 : Form
     {
@@ -32,8 +30,8 @@ namespace _10_IEnumerable
             P = new Producto("2222-CCCC");
             MiEmpresa.AgregarProducto(P);
             Persona Per = new Persona("Juan", 1234);
-            
-           
+
+
             //Per.Nombre = "Juan";
             MiEmpresa.AgregarPersona(Per);
             Per = new Persona("Perdro", 2222);
@@ -58,25 +56,26 @@ namespace _10_IEnumerable
         }
     }
 
-    public class Producto:IEnumerable,IEnumerator,ICloneable
+    // ************************************************************************
+
+    public class Producto : ICloneable, IEnumerable, IEnumerator
     {
-        /// <summary>
-        /// 1234-ABCD
-        /// </summary>
         public string Codigo { get; set; }
-        private string _Current;
-        public object Current => _Current; //Devuelve el elemento que ese está iterando
-        bool sigue; //Para el movenext
-        int c=0; //el contador
+        private string _current;
 
-        public Producto()
+        // ¿En cuál objeto estás ahora?
+        public object Current => _current;
+
+        // ¿Puedo continuar?
+        bool continua;
+
+        // ¿En qué posición del bloque estoy?
+        int contador = 0;
+
+        public Producto() { }
+        public Producto(string codigo)
         {
-
-        }
-        public Producto(string pCodigo)
-        {
-            Codigo = pCodigo;
-
+            Codigo = codigo;
         }
 
         public IEnumerator GetEnumerator()
@@ -86,29 +85,30 @@ namespace _10_IEnumerable
 
         public bool MoveNext()
         {
-            if (c == 0)
+            if (contador == 0)
             {
-                _Current = Codigo.Substring(0, 4);
-                sigue = true;
-                c++;
+                _current = Codigo.Substring(0, 4);
+                continua = true;
+                contador++;
             }
-            else if (c == 1)
+            else if (contador == 1)
             {
-                _Current = Codigo.Substring(5, 4);
-                sigue = true;
-                c++;
-
+                _current = Codigo.Substring(5, 4);
+                continua = true;
+                contador++;
             }
             else
+            {
                 Reset();
-            return sigue;
+            }
+            return continua;
         }
 
         public void Reset()
         {
-            sigue = false;
-            _Current = "";
-            c = 0;
+            continua = false;
+            _current = string.Empty;
+            contador = 0;
         }
 
         public object Clone()
@@ -117,6 +117,8 @@ namespace _10_IEnumerable
         }
     }
 
+    // ************************************************************************
+
     public class Persona : ICloneable
     {
         //declaro el evento
@@ -124,10 +126,11 @@ namespace _10_IEnumerable
 
 
         private string _Nombre;
-        public string Nombre 
+        public string Nombre
         {
             get { return _Nombre; }
-            set {
+            set
+            {
                 //aca voy a invocar el evento si se carga Juan
 
                 if (value == "Juan")
@@ -135,16 +138,16 @@ namespace _10_IEnumerable
                     SeCargoJuan?.Invoke(this, new SeCargoJuanEventArgs(value));
                 }
 
-               
+
                 _Nombre = value;
-            
-            
+
+
             }
         }
         public int Codigo { get; set; } /// <summary>
-        /// el codigo es la primera parte del codigo del producto.
-        /// para poder usar el linq
-        /// </summary>
+                                        /// el codigo es la primera parte del codigo del producto.
+                                        /// para poder usar el linq
+                                        /// </summary>
 
         public Persona()
         { }
@@ -159,6 +162,8 @@ namespace _10_IEnumerable
             return MemberwiseClone();
         }
     }
+
+    // ************************************************************************
 
     public class Empresa
     {
@@ -216,7 +221,7 @@ namespace _10_IEnumerable
         public List<Persona> RetornaPersonas()
         {
             List<Persona> Lp = new List<Persona>();
-            foreach(Persona p in LPersona)
+            foreach (Persona p in LPersona)
             {
                 Lp.Add((Persona)p.Clone());
             }
@@ -233,15 +238,17 @@ namespace _10_IEnumerable
 
     }
 
-    public class SeCargoJuanEventArgs: EventArgs
+    // ************************************************************************
+
+    public class SeCargoJuanEventArgs : EventArgs
     {
         public string Nombre { get; set; }
-       
+
 
         public SeCargoJuanEventArgs(string pNombre)
         {
             Nombre = pNombre;
-            
+
         }
     }
 }

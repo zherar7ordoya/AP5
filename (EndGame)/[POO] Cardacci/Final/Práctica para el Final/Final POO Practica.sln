@@ -19,9 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08) Delegados", "07-Delegad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09) Delegados Lambda", "08-Lambda con Delegados\09) Delegados Lambda.csproj", "{492315CD-7EBA-42FF-AB61-F8C2B4FFDCD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09-Delegados_02", "09-Delegados_02\09-Delegados_02.csproj", "{4F64E554-5EDF-4A75-B8DC-51C7DCD18386}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10) Delegado Nivel Namespace", "09-Delegados_02\10) Delegado Nivel Namespace.csproj", "{4F64E554-5EDF-4A75-B8DC-51C7DCD18386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10-IEnumerable", "10-IEnumerable\10-IEnumerable.csproj", "{52F04C88-CE11-460B-804C-32261D87FECB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICloneable IEnumerable IEnumerator", "10-IEnumerable\ICloneable IEnumerable IEnumerator.csproj", "{52F04C88-CE11-460B-804C-32261D87FECB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "De Todo", "De Todo\De Todo.csproj", "{98942D3F-2C13-441D-9CBB-8D31255FA517}"
 EndProject
