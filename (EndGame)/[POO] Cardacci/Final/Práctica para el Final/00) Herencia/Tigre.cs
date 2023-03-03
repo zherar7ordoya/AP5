@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Herencia
 {
-    public class Tigre : Animal
+    public class Tigre : Animal, ICarnivoro
     {
         public override string Nombre { get; }
         public override string Categoria { get; }

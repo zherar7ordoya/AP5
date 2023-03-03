@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _09_Delegados_02
+namespace DelegadoNivelNamespace
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _09_Delegados_02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new DelegadoForm());
         }
     }
 }

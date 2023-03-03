@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
+    <Compile Include="Base\Animal.cs" />
     <Compile Include="Cebra.cs" />
     <Compile Include="Ciervo.cs" />
     <Compile Include="ComedorAnimalForm.cs">
@@ -56,15 +56,17 @@
       <DependentUpon>ComedorAnimalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Flor.cs" />
-    <Compile Include="Herramientas.cs" />
-    <Compile Include="IAlimento.cs" />
+    <Compile Include="Xtras\Herramientas.cs" />
+    <Compile Include="Abstracta\IAlimento.cs" />
+    <Compile Include="Abstracta\ICarnivoro.cs" />
+    <Compile Include="Abstracta\IHerbivoro.cs" />
     <Compile Include="Leon.cs" />
     <Compile Include="Pasto.cs" />
     <Compile Include="Planta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tigre.cs" />
-    <Compile Include="Vegetacion.cs" />
+    <Compile Include="Base\Vegetacion.cs" />
     <EmbeddedResource Include="ComedorAnimalForm.resx">
       <DependentUpon>ComedorAnimalForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,8 +80,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Consigna.MD" />
-    <None Include="DiagramaDeClases.cd" />
+    <None Include="Xtras\Consigna.MD" />
+    <None Include="Xtras\DiagramaDeClases.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,5 +95,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

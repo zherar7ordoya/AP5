@@ -40,7 +40,7 @@ namespace InterfazIEnumerator
         public IEnumerator GetEnumerator() { return this; }
 
 
-        // IENUMERABLE ********************************************************
+        // IENUMERATOR ********************************************************
 
         // Variable para el IEnumerator
         private string _current;
