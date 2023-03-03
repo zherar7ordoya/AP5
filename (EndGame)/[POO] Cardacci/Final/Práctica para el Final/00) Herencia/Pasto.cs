@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Herencia
+namespace Captura
 {
     public class Pasto : Vegetacion, IAlimento
     {
@@ -14,7 +14,7 @@ namespace Herencia
 
         public Pasto(string nombre)
         {
-            Nombre = nombre;
+            Nombre = $"Pasto {nombre}";
             FechaInstancia = Herramientas.GetFecha();
             HoraInstancia = Herramientas.GetHora();
         }

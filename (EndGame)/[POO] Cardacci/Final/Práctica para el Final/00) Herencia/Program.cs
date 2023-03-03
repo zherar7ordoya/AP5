@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Herencia
+namespace Captura
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace Herencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ComedorAnimalForm());
+            Application.Run(new AnimalForm());
         }
     }
 }

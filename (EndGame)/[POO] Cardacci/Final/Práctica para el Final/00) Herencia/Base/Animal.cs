@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Herencia
+namespace Captura
 {
     public abstract class Animal
     {
         public abstract string Nombre { get; }
-        public abstract string Categoria { get; }
         public abstract string FechaInstancia { get; }
         public abstract string HoraInstancia { get; }
 

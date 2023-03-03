@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Herencia
+namespace Captura
 {
     public interface ICarnivoro
     {

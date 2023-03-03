@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Herencia.Properties {
+namespace Captura.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
