@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Captura.Animal" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAQAAAEAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Base\Animal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Vegetacion" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\Vegetacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.ComedorForm" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBBAAEEgACgAAJAAACDAgJACCAUAAAQAEAAAAABBAgA=</HashCode>
+      <FileName>ComedorForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.ComedorGestor" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAwAAAAAAAAAAQAAgAEAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ComedorGestor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Cebra" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAQAAAEAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Objetos\Cebra.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Ciervo" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAQAAAEAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Objetos\Ciervo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Flor" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objetos\Flor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Leon" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAQAAAEAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Objetos\Leon.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Pasto" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objetos\Pasto.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Planta" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objetos\Planta.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Tigre" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAgAAQAAAEAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Objetos\Tigre.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Captura.Program" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Herramientas" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Xtras\Herramientas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Properties.Resources" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Captura.Properties.Settings" Collapsed="true">
+    <Position X="13.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Captura.IAlimento" Collapsed="true">
+    <Position X="9.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAQAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstracta\IAlimento.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Captura.ICarnivoro" Collapsed="true">
+    <Position X="11.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstracta\ICarnivoro.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Captura.IHerbivoro" Collapsed="true">
+    <Position X="13.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstracta\IHerbivoro.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Microsoft Sans Serif" Size="9.75" />
+</ClassDiagram>
