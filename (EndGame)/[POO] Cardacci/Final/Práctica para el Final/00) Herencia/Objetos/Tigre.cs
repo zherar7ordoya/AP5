@@ -1,23 +1,23 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace Captura
 {
-    public class Ciervo : Animal, IAlimento, IHerbivoro
+    public class Tigre : Animal, ICarnivoro
     {
         public override string Nombre { get; }
         public override string FechaInstancia { get; }
         public override string HoraInstancia { get; }
         public override List<IAlimento> ListaAlimentos { get; set; }
 
-        public Ciervo(string nombre)
+        public Tigre(string nombre)
         {
-            Nombre = $"Ciervo {nombre}";
+            Nombre = $"Tigre {nombre}";
             FechaInstancia = Herramientas.GetFecha();
             HoraInstancia = Herramientas.GetHora();
+            ListaAlimentos = new List<IAlimento>();
         }
 
         public override void Comer(IAlimento alimento)

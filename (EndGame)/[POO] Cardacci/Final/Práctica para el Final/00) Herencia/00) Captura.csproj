@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,30 +47,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimalGestor.cs" />
-    <Compile Include="Base\Animal.cs" />
-    <Compile Include="Cebra.cs" />
-    <Compile Include="Ciervo.cs" />
-    <Compile Include="AnimalForm.cs">
+    <Compile Include="AltaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnimalForm.Designer.cs">
-      <DependentUpon>AnimalForm.cs</DependentUpon>
+    <Compile Include="AltaForm.Designer.cs">
+      <DependentUpon>AltaForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Flor.cs" />
+    <Compile Include="ComedorGestor.cs" />
+    <Compile Include="Base\Animal.cs" />
+    <Compile Include="Objetos\Cebra.cs" />
+    <Compile Include="Objetos\Ciervo.cs" />
+    <Compile Include="ComedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComedorForm.Designer.cs">
+      <DependentUpon>ComedorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objetos\Flor.cs" />
     <Compile Include="Xtras\Herramientas.cs" />
     <Compile Include="Abstracta\IAlimento.cs" />
     <Compile Include="Abstracta\ICarnivoro.cs" />
     <Compile Include="Abstracta\IHerbivoro.cs" />
-    <Compile Include="Leon.cs" />
-    <Compile Include="Pasto.cs" />
-    <Compile Include="Planta.cs" />
+    <Compile Include="Objetos\Leon.cs" />
+    <Compile Include="Objetos\Pasto.cs" />
+    <Compile Include="Objetos\Planta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tigre.cs" />
+    <Compile Include="Objetos\Tigre.cs" />
     <Compile Include="Base\Vegetacion.cs" />
-    <EmbeddedResource Include="AnimalForm.resx">
-      <DependentUpon>AnimalForm.cs</DependentUpon>
+    <EmbeddedResource Include="AltaForm.resx">
+      <DependentUpon>AltaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComedorForm.resx">
+      <DependentUpon>ComedorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

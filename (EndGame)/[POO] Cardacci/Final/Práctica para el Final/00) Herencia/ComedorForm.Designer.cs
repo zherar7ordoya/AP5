@@ -1,6 +1,6 @@
 ﻿namespace Captura
 {
-    partial class AnimalForm
+    partial class ComedorForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -107,6 +107,7 @@
             this.AlimentarBtn.TabIndex = 5;
             this.AlimentarBtn.Text = "<Alimentar";
             this.AlimentarBtn.UseVisualStyleBackColor = true;
+            this.AlimentarBtn.Click += new System.EventHandler(this.AlimentarBtn_Click);
             // 
             // AgregarBtn
             // 
@@ -116,6 +117,7 @@
             this.AgregarBtn.TabIndex = 6;
             this.AgregarBtn.Text = "Agregar";
             this.AgregarBtn.UseVisualStyleBackColor = true;
+            this.AgregarBtn.Click += new System.EventHandler(this.AgregarBtn_Click);
             // 
             // HistorialDgv
             // 
@@ -147,7 +149,7 @@
             this.label4.Text = "Categoría";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // AnimalForm
+            // ComedorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AnimalForm";
+            this.Name = "ComedorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comedor Animal";
             this.Load += new System.EventHandler(this.ComedorAnimalForm_Load);

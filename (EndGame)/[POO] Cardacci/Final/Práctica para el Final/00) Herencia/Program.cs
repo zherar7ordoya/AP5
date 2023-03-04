@@ -16,7 +16,7 @@ namespace Captura
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnimalForm());
+            Application.Run(new ComedorForm());
         }
     }
 }

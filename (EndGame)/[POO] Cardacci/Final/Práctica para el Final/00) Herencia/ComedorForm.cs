@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Captura
 {
-    public partial class AnimalForm : Form
+    public partial class ComedorForm : Form
     {
-        AnimalGestor _gestor = new AnimalGestor();
+        public ComedorGestor Gestor = new ComedorGestor();
 
-        public AnimalForm()
+        public ComedorForm()
         {
             InitializeComponent();
         }
 
         private void ComedorAnimalForm_Load(object sender, EventArgs e)
         {
-            AnimalesDgv.DataSource = _gestor.GetAnimales();
-            AlimentosDgv.DataSource = _gestor.GetAlimentos();
+            AnimalesDgv.DataSource = Gestor.GetAnimales();
+            AlimentosDgv.DataSource = Gestor.GetAlimentos();
         }
 
 
@@ -38,7 +38,7 @@ namespace Captura
             {
                 // Obtengo historial
                 Animal animal = AnimalesDgv.SelectedRows[0].DataBoundItem as Animal;
-                var historial = _gestor.GetHistorial(animal);
+                var historial = Gestor.GetHistorial(animal);
                 ActualizaDgv(HistorialDgv, historial);
 
                 // Obtengo categoría
@@ -50,6 +50,30 @@ namespace Captura
             {
                 CategoriaTxt.Text = "Ha ocurrido un problema. Contacte al programador.";
             }
+        }
+
+        private void AlimentarBtn_Click(object sender, EventArgs e)
+        {
+            Animal animal = AnimalesDgv.SelectedRows[0].DataBoundItem as Animal;
+            IAlimento alimento = AlimentosDgv.SelectedRows[0].DataBoundItem as IAlimento;
+            Gestor.AlimentaAnimal(animal, alimento);
+            var animales = Gestor.GetAnimales();
+            var alimentos = Gestor.GetAlimentos();
+            ActualizaDgv(AnimalesDgv, animales);
+            ActualizaDgv(AlimentosDgv, alimentos);
+            AnimalesDgv_RowEnter(this, null);
+        }
+
+        private void AgregarBtn_Click(object sender, EventArgs e)
+        {
+            Form formulario = new AltaForm();
+            formulario.ShowDialog();
+            var animales = Gestor.GetAnimales();
+            var alimentos = Gestor.GetAlimentos();
+            ActualizaDgv(AnimalesDgv, animales);
+            ActualizaDgv(AlimentosDgv, alimentos);
+            AnimalesDgv_RowEnter(this, null);
+            MessageBox.Show("Animal agregado");
         }
     }
 }
