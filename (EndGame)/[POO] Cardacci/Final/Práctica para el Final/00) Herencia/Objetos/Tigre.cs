@@ -20,9 +20,10 @@ namespace Captura
             ListaAlimentos = new List<IAlimento>();
         }
 
-        public override void Comer(IAlimento alimento)
+        public override string Comer(IAlimento alimento)
         {
-            throw new NotImplementedException();
+            if (alimento is Vegetacion) throw new AlimentoException(this);
+            return string.Empty;
         }
     }
 }

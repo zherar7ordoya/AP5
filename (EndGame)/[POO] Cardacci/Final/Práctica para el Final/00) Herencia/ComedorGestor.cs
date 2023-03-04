@@ -14,19 +14,19 @@ namespace Captura
 
         public ComedorGestor()
         {
-            _listaAnimales.Add(new Cebra("Rayada"));
-            _listaAnimales.Add(new Ciervo("Bambi"));
-            _listaAnimales.Add(new Leon("Fred"));
-            _listaAnimales.Add(new Tigre("Tom"));
+            _listaAnimales.Add(new Cebra("Yayita"));
+            _listaAnimales.Add(new Ciervo("Rodolfo"));
+            _listaAnimales.Add(new Leon("Gieco"));
+            _listaAnimales.Add(new Tigre("Zucarita"));
 
-            _listaAlimentos.Add(new Pasto("California"));
+            _listaAlimentos.Add(new Pasto("Californiano"));
             _listaAlimentos.Add(new Planta("Cactus"));
 
             // ¿Para qué esto? Para practicar el uso de LINQ (el truco: ToArray)
             var comibles = (from alimento in _listaAnimales
                             where alimento is IAlimento
                             select alimento as IAlimento).ToArray();
-            
+
             // Se podría hacer directamente aquí usando la lista de animales y
             // añadiendo el "item as IAlimento" a la lista de alimentos
             foreach (var item in comibles)
@@ -39,9 +39,14 @@ namespace Captura
             foreach (var animal in _listaAnimales)
             {
                 if (animal is ICarnivoro) animal.ListaAlimentos.Add(new Cebra("Roxana"));
-                if (animal is IHerbivoro) animal.ListaAlimentos.Add(new Pasto("Montaraz"));
                 if (animal is ICarnivoro) animal.ListaAlimentos.Add(new Ciervo("Canada"));
+                if (animal is IHerbivoro) animal.ListaAlimentos.Add(new Pasto("Montaraz"));
                 if (animal is IHerbivoro) animal.ListaAlimentos.Add(new Planta("Ligustro"));
+
+                if (animal is ICarnivoro) animal.ListaAlimentos.Add(new Cebra("Rayas"));
+                if (animal is ICarnivoro) animal.ListaAlimentos.Add(new Ciervo("Cuernos"));
+                if (animal is IHerbivoro) animal.ListaAlimentos.Add(new Pasto("Verde"));
+                if (animal is IHerbivoro) animal.ListaAlimentos.Add(new Planta("Tupida"));
             }
         }
 

@@ -56,14 +56,26 @@ namespace Captura
 
         private void AlimentarBtn_Click(object sender, EventArgs e)
         {
-            Animal animal = AnimalesDgv.SelectedRows[0].DataBoundItem as Animal;
-            IAlimento alimento = AlimentosDgv.SelectedRows[0].DataBoundItem as IAlimento;
-            _gestor.AlimentaAnimal(animal, alimento);
-            var animales = _gestor.GetAnimales();
-            var alimentos = _gestor.GetAlimentos();
-            ActualizaDgv(AnimalesDgv, animales);
-            ActualizaDgv(AlimentosDgv, alimentos);
-            AnimalesDgv_RowEnter(this, null);
+            try
+            {
+                Animal animal = AnimalesDgv.SelectedRows[0].DataBoundItem as Animal;
+                IAlimento alimento = AlimentosDgv.SelectedRows[0].DataBoundItem as IAlimento;
+
+                string excepcion = animal.Comer(alimento);
+                if (excepcion != string.Empty) throw new Exception(excepcion);
+
+                _gestor.AlimentaAnimal(animal, alimento);
+                var animales = _gestor.GetAnimales();
+                var alimentos = _gestor.GetAlimentos();
+                ActualizaDgv(AnimalesDgv, animales);
+                ActualizaDgv(AlimentosDgv, alimentos);
+                AnimalesDgv_RowEnter(this, null);
+            }
+            catch (AlimentoException ex) { MessageBox.Show(ex.Message); }
+
+
+
+
         }
 
         private void AgregarBtn_Click(object sender, EventArgs e)

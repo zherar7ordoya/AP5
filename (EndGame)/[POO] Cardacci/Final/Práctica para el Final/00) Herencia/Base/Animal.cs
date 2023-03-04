@@ -11,7 +11,7 @@ namespace Captura
         public abstract string FechaInstancia { get; }
         public abstract string HoraInstancia { get; }
 
-        public abstract void Comer(IAlimento alimento);
+        public abstract string Comer(IAlimento alimento);
 
         public abstract List<IAlimento> ListaAlimentos { get; set; }
     }
