@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace De_Todo
+namespace Integrador
 {
     public abstract class Figura
     {

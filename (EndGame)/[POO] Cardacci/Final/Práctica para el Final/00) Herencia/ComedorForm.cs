@@ -1,13 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Captura
@@ -16,17 +9,13 @@ namespace Captura
     {
         public ComedorGestor _gestor = new ComedorGestor();
 
-        public ComedorForm()
-        {
-            InitializeComponent();
-        }
+        public ComedorForm() => InitializeComponent();
 
-        private void ComedorAnimalForm_Load(object sender, EventArgs e)
+        private void ComedorForm_Load(object sender, EventArgs e)
         {
             AnimalesDgv.DataSource = _gestor.GetAnimales();
             AlimentosDgv.DataSource = _gestor.GetAlimentos();
         }
-
 
         void ActualizaDgv(DataGridView dgv, object objeto)
         {
@@ -48,10 +37,9 @@ namespace Captura
                 else if (animal is IHerbivoro) CategoriaTxt.Text = $"{animal.Nombre} es herbívoro";
                 else CategoriaTxt.Text = "Ha ocurrido un problema. Contacte al programador.";
             }
-            catch (Exception)
-            {
-                CategoriaTxt.Text = "Ha ocurrido un problema. Contacte al programador.";
-            }
+            // ¿Por qué vacío? RowEnter tiene un doble barrido. Este "truco"
+            // evita que se muestre un mensaje de error cuando se selecciona.
+            catch (Exception) { }
         }
 
         private void AlimentarBtn_Click(object sender, EventArgs e)
@@ -61,21 +49,18 @@ namespace Captura
                 Animal animal = AnimalesDgv.SelectedRows[0].DataBoundItem as Animal;
                 IAlimento alimento = AlimentosDgv.SelectedRows[0].DataBoundItem as IAlimento;
 
-                string excepcion = animal.Comer(alimento);
-                if (excepcion != string.Empty) throw new Exception(excepcion);
+                animal.Comer(alimento);
 
                 _gestor.AlimentaAnimal(animal, alimento);
+
                 var animales = _gestor.GetAnimales();
                 var alimentos = _gestor.GetAlimentos();
+
                 ActualizaDgv(AnimalesDgv, animales);
                 ActualizaDgv(AlimentosDgv, alimentos);
                 AnimalesDgv_RowEnter(this, null);
             }
-            catch (AlimentoException ex) { MessageBox.Show(ex.Message); }
-
-
-
-
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
         private void AgregarBtn_Click(object sender, EventArgs e)
@@ -87,10 +72,12 @@ namespace Captura
         {
             var animales = _gestor.GetAnimales();
             var alimentos = _gestor.GetAlimentos();
+
             ActualizaDgv(AnimalesDgv, animales);
             ActualizaDgv(AlimentosDgv, alimentos);
             AnimalesDgv_RowEnter(this, null);
-            this.GrupoRadio.Visible = false;
+
+            GrupoRadio.Visible = false;
             MessageBox.Show("Animal agregado");
         }
 
@@ -101,31 +88,46 @@ namespace Captura
 
         private void CebraRadio_CheckedChanged(object sender, EventArgs e)
         {
+            // ¿Por qué? Si no se hace esto, el evento se ejecuta dos veces.
+            if (CebraRadio.Checked == false) return;
+
             string nombre = GetNombreAnimal();
+            if (nombre == "") return;
             _gestor.AgregaAnimal(new Cebra(nombre));
             PosAgregado();
         }
 
         private void CiervoRadio_CheckedChanged(object sender, EventArgs e)
         {
+            // ¿Por qué? Si no se hace esto, el evento se ejecuta dos veces.
+            if (CiervoRadio.Checked == false) return;
+
             string nombre = GetNombreAnimal();
+            if (nombre == "") return;
             _gestor.AgregaAnimal(new Ciervo(nombre));
             PosAgregado();
         }
 
         private void LeonRadio_CheckedChanged(object sender, EventArgs e)
         {
+            // ¿Por qué? Si no se hace esto, el evento se ejecuta dos veces.
+            if (LeonRadio.Checked == false) return;
+
             string nombre = GetNombreAnimal();
+            if (nombre == "") return;
             _gestor.AgregaAnimal(new Leon(nombre));
             PosAgregado();
         }
 
         private void TigreRadio_CheckedChanged(object sender, EventArgs e)
         {
+            // ¿Por qué? Si no se hace esto, el evento se ejecuta dos veces.
+            if (TigreRadio.Checked == false) return;
+
             string nombre = GetNombreAnimal();
+            if (nombre == "") return;
             _gestor.AgregaAnimal(new Tigre(nombre));
             PosAgregado();
         }
-
     }
 }

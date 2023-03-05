@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _12_De_Todo_02
+namespace CloneableComparableDisposableEnumerable
 {
     public interface IPersona : ICloneable , IComparable<IPersona>
     {
-        int Dni { get; set; }
+        int DNI { get; set; }
         string Nombre { get; set; }
     }
 }

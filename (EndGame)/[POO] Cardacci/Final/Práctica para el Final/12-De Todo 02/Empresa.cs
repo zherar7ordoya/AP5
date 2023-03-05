@@ -5,69 +5,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _12_De_Todo_02
+namespace CloneableComparableDisposableEnumerable
 {
     public class Empresa
     {
-        List<Cliente> LClientes;
-        public Empresa()
-        {
-            LClientes = new List<Cliente>();
-        }
+        List<Cliente> _clientes;
 
-        public void AgregarCliente(Cliente C)
+        public Empresa() { _clientes = new List<Cliente>(); }
+
+        public void AgregarCliente(Cliente cliente)
         {
-            if (!LClientes.Exists(x => x.Dni == C.Dni))
+            if (!_clientes.Exists(x => x.DNI == cliente.DNI))
             {
-                LClientes.Add(C);
+                _clientes.Add(cliente);
             }
             else
             {
-                throw new Exception("El Cliente con el DNI " + C.Dni + " ya existe.");
+                throw new Exception($"El Cliente con el DNI { cliente.DNI } ya existe.");
             }
         }
 
-        public List<Cliente> RetornaClientes()
+        public List<Cliente> GetClientes()
         {
-            List<Cliente> LC = new List<Cliente>();
-            foreach(Cliente C in LClientes)
+            List<Cliente> lista = new List<Cliente>();
+
+            foreach (Cliente cliente in _clientes)
             {
-                LC.Add((Cliente)C.Clone());
+                lista.Add((Cliente)cliente.Clone());
             }
-            return LC;
+
+            return lista;
         }
+
 
         public IEnumerable RetornaSoloNombres()
         {
-            var v = from C in LClientes select new { Nombre = C.Nombre };
-            
-            
-            return v.ToList();
+            var nombres = from cliente
+                          in _clientes
+                          select new { cliente.Nombre };
+            return nombres.ToList();
 
         }
+
 
         public List<Cliente> RetornaComienzanConA()
         {
-            List<Cliente> LC = new List<Cliente>();
-            var v = from C in LClientes where C.Nombre.StartsWith("A") select C;
-            foreach (Cliente C in v)
+            List<Cliente> lista = new List<Cliente>();
+
+            var nombres = from cliente
+                          in _clientes
+                          where cliente.Nombre.StartsWith("A")
+                          select cliente;
+
+            foreach (Cliente cliente in nombres)
             {
-                LC.Add((Cliente)C.Clone());
+                lista.Add((Cliente)cliente.Clone());
             }
 
-            return LC;
+            return lista;
         }
 
-        public List<Cliente> RetornaBusqueda(string A)
+
+        public List<Cliente> RetornaBusqueda(string nombre)
         {
-            List<Cliente> LC = new List<Cliente>();
-            var v = from C in LClientes where C.Nombre==A select C;
-            foreach (Cliente C in v)
+            List<Cliente> lista = new List<Cliente>();
+
+            var nombres = from cliente
+                          in _clientes
+                          where cliente.Nombre == nombre
+                          select cliente;
+
+            foreach (Cliente cliente in nombres)
             {
-                LC.Add((Cliente)C.Clone());
+                lista.Add((Cliente)cliente.Clone());
             }
 
-            return LC;
+            return lista;
         }
     }
 

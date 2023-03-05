@@ -16,7 +16,7 @@ namespace _11_Herencia_y_varios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new UsuarioForm());
         }
     }
 }

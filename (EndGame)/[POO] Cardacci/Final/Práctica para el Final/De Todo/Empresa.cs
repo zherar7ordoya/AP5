@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace De_Todo
+namespace Integrador
 {
     public class Empresa
     {

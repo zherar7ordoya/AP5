@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InterfazIComparer
+namespace Comparer
 {
     static class Program
     {
@@ -16,7 +13,7 @@ namespace InterfazIComparer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ListaPersonasForm());
+            Application.Run(new PersonaForm());
         }
     }
 }

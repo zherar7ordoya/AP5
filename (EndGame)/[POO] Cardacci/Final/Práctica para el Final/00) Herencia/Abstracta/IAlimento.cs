@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Captura
+﻿namespace Captura
 {
     /** Por fin me toca explicar no el qué sino el por qué. ¿Por qué pongo estos
      * campos aquí, si ya están en las clases correspondientes? El DataGridView

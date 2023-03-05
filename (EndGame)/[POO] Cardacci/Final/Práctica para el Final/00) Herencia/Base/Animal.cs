@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Captura
 {
@@ -10,9 +7,8 @@ namespace Captura
         public abstract string Nombre { get; }
         public abstract string FechaInstancia { get; }
         public abstract string HoraInstancia { get; }
-
-        public abstract string Comer(IAlimento alimento);
-
         public abstract List<IAlimento> ListaAlimentos { get; set; }
+
+        public abstract void Comer(IAlimento alimento);
     }
 }

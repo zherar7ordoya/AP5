@@ -238,7 +238,7 @@
             this.Name = "ComedorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comedor Animal";
-            this.Load += new System.EventHandler(this.ComedorAnimalForm_Load);
+            this.Load += new System.EventHandler(this.ComedorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AnimalesDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AlimentosDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HistorialDgv)).EndInit();

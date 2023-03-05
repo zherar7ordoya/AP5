@@ -9,57 +9,59 @@ using System.Threading.Tasks;
 
 namespace _11_Herencia_y_varios
 {
-      public abstract class Usuario: IEnumerable,IComparable<Usuario>
+    public abstract class Usuario : IEnumerable, IComparable<Usuario>
     {
-        public event EventHandler SoyMenor;
-        public event EventHandler<SoyMayorEventArgs> SoyMayor;
-        private protected int _Edad;
+        public event EventHandler MenorEventHandler;
+        public event EventHandler<SoyMayorEventArgs> MayorEventHandler;
+
+        // La definición es "protected: solamente el código de la misma class,
+        // o bien de una class derivada de esa class, puede acceder al tipo o
+        // miembro." Ahora, ¿por qué decidió usar "private protected"?
+        // En realidad es "private protected: se puede tener acceso al tipo o
+        // miembro mediante tipos derivados del objeto class que se declaran
+        // dentro de su ensamblado contenedor."
+        private protected int _edad;
+
         public int Id { get; set; }
         public string Nombre { get; set; }
+
         public int Edad
         {
-            get
-            {
-                return _Edad;
-            }
+            get { return _edad; }
             set
             {
-                if (value < 18)
-                {
-                    SoyMenor?.Invoke(this, null);
-                }
-                else
-                {
-                    SoyMayor?.Invoke(this, new SoyMayorEventArgs(value));
-                }
-                value = _Edad;
+                if (value < 18) MenorEventHandler?.Invoke(this, null);
+                else MayorEventHandler?.Invoke(this, new SoyMayorEventArgs(value));
+                value = _edad;
             }
         }
-        public Usuario()
-        {
 
+        // ¡Qué manía con los constructores vacíos!
+        public Usuario() { }
+
+        public Usuario(int id, string nombre)
+        {
+            Id = id;
+            Nombre = nombre;
         }
 
-        public Usuario(int pId, string pNombre)
-        {
-            Id = pId;
-            Nombre = pNombre;
-        }
+        /**
+         * You use abstract methods to force subclasses to override the method.
+         * You use virtual methods to allow subclasses to override the method.
+         */
         public abstract decimal CalculaCuota(int p);
-        protected virtual int EspacioAsignado()
-        {
-            return 1024;
-        }
+        protected virtual int EspacioAsignado() { return 1024; }
 
         public IEnumerator GetEnumerator()
         {
-            return new Hola(Id, Nombre);
+            return new Saludo(Id, Nombre);
         }
 
-        public int CompareTo(Usuario other)
+        public int CompareTo(Usuario comparado)
         {
-            return string.Compare(Nombre,other.Nombre);
+            return string.Compare(Nombre, comparado.Nombre);
         }
+
 
         public class NombreDesc : IComparer<Usuario>
         {
@@ -70,81 +72,80 @@ namespace _11_Herencia_y_varios
         }
     }
 
-    public class UserPremiun : Usuario,IComparable<Auto> 
+
+    public class Auto
     {
-        public UserPremiun(int pId, string pNombre) : base(pId,pNombre)
-        {}
-        public UserPremiun()
-        {
+        public int Id { get; set; }
+    }
 
-        }
-        public override decimal CalculaCuota(int p)
-        {
-            return 100 * p;
-        }
 
-        //public new int EspacioAsignado() ///Sombreado
-        //{
-        //    return 512;
+    public class UsuarioPremium : Usuario, IComparable<Auto>
+    {
+        public UsuarioPremium(int id, string nombre) : base(id, nombre) { }
+        public UsuarioPremium() { }
 
-        //}
-        protected override int EspacioAsignado()
-        {
-            return 512;
-        }
+        // Este método: estaba obligado a sobre-escribirlo
+        public override decimal CalculaCuota(int i) { return 100 * i; }
 
-        public int CompareTo(Auto A)
+        // Este método: podía o no sobre-escribirlo
+        protected override int EspacioAsignado() { return 512; }
+
+        public int CompareTo(Auto auto)
         {
-            if (A.Id> Edad) return 1;
-            else if (A.Id < Edad) return -1;
+            if (auto.Id > Edad) return 1;
+            else if (auto.Id < Edad) return -1;
             else return 0;
         }
     }
-    public  class Hola:IEnumerator
+
+
+
+    public class Saludo : IEnumerator
     {
-        public int Id { get; set; }
-        public string  Nombre { get; set; }
-        private string _Current;
-        public object Current => _Current;
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        private string _current;
+        public object Current => _current;
 
-        int c = 0;
-        bool sigue = false;
+        int contador = 0;
+        bool continuar = false;
 
-        public Hola(int pId,string pNombre)
+        public Saludo(int id, string nombre)
         {
-            Id = pId;
-            Nombre = pNombre;
+            ID = id;
+            Nombre = nombre;
         }
 
         public bool MoveNext()
         {
-            if (c == 0)
+            if (contador == 0)
             {
-                _Current = Id.ToString();
-                sigue = true;
-                c++;
+                _current = ID.ToString();
+                continuar = true;
+                contador++;
             }
-            else if (c == 1)
+            else if (contador == 1)
             {
-                _Current = Nombre;
-                sigue = true;
-                c++;
+                _current = Nombre;
+                continuar = true;
+                contador++;
             }
-            else if (c == 2)
+            else if (contador == 2)
             {
-                _Current = "Se acabó";
-                sigue = true;
-                c++;
+                _current = "IEnumerator no tiene más que mostrar";
+                continuar = true;
+                contador++;
             }
             else { Reset(); }
-            return sigue;
+
+            return continuar;
         }
 
         public void Reset()
         {
-            c = 0;
-            sigue = false;
-            _Current = "";
+            contador = 0;
+            continuar = false;
+            _current = string.Empty;
         }
     }
 }

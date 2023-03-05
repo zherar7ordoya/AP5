@@ -67,7 +67,7 @@ namespace CloneableEnumerableEnumerator
         public object Current => _current;
 
         // ¿Puedo continuar?
-        bool continua;
+        bool continuar;
 
         // ¿En qué posición del bloque estoy?
         int contador = 0;
@@ -88,25 +88,25 @@ namespace CloneableEnumerableEnumerator
             if (contador == 0)
             {
                 _current = Codigo.Substring(0, 4);
-                continua = true;
+                continuar = true;
                 contador++;
             }
             else if (contador == 1)
             {
                 _current = Codigo.Substring(5, 4);
-                continua = true;
+                continuar = true;
                 contador++;
             }
             else
             {
                 Reset();
             }
-            return continua;
+            return continuar;
         }
 
         public void Reset()
         {
-            continua = false;
+            continuar = false;
             _current = string.Empty;
             contador = 0;
         }

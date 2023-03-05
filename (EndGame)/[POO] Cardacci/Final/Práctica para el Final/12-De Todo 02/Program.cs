@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _12_De_Todo_02
+namespace CloneableComparableDisposableEnumerable
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _12_De_Todo_02
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new IntegradorForm());
         }
     }
 }

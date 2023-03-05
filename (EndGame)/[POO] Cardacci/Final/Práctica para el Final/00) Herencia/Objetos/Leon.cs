@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Captura
 {
@@ -20,10 +17,9 @@ namespace Captura
             ListaAlimentos = new List<IAlimento>();
         }
 
-        public override string Comer(IAlimento alimento)
+        public override void Comer(IAlimento alimento)
         {
-            if (alimento is Vegetacion) throw new AlimentoException(this);
-            return string.Empty;
+            if (alimento is Vegetacion) throw new AlimentoException($"{Nombre} es carnívoro");
         }
     }
 }

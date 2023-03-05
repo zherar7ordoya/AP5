@@ -5,69 +5,72 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _12_De_Todo_02
+namespace CloneableComparableDisposableEnumerable
 {
-    public abstract class Cliente : IPersona,IEnumerable,IDisposable
+    public abstract class Cliente : IPersona, IEnumerable, IDisposable
     {
-        public event EventHandler<DniTruchoEventArgs> DniTrucho;
-        public delegate string MiDelegado();
-        public MiDelegado Del1;
-        public Func<int, bool> MiFunc = x => x == 1;
-        private int _Dni;
-        public int Dni { get { return _Dni; } 
+        public event EventHandler<DniNoValidoEventArgs> DniNoValidoEventHandler;
+
+        public delegate string DelegadoString();
+        public DelegadoString DelegadoMuestraMensaje;
+        public Func<int, bool> FuncMuestraMensaje = x => x == 1;
+
+        private int _dni;
+
+        public string Nombre { get; set; }
+        public string Codigo { get; set; }
+
+        public int DNI
+        {
+            get { return _dni; }
             set
             {
                 if (value < 1000)
                 {
-                    DniTrucho?.Invoke(this, new DniTruchoEventArgs(value));
+                    DniNoValidoEventHandler?.Invoke(this, new DniNoValidoEventArgs(value));
                 }
-
-                _Dni = value;
+                _dni = value;
             }
         }
-        public string Nombre { get; set; }
 
-        public string Codigo { get; set; }
 
-        /// <summary>
-        /// AAAA-1234
-        /// </summary>
-
-        public Cliente()
+        public Cliente() { }
+        public Cliente(int dni, string nombre)
         {
-
+            DNI = dni;
+            Nombre = nombre;
         }
 
-        public Cliente(int pDni,string pNombre)
-        {
-            Dni = pDni;
-            Nombre = pNombre;
-        }
+        // La obligación a ICloneable viene de mano de IPersona
         public object Clone()
         {
+            // Crea una copia superficial del Object actual
             return MemberwiseClone();
         }
 
-        public int CompareTo(IPersona other)
+        // La obligación a IComparable viene de mano de IPersona
+        public int CompareTo(IPersona otra)
         {
-            return string.Compare(Nombre, other.Nombre);
+            return string.Compare(Nombre, otra.Nombre);
         }
+
 
         public class DniAsc : IComparer<Cliente>
         {
             public int Compare(Cliente x, Cliente y)
             {
-                if (x.Dni > y.Dni)
+                if (x.DNI > y.DNI)
                 {
                     return 1;
                 }
-                if (x.Dni < y.Dni)
+                if (x.DNI < y.DNI)
                 {
                     return -1;
                 }
                 else return 0;
             }
         }
+
 
         public abstract decimal Cuota();
 
@@ -76,14 +79,13 @@ namespace _12_De_Todo_02
             return new Codigo(Codigo);
         }
 
+        bool _descartar = false;
 
-        bool _DisposeOk = false;
-        
         ~Cliente()
         {
-            if (!_DisposeOk)
+            if (!_descartar)
             {
-                //Solo ejecutamos el finalize si no se ejecuto el dispose
+                // Solo ejecuto Finalize (destructor) si no se ejecutó el Dispose
                 Dispose();
             }
 
@@ -91,79 +93,59 @@ namespace _12_De_Todo_02
         }
         public void Dispose()
         {
-            _DisposeOk = true;
+            _descartar = true;
         }
-        
     }
 
     public class ClientePremium : Cliente
     {
-        public ClientePremium(int pDni, string pNombre):base(pDni,pNombre)
-        {
-
-        }
-        public ClientePremium()
-        {
-
-        }
-        public override decimal Cuota()
-        {
-            return 1000;
-        }
+        public ClientePremium(int dni, string nombre) : base(dni, nombre) { }
+        public ClientePremium() { }
+        public override decimal Cuota() { return 1000; }
     }
+
+
     public class ClienteComun : Cliente
     {
-        public ClienteComun(int pDni, string pNombre) : base(pDni, pNombre)
-        {
-
-        }
-        public ClienteComun()
-        {
-
-        }
-        public override decimal Cuota()
-        {
-            return 500;
-        }
+        public ClienteComun(int dni, string nombre) : base(dni, nombre) { }
+        public ClienteComun() { }
+        public override decimal Cuota() { return 500; }
     }
 
-    public class Codigo:IEnumerator
+
+    public class Codigo : IEnumerator
     {
-        public string CodigoCliente { get; set; }
-        string _Current;
-        public object Current => _Current;
+        public string AlfaNumerico { get; set; }
+        string _current;
+        public object Current => _current;
+        bool continuar;
+        int contador;
 
-        bool sigue;
-        int c;
-
-        public Codigo(string pCodigo)
-        {
-            CodigoCliente = pCodigo;
-        }
+        public Codigo(string codigo) { AlfaNumerico = codigo; }
 
         public bool MoveNext()
         {
-            if (c == 0)
+            if (contador == 0)
             {
-                _Current = CodigoCliente.Substring(0, 4);
-                sigue = true;
-                c++;
+                _current = AlfaNumerico.Substring(0, 4);
+                continuar = true;
+                contador++;
             }
-            else if (c == 1)
+            else if (contador == 1)
             {
-                _Current = CodigoCliente.Substring(5, 4);
-                sigue = true;
-                c++;
+                _current = AlfaNumerico.Substring(5, 4);
+                continuar = true;
+                contador++;
             }
             else Reset();
-            return sigue;
+            return continuar;
         }
 
         public void Reset()
         {
-            _Current = "";
-            c = 0;
-            sigue = false;
+            _current = "";
+            contador = 0;
+            continuar = false;
         }
     }
 }

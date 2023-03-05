@@ -9,9 +9,9 @@ namespace _11_Herencia_y_varios
     public class SoyMayorEventArgs
     {
         public int Edad { get; set; }
-        public SoyMayorEventArgs(int pEdad)
+        public SoyMayorEventArgs(int edad)
         {
-            Edad = pEdad;
+            Edad = edad;
         }
     }
 }

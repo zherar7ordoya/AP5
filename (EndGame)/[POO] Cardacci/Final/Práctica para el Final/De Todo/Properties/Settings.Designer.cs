@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace De_Todo.Properties {
+namespace Integrador.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
