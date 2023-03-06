@@ -1,4 +1,4 @@
-﻿namespace DelegadoNivelNamespace
+﻿namespace Delegado
 {
     partial class DelegadoForm
     {
@@ -37,7 +37,7 @@
             this.ClientSize = new System.Drawing.Size(120, 97);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Formulario_Load);
+            this.Load += new System.EventHandler(this.DelegadoForm_Load);
             this.ResumeLayout(false);
 
         }

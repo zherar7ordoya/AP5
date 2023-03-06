@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace InterfazIEnumerator
+namespace Enumerator
 {
     public partial class PersonaForm : Form
     {
@@ -17,9 +10,9 @@ namespace InterfazIEnumerator
 
         private void Formulario_Load(object sender, EventArgs e)
         {
-            Clase _persona = new Clase("Gerardo Tordoya");
+            Persona persona = new Persona("Gerardo Tordoya");
 
-            foreach (string texto in _persona)
+            foreach (string texto in persona)
             {
                 MessageBox.Show(texto);
             }
@@ -27,61 +20,49 @@ namespace InterfazIEnumerator
     }
 
 
-    //Vamos a iterar cada parte de un codigo AAA-123
-
-    public class Clase : IEnumerable, IEnumerator
+    public class Persona : IEnumerable, IEnumerator
     {
-        public string Codigo { get; set; }                  // < Propiedad
-        public Clase(string codigo) { Codigo = codigo; }    // < Constructor
+        public string Codigo { get; set; }
+        public Persona(string codigo) { Codigo = codigo; }
 
         // IENUMERABLE ********************************************************
 
-        // Retorno el mismo objeto para usar como Enumerator
+        // Retorno el mismo objeto para usarlo como Enumerator
         public IEnumerator GetEnumerator() { return this; }
 
 
         // IENUMERATOR ********************************************************
 
-        // Variable para el IEnumerator
+
         private string _current;
-
-        // Devuelve V o F segun haya o no cosas para iterar
-        private bool _sigue;
-
-        // Lo usamos como contador, en este caso va a ser 0 o 1 ya que el
-        // cóodigo tiene 2 partes
-        private int _contador;
-
-        // Retorna el _current
-        public object Current => _current;
+        public object Current => _current;  // Cursor
+        private bool _continuar;            // Bandera
+        private int _contador;              // Iteraciones
 
         public bool MoveNext()
         {
             if (_contador == 0)
             {
                 _current = Codigo.Substring(0, 7);
-                _sigue = true;
+                _continuar = true;
                 _contador++;
             }
             else if (_contador == 1)
             {
                 _current = Codigo.Substring(8, 7);
-                _sigue = true;
+                _continuar = true;
                 _contador++;
             }
-            else
-            {
-                Reset();
-            }
+            else { Reset(); }
 
-            return _sigue;
+            return _continuar;
         }
 
         public void Reset()
         {
             _current = "";
             _contador = 0;
-            _sigue = false;
+            _continuar = false;
         }
     }
 }

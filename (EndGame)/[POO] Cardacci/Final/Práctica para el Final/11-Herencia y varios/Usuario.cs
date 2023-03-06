@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
-using System.Threading.Tasks;
 
 
-namespace _11_Herencia_y_varios
+namespace Herencia
 {
     public abstract class Usuario : IEnumerable, IComparable<Usuario>
     {
         public event EventHandler MenorEventHandler;
-        public event EventHandler<SoyMayorEventArgs> MayorEventHandler;
+        public event EventHandler<MayorEventArgs> MayorEventHandler;
 
-        // La definición es "protected: solamente el código de la misma class,
-        // o bien de una class derivada de esa class, puede acceder al tipo o
+        // La definición es "protected: solamente el código de la misma clase,
+        // o bien de una clase derivada de esa clase, puede acceder al tipo o
         // miembro." Ahora, ¿por qué decidió usar "private protected"?
         // En realidad es "private protected: se puede tener acceso al tipo o
-        // miembro mediante tipos derivados del objeto class que se declaran
+        // miembro mediante tipos derivados del objeto clase que se declaran
         // dentro de su ensamblado contenedor."
         private protected int _edad;
 
@@ -31,25 +27,25 @@ namespace _11_Herencia_y_varios
             set
             {
                 if (value < 18) MenorEventHandler?.Invoke(this, null);
-                else MayorEventHandler?.Invoke(this, new SoyMayorEventArgs(value));
-                value = _edad;
+                else MayorEventHandler?.Invoke(this, new MayorEventArgs(value));
             }
         }
 
         // ¡Qué manía con los constructores vacíos!
         public Usuario() { }
 
-        public Usuario(int id, string nombre)
+        public Usuario(int id, string nombre, int edad)
         {
             Id = id;
             Nombre = nombre;
+            Edad = edad;
         }
 
         /**
          * You use abstract methods to force subclasses to override the method.
          * You use virtual methods to allow subclasses to override the method.
          */
-        public abstract decimal CalculaCuota(int p);
+        public abstract decimal CalculaCuota(int i);
         protected virtual int EspacioAsignado() { return 1024; }
 
         public IEnumerator GetEnumerator()
@@ -57,11 +53,10 @@ namespace _11_Herencia_y_varios
             return new Saludo(Id, Nombre);
         }
 
-        public int CompareTo(Usuario comparado)
+        public int CompareTo(Usuario otro)
         {
-            return string.Compare(Nombre, comparado.Nombre);
+            return string.Compare(Nombre, otro.Nombre);
         }
-
 
         public class NombreDesc : IComparer<Usuario>
         {
@@ -72,16 +67,18 @@ namespace _11_Herencia_y_varios
         }
     }
 
+    // ************************************************************************
 
     public class Auto
     {
         public int Id { get; set; }
     }
 
+    // ************************************************************************
 
     public class UsuarioPremium : Usuario, IComparable<Auto>
     {
-        public UsuarioPremium(int id, string nombre) : base(id, nombre) { }
+        public UsuarioPremium(int id, string nombre, int edad) : base(id, nombre, edad) { }
         public UsuarioPremium() { }
 
         // Este método: estaba obligado a sobre-escribirlo
@@ -98,7 +95,7 @@ namespace _11_Herencia_y_varios
         }
     }
 
-
+    // ************************************************************************
 
     public class Saludo : IEnumerator
     {

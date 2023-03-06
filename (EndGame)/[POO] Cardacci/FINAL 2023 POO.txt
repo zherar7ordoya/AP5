@@ -1,0 +1,55 @@
+
+POO Final Marzo 2023
+zherar7ordoya@outlook.com Cambiar cuenta
+ 
+*Obligatorio
+Correo electrónico
+*
+¿Cuáles son las tres cosas que debe tener todo objeto?
+
+*
+¿Cómo se denomina la característica que permite a diferentes objetos actuar al mismo tiempo?
+*
+¿Qué interfaz implementaría si desea que los objetos de una determinada clase almacenados en un Array se puedan ordenar por diversos criterios?
+
+*
+La sobrecarga es cuando dos clases poseen métodos de igual firma.
+
+*
+Verdadero
+Falso
+¿Cómo se denomina a la clase que se espera tener instancias de ella y no puede utilizarse para heredar a otras clases?
+
+*
+Por medio de la composición se denotan las características esenciales de un objeto que lo distinguen de todos los demás tipos de objetos y proporciona así fronteras conceptuales nítidamente definidas respecto a la perspectiva del observador.
+
+*
+Verdadero
+Falso
+Defina que es el estado de un objeto
+
+*
+Se denomina abstracción al elemento de un objeto que captura su vista interna la cual incluye los mecanismos que consiguen el comportamiento deseado
+*
+Vdrdfadero
+Falso
+¿Qué tipo de dato retorna una expresión LinQ?
+
+*
+¿Cómo se denomina al método de una clase abstracta que posee implementación y fue pensado para que pueda ser sobreescribirlo las sub clases que lo heredan?
+
+*
+La sobreescritura de métodos oculta la sobrecarga
+
+*
+Verdadero
+Falso
+El invariante es una condición que debe mantenerse constante solo al instanciar el objeto.
+
+*
+Verdadero
+Falso
+Página 1 de 1
+Nunca envíes contraseñas a través de Formularios de Google.
+Google no creó ni aprobó este contenido. Denunciar abuso - Condiciones del Servicio - Política de Privacidad
+Google Formularios

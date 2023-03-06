@@ -1,0 +1,90 @@
+
+Programación II Final Marzo 2023
+zherar7ordoya@outlook.com Cambiar cuenta
+ 
+*Obligatorio
+Correo electrónico
+*
+Qué función colocaría en la línea 1 para que el resultado que imprime la línea 2 sea <class 'str'>
+
+1. x = 5
+2. print(type(x))
+*
+Mencione los tipos numéricos que posee Python y vistos en clase
+*
+Considerando los tipos de secuencia y si decimos que es una colección ordenada e inmutable nos referimos a:
+*
+Qué se observa en la consola si ejecutamos el siguiente código:
+
+numeros = (1, 2, 3)
+resultado = numeros * 2
+print(resultado)
+*
+Considerando los tipos de secuencia y si decimos que es una colección desordenada, inmutable y no indexada nos referimos a:
+(Entendemos por inmutable a la no posibilidad de realizar cambios pero sí a eliminar y agregar datos)
+*
+Indique que colocaría en las líneas punteadas para observar 2007:
+
+child1 = {
+  "name" : "Emil",
+  "year" : 2004
+}
+child2 = {
+  "name" : "Tobias",
+  "year" : 2007
+}
+child3 = {
+  "name" : "Linus",
+  "year" : 2011
+}
+myfamily = {
+  "child1" : child1,
+  "child2" : child2,
+  "child3" : child3
+}
+print(myfamily.................)
+
+
+*
+Complete que pondría en 1,2 y 3 para poder ver números desde el 0 hasta el 5
+
+for ....1....... in range(......2......):
+  print(.....3.......) 
+
+
+*
+Complete que pondría en 1,2,3,4,5 y 6 para poder ver el doble del valor ingresado en 6
+
+def myfunc(1):
+  return lambda 2 : 3 * 4
+
+mydoubler = myfunc(5)
+
+print(mydoubler(6))
+
+
+*
+Complete la clase Person para que posea la función constructora de acuerdo al código que se observa más abajo
+
+class Person:
+  ................................................
+  ...............................................
+
+p1 = Person("John", 36)
+
+print(p1.name)
+print(p1.age)
+
+
+*
+Complete la línea de puntos para que se vea 30:
+
+import json
+x =  '{ "name":"John", "age":30, "city":"New York"}'
+y = json...........................(x)
+print(y["age"])
+
+*
+Nunca envíes contraseñas a través de Formularios de Google.
+Google no creó ni aprobó este contenido. Denunciar abuso - Condiciones del Servicio - Política de Privacidad
+Google Formularios

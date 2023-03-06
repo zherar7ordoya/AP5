@@ -7,25 +7,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comparable", "01) IComparab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comparer", "02) IComparer\Comparer.csproj", "{F377996F-58C7-4AB6-94EA-4FDB388C8203}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04) IEnumerator", "04) IEnumerator\04) IEnumerator.csproj", "{0A8940E8-48A9-40B1-9432-DFBBE6970434}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerator", "04) IEnumerator\Enumerator.csproj", "{0A8940E8-48A9-40B1-9432-DFBBE6970434}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05) Evento Personalizado", "05) Evento Personalizado\05) Evento Personalizado.csproj", "{DAF13F99-7227-4C6E-ACF9-68B7ACE66DB6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06) LinQ Para Objetos", "06) LinQ Para Objetos\06) LinQ Para Objetos.csproj", "{8F191144-B12F-4A9C-8D48-B96C419B2746}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07) Genericos", "06-Generics\07) Genericos.csproj", "{FB5D1E8A-0390-4827-A213-80DAD4EBC81A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generico", "06-Generics\Generico.csproj", "{FB5D1E8A-0390-4827-A213-80DAD4EBC81A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08) Delegados", "07-Delegados\08) Delegados.csproj", "{2C77B247-085A-421F-9DA7-DCC69242AD27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegado (Clase)", "07-Delegados\Delegado (Clase).csproj", "{2C77B247-085A-421F-9DA7-DCC69242AD27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09) Delegados Lambda", "08-Lambda con Delegados\09) Delegados Lambda.csproj", "{492315CD-7EBA-42FF-AB61-F8C2B4FFDCD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegado (Lambda)", "08-Lambda con Delegados\Delegado (Lambda).csproj", "{492315CD-7EBA-42FF-AB61-F8C2B4FFDCD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10) Delegado Nivel Namespace", "09-Delegados_02\10) Delegado Nivel Namespace.csproj", "{4F64E554-5EDF-4A75-B8DC-51C7DCD18386}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegado (Namespace)", "09-Delegados_02\Delegado (Namespace).csproj", "{4F64E554-5EDF-4A75-B8DC-51C7DCD18386}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICloneable IEnumerable IEnumerator", "10-IEnumerable\ICloneable IEnumerable IEnumerator.csproj", "{52F04C88-CE11-460B-804C-32261D87FECB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerable", "10-IEnumerable\Enumerable.csproj", "{52F04C88-CE11-460B-804C-32261D87FECB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "B) Integrador", "De Todo\B) Integrador.csproj", "{98942D3F-2C13-441D-9CBB-8D31255FA517}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Herencia y Eventos", "11-Herencia y varios\Herencia y Eventos.csproj", "{152C71D2-2B46-4081-B195-8B274606D85C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Herencia", "11-Herencia y varios\Herencia.csproj", "{152C71D2-2B46-4081-B195-8B274606D85C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A) Integrador", "12-De Todo 02\A) Integrador.csproj", "{2FA24FE0-C34C-4304-9908-6A108C1F80DE}"
 EndProject
@@ -36,6 +36,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "(Captura)", "00) Herencia\(Captura).csproj", "{88324BC0-613C-400C-BC49-622724000D3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloneable", "Cloneable\Cloneable.csproj", "{8130646A-CC6F-415F-890C-88DEA1969FFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evento", "Evento\Evento.csproj", "{C3105F50-1CB7-4B60-8DAD-7E9A4C77202B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polimorfismo", "Polimorfismo\Polimorfismo.csproj", "{D8D1033C-5E0B-41DD-974D-93DAB584D04F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delegado (Anónimo)", "Delegado (Anónimo)\Delegado (Anónimo).csproj", "{8BC37FF9-5DCF-4852-8229-C5FE9873CE5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +117,18 @@ Global
 		{8130646A-CC6F-415F-890C-88DEA1969FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8130646A-CC6F-415F-890C-88DEA1969FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8130646A-CC6F-415F-890C-88DEA1969FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3105F50-1CB7-4B60-8DAD-7E9A4C77202B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3105F50-1CB7-4B60-8DAD-7E9A4C77202B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3105F50-1CB7-4B60-8DAD-7E9A4C77202B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3105F50-1CB7-4B60-8DAD-7E9A4C77202B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D1033C-5E0B-41DD-974D-93DAB584D04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D1033C-5E0B-41DD-974D-93DAB584D04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D1033C-5E0B-41DD-974D-93DAB584D04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D1033C-5E0B-41DD-974D-93DAB584D04F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BC37FF9-5DCF-4852-8229-C5FE9873CE5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BC37FF9-5DCF-4852-8229-C5FE9873CE5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BC37FF9-5DCF-4852-8229-C5FE9873CE5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BC37FF9-5DCF-4852-8229-C5FE9873CE5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

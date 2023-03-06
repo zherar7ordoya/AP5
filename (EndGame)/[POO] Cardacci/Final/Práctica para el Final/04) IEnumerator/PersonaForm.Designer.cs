@@ -1,4 +1,4 @@
-﻿namespace InterfazIEnumerator
+﻿namespace Enumerator
 {
     partial class PersonaForm
     {
@@ -30,12 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // PersonaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 271);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(120, 97);
+            this.Name = "PersonaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Formulario_Load);
             this.ResumeLayout(false);

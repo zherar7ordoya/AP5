@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _11_Herencia_y_varios.Properties {
+namespace Herencia.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

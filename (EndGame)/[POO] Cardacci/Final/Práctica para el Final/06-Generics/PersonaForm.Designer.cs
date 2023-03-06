@@ -1,4 +1,4 @@
-﻿namespace Genericos
+﻿namespace Generico
 {
     partial class PersonaForm
     {

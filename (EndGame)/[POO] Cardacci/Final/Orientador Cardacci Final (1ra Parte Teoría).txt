@@ -1,0 +1,73 @@
+Cómo comunicar 2 aplicaciones usando socket?
+Implícita
+Generar un evento
+Declarar una excepción personalizada
+
+ORIENTADOR 1 Y 2 => Preguntas guía
+
+Jerarquías "es-un" "todo-parte"
+Objeto: estado, comportamiento, identidad
+Ciclo de vida
+Modelos POO: estático, dinámico, lógico y físico
+Encapsulamiento, abstracción, modularidad, jerarquía, concurrencia, persistencia, tipo
+Componentes de una clase (campos, constructores, destructores, finalizadores, métodos y propiedades)
+Tipos de propiedades: lectura, escritura, lecto-escritura
+Tipo de métodos: con o sin parámetros, valores de retorno
+Parámetros: por valor, por referencia
+Sobrecarga de métodos
+Ámbitos públicos, privados, protected
+
+------------------------------------------------------------------
+Clase anidada
+Yo puedo poner otras clases que implementen IComparer y que esas clases cada una implemente un criterio de ordenamiento distinto. Cuando uno agrega clases anidadas es porque quiero darle un servicio a la clase anidadora. Esa es una de las pocas justificaciones de definir una clase dentro de otra.
+------------------------------------------------------------------
+
+Eventos: qué es, cómo funciona, cómo se construye
+Subscribirse a un evento
+
+------------------------------------------------------------------
+Qúe va en la clase que posee el evento y qué va afuera (en la clase que consume el evento)
+1) Declaración (se produce en clase propietaria del evento)
+2) Desencadenamiento (se produce en clase propietaria del evento)
+3) Suscripción (en la clase que posee una referencia al objeto dueño del evento)
+4) El método le pertenece a la clase que posee una referencia al objeto dueño del evento
+------------------------------------------------------------------
+
+Cómo desencadena un evento
+Argumento personalizado de evento
+Cómo personalizar el argumento del evento con delegados
+
+------------------------------------------------------------------
+
+Tipos de clases: abstractas, selladas, estáticas (características)
+
+sealed => Se puede instanciar. No se puede heredar.
+static => No necesita ser instanciada para acceder a sus métodos
+------------------------------------------------------------------
+
+Miembros estáticos en una clase estática
+Clases concretas
+Métodos virtuales
+Qué pasa si un método virtual está en una clase concreta
+Relaciones entre clases: composición, agregación, asociación
+Tipos de agregación: con contención física (composición) y común (o simple)
+Polimorfismo por herencia
+Polimorfismo por interfaces
+Asociaciones unidirecciones y bidireccionales con asociación uno a uno y uno a muchos
+Expresiones lambda: tipo anónimo
+Acoplamiento, cohesión, suficiencia, compleción
+Qué significa instancir una clase
+Clase base y subclases
+Los dos compiladores (código a lenguaje intermedio, lenguaje intermedio a ejecutable => compilador jit just in time)
+garbage colector: generaciones
+interfaces y delegados
+IComparable, ICloneable, IEnumerable
+Interfaces y herencia
+Delegados: punteros a una función => funciones lambda
+Los eventos son delegados (punteros a función)
+Genéricos a nivel de clase y genéricos a nivel de miembro
+LinQ: cómo se construye (en 3 partes: origen de datos, consulta, ejecución)
+Ventajas de una función anónima (poder usarlas como parámetros)
+Sockets, diccionario concurrente
+Manejo de subprocesos (clase Thread)
+

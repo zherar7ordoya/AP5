@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Genericos.Properties {
+namespace Generico.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

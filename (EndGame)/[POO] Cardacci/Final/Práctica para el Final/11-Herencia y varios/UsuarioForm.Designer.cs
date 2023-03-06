@@ -1,4 +1,4 @@
-﻿namespace _11_Herencia_y_varios
+﻿namespace Herencia
 {
     partial class UsuarioForm
     {

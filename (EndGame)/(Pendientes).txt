@@ -1,37 +1,5 @@
-
-IComparable
-IComparer
-IComparer
-IClonable
-IEnumerable
-IEnumerator
-
-*---
-
-Clases están formadas por los siguientes miembros:
-
-Constructores
-Destructores
-
-Métodos (Acciones)
-Eventos (Reacciones)
-
-Propiedades
-Campos (Atributos: variables privadas)
-
-*---
-
-EVENTOS (3 momentos)
-
-1) Declaración (se produce en clase propietaria del evento)
-2) Desencadenamiento (se produce en clase propietaria del evento)
-
-3) Suscripción (en la clase que posee una referencia al objeto dueño del evento)
-4) El método le pertenece a la clase que posee una referencia al objeto dueño del evento
-
-*---
-
 PYTHON
+
 Tipos de datos
 
 Listas: entre corchetes 
@@ -40,6 +8,8 @@ Sets:   entre llaves
 Diccio: en conjunto
 
 *---
+
+MDS
 
 Procesos
 Recursos
@@ -51,22 +21,10 @@ Proceso de Desarrollo
 
 *---
 
+BDD
+
 Eficiencia + Eficacia = Efectividad
 
 1FN => Valores atómicos
 2FN => Relación completa con las claves
 3FN => Relación entre los valores que no son clave
-
-*---
-
-Composición => Yo creo y conservo las referencias
-Agregación  => Yo recibo y conservo las referencias
-Asociación  => Yo creo y entrego las referencias
-
-*---
-
-LinQ to Object*
-LinQ to SQL
-LinQ to XML
-
-*---
