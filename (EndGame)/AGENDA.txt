@@ -1,3 +1,9 @@
+*********************************************
+BDD	lunes, 13 de marzo de 2023	16:00
+PRO	lunes, 13 de marzo de 2023	17:00
+*********************************************
+
+
 PYTHON
 
 Tipos de datos
@@ -6,18 +12,6 @@ Listas: entre corchetes
 Tuplas: entre paréntesis
 Sets:   entre llaves
 Diccio: en conjunto
-
-*---
-
-MDS
-
-Procesos
-Recursos
-Transformación de los Datos
-
-Procesos de Negocio
-Ciclo de Vida
-Proceso de Desarrollo
 
 *---
 
