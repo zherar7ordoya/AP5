@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas1", "Listas1\Listas1.pyproj", "{C36E90FD-4B40-4E8B-82A2-4E2075652887}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas3", "Listas1\Listas3.pyproj", "{C36E90FD-4B40-4E8B-82A2-4E2075652887}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas2", "Listas2\Listas2.pyproj", "{742A92CF-7374-4BF0-B6C5-3D818387FC3A}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas6", "Listas2\Listas6.pyproj", "{742A92CF-7374-4BF0-B6C5-3D818387FC3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
