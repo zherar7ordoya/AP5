@@ -2,15 +2,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>5e2363f0-92b5-4fc3-88e2-e321812df200</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectGuid>503daaaa-b8d3-4cf2-8ce3-41be7af9288c</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>Diccionarios9</Name>
-    <RootNamespace>Diccionarios9</RootNamespace>
+    <Name>Diccionarios08</Name>
+    <RootNamespace>Diccionarios8</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>

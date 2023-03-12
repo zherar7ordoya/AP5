@@ -7,9 +7,13 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas3", "Listas3\Listas3.
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas6", "Listas6\Listas6.pyproj", "{742A92CF-7374-4BF0-B6C5-3D818387FC3A}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios8", "Diccionarios8\Diccionarios8.pyproj", "{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios08", "Diccionarios08\Diccionarios08.pyproj", "{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios9", "Diccionarios9\Diccionarios9.pyproj", "{5E2363F0-92B5-4FC3-88E2-E321812DF200}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios09", "Diccionarios09\Diccionarios09.pyproj", "{5E2363F0-92B5-4FC3-88E2-E321812DF200}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios10", "Diccionarios10\Diccionarios10.pyproj", "{1C961365-A812-4A4F-82C1-9AB7B101A6D2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional01", "Funcional01\Funcional01.pyproj", "{66B06262-99BA-4D00-A97D-6C7A0DDEC600}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E2363F0-92B5-4FC3-88E2-E321812DF200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5E2363F0-92B5-4FC3-88E2-E321812DF200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C961365-A812-4A4F-82C1-9AB7B101A6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C961365-A812-4A4F-82C1-9AB7B101A6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
