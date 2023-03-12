@@ -15,6 +15,12 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios10", "Diccionar
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional01", "Funcional01\Funcional01.pyproj", "{66B06262-99BA-4D00-A97D-6C7A0DDEC600}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional03", "Funcional03\Funcional03.pyproj", "{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional05", "Funcional05\Funcional05.pyproj", "{BE52F0FC-6633-412F-947C-F257D475CEFC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional10", "Funcional10\Funcional10.pyproj", "{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,12 @@ Global
 		{1C961365-A812-4A4F-82C1-9AB7B101A6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE52F0FC-6633-412F-947C-F257D475CEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE52F0FC-6633-412F-947C-F257D475CEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
