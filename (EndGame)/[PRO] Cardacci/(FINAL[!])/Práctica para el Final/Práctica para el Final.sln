@@ -21,6 +21,10 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional05", "Funcional05\
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional10", "Funcional10\Funcional10.pyproj", "{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ABM", "ABM\ABM.pyproj", "{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Fichero6", "Fichero6\Fichero6.pyproj", "{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{BE52F0FC-6633-412F-947C-F257D475CEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
