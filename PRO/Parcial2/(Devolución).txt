@@ -1,5 +1,0 @@
-Estimado Rodolfo, lamentablemente no hemos podido levantar el entorno virtual que colocaste en tu proyecto y tuvimos problemas para compatibilizar algunos de los paquetes en las máquinas de nuestros labs. Como observé que habías hecho un trabajo interesante, de manera excepcional he revisado el código sin ejecutar y es por eso que te aprobamos aún no pudiendolo ejecutar en el entorno donde dictamos la asignatura. Como recomendación me permito sugerirte que para próximas entregas uses exclusivamente lo propuesto en el curso o bien consultes antes de incorporar otras cosas pues podrían producirse estos problemas.
-
-Te envío cordiales saludos .
-
-Atte
