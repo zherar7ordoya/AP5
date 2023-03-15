@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas3", "Listas3\Listas3.pyproj", "{C36E90FD-4B40-4E8B-82A2-4E2075652887}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Listas6", "Listas6\Listas6.pyproj", "{742A92CF-7374-4BF0-B6C5-3D818387FC3A}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios08", "Diccionarios08\Diccionarios08.pyproj", "{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios09", "Diccionarios09\Diccionarios09.pyproj", "{5E2363F0-92B5-4FC3-88E2-E321812DF200}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Diccionarios10", "Diccionarios10\Diccionarios10.pyproj", "{1C961365-A812-4A4F-82C1-9AB7B101A6D2}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional01", "Funcional01\Funcional01.pyproj", "{66B06262-99BA-4D00-A97D-6C7A0DDEC600}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional03", "Funcional03\Funcional03.pyproj", "{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional05", "Funcional05\Funcional05.pyproj", "{BE52F0FC-6633-412F-947C-F257D475CEFC}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Funcional10", "Funcional10\Funcional10.pyproj", "{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ABM", "ABM\ABM.pyproj", "{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Fichero6", "Fichero6\Fichero6.pyproj", "{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C36E90FD-4B40-4E8B-82A2-4E2075652887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36E90FD-4B40-4E8B-82A2-4E2075652887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{742A92CF-7374-4BF0-B6C5-3D818387FC3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{742A92CF-7374-4BF0-B6C5-3D818387FC3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503DAAAA-B8D3-4CF2-8CE3-41BE7AF9288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E2363F0-92B5-4FC3-88E2-E321812DF200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E2363F0-92B5-4FC3-88E2-E321812DF200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C961365-A812-4A4F-82C1-9AB7B101A6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C961365-A812-4A4F-82C1-9AB7B101A6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B06262-99BA-4D00-A97D-6C7A0DDEC600}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86FFC4D5-FA2A-493E-A46D-1FB6DDE88B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE52F0FC-6633-412F-947C-F257D475CEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE52F0FC-6633-412F-947C-F257D475CEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD26016-0B1E-48A0-BE6F-E26CAFC4118E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3386F8-901B-4272-A8BA-ACFFDF84FB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875D0463-8C4F-4CD5-8F4A-A27EFE87EAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C960BA3-FE91-4F74-8099-215E5934AF12}
+	EndGlobalSection
+EndGlobal

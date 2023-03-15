@@ -1,0 +1,11 @@
+Modelo ER:
+“Es el enfoque más natural del mundo real y que consiste en entidades y sus interrelaciones”.
+
+Modelo Conceptual: <- Estructuras, Restricciones, Análisis
+Son los orientados a la descripción de estructuras de datos y restricciones de integridad. Se usan fundamentalmente durante la etapa de Análisis de un problema dado y están orientados a representar los elementos que intervienen en ese problema y sus relaciones. Es el MODELO ENTIDAD/RELACION.
+
+Modelo relacional:
+Para la gestión de una BD es un modelo de datos, para modelar problemas reales y administrar datos dinámicamente.
+
+Modelo Lógico:
+Son orientados a las operaciones más que a la descripción de una realidad. Usualmente están implementados en algún Gestor de Base de Datos. El ejemplo más típico es el Modelo Relacional, que cuenta con la particularidad de contar también con buenas características conceptuales (Normalización de BD).

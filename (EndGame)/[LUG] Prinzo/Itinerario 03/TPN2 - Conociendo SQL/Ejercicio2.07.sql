@@ -1,6 +1,0 @@
-USE TPN2a
-
-GO
-
-INSERT INTO Pais
-VALUES ('Mexico');
