@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SistemaDeCobros.CCliente" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAEAAAAAABABAAAAAQABAAAAgARAAJAEAA=</HashCode>
+      <FileName>CCliente.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.CCobro" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAAAQAAAQAAAAOAAAACgCAAAEAAAAABAAAAAQQ=</HashCode>
+      <FileName>CCobro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.CCobroEspecial" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>CCobroEspecial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.CCobroNormal" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>CCobroNormal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.CFormulario" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>WAGBAACAGiSgFxBYFkioEAAGxkgcghyAfBAAECJgUMA=</HashCode>
+      <FileName>CFormulario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.CPago" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABBAAACQAAAQwAAAOACAACgAAAQAAAAEABAAAAAQQ=</HashCode>
+      <FileName>CPago.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SistemaDeCobros.CReducida" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CReducida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.Program" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.Properties.Resources" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SistemaDeCobros.Properties.Settings" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
