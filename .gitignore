@@ -4,7 +4,7 @@
 
 
 # ------------------------------------------------------------------------------
-# ||| INICIA MODIFICACIONES/ANULACIONES HECHAS POR GERARDO TORDOYA (YO) ||||||||
+# ||| INICIA MODIFICACIONES ||||||||||||||||||||||||||||||||||||||||||||||||||||
 # ------------------------------------------------------------------------------
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
@@ -47,8 +47,25 @@ __pycache__/
 *.pyc
 env/
 
-# ------------------------------------------------------------------------------
-# ||| FINALIZA MODIFICACIONES/ANULACIONES HECHAS POR GERARDO TORDOYA (YO) ||||||
+
+# Build results
+# [Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+# [Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+
+
 # ------------------------------------------------------------------------------
 
 
@@ -64,22 +81,6 @@ env/
 
 # Mono auto generated files
 mono_crash.*
-
-# Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Ww][Ii][Nn]32/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-[Ll]ogs/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
