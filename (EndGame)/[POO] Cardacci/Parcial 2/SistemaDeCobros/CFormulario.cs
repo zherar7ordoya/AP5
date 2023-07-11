@@ -11,14 +11,14 @@ namespace SistemaDeCobros
     public partial class CFormulario : Form
     {
         /////////////////////////////////////////////////////////////// SPUTNIK
-        List<CCliente> clientes  = new List<CCliente>();                    ///
-        CCliente cliente         = null;                                    ///
-        CCobro cobro             = null;                                    ///
-        CPago pago               = null;                                    ///
-        List<CPago> clonada      = new List<CPago>();                       ///
-        List<CPago> ordenable    = new List<CPago>();                       ///
+        List<CCliente> clientes = new List<CCliente>();                     ///
+        CCliente cliente = null;                                            ///
+        CCobro cobro = null;                                                ///
+        CPago pago = null;                                                  ///
+        List<CPago> clonada = new List<CPago>();                            ///
+        List<CPago> ordenable = new List<CPago>();                          ///
         List<CReducida> reducida = new List<CReducida>();                   ///
-        string usuario           = string.Empty;                            ///
+        string usuario = string.Empty;                                      ///
         ///////////////////////////////////////////////////////////////////////
 
         #region FORMULARIO
@@ -28,23 +28,23 @@ namespace SistemaDeCobros
         {
             while (true)
             {
-                if (!String.IsNullOrWhiteSpace(usuario)) { break; }
+                if (!string.IsNullOrWhiteSpace(usuario)) { break; }
                 usuario = Interaction.InputBox
                     (
                     "Ingrese su nombre:",
                     "Usuario",
                     "Gerardo Tordoya"
                     );
-                if (String.IsNullOrWhiteSpace(usuario)) { this.Close(); }
+                if (string.IsNullOrWhiteSpace(usuario)) { Close(); }
             }
         }
         private void PersonalizaFormulario()
         {
-            this.CenterToScreen();
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.Text += $" ({usuario})";
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            CenterToScreen();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Text += $" ({usuario})";
+            MaximizeBox = false;
+            MinimizeBox = false;
         }
         private void CargaDemo()
         {
@@ -57,38 +57,38 @@ namespace SistemaDeCobros
                     ) == DialogResult.Yes)
             {
                 cliente = new CCliente(100, "Cliente #1");
-                cobro   = new CCobroEspecial("Cliente #1", "Especial", 875, "UNO", new DateTime(2014, 10, 25), 1250);
+                cobro = new CCobroEspecial("Cliente #1", "Especial", 875, "UNO", new DateTime(2014, 10, 25), 1250);
                 cliente.AltaPendiente(cobro);
-                cobro   = new CCobroNormal(  "Cliente #1", "Normal",   325, "DOS", new DateTime(2021, 8, 26),  7000);
+                cobro = new CCobroNormal("Cliente #1", "Normal", 325, "DOS", new DateTime(2021, 8, 26), 7000);
                 cliente.AltaPendiente(cobro);
-                pago    = new CPago(         "Cliente #1", "Especial", 275, "SPC", new DateTime(2020, 11, 22), 1000, 8300,  9300);
+                pago = new CPago("Cliente #1", "Especial", 275, "SPC", new DateTime(2020, 11, 22), 1000, 8300, 9300);
                 cliente.AltaCancelado(pago);
-                pago    = new CPago(         "Cliente #1", "Normal",   280, "TPC", new DateTime(2020, 10, 21), 1000, 3970,  4970);
+                pago = new CPago("Cliente #1", "Normal", 280, "TPC", new DateTime(2020, 10, 21), 1000, 3970, 4970);
                 cliente.AltaCancelado(pago);
-                pago    = new CPago(         "Cliente #1", "Normal",   285, "UPC", new DateTime(2020, 9, 20),  1000, 4280,  5280);
+                pago = new CPago("Cliente #1", "Normal", 285, "UPC", new DateTime(2020, 9, 20), 1000, 4280, 5280);
                 cliente.AltaCancelado(pago);
-                pago    = new CPago(         "Cliente #1", "Especial", 290, "VPC", new DateTime(2020, 8, 19),  1000, 10200, 11200);
+                pago = new CPago("Cliente #1", "Especial", 290, "VPC", new DateTime(2020, 8, 19), 1000, 10200, 11200);
                 cliente.AltaCancelado(pago);
                 clientes.Add(cliente);
 
-                clonada   = cliente.VerCancelados().ToList();
+                clonada = cliente.VerCancelados().ToList();
                 ordenable = cliente.VerCancelados();
-                reducida  = cliente.VerCancelados().Select(x => new CReducida()
-                { Nombre  = x.Cliente, Total = x.Total }).ToList();
+                reducida = cliente.VerCancelados().Select(x => new CReducida()
+                { Nombre = x.Cliente, Total = x.Total }).ToList();
 
-                DgvListaClientes.DataSource     = clientes;
-                DgvListaPendientes.DataSource   = cliente.VerPendientes();
+                DgvListaClientes.DataSource = clientes;
+                DgvListaPendientes.DataSource = cliente.VerPendientes();
                 DgvListaCanceladosG3.DataSource = clonada;
                 DgvListaCanceladosG4.DataSource = ordenable;
                 DgvListaCanceladosG5.DataSource = reducida;
 
-                CmdAltaCliente.Enabled            = false;
-                CmdModificaCliente.Enabled        = true;
-                CmdBajaCliente.Enabled            = true;
-                TextboxLegajoCliente.Enabled      = false;
+                CmdAltaCliente.Enabled = false;
+                CmdModificaCliente.Enabled = true;
+                CmdBajaCliente.Enabled = true;
+                TextboxLegajoCliente.Enabled = false;
                 DgvListaClientes.Rows[0].Selected = true;
-                RadioAscendente.Enabled           = true;
-                RadioDescendente.Enabled          = true;
+                RadioAscendente.Enabled = true;
+                RadioDescendente.Enabled = true;
 
                 LabelInformacion.Text = "Modo Demo.\n\nExplore, pero le sugerimos que primero se familiarice con la carga.";
             }
@@ -102,14 +102,14 @@ namespace SistemaDeCobros
         private void CFormulario_Load(object sender, EventArgs e)
         {
             IniciaFormulario();
-            if (String.IsNullOrEmpty(LabelInformacion.Text))
+            if (string.IsNullOrEmpty(LabelInformacion.Text))
             {
-                this.LabelInformacion.Text  = "Inicie dando un cliente de alta.\n";
-                this.LabelInformacion.Text += "Click en cabecera de fila para seleccionarlo.\n";
-                this.LabelInformacion.Text += "Click en una celda para habilitar nuevas altas.";
+                LabelInformacion.Text = "Inicie dando un cliente de alta.\n";
+                LabelInformacion.Text += "Click en cabecera de fila para seleccionarlo.\n";
+                LabelInformacion.Text += "Click en una celda para habilitar nuevas altas.";
             }
             SimulaPlaceholder();
-            this.TextboxLegajoCliente.Focus();
+            TextboxLegajoCliente.Focus();
         }
         // *--------------------------------------------------------=> Vigencia
         public void TboxAdquiereFoco(object sender, EventArgs e)
@@ -121,13 +121,13 @@ namespace SistemaDeCobros
         public void TboxPierdeFoco(object sender, EventArgs e)
         {
             TextBox tbox = (TextBox)sender;
-            if (String.IsNullOrWhiteSpace(tbox.Text))
+            if (string.IsNullOrWhiteSpace(tbox.Text))
             { tbox.Text = tbox.Tag.ToString(); }
         }
 
         private void SimulaPlaceholder()
         {
-            foreach (Control x in this.Controls)
+            foreach (Control x in Controls)
             {
                 if (x is GroupBox)
                 {
@@ -164,7 +164,7 @@ namespace SistemaDeCobros
         {
             if (keyData == Keys.Escape)
             {
-                this.Close();
+                Close();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -217,13 +217,13 @@ namespace SistemaDeCobros
             DataGridViewCellMouseEventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
             try
             {
                 cliente = (CCliente)
-                    (this.DgvListaClientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaClientes.SelectedRows[0].DataBoundItem);
 
                 TextboxLegajoCliente.Text = DgvListaClientes
                     .Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -231,37 +231,37 @@ namespace SistemaDeCobros
                     .Rows[e.RowIndex].Cells[1].Value.ToString();
 
                 // En G1
-                TextboxLegajoCliente.Enabled  = false;
-                CmdAltaCliente.Enabled        = false;
-                CmdModificaCliente.Enabled    = true;
-                CmdBajaCliente.Enabled        = true;
+                TextboxLegajoCliente.Enabled = false;
+                CmdAltaCliente.Enabled = false;
+                CmdModificaCliente.Enabled = true;
+                CmdBajaCliente.Enabled = true;
 
                 // En G2
-                CheckTipoEspecial.Enabled     = true;
-                TextboxCodigoCobro.Enabled    = true;
-                TextboxNombreCobro.Enabled    = true;
-                DpickerFVencimiento.Enabled   = true;
-                TextboxImporte.Enabled        = true;
-                CmdAltaCobro.Enabled          = true;
-                CmdPagar.Enabled              = false;
+                CheckTipoEspecial.Enabled = true;
+                TextboxCodigoCobro.Enabled = true;
+                TextboxNombreCobro.Enabled = true;
+                DpickerFVencimiento.Enabled = true;
+                TextboxImporte.Enabled = true;
+                CmdAltaCobro.Enabled = true;
+                CmdPagar.Enabled = false;
                 DgvListaPendientes.DataSource = null;
 
                 if (cliente.VerPendientes() != null && cliente.VerPendientes().Count > 0)
                 { DgvListaPendientes.DataSource = cliente.VerPendientes(); }
-                this.LabelInformacion.Text  = "Seleccionado el cliente, puede ";
-                this.LabelInformacion.Text += "modificarlo o agregar un cobro.";
+                LabelInformacion.Text = "Seleccionado el cliente, puede ";
+                LabelInformacion.Text += "modificarlo o agregar un cobro.";
 
                 // En G3
                 // En G4
                 // En G5
-                if(cliente.VerCancelados() != null && cliente.VerCancelados().Count > 0)
+                if (cliente.VerCancelados() != null && cliente.VerCancelados().Count > 0)
                 {
-                    clonada   = cliente.VerCancelados().ToList();
+                    clonada = cliente.VerCancelados().ToList();
                     ordenable = cliente.VerCancelados();
-                    reducida  = cliente.VerCancelados().Select(x => new CReducida()
+                    reducida = cliente.VerCancelados().Select(x => new CReducida()
                     {
                         Nombre = x.Cliente,
-                        Total  = x.Total
+                        Total = x.Total
                     }).ToList();
                     DgvListaCanceladosG3.DataSource = null;
                     DgvListaCanceladosG4.DataSource = null;
@@ -271,10 +271,10 @@ namespace SistemaDeCobros
                     DgvListaCanceladosG4.DataSource = ordenable;
                     DgvListaCanceladosG5.DataSource = reducida;
 
-                    RadioAscendente.Enabled         = true;
-                    RadioDescendente.Enabled        = true;
-                    RadioAscendente.Checked         = false;
-                    RadioDescendente.Checked        = false;
+                    RadioAscendente.Enabled = true;
+                    RadioDescendente.Enabled = true;
+                    RadioAscendente.Checked = false;
+                    RadioDescendente.Checked = false;
                 }
             }
             catch (Exception error)
@@ -286,48 +286,48 @@ namespace SistemaDeCobros
             DataGridViewCellEventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
             try
             {
                 if (DgvListaClientes.SelectedRows.Count > 0)
                 {
                     cliente = (CCliente)DgvListaClientes.SelectedRows[0].DataBoundItem;
                     if (cliente.VerPendientes().Count > 0)
-                    { this.DgvListaPendientes.DataSource = cliente.VerPendientes(); }
+                    { DgvListaPendientes.DataSource = cliente.VerPendientes(); }
                 }
 
                 // En G1
-                this.DgvListaPendientes.DataSource = null;
-                this.TextboxLegajoCliente.Text     = String.Empty;
-                this.TextboxNombreCliente.Text     = String.Empty;
-                this.TextboxLegajoCliente.Enabled  = true;
-                this.CmdAltaCliente.Enabled        = true;
-                this.CmdModificaCliente.Enabled    = false;
-                this.CmdBajaCliente.Enabled        = false;
-                this.EtiquetaClientes.Text         = "Para legajo, le sugerimos un entero positivo";
+                DgvListaPendientes.DataSource = null;
+                TextboxLegajoCliente.Text = string.Empty;
+                TextboxNombreCliente.Text = string.Empty;
+                TextboxLegajoCliente.Enabled = true;
+                CmdAltaCliente.Enabled = true;
+                CmdModificaCliente.Enabled = false;
+                CmdBajaCliente.Enabled = false;
+                EtiquetaClientes.Text = "Para legajo, le sugerimos un entero positivo";
 
                 // En G2
-                this.LabelInformacion.Text         = String.Empty;
-                this.CmdAltaCobro.Enabled          = true;
-                this.CmdPagar.Enabled              = false;
-                this.DgvListaPendientes.DataSource = null;
-                this.LabelInformacion.Text         = "Deseleccionado el cliente, puede ";
-                this.LabelInformacion.Text        += "agregar otro cliente.";
+                LabelInformacion.Text = string.Empty;
+                CmdAltaCobro.Enabled = true;
+                CmdPagar.Enabled = false;
+                DgvListaPendientes.DataSource = null;
+                LabelInformacion.Text = "Deseleccionado el cliente, puede ";
+                LabelInformacion.Text += "agregar otro cliente.";
 
                 // En G3
-                this.DgvListaCanceladosG3.DataSource = null;
+                DgvListaCanceladosG3.DataSource = null;
 
                 // En G4
-                this.DgvListaCanceladosG4.DataSource = null;
-                this.RadioAscendente.Enabled         = false;
-                this.RadioAscendente.Checked         = false;
-                this.RadioDescendente.Enabled        = false;
-                this.RadioDescendente.Checked        = false;
+                DgvListaCanceladosG4.DataSource = null;
+                RadioAscendente.Enabled = false;
+                RadioAscendente.Checked = false;
+                RadioDescendente.Enabled = false;
+                RadioDescendente.Checked = false;
 
                 // En G5
-                this.DgvListaCanceladosG5.DataSource = null;
+                DgvListaCanceladosG5.DataSource = null;
             }
             catch (Exception error)
             { InformaExcepcion(EtiquetaClientes, error.Message); }
@@ -339,35 +339,35 @@ namespace SistemaDeCobros
             DataGridViewCellMouseEventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
             try
             {
                 // Verificación
                 cliente = (CCliente)
-                    (this.DgvListaClientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaClientes.SelectedRows[0].DataBoundItem);
                 cobro = (CCobro)
-                    (this.DgvListaPendientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaPendientes.SelectedRows[0].DataBoundItem);
 
                 // En G1
                 // En G2
-                if (cobro.Tipo == "Especial") { this.CheckTipoEspecial.Checked = true; }
-                TextboxCodigoCobro.Text          = cobro.Codigo.ToString();
-                TextboxNombreCobro.Text          = cobro.NombreCobro;
+                if (cobro.Tipo == "Especial") { CheckTipoEspecial.Checked = true; }
+                TextboxCodigoCobro.Text = cobro.Codigo.ToString();
+                TextboxNombreCobro.Text = cobro.NombreCobro;
                 DpickerFVencimiento.Value = cobro.FechaVencimiento;
-                TextboxImporte.Text              = cobro.Importe.ToString();
-                CmdAltaCobro.Enabled             = false;
-                CmdPagar.Enabled                 = true;
-                this.LabelInformacion.Text       = "Seleccionado cliente y cobro, ";
-                this.LabelInformacion.Text      += "puede proceder al pago del mismo.";
+                TextboxImporte.Text = cobro.Importe.ToString();
+                CmdAltaCobro.Enabled = false;
+                CmdPagar.Enabled = true;
+                LabelInformacion.Text = "Seleccionado cliente y cobro, ";
+                LabelInformacion.Text += "puede proceder al pago del mismo.";
 
                 // En G3
                 // En G4
                 // En G5
             }
             catch (Exception error)
-            { 
+            {
                 InformaExcepcion(
                     EtiquetaClientes,
                     $"¿Tiene seleccionado un cliente?\n(Fila cliente seleccionada)\n\n{error.Message}");
@@ -379,24 +379,24 @@ namespace SistemaDeCobros
             DataGridViewCellEventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
             try
             {
                 // En G1
                 // En G2
-                this.CheckTipoEspecial.Checked   = false;
-                TextboxCodigoCobro.Text          = String.Empty;
-                TextboxNombreCobro.Text          = String.Empty;
+                CheckTipoEspecial.Checked = false;
+                TextboxCodigoCobro.Text = string.Empty;
+                TextboxNombreCobro.Text = string.Empty;
                 DpickerFVencimiento.Value = DateTime.Today.AddDays(-1);
-                TextboxImporte.Text              = String.Empty;
-                CmdAltaCobro.Enabled             = true;
-                CmdPagar.Enabled                 = false;
-                this.LabelInformacion.Text       = "Deseleccionado un cliente, puede ";
-                this.LabelInformacion.Text      += "proceder al alta de otro cobro.\n";
-                this.LabelInformacion.Text      += "Tip: el nombre de cobro es un ayuda-memoria para usted.";
-                this.EtiquetaPendientes.Text     = "Para código sugerimos un número entero positivo.\n";
+                TextboxImporte.Text = string.Empty;
+                CmdAltaCobro.Enabled = true;
+                CmdPagar.Enabled = false;
+                LabelInformacion.Text = "Deseleccionado un cliente, puede ";
+                LabelInformacion.Text += "proceder al alta de otro cobro.\n";
+                LabelInformacion.Text += "Tip: el nombre de cobro es un ayuda-memoria para usted.";
+                EtiquetaPendientes.Text = "Para código sugerimos un número entero positivo.\n";
 
                 // En G3
                 // En G4
@@ -407,16 +407,16 @@ namespace SistemaDeCobros
         }
 
         // *---------------------------------------------------------=> Grupo 4
-         private void RadioAscendente_CheckedChanged(object sender, EventArgs e)
+        private void RadioAscendente_CheckedChanged(object sender, EventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
 
             try
             {
-                if(cliente.VerCancelados() != null && cliente.VerCancelados().Count > 0)
+                if (cliente.VerCancelados() != null && cliente.VerCancelados().Count > 0)
                 {
                     List<CPago> ascendente = cliente.VerCancelados().OrderBy(x => x.Total).ToList();
                     DgvListaCanceladosG4.DataSource = null;
@@ -425,7 +425,7 @@ namespace SistemaDeCobros
 
                 // En G1
                 // En G2
-                this.LabelInformacion.Text = "Información\n\nLos pagos han sido ordenados de menor a mayor por el total.";
+                LabelInformacion.Text = "Información\n\nLos pagos han sido ordenados de menor a mayor por el total.";
 
                 // En G3
                 // En G4
@@ -438,9 +438,9 @@ namespace SistemaDeCobros
         private void RadioDescendente_CheckedChanged(object sender, EventArgs e)
         {
             ErrorProvider.Clear();
-            EtiquetaClientes.Text   = String.Empty;
-            EtiquetaPendientes.Text = String.Empty;
-            LabelInformacion.Text   = String.Empty;
+            EtiquetaClientes.Text = string.Empty;
+            EtiquetaPendientes.Text = string.Empty;
+            LabelInformacion.Text = string.Empty;
             try
             {
                 if (cliente.VerCancelados() != null && cliente.VerCancelados().Count > 0)
@@ -452,7 +452,7 @@ namespace SistemaDeCobros
 
                 // En G1
                 // En G2
-                this.LabelInformacion.Text = "Información\n\nLos pagos han sido ordenados de mayor a menor por el total.";
+                LabelInformacion.Text = "Información\n\nLos pagos han sido ordenados de mayor a menor por el total.";
 
                 // En G3
                 // En G4
@@ -461,13 +461,13 @@ namespace SistemaDeCobros
             catch (Exception error)
             { InformaExcepcion(EtiquetaClientes, error.Message); }
         }
-       #endregion
+        #endregion
 
         #region MÉTODOS
         // *---------------------------------------------------------=> Grupo 1
         private void CmdAltaCliente_Click(object sender, EventArgs e)
         {
-            EtiquetaClientes.Text  = "Los legajos deben ser únicos. ";
+            EtiquetaClientes.Text = "Los legajos deben ser únicos. ";
             EtiquetaClientes.Text += "Los nombres, convencionales.";
             try
             {
@@ -486,10 +486,10 @@ namespace SistemaDeCobros
                     throw new Exception
                         (
                         "Use un nombre propio que empiece con mayúscula.\n" +
-                        "\t(Ejemplos: Fulano, Mengano, Zutano...)"); 
+                        "\t(Ejemplos: Fulano, Mengano, Zutano...)");
                 }
-                else if(clientes.Any
-                    (x => x.Legajo == Int32.Parse(TextboxLegajoCliente.Text)))
+                else if (clientes.Any
+                    (x => x.Legajo == int.Parse(TextboxLegajoCliente.Text)))
                 { throw new Exception("Los legajos deben ser diferentes."); }
 
                 // Operaciones
@@ -503,7 +503,7 @@ namespace SistemaDeCobros
                 {
                     clientes.Add(new CCliente
                     (
-                    Int32.Parse(TextboxLegajoCliente.Text),
+                    int.Parse(TextboxLegajoCliente.Text),
                     TextboxNombreCliente.Text
                     ));
                     DgvListaClientes.DataSource = null;
@@ -511,9 +511,9 @@ namespace SistemaDeCobros
 
                     // Adendas
                     DgvListaClientes_CellClick(this, null);
-                    LabelInformacion.Text  = "Alta del Cliente realizada exitosamente.\n";
+                    LabelInformacion.Text = "Alta del Cliente realizada exitosamente.\n";
                     LabelInformacion.Text += "Para asignarle un cobro, haga click en la cabecera de fila.";
-                    this.TextboxLegajoCliente.Focus();
+                    TextboxLegajoCliente.Focus();
                 }
             }
             catch (Exception error)
@@ -522,7 +522,7 @@ namespace SistemaDeCobros
 
         private void CmdBajaCliente_Click(object sender, EventArgs e)
         {
-            EtiquetaClientes.Text  = "Los legajos deben ser únicos. ";
+            EtiquetaClientes.Text = "Los legajos deben ser únicos. ";
             EtiquetaClientes.Text += "Los nombres, convencionales.";
             try
             {
@@ -536,7 +536,7 @@ namespace SistemaDeCobros
                         );
                 }
                 cliente = (CCliente)
-                    (this.DgvListaClientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaClientes.SelectedRows[0].DataBoundItem);
 
                 // Operaciones
                 if (MessageBox.Show
@@ -547,16 +547,16 @@ namespace SistemaDeCobros
                     MessageBoxIcon.Question
                     ) == DialogResult.Yes)
                 {
-                    this.clientes.Remove(cliente);
+                    clientes.Remove(cliente);
                     DgvListaClientes.DataSource = null;
                     DgvListaClientes.DataSource = clientes;
                 }
 
                 // Adendas
                 DgvListaClientes_CellClick(this, null);
-                LabelInformacion.Text  = "Baja del Cliente realizada exitosamente.\n";
+                LabelInformacion.Text = "Baja del Cliente realizada exitosamente.\n";
                 LabelInformacion.Text += "Para asignarle un cobro, haga click en la cabecera de fila.";
-                this.TextboxLegajoCliente.Focus();
+                TextboxLegajoCliente.Focus();
             }
             catch (Exception error)
             { InformaExcepcion(EtiquetaClientes, error.Message); }
@@ -564,7 +564,7 @@ namespace SistemaDeCobros
 
         private void CmdModificaCliente_Click(object sender, EventArgs e)
         {
-            EtiquetaClientes.Text  = "Los legajos deben ser únicos. ";
+            EtiquetaClientes.Text = "Los legajos deben ser únicos. ";
             EtiquetaClientes.Text += "Los nombres, convencionales.";
             try
             {
@@ -578,7 +578,7 @@ namespace SistemaDeCobros
                         );
                 }
                 cliente = (CCliente)
-                    (this.DgvListaClientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaClientes.SelectedRows[0].DataBoundItem);
 
                 // Operaciones
                 if (MessageBox.Show
@@ -596,9 +596,9 @@ namespace SistemaDeCobros
 
                 // Adendas
                 DgvListaClientes_CellClick(this, null);
-                LabelInformacion.Text  = "Modificación del Cliente realizada exitosamente.\n";
+                LabelInformacion.Text = "Modificación del Cliente realizada exitosamente.\n";
                 LabelInformacion.Text += "Para asignarle un cobro, haga click en la cabecera de fila.";
-                this.TextboxLegajoCliente.Focus();
+                TextboxLegajoCliente.Focus();
             }
             catch (Exception error)
             { InformaExcepcion(EtiquetaClientes, error.Message); }
@@ -608,15 +608,17 @@ namespace SistemaDeCobros
         // *---------------------------------------------------------=> Grupo 2
         private void CmdAltaCobro_Click(object sender, EventArgs e)
         {
-            EtiquetaPendientes.Text  = "Los códigos deben ser únicos. ";
+            EtiquetaPendientes.Text = "Los códigos deben ser únicos. ";
             EtiquetaPendientes.Text += "Los nombres son un ayuda-memoria.";
             try
             {
                 // Verificaciones
                 ErrorProvider.Clear();
                 if (DgvListaClientes.SelectedRows.Count == 0)
-                { throw new Exception("Debe seleccionar un cliente.\n" +
-                    "Puede hacerlo con un click en su cabecera de fila."); }
+                {
+                    throw new Exception("Debe seleccionar un cliente.\n" +
+                      "Puede hacerlo con un click en su cabecera de fila.");
+                }
                 else if (
                     TextboxCodigoCobro.Text == string.Empty ||
                     TextboxNombreCobro.Text == string.Empty ||
@@ -624,12 +626,12 @@ namespace SistemaDeCobros
                     ) { throw new Exception("No pueden haber campos vacíos"); }
 
                 cliente = (CCliente)DgvListaClientes.SelectedRows[0].DataBoundItem;
-                if(cliente.VerPendientes().Count > 1)
+                if (cliente.VerPendientes().Count > 1)
                 { throw new Exception("El cliente no puede tener más de dos pendientes"); }
 
-                foreach(var x in clientes)
+                foreach (var x in clientes)
                 {
-                    if (x.EsDuplicado(Int32.Parse(TextboxCodigoCobro.Text)))
+                    if (x.EsDuplicado(int.Parse(TextboxCodigoCobro.Text)))
                     { throw new Exception("Ese código de cobro ya ha sido tomado.\nElija otro."); }
                 }
 
@@ -648,10 +650,10 @@ namespace SistemaDeCobros
                             (
                             TextboxNombreCliente.Text,
                             "Especial",
-                            Int32.Parse(TextboxCodigoCobro.Text),
+                            int.Parse(TextboxCodigoCobro.Text),
                             TextboxNombreCobro.Text,
                             DpickerFVencimiento.Value,
-                            Decimal.Parse(TextboxImporte.Text)
+                            decimal.Parse(TextboxImporte.Text)
                             );
                         cliente.AltaPendiente(cobro);
                     }
@@ -661,25 +663,25 @@ namespace SistemaDeCobros
                             (
                             TextboxNombreCliente.Text,
                             "Normal",
-                            Int32.Parse(TextboxCodigoCobro.Text),
+                            int.Parse(TextboxCodigoCobro.Text),
                             TextboxNombreCobro.Text,
                             DpickerFVencimiento.Value,
-                            Decimal.Parse(TextboxImporte.Text)
+                            decimal.Parse(TextboxImporte.Text)
                             );
                         cliente.AltaPendiente(cobro);
                     }
-                    this.DgvListaPendientes.DataSource = null;
+                    DgvListaPendientes.DataSource = null;
                     if (cliente.VerPendientes() != null && cliente.VerPendientes().Count > 0)
-                    { this.DgvListaPendientes.DataSource = cliente.VerPendientes(); }
+                    { DgvListaPendientes.DataSource = cliente.VerPendientes(); }
 
                     // Adendas
                     CheckTipoEspecial.Checked = false;
-                    TextboxCodigoCobro.Text   = String.Empty;
-                    TextboxNombreCobro.Text   = String.Empty;
+                    TextboxCodigoCobro.Text = string.Empty;
+                    TextboxNombreCobro.Text = string.Empty;
                     DpickerFVencimiento.Value = DateTime.Now;
-                    TextboxImporte.Text       = String.Empty;
+                    TextboxImporte.Text = string.Empty;
 
-                    LabelInformacion.Text  = "Alta de Cobro realizada exitosamente.\n";
+                    LabelInformacion.Text = "Alta de Cobro realizada exitosamente.\n";
                     LabelInformacion.Text += "Para proceder al pago, recuerde:\n";
                     LabelInformacion.Text += "Debe seleccionar tanto cliente como cobro.\n";
                     LabelInformacion.Text += "Se hace haciendo click en la cabecera de fila de cada uno.";
@@ -691,7 +693,7 @@ namespace SistemaDeCobros
 
         private void CmdPagar_Click(object sender, EventArgs e)
         {
-            EtiquetaPendientes.Text  = "Los códigos deben ser únicos. ";
+            EtiquetaPendientes.Text = "Los códigos deben ser únicos. ";
             EtiquetaPendientes.Text += "Los nombres son un ayuda-memoria.";
             try
             {
@@ -708,9 +710,9 @@ namespace SistemaDeCobros
                       "Puede hacerlo con un click en su cabecera de fila.");
                 }
                 cliente = (CCliente)
-                   (this.DgvListaClientes.SelectedRows[0].DataBoundItem);
+                   (DgvListaClientes.SelectedRows[0].DataBoundItem);
                 cobro = (CCobro)
-                    (this.DgvListaPendientes.SelectedRows[0].DataBoundItem);
+                    (DgvListaPendientes.SelectedRows[0].DataBoundItem);
 
                 // Operaciones
                 if (MessageBox.Show
@@ -721,7 +723,7 @@ namespace SistemaDeCobros
                     MessageBoxIcon.Question
                     ) == DialogResult.Yes)
                 {
-                    LabelInformacion.Text = String.Empty;
+                    LabelInformacion.Text = string.Empty;
 
                     DateTime desde = (DateTime)DpickerFVencimiento.Value;
                     DateTime hasta = DateTime.Now.AddDays(-1);
@@ -767,33 +769,33 @@ namespace SistemaDeCobros
                         Total = x.Total
                     }).ToList();
 
-                    DgvListaPendientes.DataSource   = null;
+                    DgvListaPendientes.DataSource = null;
                     DgvListaCanceladosG3.DataSource = null;
                     DgvListaCanceladosG4.DataSource = null;
                     DgvListaCanceladosG5.DataSource = null;
 
-                    DgvListaPendientes.DataSource   = cliente.VerPendientes();
+                    DgvListaPendientes.DataSource = cliente.VerPendientes();
                     DgvListaCanceladosG3.DataSource = clonada;
                     DgvListaCanceladosG4.DataSource = ordenable;
                     DgvListaCanceladosG5.DataSource = reducida;
 
                     // Adendas
-                    RadioAscendente.Enabled     = true;
-                    RadioDescendente.Enabled    = true;
+                    RadioAscendente.Enabled = true;
+                    RadioDescendente.Enabled = true;
 
-                    RadioAscendente.Checked     = false;
-                    RadioDescendente.Checked    = false;
+                    RadioAscendente.Checked = false;
+                    RadioDescendente.Checked = false;
 
-                    CmdPagar.Enabled            = false;
-                    CmdAltaCobro.Enabled        = true;
+                    CmdPagar.Enabled = false;
+                    CmdAltaCobro.Enabled = true;
 
-                    CheckTipoEspecial.Checked   = false;
-                    TextboxCodigoCobro.Text     = String.Empty;
-                    TextboxNombreCobro.Text     = String.Empty;
-                    DpickerFVencimiento.Value   = DateTime.Now;
-                    TextboxImporte.Text         = String.Empty;
+                    CheckTipoEspecial.Checked = false;
+                    TextboxCodigoCobro.Text = string.Empty;
+                    TextboxNombreCobro.Text = string.Empty;
+                    DpickerFVencimiento.Value = DateTime.Now;
+                    TextboxImporte.Text = string.Empty;
 
-                    this.TextboxCodigoCobro.Focus();
+                    TextboxCodigoCobro.Focus();
 
                     if (pago.Total <= 10000)
                     { LabelInformacion.Text = "Pago realizado exitosamente."; }

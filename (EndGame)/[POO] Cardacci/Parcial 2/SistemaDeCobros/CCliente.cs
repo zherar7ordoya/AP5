@@ -13,22 +13,22 @@ namespace SistemaDeCobros
         // Propiedades
         public int Legajo
         {
-            get => this.legajo;
-            set => this.legajo = value;
+            get => legajo;
+            set => legajo = value;
         }
         public string NombreCliente
         {
-            get => this.nombreCliente;
-            set => this.nombreCliente = value;
+            get => nombreCliente;
+            set => nombreCliente = value;
         }
-        public List<CCobro> VerPendientes() { return this.CobrosPendientes; }
-        public List<CPago> VerCancelados() { return this.CobrosCancelados; }
+        public List<CCobro> VerPendientes() { return CobrosPendientes; }
+        public List<CPago> VerCancelados() { return CobrosCancelados; }
 
         // Constructores
         public CCliente(int pLegajo, string pNombreCliente)
         {
-            this.legajo        = pLegajo;
-            this.nombreCliente = pNombreCliente;
+            legajo        = pLegajo;
+            nombreCliente = pNombreCliente;
         }
 
         // Métodos
@@ -52,12 +52,12 @@ namespace SistemaDeCobros
             return false;
         }
         public void AltaPendiente(CCobro pCobro)
-        { this.CobrosPendientes.Add(pCobro); }
+        { CobrosPendientes.Add(pCobro); }
 
         public void BajaPendiente(CCobro pCobro)
-        { this.CobrosPendientes.Remove(pCobro); }
+        { CobrosPendientes.Remove(pCobro); }
 
         public void AltaCancelado(CPago pPago)
-        { this.CobrosCancelados.Add(pPago); }
+        { CobrosCancelados.Add(pPago); }
     }
 }

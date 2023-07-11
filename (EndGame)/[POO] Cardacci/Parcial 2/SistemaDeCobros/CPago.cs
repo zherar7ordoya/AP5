@@ -27,8 +27,8 @@ namespace SistemaDeCobros
             get => total;
             set
             {
-                this.total = value;
-                this.OnTotalChanged?.Invoke(this, this.total);
+                total = value;
+                OnTotalChanged?.Invoke(this, total);
             }
         }
         public event EventHandler<decimal> OnTotalChanged;
@@ -46,14 +46,14 @@ namespace SistemaDeCobros
             decimal  pTotal
             )
         {
-            this.cliente          = pCliente;
-            this.Tipo             = pTipo;
-            this.Codigo           = pCodigo;
-            this.NombreCobro      = pNombreCobro;
-            this.FechaVencimiento = pFechaVencimiento;
-            this.Importe          = pImporte;
-            this.recargo          = pRecargo;
-            this.total            = pTotal;
+            cliente          = pCliente;
+            Tipo             = pTipo;
+            Codigo           = pCodigo;
+            NombreCobro      = pNombreCobro;
+            FechaVencimiento = pFechaVencimiento;
+            Importe          = pImporte;
+            recargo          = pRecargo;
+            total            = pTotal;
         }
         
         // Métodos

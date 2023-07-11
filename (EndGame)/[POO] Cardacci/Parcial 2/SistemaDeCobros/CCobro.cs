@@ -31,12 +31,12 @@ namespace SistemaDeCobros
             decimal  pImporte
             )
         {
-            this.cliente          = pCliente;
-            this.tipo             = pTipo;
-            this.codigo           = pCodigo;
-            this.nombreCobro      = pNombreCobro;
-            this.fechaVencimiento = pFechaVencimiento;
-            this.importe          = pImporte;
+            cliente          = pCliente;
+            tipo             = pTipo;
+            codigo           = pCodigo;
+            nombreCobro      = pNombreCobro;
+            fechaVencimiento = pFechaVencimiento;
+            importe          = pImporte;
         }
 
         // Métodos
