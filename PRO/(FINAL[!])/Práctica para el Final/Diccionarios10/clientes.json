@@ -1,0 +1,30 @@
+{
+  "99999999": {
+    "nombre": "Gerardo Tordoya",
+    "direccion": "San Juan 555",
+    "telefono": 5550800123,
+    "correo": "gerardo.tordoya@outlook.com",
+    "preferente": true
+  },
+  "33666999": {
+    "nombre": "Abel Lizard",
+    "direccion": "Pasaje 10 568",
+    "telefono": 3884564285,
+    "correo": "abel.lizard@mail.net",
+    "preferente": false
+  },
+    "22555888": {
+    "nombre": "Manolo Centeno",
+    "direccion": "Celso S/N",
+    "telefono": 3887654321,
+    "correo": "manolo.centeno@mail.net",
+    "preferente": true
+  },
+    "11444777": {
+    "nombre": "Juanjo Oliva",
+    "direccion": "Arroyo Las Martas 85",
+    "telefono": 3886549872,
+    "correo": "juanjo.oliva@mail.net",
+    "preferente": false
+  }
+}

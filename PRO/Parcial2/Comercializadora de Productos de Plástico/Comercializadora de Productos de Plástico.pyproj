@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fd696d41-1bc9-406a-875d-895359493a23}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>main.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>
+    </InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <Name>Comercializadora de Productos de Plástico</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BEL\articulo_model.py" />
+    <Compile Include="BEL\venta_model.py" />
+    <Compile Include="BEL\__init__.py" />
+    <Compile Include="BLL\articulo_logic.py" />
+    <Compile Include="BLL\compartido.py" />
+    <Compile Include="BLL\listado_logic.py" />
+    <Compile Include="BLL\validaciones.py" />
+    <Compile Include="BLL\venta_logic.py" />
+    <Compile Include="BLL\__init__.py" />
+    <Compile Include="DAL\acceso_datos.py" />
+    <Compile Include="DAL\__init__.py" />
+    <Compile Include="EHL\handler_logger.py" />
+    <Compile Include="EHL\__init__.py" />
+    <Compile Include="main.py" />
+    <Compile Include="MPP\articulo_mapper.py" />
+    <Compile Include="MPP\venta_mapper.py" />
+    <Compile Include="MPP\__init__.py" />
+    <Compile Include="UIL\example1.py" />
+    <Compile Include="UIL\example2.py" />
+    <Compile Include="UIL\example3.py" />
+    <Compile Include="UIL\example4.py" />
+    <Compile Include="UIL\example5.py" />
+    <Compile Include="UIL\example6.py" />
+    <Compile Include="UIL\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BEL" />
+    <Folder Include="BLL" />
+    <Folder Include="DAL" />
+    <Folder Include="EHL" />
+    <Folder Include="MPP" />
+    <Folder Include="UIL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

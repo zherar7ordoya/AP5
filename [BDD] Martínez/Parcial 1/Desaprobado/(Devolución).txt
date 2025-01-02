@@ -1,0 +1,7 @@
+Práctica:
+
+1 Cuidado, hay mal concepto de simbologia de cardinalidad. No se utiliza ID, por favor, ver las grabaciones de los encuentros de este tema. Se podría indicar una entidad autor. falta lógica de ejemplares. Falta lógica de proveedor.
+
+2 Un préstamo puede tener más de un ejemplar. De donde sale Autor como PK si no existe entidad autor??
+
+3 ok

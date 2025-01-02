@@ -1,0 +1,17 @@
+﻿
+@{ ViewData["Title"] = "Index"; }
+
+<div class="text-center">
+    <a asp-action="ListPeliculas" asp-controller="cosmos" class="btn btn-dark">Listar peliculas</a>
+    <br />
+    <br />
+    <form method="post">
+        <label>
+            Al pulsar sobre este botón, se creará la BD de películas en Cosmos Db Azure.
+            Además, se crearán 4 películas y se insertarán en la BD.
+        </label><br />
+        <button type="submit" name="accion" value="iniciar" class="btn btn-info">Iniciar acciones Cosmos DB</button>
+    </form>
+
+    <h1 class="display-4" style="color:green">@ViewBag.mensaje</h1>
+</div>

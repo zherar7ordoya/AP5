@@ -1,0 +1,16 @@
+en pag 58 de lección 5:
+
+- en R5 sustituir proveedor por suministrar (si no, se obtendrían los proveedores
+  que suministran todas las piezas que suministra el proveedor de clave 25, o no suministran ninguna pieza.
+  O, lo que es lo mismo, sólo sería correcta la solución que había si todos los proveedores
+  suministraran alguna Pieza.
+
+en pag 22 de lección 7:
+
+- idDeporte e idAsignatura forman parte de la clave
+- cambios menores en algunas transparencias (21, 28)
+
+- (23 May 2013) en pag. 58 de diseño físico, se ha cambiado la sintaxis de los select:
+     SELECT COUNT(*) AS cardinalidadDeMiTabla FROM MiTabla;
+     en vez de
+     SELECT COUNT(*) FROM MiTabla AS cardinalidadDeMiTabla;

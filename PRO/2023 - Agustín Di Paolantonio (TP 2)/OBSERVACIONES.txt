@@ -1,0 +1,4 @@
+* no envíes el pdf sin tu nombre y demás
+* no sé si tuviste con cardacci. él te habría señalado que la UX no es intuitiva: no hay indicaciones de cómo jugar ni cómo salir del juego, por ejemplo
+* python es muy parecido a javascript (y a los jeep de la 2da guerra mundial): no se detiene, incluso bajo condición de error. tu juego está tirando advertencias. no conozco a pygame, así que no sé la gravedad o la trivialidad de los mensajes de advertencia (captura 1)
+* a menos que te pidan rar, enviá zip

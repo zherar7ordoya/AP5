@@ -1,0 +1,562 @@
+﻿{
+    "version": 2,
+    "www": "erdplus.com",
+    "shapes": [
+        {
+            "type": "Entity",
+            "details": {
+                "name": "Línea",
+                "type": "regular",
+                "x": 268,
+                "y": 172.5,
+                "isDisjointed": true,
+                "isTotalSpecialization": true,
+                "isSubtype": false,
+                "supertypeEntityId": null,
+                "id": 1
+            }
+        },
+        {
+            "type": "Entity",
+            "details": {
+                "name": "Estación",
+                "type": "regular",
+                "x": 585,
+                "y": 162.5,
+                "isDisjointed": true,
+                "isTotalSpecialization": true,
+                "isSubtype": false,
+                "supertypeEntityId": null,
+                "id": 2
+            }
+        },
+        {
+            "type": "Relationship",
+            "details": {
+                "name": "Pertenece",
+                "isIdentifying": false,
+                "x": 422,
+                "y": 163.5,
+                "slots": [
+                    {
+                        "slotIndex": 0,
+                        "minimum": "1",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 1
+                    },
+                    {
+                        "slotIndex": 1,
+                        "minimum": "1",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 2
+                    }
+                ],
+                "id": 3
+            }
+        },
+        {
+            "type": "Entity",
+            "details": {
+                "name": "Acceso",
+                "type": "regular",
+                "x": 918,
+                "y": 173,
+                "isDisjointed": true,
+                "isTotalSpecialization": true,
+                "isSubtype": false,
+                "supertypeEntityId": null,
+                "id": 6
+            }
+        },
+        {
+            "type": "Relationship",
+            "details": {
+                "name": "Tiene",
+                "isIdentifying": false,
+                "x": 759,
+                "y": 179.5,
+                "slots": [
+                    {
+                        "slotIndex": 0,
+                        "minimum": "1",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 2
+                    },
+                    {
+                        "slotIndex": 1,
+                        "minimum": "",
+                        "maximum": "1",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 6
+                    }
+                ],
+                "id": 7
+            }
+        },
+        {
+            "type": "Relationship",
+            "details": {
+                "name": "Es Asignado",
+                "isIdentifying": false,
+                "x": 295,
+                "y": 293.5,
+                "slots": [
+                    {
+                        "slotIndex": 0,
+                        "minimum": "1",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 1
+                    },
+                    {
+                        "slotIndex": 1,
+                        "minimum": "0",
+                        "maximum": "1",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 11
+                    }
+                ],
+                "id": 10
+            }
+        },
+        {
+            "type": "Entity",
+            "details": {
+                "name": "Tren",
+                "type": "regular",
+                "x": 253,
+                "y": 385.5,
+                "isDisjointed": true,
+                "isTotalSpecialization": true,
+                "isSubtype": false,
+                "supertypeEntityId": null,
+                "id": 11
+            }
+        },
+        {
+            "type": "Entity",
+            "details": {
+                "name": "Cochera",
+                "type": "regular",
+                "x": 606,
+                "y": 385.5,
+                "isDisjointed": true,
+                "isTotalSpecialization": true,
+                "isSubtype": false,
+                "supertypeEntityId": null,
+                "id": 14
+            }
+        },
+        {
+            "type": "Relationship",
+            "details": {
+                "name": "Dispone De",
+                "isIdentifying": false,
+                "x": 432,
+                "y": 389.5,
+                "slots": [
+                    {
+                        "slotIndex": 0,
+                        "minimum": "",
+                        "maximum": "1",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 11
+                    },
+                    {
+                        "slotIndex": 1,
+                        "minimum": "1",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 14
+                    }
+                ],
+                "id": 15
+            }
+        },
+        {
+            "type": "Relationship",
+            "details": {
+                "name": "Dispone De",
+                "isIdentifying": false,
+                "x": 581,
+                "y": 275.5,
+                "slots": [
+                    {
+                        "slotIndex": 0,
+                        "minimum": "0",
+                        "maximum": "",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 2
+                    },
+                    {
+                        "slotIndex": 1,
+                        "minimum": "",
+                        "maximum": "1",
+                        "participation": "unspecified",
+                        "cardinality": "unspecified",
+                        "role": "",
+                        "entityId": 14
+                    }
+                ],
+                "id": 18
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Número",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": true,
+                "x": 266,
+                "y": 41.5,
+                "id": 22
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Origen",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 388,
+                "y": 33.5,
+                "id": 24
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Destino",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 498,
+                "y": 39.5,
+                "id": 26
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Nombre",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": true,
+                "x": 611,
+                "y": 57.5,
+                "id": 28
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Locación",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 730,
+                "y": 59.5,
+                "id": 30
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Código",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": true,
+                "x": 861,
+                "y": 60,
+                "id": 32
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Nombre",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 966,
+                "y": 25,
+                "id": 34
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Patente",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": true,
+                "x": 236,
+                "y": 461.5,
+                "id": 36
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Descripción",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 340,
+                "y": 469.5,
+                "id": 38
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Código",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": true,
+                "x": 570,
+                "y": 466.5,
+                "id": 40
+            }
+        },
+        {
+            "type": "Attribute",
+            "details": {
+                "name": "Ubicación",
+                "isDerived": false,
+                "isMultivalued": false,
+                "isOptional": false,
+                "isComposite": false,
+                "isUnique": false,
+                "x": 724,
+                "y": 430.5,
+                "id": 42
+            }
+        }
+    ],
+    "connectors": [
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 0,
+                "id": 4
+            },
+            "source": 1,
+            "destination": 3
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 1,
+                "id": 5
+            },
+            "source": 2,
+            "destination": 3
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 0,
+                "id": 8
+            },
+            "source": 2,
+            "destination": 7
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 1,
+                "id": 9
+            },
+            "source": 6,
+            "destination": 7
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 0,
+                "id": 12
+            },
+            "source": 1,
+            "destination": 10
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 1,
+                "id": 13
+            },
+            "source": 11,
+            "destination": 10
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 0,
+                "id": 16
+            },
+            "source": 11,
+            "destination": 15
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 1,
+                "id": 17
+            },
+            "source": 14,
+            "destination": 15
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 0,
+                "id": 19
+            },
+            "source": 2,
+            "destination": 18
+        },
+        {
+            "type": "RelationshipConnector",
+            "details": {
+                "slotIndex": 1,
+                "id": 20
+            },
+            "source": 14,
+            "destination": 18
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 23
+            },
+            "source": 22,
+            "destination": 1
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 25
+            },
+            "source": 24,
+            "destination": 1
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 27
+            },
+            "source": 26,
+            "destination": 1
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 29
+            },
+            "source": 28,
+            "destination": 2
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 31
+            },
+            "source": 30,
+            "destination": 2
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 33
+            },
+            "source": 32,
+            "destination": 6
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 35
+            },
+            "source": 34,
+            "destination": 6
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 37
+            },
+            "source": 36,
+            "destination": 11
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 39
+            },
+            "source": 38,
+            "destination": 11
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 41
+            },
+            "source": 40,
+            "destination": 14
+        },
+        {
+            "type": "Connector",
+            "details": {
+                "id": 43
+            },
+            "source": 42,
+            "destination": 14
+        }
+    ],
+    "width": 2000,
+    "height": 1000
+}
